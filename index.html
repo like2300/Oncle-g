@@ -537,7 +537,59 @@
         }
     </style>
 
-    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        /* Ligne verticale personnalisée */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #374151, #eab308, #374151, transparent);
+        }
+        @media (max-width: 768px) {
+            .timeline-line::before { left: 20px; }
+        }
+    </style>
+
+    <style>
+       
+        /* Effet de texte contour (Outline) */
+        .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+        }
+
+        /* Animation au survol des cartes */
+        .whawoo-card {
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .whawoo-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            background: #111;
+            border-color: #eab308;
+        }
+
+        /* Décoration d'arrière-plan */
+        .bg-glow {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(234, 179, 8, 0.05) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        input , textarea {
+            color: black!important  ;
+        }
+    </style>
 
 </head>
 
@@ -804,12 +856,12 @@
 
         <!-- Center Content -->
         <div class="text-center w-full md:w-2/4 px-6 z-10 fade-in">
-               <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wide mb-4">services</h2>
+               <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wide mb-4">Services Oncle G </h2>
                 <p class="text-sm md:text-base text-gray-700 leading-relaxed max-w-md mx-auto">
-                    Quisque eget vestibulum nulla. Quisque quis dui quis ex ultricies efficitur vitae non felis.
-                    Phasellus quis nibh hendrerit.
+                  Quand l’urgence devient une tranquillité
                 </p>
         </div>
+ 
 
         <!-- Left Side Animated Bars -->
         <div class="side-panel   absolute -left-8 md:-left-1 md:top-1/2 -bottom-20  rotate-180 transform -translate-y-1/2 flex flex-col gap-3 opacity-40 md:opacity-90 scale-50 md:scale-100 transition-all duration-300 -translate-x-10 md:translate-x-0">
@@ -859,90 +911,87 @@
         </div>
     </section>
 
+<section class="py-24 px-4 md:px-8 max-w-7xl mx-auto">
+ 
 
-    <section class="py-16 md:px-4 md:px-8 mx-3">
+    <div class="flex flex-col md:flex-row gap-6 md:gap-10">
 
-        <div class="flex flex-col md:flex-row gap-6 md:gap-8">
+        <div class="flex flex-col gap-6 md:gap-10 w-full md:w-1/2">
 
-            <div class="flex flex-col gap-6 md:gap-8 w-full md:w-1/2">
-
-                <div
-                    class="bg-gray-200 rounded-[2rem] p-8 md:p-12 h-80 flex flex-col justify-between items-center text-center relative group hover:scale-[1.01] transition-transform">
-                    <div class="flex-grow flex items-center">
-                        <p class="text-sm md:text-base text-gray-800 max-w-xs mx-auto">
-                            Quisque eget vestibulum nulla. Quisque quis dui quis ex ultricies efficitur vitae non felis.
-                        </p>
-                    </div>
-                    <button
-                        class="bg-black text-white text-xs font-semibold py-3 px-6 rounded-full flex items-center gap-2 self-end mt-4">
-                        En savoir Plus
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-yellow-400" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                    </button>
+            <div class="bg-zinc-900 rounded-[2.5rem] p-8 md:p-12 h-[450px] flex flex-col justify-between relative group overflow-visible border border-zinc-800">
+                <img src="./img/livreur-pro.png" alt="" class="absolute -top-12 -right-6 w-64 h-auto drop-shadow-2xl group-hover:-translate-y-4 transition-transform duration-500 z-20 pointer-events-none">
+                
+                <div class="z-10 relative">
+                    <span class="bg-yellow-500 text-black px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-tighter">B2B</span>
+                    <h4 class="text-3xl font-black text-white mt-4 uppercase leading-none">G – PRO <br> ILLIMITÉ</h4>
+                    <p class="text-sm text-gray-400 mt-6 max-w-[200px] leading-relaxed">
+                        Une moto et un livreur dédiés. Maintenance et carburant inclus. Zéro charges, <span class="text-white">100% ventes</span>.
+                    </p>
                 </div>
-
-                <div
-                    class="bg-gray-200 rounded-[2rem] p-8 md:p-12 h-80 flex flex-col justify-between items-center text-center relative group hover:scale-[1.01] transition-transform">
-                    <div class="flex-grow flex items-center">
-                        <p class="text-sm md:text-base text-gray-800 max-w-xs mx-auto">
-                            Phasellus quis nibh hendrerit. Quisque quis dui quis ex ultricies efficitur vitae non felis.
-                        </p>
-                    </div>
-                    <button
-                        class="bg-black text-white text-xs font-semibold py-3 px-6 rounded-full flex items-center gap-2 self-end mt-4">
-                        En savoir Plus
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-yellow-400" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                    </button>
-                </div>
-
+                
+                <button class="bg-white text-black text-[10px] font-black uppercase py-4 px-8 rounded-full flex items-center gap-3 w-fit hover:bg-yellow-500 transition-colors z-10">
+                    En savoir Plus
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </button>
             </div>
 
-            <div class="flex flex-col gap-6 md:gap-8 w-full md:w-1/2 md:mt-[40px]">
-
-                <div
-                    class="bg-gray-200 rounded-[2rem] p-8 md:p-12 h-80 flex flex-col justify-between items-center text-center relative group hover:scale-[1.01] transition-transform">
-                    <div class="flex-grow flex items-center">
-                        <p class="text-sm md:text-base text-gray-800 max-w-xs mx-auto">
-                            Quisque eget vestibulum nulla. Quisque quis dui quis ex ultricies efficitur vitae non felis.
-                        </p>
-                    </div>
-                    <button
-                        class="bg-black text-white text-xs font-semibold py-3 px-6 rounded-full flex items-center gap-2 self-end mt-4">
-                        En savoir Plus
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-yellow-400" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                    </button>
+            <div class="bg-zinc-100 rounded-[2.5rem] p-8 md:p-12 h-[400px] flex flex-col justify-between relative group overflow-visible">
+                <img src="./img/marketing-impact.png" alt="" class="absolute -top-16 -left-4 w-56 h-auto drop-shadow-xl group-hover:scale-110 transition-transform duration-500 z-20 pointer-events-none">
+                
+                <div class="z-10 relative text-right md:text-left flex flex-col items-end md:items-start">
+                    <h4 class="text-3xl font-black text-black uppercase leading-none">Marketing <br> Impact</h4>
+                    <p class="text-sm text-gray-600 mt-6 max-w-[250px]">
+                        L'Oncle frappe à votre porte pour vos courses urgentes et démarches rapides.
+                    </p>
                 </div>
-
-                <div
-                    class="bg-gray-200 rounded-[2rem] p-8 md:p-12 h-80 flex flex-col justify-between items-center text-center relative group hover:scale-[1.01] transition-transform">
-                    <div class="flex-grow flex items-center">
-                        <p class="text-sm md:text-base text-gray-800 max-w-xs mx-auto">
-                            Phasellus quis nibh hendrerit. Quisque quis dui quis ex ultricies efficitur vitae non felis.
-                        </p>
-                    </div>
-                    <button
-                        class="bg-black text-white text-xs font-semibold py-3 px-6 rounded-full flex items-center gap-2 self-end mt-4">
-                        En savoir Plus
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-yellow-400" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                    </button>
-                </div>
-
+                
+                <button class="bg-black text-white text-[10px] font-black uppercase py-4 px-8 rounded-full flex items-center gap-3 w-fit self-end md:self-start">
+                    Détails
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </button>
             </div>
 
         </div>
-    </section>
 
+        <div class="flex flex-col gap-6 md:gap-10 w-full md:w-1/2 md:mt-20">
+
+            <div class="bg-yellow-500 rounded-[2.5rem] p-8 md:p-12 h-[450px] flex flex-col justify-between relative group overflow-visible">
+                <img src="./img/bouteille-gaz.png" alt="" class="absolute -top-20 right-0 w-48 h-auto drop-shadow-2xl group-hover:rotate-12 transition-transform duration-500 z-20 pointer-events-none">
+                
+                <div>
+                    <h4 class="text-4xl font-black text-black uppercase leading-tight">Conciergerie <br> Express</h4>
+                    <p class="text-sm text-black font-medium mt-6 max-w-[220px]">
+                        Votre bouteille de Gaz livrée, installée et testée. Ne vous salissez plus les mains !
+                    </p>
+                </div>
+                
+                <button class="bg-black text-white text-[10px] font-black uppercase py-4 px-8 rounded-full flex items-center gap-3 w-fit">
+                    Commander Gaz
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="bg-zinc-800 rounded-[2.5rem] p-8 md:p-12 h-[350px] flex flex-col justify-between relative group overflow-hidden border border-zinc-700">
+                <div class="z-10">
+                    <h4 class="text-3xl font-black text-white uppercase leading-none">100% Ventes</h4>
+                    <p class="text-sm text-gray-400 mt-6 max-w-[250px]">
+                        Vendez, on gère tout : stock, distribution et sourire final.
+                    </p>
+                </div>
+                
+                <div class="absolute -bottom-10 -right-10 text-9xl font-black text-white/5 italic select-none">VENDRE</div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
 
 
 
@@ -1000,11 +1049,13 @@
 
         <!-- Center Content -->
         <div class="text-center w-full md:w-2/4 px-6 z-10 fade-in">
-               <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wide mb-4">services</h2>
-                <p class="text-sm md:text-base text-gray-700 leading-relaxed max-w-md mx-auto">
-                    Quisque eget vestibulum nulla. Quisque quis dui quis ex ultricies efficitur vitae non felis.
-                    Phasellus quis nibh hendrerit.
-                </p>
+
+        <h2 class="text-sm uppercase tracking-[0.4em] text-yellow-500 font-bold mb-4">Geste par Geste</h2>
+               <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wide mb-4"> Un appel, et l’histoire commence 
+       </h2>
+              <p class="mt-8 text-gray-400 text-lg max-w-2xl mx-auto">
+            Pas besoin de complications. Vous commandez, ONCLE G Livraisons écoute, et déjà la magie opère.
+        </p>
         </div>
 
         <!-- Left Side Animated Bars -->
@@ -1056,53 +1107,59 @@
     </section>
 
 
-    <section class="py-16 md:px-4 md:px-8  mx-3">
 
-        <div
-            class="sticky top-20 z-10 bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row h-[500px] mb-20 p-4 rounded-3xl border border-gray-500 border-2">
-            <div class="md:w-1/2 h-1/2 md:h-full relative rounded-3xl ">
-                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop"
-                    alt="Particuliers" class="absolute  rounded-3xl inset-0 w-full h-full object-cover">
-                <div class="absolute bottom-4 left-4 text-white text-2xl font-bold">Particuliers</div>
-            </div>
-            <div class="md:w-1/2 md:p-6 flex flex-col justify-start md:p-9 md:m-8">
-                <h3 class="text-4xl mb-4 font-bold mb-2">Expressive API</h3>
-                <p class="text-gray-600 text-xl leading-relaxed ">You don't need to be an expert to use our plugin. Our expressive API is
-                    readable and well documented.</p>
-                     
-            </div>
+    <section class="py-24 md:px-4 md:px-8 mx-3  ">
+ 
+
+    <div
+        class="sticky top-20 z-10 bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col md:flex-row h-[550px] md:h-[500px] mb-20 p-4 border-2 border-gray-200">
+        <div class="md:w-1/2 h-2/5 md:h-full relative overflow-hidden rounded-[2rem]">
+            <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=2070&auto=format&fit=crop"
+                alt="Commande" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div class="absolute bottom-6 left-6 text-white text-xs font-black uppercase tracking-widest bg-black px-4 py-2 rounded-full">Étape 01</div>
         </div>
-
-        <div
-            class="sticky top-32 z-20 bg-black text-white rounded-3xl shadow-xl overflow-hidden flex flex-col-reverse md:flex-row h-[500px] mb-20    p-4 rounded-3xl border border-gray-500 border-2">
-            <div class="md:w-1/2 md:p-6 flex flex-col justify-start md:p-9 md:m-8">
-                 <h3 class="text-4xl mb-4 font-bold mb-2">Expressive API</h3>
-                <p class="text-gray-600 text-xl leading-relaxed ">You don't need to be an expert to use our plugin. Our expressive API is
-                    readable and well documented.</p>
-            </div>
-            <div class="md:w-1/2 h-1/2 md:h-full relative">
-                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop"
-                    alt="Particuliers" class="absolute  rounded-3xl inset-0 w-full h-full object-cover">
-                <div class="absolute bottom-4 right-4 text-white text-2xl font-bold">Particuliers</div>
-            </div>
+        <div class="md:w-1/2 flex flex-col justify-center p-8 md:p-16">
+            <h3 class="text-4xl md:text-5xl font-black mb-6 uppercase leading-none">Simple, direct, <br><span class="text-yellow-500">humain</span></h3>
+            <p class="text-gray-600 text-xl leading-relaxed">
+                C’est ainsi que nous écrivons chacune de vos livraisons. Une écoute attentive pour un service sans stress.
+            </p>
         </div>
+    </div>
 
-        <div
-            class="sticky top-44 z-30 bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row h-[500px] mb-20  p-4 rounded-3xl border border-gray-500 border-2">
-            <div class="md:w-1/2 h-1/2 md:h-full relative ">
-                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2070&auto=format&fit=crop"
-                    alt="Particuliers" class="absolute  rounded-3xl inset-0 w-full h-full object-cover">
-               
-                <div class="absolute bottom-4 left-4 text-white text-2xl font-bold">Particuliers</div>
-            </div>
-            <div class="md:w-1/2 md:p-6 flex flex-col justify-start md:p-9 md:m-8">
-                 <h3 class="text-4xl mb-4 font-bold mb-2">Expressive API</h3>
-                <p class="text-gray-600 text-xl leading-relaxed ">You don't need to be an expert to use our plugin. Our expressive API is
-                    readable and well documented.</p>
-            </div>
+    <div
+        class="sticky top-32 z-20 bg-zinc-900 text-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col-reverse md:flex-row h-[550px] md:h-[500px] mb-20 p-4 border-2 border-zinc-700">
+        <div class="md:w-1/2 flex flex-col justify-center p-8 md:p-16">
+            <span class="text-yellow-500 font-bold uppercase tracking-widest text-sm mb-4">Suivi en temps réel</span>
+            <h3 class="text-4xl md:text-5xl font-black mb-6 uppercase leading-none">Un conte <br>en direct</h3>
+            <p class="text-gray-400 text-xl leading-relaxed">
+                Vous voyez chaque étape, comme si vous suiviez un récit qui se déroule sous vos yeux. La transparence est notre signature.
+            </p>
         </div>
-    </section>
+        <div class="md:w-1/2 h-2/5 md:h-full relative overflow-hidden rounded-[2rem]">
+            <img src="https://images.unsplash.com/photo-1520038410233-7141be7e6f97?q=80&w=2070&auto=format&fit=crop"
+                alt="Suivi" class="absolute inset-0 w-full h-full object-cover grayscale">
+            <div class="absolute bottom-6 right-6 text-black text-xs font-black uppercase tracking-widest bg-yellow-500 px-4 py-2 rounded-full">Étape 02</div>
+        </div>
+    </div>
 
+    <div
+        class="sticky top-44 z-30 bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col md:flex-row h-[550px] md:h-[500px] mb-20 p-4 border-2 border-gray-200">
+        <div class="md:w-1/2 h-2/5 md:h-full relative overflow-hidden rounded-[2rem]">
+            <img src="https://images.unsplash.com/photo-1549037173-e3b717902c57?q=80&w=2070&auto=format&fit=crop"
+                alt="Remise" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute bottom-6 left-6 text-white text-xs font-black uppercase tracking-widest bg-black px-4 py-2 rounded-full">Étape 03</div>
+        </div>
+        <div class="md:w-1/2 flex flex-col justify-center p-8 md:p-16">
+             <span class="text-gray-400 font-bold uppercase tracking-widest text-sm mb-4">Remise en main propre</span>
+             <h3 class="text-4xl md:text-5xl font-black mb-6 uppercase leading-none text-black">Une promesse <br><span class="text-yellow-600">tenue</span></h3>
+            <p class="text-gray-600 text-xl leading-relaxed">
+                Une poignée de main, un sourire, et votre quotidien est simplifié. C'est la conclusion heureuse de chaque récit.
+            </p>
+        </div>
+    </div>
+
+</section>
 
 
 
@@ -1160,11 +1217,12 @@
 
         <!-- Center Content -->
         <div class="text-center w-full md:w-2/4 px-6 z-10 fade-in">
-               <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wide mb-4">services</h2>
+               <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wide mb-4">Communauté</h2>
                 <p class="text-sm md:text-base text-gray-700 leading-relaxed max-w-md mx-auto">
-                    Quisque eget vestibulum nulla. Quisque quis dui quis ex ultricies efficitur vitae non felis.
-                    Phasellus quis nibh hendrerit.
+                    Histoires de Clients
                 </p>
+
+                 
         </div>
 
         <!-- Left Side Animated Bars -->
@@ -1217,52 +1275,64 @@
 
 
 
+<style>
+    #slider {
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    #slider > div {
+        scroll-snap-align: center;
+    }
+    /* Masquer la scrollbar */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
 
-   <style>
-        #slider {
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-        }
-        #slider > div {
-            scroll-snap-align: center;
-        }
-    </style>
+<div class="w-full py-10 md:py-20 bg-black">
+   
 
- <div class="w-full md:m-20">
-        <div id="slider" class="flex overflow-x-scroll space-x-4 rounded-lg  no-scrollbar">
-            <div class="flex-shrink-0 w-full md:w-3/4 lg:w-2/3 scroll-ml-6">
-                <img src="https://res.cloudinary.com/djv4xa6wu/image/upload/v1735722165/AbhirajK/Abhirajk.webp" 
-                     alt="Slider Image 1" 
-                    class="w-full md:h-[700px] object-cover rounded-lg h-[580.9px]">
-            </div>
-            <div class="flex-shrink-0 w-full md:w-3/4 lg:w-2/3 scroll-ml-6">
-                <img src="https://res.cloudinary.com/djv4xa6wu/image/upload/v1735722163/AbhirajK/Abhirajk%20mykare.webp" 
-                     alt="Slider Image 2" 
-                    class="w-full md:h-[700px] object-cover rounded-lg h-[580.9px]">
-            </div>
-            <div class="flex-shrink-0 w-full md:w-3/4 lg:w-2/3 scroll-ml-6">
-                <img src="https://res.cloudinary.com/djv4xa6wu/image/upload/v1735722161/AbhirajK/Abhirajk2.webp" 
-                     alt="Slider Image 3" 
-                    class="w-full md:h-[700px] object-cover rounded-lg h-[580.9px]">
-            </div>
-            <div class="flex-shrink-0 w-full md:w-3/4 lg:w-2/3 scroll-ml-6">
-                <img src="https://res.cloudinary.com/djv4xa6wu/image/upload/v1735722161/AbhirajK/Abhirajk3.webp" 
-                     alt="Slider Image 4" 
-                    class="w-full md:h-[700px] object-cover rounded-lg h-[580.9px]">
-            </div>
-            <div class="flex-shrink-0 w-full md:w-3/4 lg:w-2/3 scroll-ml-6">
-                <img src="https://res.cloudinary.com/djv4xa6wu/image/upload/v1735722160/AbhirajK/Abhirajk4.webp" 
-                     alt="Slider Image 5" 
-                    class="w-full md:h-[700px] object-cover rounded-lg h-[580.9px]">
-                      
+    <div id="slider" class="flex overflow-x-scroll space-x-6 px-6 md:px-20 no-scrollbar">
+        
+        <div class="flex-shrink-0 w-[85%] md:w-3/4 lg:w-2/3 relative group overflow-hidden rounded-[2.5rem]">
+            <img src="ton-illustration-1.webp" alt="Chapitre 1" class="w-full md:h-[700px] h-[580px] object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+            <div class="absolute bottom-10 left-10 right-10">
+                <span class="text-yellow-500 text-xs font-bold uppercase tracking-widest">Chapitre 01</span>
+                <h4 class="text-3xl md:text-4xl font-black text-white uppercase mt-2 mb-4">Chaque livraison est un chapitre</h4>
+                <p class="text-gray-300 max-w-lg text-sm md:text-base leading-relaxed">
+                    Une maman, un étudiant, un couple... Ces récits sont la preuve vivante de notre mission.
+                </p>
             </div>
         </div>
 
+        <div class="flex-shrink-0 w-[85%] md:w-3/4 lg:w-2/3 relative group overflow-hidden rounded-[2.5rem]">
+            <img src="ton-illustration-2.webp" alt="Quartiers Brazza" class="w-full md:h-[700px] h-[580px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+            <div class="absolute bottom-10 left-10 right-10 text-right flex flex-col items-end">
+                <span class="text-yellow-500 text-xs font-bold uppercase tracking-widest">La Voix des Quartiers</span>
+                <h4 class="text-3xl md:text-4xl font-black text-white uppercase mt-2 mb-4">Brazzaville raconte Oncle G</h4>
+                <p class="text-gray-300 max-w-sm text-sm md:text-base leading-relaxed">
+                    De <span class="text-white">Bacongo</span> à <span class="text-white">Moungali</span>, chaque voix raconte comment Oncle G simplifie la vie.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex-shrink-0 w-[85%] md:w-3/4 lg:w-2/3 relative group overflow-hidden rounded-[2.5rem] border-2 border-dashed border-zinc-800">
+            <img src="ton-illustration-3.webp" alt="Partagez" class="w-full md:h-[700px] h-[580px] object-cover opacity-50 group-hover:opacity-80 transition-opacity">
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-10">
+                <h4 class="text-4xl md:text-6xl font-black text-white uppercase leading-none mb-6">Partagez <br><span class="text-yellow-500">votre histoire</span></h4>
+                <p class="text-gray-400 max-w-md mb-8">Votre anecdote est notre fierté. Écrivez votre chapitre dans le grand livre d’Oncle G.</p>
+                <button class="bg-white text-black font-black uppercase tracking-widest px-8 py-4 rounded-full hover:bg-yellow-500 transition-colors">
+                    Écrire à l'Oncle
+                </button>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 
 
-
     <!-- Hero Section with Animated Bars -->
     <section class="relative flex justify-center items-center h-screen w-full overflow-hidden bg-white pt-20">
         <!-- Animated Background -->
@@ -1317,11 +1387,10 @@
 
         <!-- Center Content -->
         <div class="text-center w-full md:w-2/4 px-6 z-10 fade-in">
-               <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wide mb-4">services</h2>
-                <p class="text-sm md:text-base text-gray-700 leading-relaxed max-w-md mx-auto">
-                    Quisque eget vestibulum nulla. Quisque quis dui quis ex ultricies efficitur vitae non felis.
-                    Phasellus quis nibh hendrerit.
-                </p>
+                <header class="mb-24 text-center">
+        <h1 class="text-sm uppercase tracking-[0.3em] text-yellow-500 font-semibold mb-4">L'Esprit Oncle G</h1>
+        <h2 class="text-5xl lg:text-7xl font-bold tracking-tight">NOTRE HISTOIRE</h2>
+    </header>
         </div>
 
         <!-- Left Side Animated Bars -->
@@ -1373,96 +1442,148 @@
     </section>
 
 
- <section class="py-16 px-4 md:px-8 max-w-7xl mx-auto flex-col flex items-center justify-center">
-    <div class="mb-20 flex bg-slate-800/70 h-[300px] w-[300px]"></div>
+ 
 
-    <img src="./img/Oncle G - Logo.svg" alt="" class="max-w-full h-auto" />
-    <p class="text-center md:w-[800px]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro dolorem quod nobis modi quaerat nam commodi nemo repudiandae facere vitae tempora cumque quos reiciendis, veritatis saepe, accusantium ullam necessitatibus eos. </p>
- </section>
+    <div class="relative mt-12 max-w-6xl mx-auto timeline-line">
+
+        <div class="relative mb-24 flex items-center justify-between w-full flex-col md:flex-row-reverse">
+            <div class="hidden md:block w-5/12"></div>
+            <div class="absolute left-[20px] md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-yellow-500 rounded-full border-4 border-black z-10"></div>
+            
+            <div class="w-full md:w-5/12 pl-12 md:pl-0 md:text-right">
+                <span class="text-3xl font-light text-gray-500 mb-2 block">01</span>
+                <h3 class="text-2xl text-black font-bold mb-4 uppercase tracking-wider">L'Idée Simple</h3>
+                <p class="text-gray-400 leading-relaxed">
+                    <span class="text-yellow-500 font-medium italic">"Servir comme un oncle"</span>. 
+                    Oncle G Livraisons est né de l'envie de transformer la livraison en un geste de famille. Ici, chaque trajet est une preuve d'attention.
+                </p>
+            </div>
+        </div>
+
+        <div class="relative mb-24 flex items-center justify-between w-full flex-col md:flex-row">
+            <div class="hidden md:block w-5/12"></div>
+            <div class="absolute left-[20px] md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-yellow-500 rounded-full border-4 border-black z-10"></div>
+            
+            <div class="w-full md:w-5/12 pl-12 md:pl-0">
+                <span class="text-3xl font-light text-gray-500 mb-2 block">02</span>
+                <h3 class="text-2xl font-bold mb-4 uppercase tracking-wider text-yellow-500">Nos Valeurs</h3>
+                <p class="text-gray-400 leading-relaxed">
+                    Proximité, fiabilité, fierté locale. Ces trois piliers guident chaque pas. Pour nous, livrer est un acte de confiance et de fierté pour <span class="text-white underline decoration-yellow-500">Brazzaville</span>.
+                </p>
+            </div>
+        </div>
+
+        <div class="relative mb-24 flex items-center justify-between w-full flex-col md:flex-row-reverse">
+            <div class="hidden md:block w-5/12"></div>
+            <div class="absolute left-[20px] md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-yellow-500 rounded-full border-4 border-black z-10"></div>
+            
+            <div class="w-full md:w-5/12 pl-12 md:pl-0 md:text-right">
+                <span class="text-3xl font-light text-gray-500 mb-2 block">03</span>
+                <h3 class="text-2xl text-black font-bold mb-4 uppercase tracking-wider  ">Notre Équipe</h3>
+                <p class="text-gray-400 leading-relaxed">
+                    Une famille de livreurs soudée qui connaît Brazzaville comme sa poche. Chaque livreur est un ambassadeur portant la mission de servir avec du cœur.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="mt-20 text-center">
+        <div class="inline-block border border-gray-800 p-8 hover:border-yellow-500 transition-colors">
+            <p class="text-sm uppercase tracking-widest text-gray-400">Prêt à rejoindre la famille ?</p>
+            <button class="mt-4 px-8 py-3 bg-white text-black font-bold uppercase text-xs tracking-widest hover:bg-yellow-500 transition border border-black">Commander une livraison</button>
+        </div>
+    </footer>
 
 
 
 
+    <div class="bg-glow"></div>
 
-    <script>
-      document.addEventListener('alpine:init', () => {
-        Alpine.data('sliderComponent', () => ({
-          currentSlide: 0,
-          transitioning: false,
-          bars: Array.from({ length: 14 }),
+    <header class="relative pt-32 pb-20 px-6 text-center overflow-hidden">
+        <div class="absolute top-10 left-1/2 -translate-x-1/2 text-[15rem] font-black text-outline uppercase select-none opacity-20 -z-10 leading-none">
+            CONTACT
+        </div>
+        <img src="./img/Oncle G - Logo.svg" alt="Oncle G" class="w-40 mx-auto mb-12 hover:rotate-12 transition-transform duration-500" />
+        <h1 class="text-6xl text-black md:text-9xl font-black uppercase tracking-tighter leading-none mb-6">
+            APPELEZ <span class="text-yellow-500">L'ONCLE !</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto font-light">
+            Derrière la ligne, une voix rassurante. <br>
+            <span class="text-white italic">"Un service né d’une idée simple : servir comme un oncle."</span>
+        </p>
 
-          slides: [
-            {
-              title: "Excellence & Livraison",
-              description: "Nous garantissons une livraison dans les meilleurs délais avec un suivi en temps réel de votre colis partout dans la ville."
-            },
-            {
-              title: "Réseau Social & Impact",
-              description: "Boostez votre présence sur les réseaux sociaux avec notre service spécialisé."
-            },
-            {
-              title: "Top Compétiteurs",
-              description: "Soyez toujours en tête de la compétition grâce à nos services innovants."
-            }
-          ],
+    </header>
 
-          get hasNextSlide() {
-            return this.currentSlide < this.slides.length - 1;
-          },
+    <main class="max-w-7xl mx-auto px-6 pb-32">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            <div class="lg:col-span-7 whawoo-card bg-zinc-950 border border-zinc-800 p-12 rounded-[2rem] flex flex-col justify-between min-h-[400px]">
+                <div>
+                    <span class="text-yellow-500 font-bold tracking-[0.3em] uppercase text-sm">Action immédiate</span>
+                    <h2 class="text-5xl text-white font-black mt-4 uppercase">Des numéros, <br> des solutions</h2>
+                </div>
+                <div class="mt-12">
+                    <p class="text-gray-400 mb-6 text-lg max-w-md">Un coup de fil suffit. Oncle G Livraisons est déjà en route pour Brazzaville.</p>
+                    <a href="tel:+242060000000" class="text-4xl text-yellow-500 md:text-6xl font-bold hover:text-yellow-500 transition-colors tracking-tighter">
+                        +242 06 000 00 00
+                    </a>
+                </div>
+            </div>
 
-          getNextSlideText() {
-            const nextIndex = (this.currentSlide + 1) % this.slides.length;
-            return this.slides[nextIndex].title;
-          },
+            <div class="lg:col-span-5 whawoo-card bg-yellow-500 p-12 rounded-[2rem] text-black">
+                <span class="font-bold tracking-[0.3em] uppercase text-sm">Écrivez-lui !</span>
+                <h2 class="text-5xl font-black mt-4 uppercase">Une lettre d’un proche</h2>
+                <p class="mt-8 text-black/80 text-lg leading-snug">
+                    Nous lisons vos mots avec soin. La réponse est toujours humaine, jamais automatique.
+                </p>
+                <div class="mt-16">
+                    <a href="mailto:bonjour@oncleg.cg" class="inline-block border-2 border-black px-8 py-4 font-black uppercase tracking-widest hover:bg-black hover:text-yellow-500 transition-all">
+                        Envoyer un mail
+                    </a>
+                </div>
+            </div>
 
-          getNextSlideDescription() {
-            const nextIndex = (this.currentSlide + 1) % this.slides.length;
-            return this.slides[nextIndex].description;
-          },
+            <div class="lg:col-span-12 whawoo-card bg-zinc-950 border border-zinc-800 p-12 rounded-[2rem] flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="max-w-xl">
+                    <h2 class="text-4xl font-black text-white uppercase mb-4">Rejoignez la famille</h2>
+                    <p class="text-gray-400">Oncle G n'est pas qu'un service, c'est une communauté. Suivez l'oncle dans ses courses quotidiennes à travers la ville.</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="w-20 h-20 rounded-full border border-zinc-700 flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                        <span class="font-bold text-yellow-500">FB</span>
+                    </a>
+                    <a href="#" class="w-20 h-20 rounded-full border border-zinc-700 flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                        <span class="font-bold text-yellow-500">IG</span>
+                    </a>
+                </div>
+            </div>
 
-          nextSlide() {
-            if (this.transitioning) return;
+        </div>
 
-            this.transitioning = true;
+        <section class="mt-32">
+            <h3 class="text-sm uppercase tracking-[0.5em] text-center text-yellow-500 mb-12">Laissez une trace</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl mx-auto">
+                <div class="group border-b border-zinc-800 focus-within:border-yellow-500 transition">
+                    <label class="text-xs uppercase text-zinc-500">Nom complet</label>
+                    <input type="text" class="w-full bg-transparent py-4 outline-none text-xl font-bold" placeholder="Oncle G">
+                </div>
+                <div class="group border-b border-zinc-800 focus-within:border-yellow-500 transition">
+                    <label class="text-xs uppercase text-zinc-500">Email</label>
+                    <input type="email" class="w-full bg-transparent py-4 outline-none text-xl font-bold" placeholder="jean@famille.cg">
+                </div>
+                <div class="md:col-span-2 group border-b border-zinc-800 focus-within:border-yellow-500 transition">
+                    <label class="text-xs uppercase text-zinc-500">Votre Message</label>
+                    <textarea class="w-full bg-transparent py-4 outline-none text-xl font-bold h-32" placeholder="Dites-nous tout..."></textarea>
+                </div>
+                <button class="md:col-span-2 border border-black mt-8 py-6 bg-white text-black text-2xl font-black uppercase tracking-tighter hover:bg-yellow-500 transition-colors">
+                    Envoyer à l'Oncle
+                </button>
+            </div>
+        </section>
+    </main>
 
-            setTimeout(() => {
-              this.currentSlide = (this.currentSlide + 1) % this.slides.length;
-              this.transitioning = false;
-            }, 800); // Timeout to match animation duration
-          },
-
-          prevSlide() {
-            if (this.transitioning) return;
-
-            this.transitioning = true;
-
-            setTimeout(() => {
-              this.currentSlide = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
-              this.transitioning = false;
-            }, 800); // Timeout to match animation duration
-          },
-
-          goToSlide(index) {
-            if (this.transitioning || index === this.currentSlide) return;
-
-            this.transitioning = true;
-
-            setTimeout(() => {
-              this.currentSlide = index;
-              this.transitioning = false;
-            }, 800); // Timeout to match animation duration
-          },
-
-          init() {
-            // Auto-advance every 20 seconds to increase slide duration
-            setInterval(() => {
-              this.nextSlide();
-            }, 20000);
-          }
-        }));
-      });
-    </script>
-
+ 
     <script>
         // Variables for auto-scroll functionality
         let autoScrollInterval;
@@ -1573,29 +1694,23 @@
                 cards: [
                     {
                         id: 1,
-                        text: "Excellence & Livraison",
-                        description: "Nous garantissons une livraison dans les meilleurs délais avec un suivi en temps réel de votre colis partout dans la ville.",
-                        // Image nettoyée (sans paramètres complexes qui pourraient bloquer)
+                       text: "Un sourire, c’est déjà réussi",
+        description: "Avant même d’arriver à votre porte, ONCLE G Livraisons vous offre un sourire. Dans une ville au rythme effréné, ce sourire devient une certitude que votre quotidien sera allégé.",
+         // Image nettoyée (sans paramètres complexes qui pourraient bloquer)
                         bg: "./img/freepik__ultrarealistic-advertising-photography-captured-by__31974.jpeg"
                     },
                     {
                         id: 2,
-                        text: "Réseau Social & Impact",
-                        description: "Boostez votre présence sur les réseaux sociaux avec notre service spécialisé.",
-                        bg: "./img/freepik__ultrarealistic-advertising-photography-captured-by__31972.jpeg"
+                       text: "Vos rues sont nos racines",
+        description: "Né dans les ruelles de Brazzaville, de Poto-Poto à Bacongo, nous connaissons chaque détour. Plus qu'un service : c’est une déclaration d’amour à la ville.",
+          bg: "./img/freepik__ultrarealistic-advertising-photography-captured-by__31972.jpeg"
                     },
                     {
                         id: 3,
-                        text: "Top Compétiteurs",
-                        description: "Soyez toujours en tête de la compétition grâce à nos services innovants.",
-                        bg: "./img/freepik__ultrarealistic-advertising-photography-captured-by__31973.jpeg"
+                       text: "Moins de soucis, plus de vie",
+        description: "Chaque minute compte. ONCLE G transforme vos besoins en instants de sérénité. Nous faisons le chemin pour vous, pour que vous profitiez pleinement de vos journées.", bg: "./img/freepik__ultrarealistic-advertising-photography-captured-by__31973.jpeg"
                     },
-                    {
-                        id: 4,
-                        text: "Contenu & Formation",
-                        description: "Créez des contenus de qualité pour vos formations en ligne et cours.",
-                        bg: "./img/freepik__ultrarealistic-advertising-photography-captured-by__31974.jpeg"
-                    }
+                   
                 ],
                 animatingNext: false,
                 animatingPrev: false,
@@ -1755,7 +1870,7 @@
 
     </footer>
     <!-- SVG Decoration (Juste en bas du footer, en noir) -->
-    <div class="bg-white w-full overflow-hidden -mt-1 relative z-10">
+    <div class="  w-full overflow-hidden -mt-1 relative z-10">
         <svg class="w-full h-auto block" viewBox="0 0 1440 405" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M852.735 236.416L853.308 353.544C853.371 366.3 843.913 376.641 832.27 376.73L832.255 376.73C820.612 376.819 811.053 366.623 810.99 353.868L810.417 236.739C810.355 223.983 819.813 213.642 831.456 213.553L831.472 213.553C843.115 213.464 852.673 223.66 852.735 236.416Z" stroke="black"/>
             <path d="M784.848 122.485L786.048 367.147C786.11 379.904 776.637 390.247 764.974 390.336L764.958 390.336C753.295 390.425 743.721 380.227 743.658 367.47L742.459 122.808C742.396 110.052 751.869 99.7095 763.532 99.6205L763.548 99.6204C775.212 99.5315 784.785 109.729 784.848 122.485Z" stroke="black"/>
