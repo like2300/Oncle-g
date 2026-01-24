@@ -6,6 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slider Oncle G Corrigé - Images Affichées</title>
 
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Découvrez les services innovants d'Oncle G : livraison express, impact sur les réseaux sociaux, compétitivité et formation de qualité.">
+    <meta name="keywords" content="Oncle G, services, livraison, réseaux sociaux, formation, compétitivité">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Oncle G - Services Innovants">
+    <meta property="og:description" content="Découvrez les services innovants d'Oncle G : livraison express, impact sur les réseaux sociaux, compétitivité et formation de qualité.">
+    <meta property="og:image" content="./img/Oncle G - Logo.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Oncle G - Services Innovants">
+    <meta property="twitter:description" content="Découvrez les services innovants d'Oncle G : livraison express, impact sur les réseaux sociaux, compétitivité et formation de qualité.">
+    <meta property="twitter:image" content="./img/Oncle G - Logo.svg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/icons/favicon-16x16.png">
+    <link rel="shortcut icon" href="./img/icons/favicon.ico">
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/icons/apple-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./img/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./img/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./img/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./img/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./img/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./img/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="./img/icons/apple-icon-57x57.png">
+
+    <!-- Android Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="./img/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="./img/icons/android-icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./img/icons/android-icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="72x72" href="./img/icons/android-icon-72x72.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="./img/icons/android-icon-48x48.png">
+    <link rel="icon" type="image/png" sizes="36x36" href="./img/icons/android-icon-36x36.png">
+
+    <!-- MS Icons -->
+    <link rel="icon" type="image/png" sizes="310x310" href="./img/icons/ms-icon-310x310.png">
+    <link rel="icon" type="image/png" sizes="150x150" href="./img/icons/ms-icon-150x150.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="./img/icons/ms-icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="70x70" href="./img/icons/ms-icon-70x70.png">
+
+    <!-- Manifest and Config -->
+    <link rel="manifest" href="./img/icons/manifest.json">
+    <meta name="msapplication-config" content="./img/icons/browserconfig.xml">
+
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -337,6 +387,89 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+
+        /* Premium Popup Styles */
+       
+
+        .popup-image {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .popup-title {
+            animation: slideFromTop 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+
+        .popup-text {
+            animation: slideFromBottom 0.8s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+
+        .popup-button {
+            animation: scaleIn 0.8s 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        @keyframes slideFromTop {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideFromBottom {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Kinetic light effects */
+        .kinetic-light-1, .kinetic-light-2, .kinetic-light-3 {
+            position: absolute;
+            border-radius: 50%;
+             width: 200px;
+            height: 200px;
+            filter: blur(40px);
+            z-index: -1;
+            animation: moveLight 8s infinite alternate;
+        }
+
+        .kinetic-light-1 {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .kinetic-light-2 {
+            top: 60%;
+            left: 70%;
+            animation-delay: 2s;
+        }
+
+        .kinetic-light-3 {
+            top: 30%;
+            left: 50%;
+            animation-delay: 4s;
+        }
+
+        @keyframes moveLight {
+            0% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+            25% { transform: translate(20px, 30px) scale(1.2); opacity: 0.7; }
+            50% { transform: translate(-10px, 20px) scale(0.9); opacity: 0.4; }
+            75% { transform: translate(15px, -10px) scale(1.1); opacity: 0.6; }
+            100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+        }
+
+        /* Animation for showing the popup */
+        .popup-show {
+            transform: scale(1) !important;
+            opacity: 1 !important;
+        }
     </style>
 
 
@@ -364,6 +497,42 @@
             </template>
         </div>
     </header>
+
+    <!-- Premium Popup Modal -->
+    <div id="premiumPopup" class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-lg hidden z-50 flex items-center justify-center p-4">
+      <div class="popup-content     rounded-2xl   max-w-md w-full overflow-hidden transform scale-90 opacity-0 transition-all duration-500">
+        <div class="relative">
+          <!-- Close Button (X) -->
+          <button id="closePopupX" class="absolute hidden top-4 right-4 text-white bg-red-500 rounded-full w-8 h-8 flex items-center justify-center z-10 hover:bg-red-600 transition-colors">
+            <i class="fas fa-times"></i>
+          </button>
+
+          <!-- Centered Image -->
+          <div class="image-container relative overflow-hidden">
+            <img src="./img/Oncle G - Logo.svg" alt="Oncle G Premium" class="w-full h-48 object-contain  popup-image animate-float">
+            <div class="absolute inset-0    opacity-50"></div>
+          </div>
+
+          <!-- Content -->
+          <div class="p-6 text-center">
+            <h2 class="text-2xl font-bold text-white mb-3 popup-title">Bienvenue Chez Oncle G</h2>
+            <p class="text-gray-300 mb-6 popup-text">Découvrez notre expérience premium unique et nos services exceptionnels qui vous attendent.</p>
+
+            <!-- Centered Button -->
+            <button id="exploreButton" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 popup-button">
+              Explorer Maintenant
+            </button>
+          </div>
+        </div>
+
+        <!-- Kinetic light effects -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div class="kinetic-light-1"></div>
+          <div class="kinetic-light-2"></div>
+          <div class="kinetic-light-3"></div>
+        </div>
+      </div>
+    </div>
 
     <!-- Main Content with Carousel -->
     <main class="flex-grow relative w-full">
@@ -1390,6 +1559,69 @@
 
 
 
-</body>
+    <!-- Premium Popup JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const popup = document.getElementById('premiumPopup');
+            const closePopupX = document.getElementById('closePopupX');  // The X button
+            const exploreBtn = document.getElementById('exploreButton');  // The "Explorer Maintenant" button
 
+            // Check if popup has been shown before
+            const hasSeenPopup = localStorage.getItem('hasSeenPremiumPopup');
+
+            // Show popup if user hasn't seen it before
+            if (!hasSeenPopup) {
+                // Small delay to ensure page loads first
+                setTimeout(() => {
+                    popup.classList.remove('hidden');
+                    // Trigger the animation
+                    setTimeout(() => {
+                        const popupContent = popup.querySelector('.popup-content');
+                        popupContent.classList.add('popup-show');
+                        popupContent.style.transform = 'scale(1)';
+                        popupContent.style.opacity = '1';
+                    }, 50);
+                }, 500);
+
+                // Mark as seen in localStorage
+                localStorage.setItem('hasSeenPremiumPopup', 'true');
+            }
+
+            // Close popup functions
+            function closePopup() {
+                const popupContent = popup.querySelector('.popup-content');
+                popupContent.classList.remove('popup-show');
+                popupContent.style.transform = 'scale(0.9)';
+                popupContent.style.opacity = '0';
+
+                // Hide the popup after animation completes
+                setTimeout(() => {
+                    popup.classList.add('hidden');
+                }, 500);
+            }
+
+            // Event listeners
+            closePopupX.addEventListener('click', closePopup);  // X button closes popup
+            exploreBtn.addEventListener('click', closePopup);   // "Explorer Maintenant" button closes popup
+
+            // Also close if user clicks outside the popup content
+            popup.addEventListener('click', function(e) {
+                if (e.target === popup) {
+                    closePopup();
+                }
+            });
+        });
+    </script>
+
+    <script>
+        // Popup close functionality
+        document.getElementById('closePopup').addEventListener('click', function() {
+            const popup = document.getElementById('popup');
+            if (popup) {
+                popup.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
 </html>
