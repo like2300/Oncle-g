@@ -506,6 +506,13 @@
             100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
         }
 
+        /* Slide-in menu animation */
+        .menu-overlay {
+            transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        .menu-open { transform: translateY(0); }
+        .menu-closed { transform: translateY(-100%); }
+
         /* Animation for showing the popup */
         .popup-show {
             transform: scale(1) !important;
@@ -534,19 +541,79 @@
 
 <body class="bg-white p-0   overflow-x-hidden no-select" x-data="cardStack()">
 
+    <!-- Slide-in Navigation Menu -->
+    <div id="menuOverlay" class="fixed inset-0 z-50 bg-black/90 menu-overlay menu-closed overflow-y-auto p-6 md:p-12 lg:p-24">
+        <div class="flex flex-col h-full">
+             <header class="mb-12 md:mb-20">
+                <!-- <h2 class="text-4xl md:block hidden md:text-5xl lg:text-7xl font-bold tracking-tight text-white">Navigation</h2> -->
+            </header>  
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 md:gap-x-16 gap-y-8 md:gap-y-12 flex-grow">
+
+                <a href="#identite" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm uppercase tracking-widest text-gray-500">01</span>
+                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">Identité de marque</h3>
+                    </div>
+                </a>
+
+                <a href="#visuelle" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm uppercase tracking-widest text-gray-500">02</span>
+                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">Identité visuelle</h3>
+                    </div>
+                </a>
+
+                <a href="#mise-en-page" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm uppercase tracking-widest text-gray-500">03</span>
+                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">Mise en page</h3>
+                      
+                    </div>
+                </a>
+
+                <a href="#digital" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm uppercase tracking-widest text-gray-500">04</span>
+                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">Usage digital</h3>
+                    </div>
+                </a>
+
+                <a href="#application" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm uppercase tracking-widest text-gray-500">05</span>
+                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">Application</h3>
+                    </div>
+                </a>
+
+                <a href="#typo" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm uppercase tracking-widest text-gray-500">06</span>
+                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">Typographie</h3>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Close button -->
+            <button id="closeMenuBtn" class="mt-5 w-[50px] h-[50px]   bg-yellow-500 flex items-center justify-center text-white self-start">
+                <i class="fas fa-times text-4xl "></i>
+            </button>
+        </div>
+    </div>
+
     <!-- HEADER -->
     <header class="flex  justify-between items-center px-8 py-5 max-w-[1400px] mx-auto relative z-50">
         <div class="logo flex items-center gap-3 cursor-pointer">
             <img src="./img/Oncle G - Logo.min.svg" alt="Logo" class="h-16">
         </div>
 
-        <a href="#"
+        <button id="menuTriggerBtn"
             class="nav-link hidden md:flex text-sm text-neutral-500 flex items-center gap-2 hover:text-yellow-500 transition-colors font-medium">
             Home pages presentation <i class="fa-solid fa-arrow-right text-yellow-500 rotate-45"></i>
-        </a>
+        </button>
 
-        <!-- Mobile button for popup -->
-        <button id="mobilePresentationBtn" class="md:hidden text-neutral-500 flex items-center hover:text-yellow-500 transition-colors p-2">
+        <!-- Mobile button for slide-in menu -->
+        <button id="mobileMenuBtn" class="md:hidden text-neutral-500 flex items-center hover:text-yellow-500 transition-colors p-2 z-[70]">
             <i class="fa-solid fa-bars text-xl"></i>
         </button>
 
@@ -596,61 +663,6 @@
       </div>
     </div>
 
-    <!-- Home Presentation Popup Modal -->
-    <div id="presentationPopup" class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-lg hidden z-50 flex items-center justify-center p-4">
-      <div class="presentation-popup-content bg-gradient-to-br from-gray-900 to-black rounded-2xl shadow-2xl max-w-2xl w-full overflow-hidden transform scale-90 opacity-0 transition-all duration-500">
-        <div class="relative">
-          <!-- Close Button (X) -->
-          <button id="closePresentationPopup" class="absolute top-4 right-4 text-white bg-red-500 rounded-full w-8 h-8 flex items-center justify-center z-10 hover:bg-red-600 transition-colors">
-            <i class="fas fa-times"></i>
-          </button>
-
-          <!-- Popup Title -->
-          <div class="p-6 text-center border-b border-gray-700">
-            <h2 class="text-2xl font-bold text-white mb-2">Home Pages Presentation</h2>
-            <p class="text-gray-300">Découvrez nos différentes pages d'accueil</p>
-          </div>
-
-          <!-- Popup Content - Elements with delay -->
-          <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-4 max-h-96 overflow-y-auto">
-            <div class="element-item bg-gray-800 rounded-lg p-4 transform transition-all duration-300 hover:scale-105 hover:bg-gray-700 animate-fadeIn" style="animation-delay: 0.1s;">
-              <h3 class="text-lg font-bold text-yellow-400 mb-2">Page Classique</h3>
-              <p class="text-gray-300 text-sm">Design élégant et sobre avec mise en avant des services principaux</p>
-            </div>
-            <div class="element-item bg-gray-800 rounded-lg p-4 transform transition-all duration-300 hover:scale-105 hover:bg-gray-700 animate-fadeIn" style="animation-delay: 0.2s;">
-              <h3 class="text-lg font-bold text-yellow-400 mb-2">Page Moderne</h3>
-              <p class="text-gray-300 text-sm">Interface dynamique avec animations et effets visuels avancés</p>
-            </div>
-            <div class="element-item bg-gray-800 rounded-lg p-4 transform transition-all duration-300 hover:scale-105 hover:bg-gray-700 animate-fadeIn" style="animation-delay: 0.3s;">
-              <h3 class="text-lg font-bold text-yellow-400 mb-2">Page Premium</h3>
-              <p class="text-gray-300 text-sm">Expérience haut de gamme avec éléments interactifs</p>
-            </div>
-            <div class="element-item bg-gray-800 rounded-lg p-4 transform transition-all duration-300 hover:scale-105 hover:bg-gray-700 animate-fadeIn" style="animation-delay: 0.4s;">
-              <h3 class="text-lg font-bold text-yellow-400 mb-2">Page Minimaliste</h3>
-              <p class="text-gray-300 text-sm">Design épuré mettant en valeur le contenu principal</p>
-            </div>
-            <div class="element-item bg-gray-800 rounded-lg p-4 transform transition-all duration-300 hover:scale-105 hover:bg-gray-700 animate-fadeIn" style="animation-delay: 0.5s;">
-              <h3 class="text-lg font-bold text-yellow-400 mb-2">Page Interactive</h3>
-              <p class="text-gray-300 text-sm">Éléments cliquables et animations au survol</p>
-            </div>
-            <div class="element-item bg-gray-800 rounded-lg p-4 transform transition-all duration-300 hover:scale-105 hover:bg-gray-700 animate-fadeIn" style="animation-delay: 0.6s;">
-              <h3 class="text-lg font-bold text-yellow-400 mb-2">Page Animée</h3>
-              <p class="text-gray-300 text-sm">Effets de mouvement et transitions fluides</p>
-            </div>
-          </div>
-
-          <!-- Action Buttons -->
-          <div class="p-6 flex justify-center space-x-4">
-            <button id="selectTemplateBtn" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105">
-              Sélectionner un modèle
-            </button>
-            <button id="closePresentationBtn" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105">
-              Fermer
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Main Content with Carousel -->
     <main class="flex-grow relative w-full">
@@ -1823,83 +1835,54 @@
                 }
             });
 
-            // Home presentation popup functionality
-            const presentationLink = document.querySelector('.nav-link[href="#"]');
-            const mobilePresentationBtn = document.getElementById('mobilePresentationBtn');
-            const presentationPopup = document.getElementById('presentationPopup');
-            const closePresentationPopup = document.getElementById('closePresentationPopup');
-            const closePresentationBtn = document.getElementById('closePresentationBtn');
-            const selectTemplateBtn = document.getElementById('selectTemplateBtn');
+            // Slide-in menu functionality
+            const menuOverlay = document.getElementById('menuOverlay');
+            const menuTriggerBtn = document.getElementById('menuTriggerBtn');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const closeMenuBtn = document.getElementById('closeMenuBtn');
+            const menuLinks = menuOverlay.querySelectorAll('a');
 
-            // Show presentation popup when clicking the nav link
-            if (presentationLink) {
-                presentationLink.addEventListener('click', function(e) {
-                    e.preventDefault(); // Prevent default anchor behavior
-                    presentationPopup.classList.remove('hidden');
+            // Toggle Menu
+            function toggleMenu() {
+                const isOpen = menuOverlay.classList.contains('menu-open');
+                if (isOpen) {
+                    menuOverlay.classList.replace('menu-open', 'menu-closed');
+                    document.body.style.overflow = 'auto';
+                } else {
+                    menuOverlay.classList.replace('menu-closed', 'menu-open');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
 
-                    // Trigger the animation
-                    setTimeout(() => {
-                        const popupContent = presentationPopup.querySelector('.presentation-popup-content');
-                        popupContent.classList.add('popup-show');
-                        popupContent.style.transform = 'scale(1)';
-                        popupContent.style.opacity = '1';
-                    }, 50);
+            // Event listeners for opening the menu
+            if (menuTriggerBtn) {
+                menuTriggerBtn.addEventListener('click', toggleMenu);
+            }
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', toggleMenu);
+            }
+
+            // Event listener for closing the menu
+            if (closeMenuBtn) {
+                closeMenuBtn.addEventListener('click', toggleMenu);
+            }
+
+            // Close menu when clicking on a link
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menuOverlay.classList.replace('menu-open', 'menu-closed');
+                    document.body.style.overflow = 'auto';
                 });
-            }
+            });
 
-            // Show presentation popup when clicking the mobile button
-            if (mobilePresentationBtn) {
-                mobilePresentationBtn.addEventListener('click', function(e) {
-                    e.preventDefault(); // Prevent default button behavior
-                    presentationPopup.classList.remove('hidden');
-
-                    // Trigger the animation
-                    setTimeout(() => {
-                        const popupContent = presentationPopup.querySelector('.presentation-popup-content');
-                        popupContent.classList.add('popup-show');
-                        popupContent.style.transform = 'scale(1)';
-                        popupContent.style.opacity = '1';
-                    }, 50);
-                });
-            }
-
-            // Close presentation popup functions
-            function closePresentationPopupFunc() {
-                const popupContent = presentationPopup.querySelector('.presentation-popup-content');
-                popupContent.classList.remove('popup-show');
-                popupContent.style.transform = 'scale(0.9)';
-                popupContent.style.opacity = '0';
-
-                // Hide the popup after animation completes
-                setTimeout(() => {
-                    presentationPopup.classList.add('hidden');
-                }, 500);
-            }
-
-            // Event listeners for presentation popup
-            if (closePresentationPopup) {
-                closePresentationPopup.addEventListener('click', closePresentationPopupFunc);
-            }
-
-            if (closePresentationBtn) {
-                closePresentationBtn.addEventListener('click', closePresentationPopupFunc);
-            }
-
-            if (selectTemplateBtn) {
-                selectTemplateBtn.addEventListener('click', function() {
-                    alert('Merci d\'avoir sélectionné un modèle! Nous vous contacterons bientôt.');
-                    closePresentationPopupFunc();
-                });
-            }
-
-            // Also close presentation popup if user clicks outside the popup content
-            if (presentationPopup) {
-                presentationPopup.addEventListener('click', function(e) {
-                    if (e.target === presentationPopup) {
-                        closePresentationPopupFunc();
-                    }
-                });
-            }
+            // Close menu when clicking outside the menu content
+            menuOverlay.addEventListener('click', function(e) {
+                if (e.target === menuOverlay) {
+                    menuOverlay.classList.replace('menu-open', 'menu-closed');
+                    document.body.style.overflow = 'auto';
+                }
+            });
         });
     </script>
 
