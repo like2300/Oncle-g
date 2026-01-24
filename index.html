@@ -537,6 +537,8 @@
         }
     </style>
 
+    
+
 </head>
 
 <body class="bg-white p-0   overflow-x-hidden no-select" x-data="cardStack()">
@@ -748,118 +750,114 @@
     </main>
  
 
-    </div>
+    <!-- Hero Section with Animated Bars -->
+    <section class="relative flex justify-center items-center h-screen w-full overflow-hidden bg-white pt-20">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-100 to-white"></div>
 
-    <!-- Section 1 -->
-    <section class="py-20 h-[200px]"></section>
+        <!-- Right Side Animated Bars -->
+        <div class="side-panel absolute -right-8 md:-right-1 md:top-1/2 top-2/2 transform -translate-y-1/2 flex flex-col gap-3 opacity-40 md:opacity-90 scale-50 -z-5 md:scale-100 transition-all duration-300 translate-x-10 md:translate-x-0">
+            <div class="flex justify-end">
+                <div class="bar w-16 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-3">
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                <div class="bar w-20 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-4 relative -left-8">
+                <div class="bar w-10 h-4 bg-black rounded-full"></div>
+                <div class="bar w-40 h-4 bg-black rounded-full"></div>
+                <div class="bar w-6 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-3">
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                <div class="bar w-20 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-28 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-4 relative -left-8">
+                <div class="bar w-10 h-4 bg-black rounded-full"></div>
+                <div class="bar w-40 h-4 bg-black rounded-full"></div>
+                <div class="bar w-6 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-32 h-4 bg-black rounded-full"></div>
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-14 h-4 bg-black rounded-full"></div>
+            </div>
+        </div>
 
-
-
-<!-- element option -->
-<div class=" relative flex justify-center items-center h-[500px]">
-     <div
-                                class="absolute -right-1 top-1/2 transform -translate-y-1/2 flex flex-col gap-3 opacity-90 scale-75 md:scale-100">
-                                <div class="flex justify-end">
-                                    <div class="w-16 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-3">
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                    <div class="w-20 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-4 relative -left-8">
-                                    <div class="w-10 h-4 bg-black rounded-full"></div>
-                                    <div class="w-40 h-4 bg-black rounded-full"></div>
-                                    <div class="w-6 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-3">
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                    <div class="w-20 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-28 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-4 relative -left-8">
-                                    <div class="w-10 h-4 bg-black rounded-full"></div>
-                                    <div class="w-40 h-4 bg-black rounded-full"></div>
-                                    <div class="w-6 h-4 bg-black rounded-full"></div>
-                                </div>
-                              
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-32 h-4 bg-black rounded-full"></div>
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-14 h-4 bg-black rounded-full"></div>
-                                </div>
-    </div>
-        <div class="text-center w-full md:w-2/4 px-4 z-10">
-                <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wide mb-4">services</h2>
+        <!-- Center Content -->
+        <div class="text-center w-full md:w-2/4 px-6 z-10 fade-in">
+               <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wide mb-4">services</h2>
                 <p class="text-sm md:text-base text-gray-700 leading-relaxed max-w-md mx-auto">
                     Quisque eget vestibulum nulla. Quisque quis dui quis ex ultricies efficitur vitae non felis.
                     Phasellus quis nibh hendrerit.
                 </p>
+        </div>
+
+        <!-- Left Side Animated Bars -->
+        <div class="side-panel   absolute -left-8 md:-left-1 md:top-1/2 -bottom-20  rotate-180 transform -translate-y-1/2 flex flex-col gap-3 opacity-40 md:opacity-90 scale-50 md:scale-100 transition-all duration-300 -translate-x-10 md:translate-x-0">
+            <div class="flex justify-end">
+                <div class="bar w-16 h-4 bg-black rounded-full"></div>
             </div>
-     <div
-                                class="absolute -left-1 top-1/2 rotate-180 transform -translate-y-1/2 flex flex-col gap-3 opacity-90 scale-75 md:scale-100">
-                                <div class="flex justify-end">
-                                    <div class="w-16 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-3">
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                    <div class="w-20 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-4 relative -left-8">
-                                    <div class="w-10 h-4 bg-black rounded-full"></div>
-                                    <div class="w-40 h-4 bg-black rounded-full"></div>
-                                    <div class="w-6 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-3">
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                    <div class="w-20 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-28 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-4 relative -left-8">
-                                    <div class="w-10 h-4 bg-black rounded-full"></div>
-                                    <div class="w-40 h-4 bg-black rounded-full"></div>
-                                    <div class="w-6 h-4 bg-black rounded-full"></div>
-                                </div>
-                              
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-32 h-4 bg-black rounded-full"></div>
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-14 h-4 bg-black rounded-full"></div>
-                                </div>
-    </div>
-</div>
-                 
+            <div class="flex justify-end gap-2">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-3">
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                <div class="bar w-20 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-4 relative -left-8">
+                <div class="bar w-10 h-4 bg-black rounded-full"></div>
+                <div class="bar w-40 h-4 bg-black rounded-full"></div>
+                <div class="bar w-6 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-3">
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                <div class="bar w-20 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-28 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-4 relative -left-8">
+                <div class="bar w-10 h-4 bg-black rounded-full"></div>
+                <div class="bar w-40 h-4 bg-black rounded-full"></div>
+                <div class="bar w-6 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-32 h-4 bg-black rounded-full"></div>
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-14 h-4 bg-black rounded-full"></div>
+            </div>
+        </div>
+    </section>
 
 
     <section class="py-16 md:px-4 md:px-8 mx-3">
@@ -948,111 +946,114 @@
 
 
 
+    <!-- Hero Section with Animated Bars -->
+    <section class="relative flex justify-center items-center h-screen w-full overflow-hidden bg-white pt-20">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-100 to-white"></div>
 
-<!-- element option -->
-<div class=" relative flex justify-center items-center h-[500px]">
-     <div
-                                class="absolute -right-1 top-1/2 transform -translate-y-1/2 flex flex-col gap-3 opacity-90 scale-75 md:scale-100">
-                                <div class="flex justify-end">
-                                    <div class="w-16 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-3">
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                    <div class="w-20 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-4 relative -left-8">
-                                    <div class="w-10 h-4 bg-black rounded-full"></div>
-                                    <div class="w-40 h-4 bg-black rounded-full"></div>
-                                    <div class="w-6 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-3">
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                    <div class="w-20 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-28 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-4 relative -left-8">
-                                    <div class="w-10 h-4 bg-black rounded-full"></div>
-                                    <div class="w-40 h-4 bg-black rounded-full"></div>
-                                    <div class="w-6 h-4 bg-black rounded-full"></div>
-                                </div>
-                              
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-32 h-4 bg-black rounded-full"></div>
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-14 h-4 bg-black rounded-full"></div>
-                                </div>
-    </div>
-        <div class="text-center w-full md:w-2/4 px-4 z-10">
-                <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wide mb-4">services</h2>
+        <!-- Right Side Animated Bars -->
+        <div class="side-panel absolute -right-8 md:-right-1 md:top-1/2 top-2/2 transform -translate-y-1/2 flex flex-col gap-3 opacity-40 md:opacity-90 scale-50 -z-5 md:scale-100 transition-all duration-300 translate-x-10 md:translate-x-0">
+            <div class="flex justify-end">
+                <div class="bar w-16 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-3">
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                <div class="bar w-20 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-4 relative -left-8">
+                <div class="bar w-10 h-4 bg-black rounded-full"></div>
+                <div class="bar w-40 h-4 bg-black rounded-full"></div>
+                <div class="bar w-6 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-3">
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                <div class="bar w-20 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-28 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-4 relative -left-8">
+                <div class="bar w-10 h-4 bg-black rounded-full"></div>
+                <div class="bar w-40 h-4 bg-black rounded-full"></div>
+                <div class="bar w-6 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-32 h-4 bg-black rounded-full"></div>
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-14 h-4 bg-black rounded-full"></div>
+            </div>
+        </div>
+
+        <!-- Center Content -->
+        <div class="text-center w-full md:w-2/4 px-6 z-10 fade-in">
+               <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wide mb-4">services</h2>
                 <p class="text-sm md:text-base text-gray-700 leading-relaxed max-w-md mx-auto">
                     Quisque eget vestibulum nulla. Quisque quis dui quis ex ultricies efficitur vitae non felis.
                     Phasellus quis nibh hendrerit.
                 </p>
+        </div>
+
+        <!-- Left Side Animated Bars -->
+        <div class="side-panel   absolute -left-8 md:-left-1 md:top-1/2 -bottom-20  rotate-180 transform -translate-y-1/2 flex flex-col gap-3 opacity-40 md:opacity-90 scale-50 md:scale-100 transition-all duration-300 -translate-x-10 md:translate-x-0">
+            <div class="flex justify-end">
+                <div class="bar w-16 h-4 bg-black rounded-full"></div>
             </div>
-     <div
-                                class="absolute -left-1 top-1/2 rotate-180 transform -translate-y-1/2 flex flex-col gap-3 opacity-90 scale-75 md:scale-100">
-                                <div class="flex justify-end">
-                                    <div class="w-16 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-3">
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                    <div class="w-20 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-4 relative -left-8">
-                                    <div class="w-10 h-4 bg-black rounded-full"></div>
-                                    <div class="w-40 h-4 bg-black rounded-full"></div>
-                                    <div class="w-6 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-3">
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                    <div class="w-20 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-28 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-4 relative -left-8">
-                                    <div class="w-10 h-4 bg-black rounded-full"></div>
-                                    <div class="w-40 h-4 bg-black rounded-full"></div>
-                                    <div class="w-6 h-4 bg-black rounded-full"></div>
-                                </div>
-                              
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-32 h-4 bg-black rounded-full"></div>
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-14 h-4 bg-black rounded-full"></div>
-                                </div>
-    </div>
-</div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-3">
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                <div class="bar w-20 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-4 relative -left-8">
+                <div class="bar w-10 h-4 bg-black rounded-full"></div>
+                <div class="bar w-40 h-4 bg-black rounded-full"></div>
+                <div class="bar w-6 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-3">
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                <div class="bar w-20 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-28 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-4 relative -left-8">
+                <div class="bar w-10 h-4 bg-black rounded-full"></div>
+                <div class="bar w-40 h-4 bg-black rounded-full"></div>
+                <div class="bar w-6 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-32 h-4 bg-black rounded-full"></div>
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-14 h-4 bg-black rounded-full"></div>
+            </div>
+        </div>
+    </section>
 
 
     <section class="py-16 md:px-4 md:px-8  mx-3">
@@ -1105,110 +1106,114 @@
 
 
 
-<!-- element option -->
-<div class=" relative flex justify-center items-center h-[500px]">
-     <div
-                                class="absolute -right-1 top-1/2 transform -translate-y-1/2 flex flex-col gap-3 opacity-90 scale-75 md:scale-100">
-                                <div class="flex justify-end">
-                                    <div class="w-16 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-3">
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                    <div class="w-20 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-4 relative -left-8">
-                                    <div class="w-10 h-4 bg-black rounded-full"></div>
-                                    <div class="w-40 h-4 bg-black rounded-full"></div>
-                                    <div class="w-6 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-3">
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                    <div class="w-20 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-28 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-4 relative -left-8">
-                                    <div class="w-10 h-4 bg-black rounded-full"></div>
-                                    <div class="w-40 h-4 bg-black rounded-full"></div>
-                                    <div class="w-6 h-4 bg-black rounded-full"></div>
-                                </div>
-                              
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-32 h-4 bg-black rounded-full"></div>
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-14 h-4 bg-black rounded-full"></div>
-                                </div>
-    </div>
-        <div class="text-center w-full md:w-2/4 px-4 z-10">
-                <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wide mb-4">services</h2>
+    <!-- Hero Section with Animated Bars -->
+    <section class="relative flex justify-center items-center h-screen w-full overflow-hidden bg-white pt-20">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-100 to-white"></div>
+
+        <!-- Right Side Animated Bars -->
+        <div class="side-panel absolute -right-8 md:-right-1 md:top-1/2 top-2/2 transform -translate-y-1/2 flex flex-col gap-3 opacity-40 md:opacity-90 scale-50 -z-5 md:scale-100 transition-all duration-300 translate-x-10 md:translate-x-0">
+            <div class="flex justify-end">
+                <div class="bar w-16 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-3">
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                <div class="bar w-20 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-4 relative -left-8">
+                <div class="bar w-10 h-4 bg-black rounded-full"></div>
+                <div class="bar w-40 h-4 bg-black rounded-full"></div>
+                <div class="bar w-6 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-3">
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                <div class="bar w-20 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-28 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-4 relative -left-8">
+                <div class="bar w-10 h-4 bg-black rounded-full"></div>
+                <div class="bar w-40 h-4 bg-black rounded-full"></div>
+                <div class="bar w-6 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-32 h-4 bg-black rounded-full"></div>
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-14 h-4 bg-black rounded-full"></div>
+            </div>
+        </div>
+
+        <!-- Center Content -->
+        <div class="text-center w-full md:w-2/4 px-6 z-10 fade-in">
+               <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wide mb-4">services</h2>
                 <p class="text-sm md:text-base text-gray-700 leading-relaxed max-w-md mx-auto">
                     Quisque eget vestibulum nulla. Quisque quis dui quis ex ultricies efficitur vitae non felis.
                     Phasellus quis nibh hendrerit.
                 </p>
+        </div>
+
+        <!-- Left Side Animated Bars -->
+        <div class="side-panel   absolute -left-8 md:-left-1 md:top-1/2 -bottom-20  rotate-180 transform -translate-y-1/2 flex flex-col gap-3 opacity-40 md:opacity-90 scale-50 md:scale-100 transition-all duration-300 -translate-x-10 md:translate-x-0">
+            <div class="flex justify-end">
+                <div class="bar w-16 h-4 bg-black rounded-full"></div>
             </div>
-     <div
-                                class="absolute -left-1 top-1/2 rotate-180 transform -translate-y-1/2 flex flex-col gap-3 opacity-90 scale-75 md:scale-100">
-                                <div class="flex justify-end">
-                                    <div class="w-16 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-3">
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                    <div class="w-20 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-4 relative -left-8">
-                                    <div class="w-10 h-4 bg-black rounded-full"></div>
-                                    <div class="w-40 h-4 bg-black rounded-full"></div>
-                                    <div class="w-6 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-3">
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                    <div class="w-20 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-28 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-4 relative -left-8">
-                                    <div class="w-10 h-4 bg-black rounded-full"></div>
-                                    <div class="w-40 h-4 bg-black rounded-full"></div>
-                                    <div class="w-6 h-4 bg-black rounded-full"></div>
-                                </div>
-                              
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-32 h-4 bg-black rounded-full"></div>
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-14 h-4 bg-black rounded-full"></div>
-                                </div>
-    </div>
-</div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-3">
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                <div class="bar w-20 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-4 relative -left-8">
+                <div class="bar w-10 h-4 bg-black rounded-full"></div>
+                <div class="bar w-40 h-4 bg-black rounded-full"></div>
+                <div class="bar w-6 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-3">
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                <div class="bar w-20 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-28 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-4 relative -left-8">
+                <div class="bar w-10 h-4 bg-black rounded-full"></div>
+                <div class="bar w-40 h-4 bg-black rounded-full"></div>
+                <div class="bar w-6 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-32 h-4 bg-black rounded-full"></div>
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-14 h-4 bg-black rounded-full"></div>
+            </div>
+        </div>
+    </section>
 
 
 
@@ -1258,111 +1263,114 @@
 
 
 
+    <!-- Hero Section with Animated Bars -->
+    <section class="relative flex justify-center items-center h-screen w-full overflow-hidden bg-white pt-20">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-100 to-white"></div>
 
-<!-- element option -->
-<div class=" relative flex justify-center items-center h-[500px]">
-     <div
-                                class="absolute -right-1 top-1/2 transform -translate-y-1/2 flex flex-col gap-3 opacity-90 scale-75 md:scale-100">
-                                <div class="flex justify-end">
-                                    <div class="w-16 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-3">
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                    <div class="w-20 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-4 relative -left-8">
-                                    <div class="w-10 h-4 bg-black rounded-full"></div>
-                                    <div class="w-40 h-4 bg-black rounded-full"></div>
-                                    <div class="w-6 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-3">
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                    <div class="w-20 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-28 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-4 relative -left-8">
-                                    <div class="w-10 h-4 bg-black rounded-full"></div>
-                                    <div class="w-40 h-4 bg-black rounded-full"></div>
-                                    <div class="w-6 h-4 bg-black rounded-full"></div>
-                                </div>
-                              
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-32 h-4 bg-black rounded-full"></div>
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-14 h-4 bg-black rounded-full"></div>
-                                </div>
-    </div>
-        <div class="text-center w-full md:w-2/4 px-4 z-10">
-                <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wide mb-4">services</h2>
+        <!-- Right Side Animated Bars -->
+        <div class="side-panel absolute -right-8 md:-right-1 md:top-1/2 top-2/2 transform -translate-y-1/2 flex flex-col gap-3 opacity-40 md:opacity-90 scale-50 -z-5 md:scale-100 transition-all duration-300 translate-x-10 md:translate-x-0">
+            <div class="flex justify-end">
+                <div class="bar w-16 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-3">
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                <div class="bar w-20 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-4 relative -left-8">
+                <div class="bar w-10 h-4 bg-black rounded-full"></div>
+                <div class="bar w-40 h-4 bg-black rounded-full"></div>
+                <div class="bar w-6 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-3">
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                <div class="bar w-20 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-28 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-4 relative -left-8">
+                <div class="bar w-10 h-4 bg-black rounded-full"></div>
+                <div class="bar w-40 h-4 bg-black rounded-full"></div>
+                <div class="bar w-6 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-32 h-4 bg-black rounded-full"></div>
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-14 h-4 bg-black rounded-full"></div>
+            </div>
+        </div>
+
+        <!-- Center Content -->
+        <div class="text-center w-full md:w-2/4 px-6 z-10 fade-in">
+               <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wide mb-4">services</h2>
                 <p class="text-sm md:text-base text-gray-700 leading-relaxed max-w-md mx-auto">
                     Quisque eget vestibulum nulla. Quisque quis dui quis ex ultricies efficitur vitae non felis.
                     Phasellus quis nibh hendrerit.
                 </p>
+        </div>
+
+        <!-- Left Side Animated Bars -->
+        <div class="side-panel   absolute -left-8 md:-left-1 md:top-1/2 -bottom-20  rotate-180 transform -translate-y-1/2 flex flex-col gap-3 opacity-40 md:opacity-90 scale-50 md:scale-100 transition-all duration-300 -translate-x-10 md:translate-x-0">
+            <div class="flex justify-end">
+                <div class="bar w-16 h-4 bg-black rounded-full"></div>
             </div>
-     <div
-                                class="absolute -left-1 top-1/2 rotate-180 transform -translate-y-1/2 flex flex-col gap-3 opacity-90 scale-75 md:scale-100">
-                                <div class="flex justify-end">
-                                    <div class="w-16 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-3">
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                    <div class="w-20 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-4 relative -left-8">
-                                    <div class="w-10 h-4 bg-black rounded-full"></div>
-                                    <div class="w-40 h-4 bg-black rounded-full"></div>
-                                    <div class="w-6 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-3">
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                    <div class="w-20 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-28 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-4 relative -left-8">
-                                    <div class="w-10 h-4 bg-black rounded-full"></div>
-                                    <div class="w-40 h-4 bg-black rounded-full"></div>
-                                    <div class="w-6 h-4 bg-black rounded-full"></div>
-                                </div>
-                              
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end gap-2">
-                                    <div class="w-32 h-4 bg-black rounded-full"></div>
-                                    <div class="w-8 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-24 h-4 bg-black rounded-full"></div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="w-14 h-4 bg-black rounded-full"></div>
-                                </div>
-    </div>
-</div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-3">
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                <div class="bar w-20 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-4 relative -left-8">
+                <div class="bar w-10 h-4 bg-black rounded-full"></div>
+                <div class="bar w-40 h-4 bg-black rounded-full"></div>
+                <div class="bar w-6 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-3">
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                <div class="bar w-20 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-28 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-4 relative -left-8">
+                <div class="bar w-10 h-4 bg-black rounded-full"></div>
+                <div class="bar w-40 h-4 bg-black rounded-full"></div>
+                <div class="bar w-6 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end gap-2">
+                <div class="bar w-32 h-4 bg-black rounded-full"></div>
+                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+            </div>
+            <div class="flex justify-end">
+                <div class="bar w-14 h-4 bg-black rounded-full"></div>
+            </div>
+        </div>
+    </section>
 
 
  <section class="py-16 px-4 md:px-8 max-w-7xl mx-auto flex-col flex items-center justify-center">
