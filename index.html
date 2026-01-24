@@ -542,9 +542,14 @@
         </div>
 
         <a href="#"
-            class="nav-link flex text-sm text-neutral-500 flex items-center gap-2 hover:text-yellow-500 transition-colors font-medium">
+            class="nav-link hidden md:flex text-sm text-neutral-500 flex items-center gap-2 hover:text-yellow-500 transition-colors font-medium">
             Home pages presentation <i class="fa-solid fa-arrow-right text-yellow-500 rotate-45"></i>
         </a>
+
+        <!-- Mobile button for popup -->
+        <button id="mobilePresentationBtn" class="md:hidden text-sm text-neutral-500 flex items-center gap-2 hover:text-yellow-500 transition-colors font-medium">
+            <i class="fa-solid fa-info-circle mr-1"></i> Présentation
+        </button>
 
         <div class="social-icons hidden md:flex gap-3">
             <template x-for="social in ['facebook-f', 'instagram', 'linkedin-in', 'x-twitter', 'tiktok']">
@@ -1771,6 +1776,7 @@
 
             // Home presentation popup functionality
             const presentationLink = document.querySelector('.nav-link[href="#"]');
+            const mobilePresentationBtn = document.getElementById('mobilePresentationBtn');
             const presentationPopup = document.getElementById('presentationPopup');
             const closePresentationPopup = document.getElementById('closePresentationPopup');
             const closePresentationBtn = document.getElementById('closePresentationBtn');
@@ -1780,6 +1786,22 @@
             if (presentationLink) {
                 presentationLink.addEventListener('click', function(e) {
                     e.preventDefault(); // Prevent default anchor behavior
+                    presentationPopup.classList.remove('hidden');
+
+                    // Trigger the animation
+                    setTimeout(() => {
+                        const popupContent = presentationPopup.querySelector('.presentation-popup-content');
+                        popupContent.classList.add('popup-show');
+                        popupContent.style.transform = 'scale(1)';
+                        popupContent.style.opacity = '1';
+                    }, 50);
+                });
+            }
+
+            // Show presentation popup when clicking the mobile button
+            if (mobilePresentationBtn) {
+                mobilePresentationBtn.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent default button behavior
                     presentationPopup.classList.remove('hidden');
 
                     // Trigger the animation
