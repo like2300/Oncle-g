@@ -3,131 +3,415 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONCLE G Livraisons - Carousel</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Outfit:wght@300;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-       
-        /* Effet de texte contour (Outline) */
-        .text-outline {
-            color: transparent;
-            -webkit-text-stroke: 1px rgba(255,255,255,0.3);
-        }
-
-        /* Animation au survol des cartes */
-        .whawoo-card {
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-            position: relative;
+        /* Styles utilitaires pour la troncation du texte */
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
             overflow: hidden;
         }
-        .whawoo-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            background: #111;
-            border-color: #eab308;
+
+        /* Cacher la barre de défilement */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
 
-        /* Décoration d'arrière-plan */
-        .bg-glow {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(234, 179, 8, 0.05) 0%, transparent 70%);
-            z-index: -1;
-            pointer-events: none;
-        }
-        input , textarea {
-            color: black!important  ;
+        .hover-overlay {
+            transition: opacity 0.3s ease-in-out;
         }
     </style>
 </head>
-<body class="text-white">
+<body class="bg-gray-900 font-sans text-white overflow-x-hidden">
 
-    <div class="bg-glow"></div>
+    <!-- Main Content with Carousel -->
+    <main class="flex-grow relative w-full">
 
-    <header class="relative pt-32 pb-20 px-6 text-center overflow-hidden">
-        <div class="absolute top-10 left-1/2 -translate-x-1/2 text-[15rem] font-black text-outline uppercase select-none opacity-20 -z-10 leading-none">
-            CONTACT
+        <!-- CONTAINER DU SLIDER -->
+        <div
+            class="card-stack main-slider-container relative w-full lg:h-[750px] h-[750px] max-w-[1600px] mx-auto mt-4 overflow-visible lg:p-12 p-2">
+
+            <!-- LISTE DES CARTES -->
+            <ul class="relative w-full h-full">
+                
+                <!-- CAROUSEL SLIDE 1 -->
+                <li id="slide-1" class="carousel-slide group relative absolute list-none rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] transition-all duration-500 ease-in-out left-0 right-0 mx-auto bg-cover bg-center bg-no-repeat overflow-hidden h-full cursor-default"
+                    style="background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(63, 55, 0, 0.4)), url('https://picsum.photos/seed/oncleg1/1600/900.jpg'); width: 65%; top: 0px; height: 100%; background-size: cover; background-position: center; z-index: 1;">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+                    <div id="overlay-1" class="hover-overlay absolute inset-0 bg-black/95 flex flex-col items-center justify-center opacity-0 pointer-events-none z-50 px-8">
+                        <div class="text-content text-center w-full max-w-3xl max-h-full overflow-y-auto no-scrollbar py-8">
+                            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6 uppercase">Service Oncle G</h2>
+                            <p class="text-lg text-gray-200 leading-relaxed text-justify">
+                                Un sourire, c’est déjà une livraison réussie. ONCLE G Livraisons vous offre un service fiable et attentionné. Avant même d’arriver à votre porte, ONCLE G Livraisons vous offre un sourire. C’est sa manière de dire que chaque trajet est une promesse tenue. Dans une ville où le rythme est parfois effréné, ce sourire devient un repère, une certitude que votre quotidien sera allégé.
+                            </p>
+                            <button onclick="toggleOverlay(1, false)" class="mt-8 px-6 py-2 bg-yellow-500 text-black font-bold uppercase rounded-full hover:bg-yellow-400 transition-colors">
+                                <i class="fa-solid fa-times mr-2"></i> Fermer
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- CONTENU TEXTE -->
+                    <div class="absolute inset-0 flex flex-col justify-end md:justify-between items-start px-6 md:px-8 pb-24 md:pb-16 pt-8 z-10 pointer-events-none">
+                        
+                        <!-- Titre -->
+                        <div class="md:transform transition-all duration-500 w-full text-left mb-4 md:mb-0 md:mt-10 md:ml-12 translate-y-8 opacity-0 scale-95 title-anim">
+                            <!-- Taille: Mobile (2xl) -> Tablette (4xl) -> PC (5xl) -->
+                            <h1 class="text-2xl md:text-4xl lg:text-5xl md:w-[670px] text-white font-bold uppercase tracking-wider leading-tight drop-shadow-xl text-primary">
+                              Un sourire, <br>c’est déjà une <br> livraison <br> réussie
+                            </h1>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="max-w-md text-gray-200 text-base md:text-lg lg:text-xl font-light leading-relaxed drop-shadow-md text-left md:text-right w-full ml-auto md:ml-auto md:mr-12 pb-32 md:pb-24">
+                            <!-- Logique Troncation: Mobile (clamp) -> Tablette (clamp) -> PC (none) -->
+                            <p class="text-start md:text-right line-clamp-3 md:line-clamp-3 lg:line-clamp-none">
+                                Avant même d’arriver à votre porte, ONCLE G Livraisons vous offre un sourire. C’est sa manière de dire que chaque trajet est une promesse tenue. Dans une ville où le rythme est parfois effréné, ce sourire devient un repère, une certitude que votre quotidien sera allégé.
+                            </p>
+                            <!-- Bouton visible sur Mobile et Tablette (lg:hidden), caché sur PC -->
+                            <button onclick="toggleOverlay(1, true)" class="lire-plus-btn lg:hidden text-yellow-500 mt-2 text-sm font-bold uppercase tracking-wider flex items-center pointer-events-auto md:ml-auto md:text-right">
+                                Lire la suite <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="controls-overlay absolute bottom-6 left-0 w-full px-6 md:px-12 flex justify-between items-center pointer-events-none z-50">
+                        <div class="dots flex items-center gap-4 pointer-events-auto pl-4">
+                            <div data-target="0" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-black border-yellow-400 w-6 h-3 border-2 rounded-full"></div>
+                            <div data-target="1" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-transparent border-2 border-white/40 w-3 h-3 rounded-full"></div>
+                            <div data-target="2" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-transparent border-2 border-white/40 w-3 h-3 rounded-full"></div>
+                        </div>
+                        <div class="nav-controls flex items-center bg-black/70 backdrop-blur-sm border border-white/10 px-5 py-2.5 rounded-full gap-5 pointer-events-auto shadow-2xl hover:bg-black/90 transition-colors">
+                            <button class="arrow-btn-prev w-9 h-9 border border-white/30 text-white rounded-full flex items-center justify-center hover:border-yellow-400 hover:text-yellow-400 transition-all">
+                                <i class="fa-solid fa-chevron-left text-xs"></i>
+                            </button>
+                            <span class="counter text-white font-bold font-mono text-sm md:text-base tracking-widest">1/3</span>
+                            <button class="arrow-btn-next w-9 h-9 border border-white/30 text-white rounded-full flex items-center justify-center hover:border-yellow-400 hover:text-yellow-400 transition-all">
+                                <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- CAROUSEL SLIDE 2 -->
+                <li id="slide-2" class="carousel-slide group absolute list-none rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] transition-all duration-500 ease-in-out left-0 right-0 mx-auto bg-cover bg-center bg-no-repeat overflow-hidden h-full cursor-default"
+                    style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url('https://picsum.photos/seed/oncleg2/1600/900.jpg'); width: 82.5%; top: 40px; height: 100%; background-size: cover; background-position: center; z-index: 2;">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+                    <div id="overlay-2" class="hover-overlay absolute inset-0 bg-black/95 flex flex-col items-center justify-center opacity-0 pointer-events-none z-50 px-8">
+                        <div class="text-content text-center w-full max-w-3xl max-h-full overflow-y-auto no-scrollbar py-8">
+                            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6 uppercase">Nos Racines</h2>
+                            <p class="text-lg text-gray-200 leading-relaxed text-justify">
+                                ONCLE G Livraisons est né dans les ruelles de Brazzaville. Des marchés de Poto-Poto aux avenues de Bacongo, nous connaissons chaque détour, chaque ambiance. Ce n’est pas seulement un service : c’est une déclaration d’amour à la ville et à ses habitants.
+                            </p>
+                            <button onclick="toggleOverlay(2, false)" class="mt-8 px-6 py-2 bg-yellow-500 text-black font-bold uppercase rounded-full hover:bg-yellow-400 transition-colors">
+                                <i class="fa-solid fa-times mr-2"></i> Fermer
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="absolute inset-0 flex flex-col justify-end md:justify-between items-start px-6 md:px-8 pb-24 md:pb-16 pt-8 z-10 pointer-events-none">
+                        <div class="md:transform transition-all duration-500 w-full text-left mb-4 md:mb-0 md:mt-10 md:ml-12 translate-y-8 opacity-0 scale-95 title-anim">
+                            <h1 class="text-2xl md:text-4xl lg:text-5xl md:w-[670px] text-white font-bold uppercase tracking-wider leading-tight drop-shadow-xl text-primary">
+                                Vos rues <br>sont nos <br> racines
+                            </h1>
+                        </div>
+
+                        <div class="max-w-md text-gray-200 text-base md:text-lg lg:text-xl font-light leading-relaxed drop-shadow-md text-left md:text-right w-full ml-auto md:ml-auto md:mr-12 pb-32 md:pb-24">
+                            <p class="text-start md:text-right line-clamp-3 md:line-clamp-3 lg:line-clamp-none">
+                                ONCLE G Livraisons est né dans les ruelles de Brazzaville. Des marchés de Poto-Poto aux avenues de Bacongo, nous connaissons chaque détour, chaque ambiance. Ce n’est pas seulement un service : c’est une déclaration d’amour à la ville et à ses habitants.
+                            </p>
+                            <button onclick="toggleOverlay(2, true)" class="lire-plus-btn lg:hidden text-yellow-500 mt-2 text-sm font-bold uppercase tracking-wider flex items-center pointer-events-auto md:ml-auto md:text-right">
+                                Lire la suite <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="controls-overlay absolute bottom-6 left-0 w-full px-6 md:px-12 flex justify-between items-center pointer-events-none z-50">
+                        <div class="dots flex items-center gap-4 pointer-events-auto pl-4">
+                            <div data-target="0" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-transparent border-2 border-white/40 w-3 h-3 rounded-full"></div>
+                            <div data-target="1" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-black border-yellow-400 w-6 h-3 border-2 rounded-full"></div>
+                            <div data-target="2" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-transparent border-2 border-white/40 w-3 h-3 rounded-full"></div>
+                        </div>
+                        <div class="nav-controls flex items-center bg-black/70 backdrop-blur-sm border border-white/10 px-5 py-2.5 rounded-full gap-5 pointer-events-auto shadow-2xl hover:bg-black/90 transition-colors">
+                            <button class="arrow-btn-prev w-9 h-9 border border-white/30 text-white rounded-full flex items-center justify-center hover:border-yellow-400 hover:text-yellow-400 transition-all">
+                                <i class="fa-solid fa-chevron-left text-xs"></i>
+                            </button>
+                            <span class="counter text-white font-bold font-mono text-sm md:text-base tracking-widest">2/3</span>
+                            <button class="arrow-btn-next w-9 h-9 border border-white/30 text-white rounded-full flex items-center justify-center hover:border-yellow-400 hover:text-yellow-400 transition-all">
+                                <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- CAROUSEL SLIDE 3 -->
+                <li id="slide-3" class="carousel-slide group absolute list-none rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] transition-all duration-500 ease-in-out left-0 right-0 mx-auto bg-cover bg-center bg-no-repeat overflow-hidden h-full cursor-default"
+                    style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url('https://picsum.photos/seed/oncleg3/1600/900.jpg'); width: 100%; top: 80px; height: 100%; background-size: cover; background-position: center; z-index: 3;">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+                    <div id="overlay-3" class="hover-overlay absolute inset-0 bg-black/95 flex flex-col items-center justify-center opacity-0 pointer-events-none z-50 px-8">
+                        <div class="text-content text-center w-full max-w-3xl max-h-full overflow-y-auto no-scrollbar py-8">
+                            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6 uppercase">Sérénité</h2>
+                            <p class="text-lg text-gray-200 leading-relaxed text-justify">
+                                Chaque minute compte. ONCLE G Livraisons transforme vos besoins en instants de sérénité. Plus besoin de courir, de jongler avec les imprévus : nous faisons le chemin pour vous, afin que vous puissiez profiter pleinement de vos journées.
+                            </p>
+                            <button onclick="toggleOverlay(3, false)" class="mt-8 px-6 py-2 bg-yellow-500 text-black font-bold uppercase rounded-full hover:bg-yellow-400 transition-colors">
+                                <i class="fa-solid fa-times mr-2"></i> Fermer
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="absolute inset-0 flex flex-col justify-end md:justify-between items-start px-6 md:px-8 pb-24 md:pb-16 pt-8 z-10 pointer-events-none">
+                        <div class="md:transform transition-all duration-500 w-full text-left mb-4 md:mb-0 md:mt-10 md:ml-12 translate-y-0 opacity-100 scale-100 title-anim">
+                            <h1 class="text-2xl md:text-4xl lg:text-5xl md:w-[670px] text-white font-bold uppercase tracking-wider leading-tight drop-shadow-xl text-primary">
+                                Moins de soucis,<br> plus de vie
+                            </h1>
+                        </div>
+
+                        <div class="max-w-md text-gray-200 text-base md:text-lg lg:text-xl font-light leading-relaxed drop-shadow-md text-left md:text-right w-full ml-auto md:ml-auto md:mr-12 pb-32 md:pb-24">
+                            <p class="text-start md:text-right line-clamp-3 md:line-clamp-3 lg:line-clamp-none">
+                                Chaque minute compte. ONCLE G Livraisons transforme vos besoins en instants de sérénité. Plus besoin de courir, de jongler avec les imprévus : nous faisons le chemin pour vous, afin que vous puissiez profiter pleinement de vos journées.
+                            </p>
+                            <button onclick="toggleOverlay(3, true)" class="lire-plus-btn lg:hidden text-yellow-500 mt-2 text-sm font-bold uppercase tracking-wider flex items-center pointer-events-auto md:ml-auto md:text-right">
+                                Lire la suite <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="controls-overlay absolute bottom-6 left-0 w-full px-6 md:px-12 flex justify-between items-center pointer-events-none z-50">
+                        <div class="dots flex items-center gap-4 pointer-events-auto pl-4">
+                            <div data-target="0" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-transparent border-2 border-white/40 w-3 h-3 rounded-full"></div>
+                            <div data-target="1" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-transparent border-2 border-white/40 w-3 h-3 rounded-full"></div>
+                            <div data-target="2" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-black border-yellow-400 w-6 h-3 border-2 rounded-full"></div>
+                        </div>
+                        <div class="nav-controls flex items-center bg-black/70 backdrop-blur-sm border border-white/10 px-5 py-2.5 rounded-full gap-5 pointer-events-auto shadow-2xl hover:bg-black/90 transition-colors">
+                            <button class="arrow-btn-prev w-9 h-9 border border-white/30 text-white rounded-full flex items-center justify-center hover:border-yellow-400 hover:text-yellow-400 transition-all">
+                                <i class="fa-solid fa-chevron-left text-xs"></i>
+                            </button>
+                            <span class="counter text-white font-bold font-mono text-sm md:text-base tracking-widest">3/3</span>
+                            <button class="arrow-btn-next w-9 h-9 border border-white/30 text-white rounded-full flex items-center justify-center hover:border-yellow-400 hover:text-yellow-400 transition-all">
+                                <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <img src="./img/Oncle G - Logo.svg" alt="Oncle G" class="w-40 mx-auto mb-12 hover:rotate-12 transition-transform duration-500" />
-        <h1 class="text-6xl text-black md:text-9xl font-black uppercase tracking-tighter leading-none mb-6">
-            APPELEZ <span class="text-yellow-500">L'ONCLE !</span>
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto font-light">
-            Derrière la ligne, une voix rassurante. <br>
-            <span class="text-white italic">"Un service né d’une idée simple : servir comme un oncle."</span>
-        </p>
-
-    </header>
-
-    <main class="max-w-7xl mx-auto px-6 pb-32">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            
-            <div class="lg:col-span-7 whawoo-card bg-zinc-950 border border-zinc-800 p-12 rounded-[2rem] flex flex-col justify-between min-h-[400px]">
-                <div>
-                    <span class="text-yellow-500 font-bold tracking-[0.3em] uppercase text-sm">Action immédiate</span>
-                    <h2 class="text-5xl font-black mt-4 uppercase">Des numéros, <br> des solutions</h2>
-                </div>
-                <div class="mt-12">
-                    <p class="text-gray-400 mb-6 text-lg max-w-md">Un coup de fil suffit. Oncle G Livraisons est déjà en route pour Brazzaville.</p>
-                    <a href="tel:+242060000000" class="text-4xl md:text-6xl font-bold hover:text-yellow-500 transition-colors tracking-tighter">
-                        +242 06 000 00 00
-                    </a>
-                </div>
-            </div>
-
-            <div class="lg:col-span-5 whawoo-card bg-yellow-500 p-12 rounded-[2rem] text-black">
-                <span class="font-bold tracking-[0.3em] uppercase text-sm">Écrivez-lui !</span>
-                <h2 class="text-5xl font-black mt-4 uppercase">Une lettre d’un proche</h2>
-                <p class="mt-8 text-black/80 text-lg leading-snug">
-                    Nous lisons vos mots avec soin. La réponse est toujours humaine, jamais automatique.
-                </p>
-                <div class="mt-16">
-                    <a href="mailto:bonjour@oncleg.cg" class="inline-block border-2 border-black px-8 py-4 font-black uppercase tracking-widest hover:bg-black hover:text-yellow-500 transition-all">
-                        Envoyer un mail
-                    </a>
-                </div>
-            </div>
-
-            <div class="lg:col-span-12 whawoo-card bg-zinc-950 border border-zinc-800 p-12 rounded-[2rem] flex flex-col md:flex-row items-center justify-between gap-8">
-                <div class="max-w-xl">
-                    <h2 class="text-4xl font-black uppercase mb-4">Rejoignez la famille</h2>
-                    <p class="text-gray-400">Oncle G n'est pas qu'un service, c'est une communauté. Suivez l'oncle dans ses courses quotidiennes à travers la ville.</p>
-                </div>
-                <div class="flex gap-4">
-                    <a href="#" class="w-20 h-20 rounded-full border border-zinc-700 flex items-center justify-center hover:bg-white hover:text-black transition-all">
-                        <span class="font-bold">FB</span>
-                    </a>
-                    <a href="#" class="w-20 h-20 rounded-full border border-zinc-700 flex items-center justify-center hover:bg-white hover:text-black transition-all">
-                        <span class="font-bold">IG</span>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-
-        <section class="mt-32">
-            <h3 class="text-sm uppercase tracking-[0.5em] text-center text-yellow-500 mb-12">Laissez une trace</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl mx-auto">
-                <div class="group border-b border-zinc-800 focus-within:border-yellow-500 transition">
-                    <label class="text-xs uppercase text-zinc-500">Nom complet</label>
-                    <input type="text" class="w-full bg-transparent py-4 outline-none text-xl font-bold" placeholder="Oncle Jean">
-                </div>
-                <div class="group border-b border-zinc-800 focus-within:border-yellow-500 transition">
-                    <label class="text-xs uppercase text-zinc-500">Email</label>
-                    <input type="email" class="w-full bg-transparent py-4 outline-none text-xl font-bold" placeholder="jean@famille.cg">
-                </div>
-                <div class="md:col-span-2 group border-b border-zinc-800 focus-within:border-yellow-500 transition">
-                    <label class="text-xs uppercase text-zinc-500">Votre Message</label>
-                    <textarea class="w-full bg-transparent py-4 outline-none text-xl font-bold h-32" placeholder="Dites-nous tout..."></textarea>
-                </div>
-                <button class="md:col-span-2 mt-8 py-6 bg-white text-black text-2xl font-black uppercase tracking-tighter hover:bg-yellow-500 transition-colors">
-                    Envoyer à l'Oncle
-                </button>
-            </div>
-        </section>
     </main>
 
+    <script>
+        class Carousel {
+            constructor() {
+                this.currentSlide = 0;
+                this.totalSlides = 3;
+                this.slideElements = [];
+                this.dotElements = [];
+                this.autoSlideInterval = null;
+
+                this.init();
+            }
+
+            init() {
+                this.slideElements = [
+                    document.getElementById('slide-1'),
+                    document.getElementById('slide-2'),
+                    document.getElementById('slide-3')
+                ];
+                this.dotElements = document.querySelectorAll('.dot');
+                this.addEventListeners();
+                this.setActiveSlide(0);
+                setTimeout(() => {
+                    this.startAutoSlide();
+                }, 1000);
+            }
+
+            setActiveSlide(slideIndex) {
+                if (slideIndex < 0 || slideIndex >= this.totalSlides) return;
+                this.currentSlide = slideIndex;
+
+                this.slideElements.forEach((slide, index) => {
+                    slide.style.transition = 'all 0.5s ease';
+                    const titleContainer = slide.querySelector('.title-anim');
+                    const description = slide.querySelector('.max-w-md');
+
+                    if (index === this.currentSlide) {
+                        slide.style.width = '100%';
+                        slide.style.top = '80px';
+                        slide.style.zIndex = '3';
+                        
+                        if(titleContainer) {
+                            titleContainer.classList.remove('translate-y-8', 'opacity-0', 'scale-95');
+                            titleContainer.classList.add('translate-y-0', 'opacity-100', 'scale-100');
+                        }
+                        if(description) description.classList.remove('hidden');
+
+                    } else if (index === this.currentSlide - 1 || (this.currentSlide === 0 && index === this.totalSlides - 1)) {
+                        slide.style.width = '82.5%';
+                        slide.style.top = '40px';
+                        slide.style.zIndex = '2';
+
+                        if(titleContainer) {
+                            titleContainer.classList.add('translate-y-8', 'opacity-0', 'scale-95');
+                            titleContainer.classList.remove('translate-y-0', 'opacity-100', 'scale-100');
+                        }
+                        if(description) description.classList.add('hidden');
+
+                    } else {
+                        slide.style.width = '65%';
+                        slide.style.top = '0px';
+                        slide.style.zIndex = '1';
+
+                        if(titleContainer) {
+                            titleContainer.classList.add('translate-y-8', 'opacity-0', 'scale-95');
+                            titleContainer.classList.remove('translate-y-0', 'opacity-100', 'scale-100');
+                        }
+                        if(description) description.classList.add('hidden');
+                    }
+                });
+
+                this.updateDots();
+                this.updateCounter();
+            }
+
+            updateDots() {
+                this.dotElements.forEach(dot => {
+                    const targetIndex = parseInt(dot.getAttribute('data-target'));
+                    if (targetIndex === this.currentSlide) {
+                        dot.classList.remove('bg-transparent', 'w-3', 'h-3');
+                        dot.classList.add('bg-black', 'border-yellow-400', 'w-6', 'h-3');
+                    } else {
+                        dot.classList.remove('bg-black', 'border-yellow-400', 'w-6', 'h-3');
+                        dot.classList.add('bg-transparent', 'w-3', 'h-3');
+                    }
+                });
+            }
+
+            updateCounter() {
+                const counters = document.querySelectorAll('.counter');
+                counters.forEach(counter => {
+                    counter.textContent = `${this.currentSlide + 1}/${this.totalSlides}`;
+                });
+            }
+
+            next() {
+                this.pauseAutoSlide();
+                this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                this.setActiveSlide(this.currentSlide);
+                this.resumeAutoSlide();
+            }
+
+            prev() {
+                this.pauseAutoSlide();
+                this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                this.setActiveSlide(this.currentSlide);
+                this.resumeAutoSlide();
+            }
+
+            goToSlide(targetIndex) {
+                this.pauseAutoSlide();
+                if (targetIndex >= 0 && targetIndex < this.totalSlides) {
+                    this.setActiveSlide(targetIndex);
+                }
+                this.resumeAutoSlide();
+            }
+
+            openOverlay(slideNumber) {
+                const overlay = document.getElementById(`overlay-${slideNumber}`);
+                if (overlay) {
+                    overlay.classList.remove('opacity-0', 'pointer-events-none');
+                    overlay.classList.add('opacity-100', 'pointer-events-auto');
+                    this.pauseAutoSlide();
+                }
+            }
+
+            closeOverlay(slideNumber) {
+                const overlay = document.getElementById(`overlay-${slideNumber}`);
+                if (overlay) {
+                    overlay.classList.add('opacity-0', 'pointer-events-none');
+                    overlay.classList.remove('opacity-100', 'pointer-events-auto');
+                    this.resumeAutoSlide();
+                }
+            }
+
+            startAutoSlide() {
+                if (this.autoSlideInterval) clearInterval(this.autoSlideInterval);
+                this.autoSlideInterval = setInterval(() => {
+                    const anyOverlayOpen = document.querySelector('.hover-overlay.opacity-100');
+                    if (!anyOverlayOpen) {
+                        this.next();
+                    }
+                }, 8000);
+            }
+
+            pauseAutoSlide() {
+                if (this.autoSlideInterval) {
+                    clearInterval(this.autoSlideInterval);
+                    this.autoSlideInterval = null;
+                }
+            }
+
+            resumeAutoSlide() {
+                setTimeout(() => {
+                    if (!this.autoSlideInterval) {
+                        this.startAutoSlide();
+                    }
+                }, 5000);
+            }
+
+            addEventListeners() {
+                document.querySelectorAll('.arrow-btn-next').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        this.next();
+                    });
+                });
+                document.querySelectorAll('.arrow-btn-prev').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        this.prev();
+                    });
+                });
+
+                this.dotElements.forEach(dot => {
+                    dot.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const index = parseInt(dot.getAttribute('data-target'));
+                        this.goToSlide(index);
+                    });
+                });
+            }
+        }
+
+        let carouselInstance;
+
+        function toggleOverlay(slideNumber, open) {
+            if (carouselInstance) {
+                if (open) {
+                    carouselInstance.openOverlay(slideNumber);
+                } else {
+                    carouselInstance.closeOverlay(slideNumber);
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            carouselInstance = new Carousel();
+            window.carouselInstance = carouselInstance;
+        });
+    </script>
 </body>
 </html>
