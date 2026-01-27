@@ -87,106 +87,8 @@
     </style>
 
 
-    <!-- Halcom Font Family - Loading locally -->
-    <style>
-        @font-face {
-            font-family: 'Halcom';
-            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-Thin-BF648a7145280f9.otf') format('opentype');
-            font-weight: 100;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'Halcom';
-            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-ThinItalic-BF648a714522fdf.otf') format('opentype');
-            font-weight: 100;
-            font-style: italic;
-        }
-
-        @font-face {
-            font-family: 'Halcom';
-            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-Light-BF648a71454e889.otf') format('opentype');
-            font-weight: 300;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'Halcom';
-            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-LightItalic-BF648a71454d055.otf') format('opentype');
-            font-weight: 300;
-            font-style: italic;
-        }
-
-        @font-face {
-            font-family: 'Halcom';
-            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-Regular-BF648a71453957a.otf') format('opentype');
-            font-weight: 400;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'Halcom';
-            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-Italic-BF648a71456443a.otf') format('opentype');
-            font-weight: 400;
-            font-style: italic;
-        }
-
-        @font-face {
-            font-family: 'Halcom';
-            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-Medium-BF648a714568789.otf') format('opentype');
-            font-weight: 500;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'Halcom';
-            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-MediumItalic-BF648a71455df9d.otf') format('opentype');
-            font-weight: 500;
-            font-style: italic;
-        }
-
-        @font-face {
-            font-family: 'Halcom';
-            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-Bold-BF648a714549635.otf') format('opentype');
-            font-weight: 700;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'Halcom';
-            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-BoldItalic-BF648a7145597de.otf') format('opentype');
-            font-weight: 700;
-            font-style: italic;
-        }
-
-        @font-face {
-            font-family: 'Halcom';
-            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-ExtraBold-BF648a71454d82a.otf') format('opentype');
-            font-weight: 800;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'Halcom';
-            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-ExtraBoldItalic-BF648a714551827.otf') format('opentype');
-            font-weight: 800;
-            font-style: italic;
-        }
-
-        @font-face {
-            font-family: 'Halcom';
-            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-Black-BF648a7144cd3a5.otf') format('opentype');
-            font-weight: 900;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'Halcom';
-            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-BlackItalic-BF648a71455b3bd.otf') format('opentype');
-            font-weight: 900;
-            font-style: italic;
-        }
-    </style>
+    <!-- Halcom Font Family - Loading from external CSS file -->
+    <link rel="stylesheet" href="./fonts.css">
 
     <style>
         @keyframes float {
@@ -1000,46 +902,46 @@ document.body.classList.add('loading');
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 md:gap-x-16 gap-y-8 md:gap-y-12 flex-grow">
 
-                <a href="#identite" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                <a href="./pages/le-sourire-de-l-oncle.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
                     <div class="flex justify-between items-center">
                         <span class="text-sm uppercase tracking-widest text-gray-500">01</span>
-                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">Identité de marque</h3>
+                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">LE SOURIRE DE L’ONCLE</h3>
                     </div>
                 </a>
 
-                <a href="#visuelle" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                <a href="./pages/livraison-express.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
                     <div class="flex justify-between items-center">
                         <span class="text-sm uppercase tracking-widest text-gray-500">02</span>
-                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">Identité visuelle</h3>
+                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">LIVRAISON EXPRESS</h3>
                     </div>
                 </a>
 
-                <a href="#mise-en-page" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                <a href="./pages/commandez-en-un-geste.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
                     <div class="flex justify-between items-center">
                         <span class="text-sm uppercase tracking-widest text-gray-500">03</span>
-                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">Mise en page</h3>
+                        <h3 class="text-xl md:text-xl font-semibold group-hover:text-yellow-500">COMMANDEZ EN UN GESTE</h3>
 
                     </div>
                 </a>
 
-                <a href="#digital" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                <a href="./pages/a-propos.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
                     <div class="flex justify-between items-center">
                         <span class="text-sm uppercase tracking-widest text-gray-500">04</span>
-                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">Usage digital</h3>
+                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">À PROPOS</h3>
                     </div>
                 </a>
 
-                <a href="#application" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                <a href="./pages/communaute.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
                     <div class="flex justify-between items-center">
                         <span class="text-sm uppercase tracking-widest text-gray-500">05</span>
-                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">Application</h3>
+                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">COMMUNAUTÉ</h3>
                     </div>
                 </a>
 
-                <a href="#typo" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                <a href="./pages/contacts.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
                     <div class="flex justify-between items-center">
                         <span class="text-sm uppercase tracking-widest text-gray-500">06</span>
-                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">Typographie</h3>
+                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">CONTACTS</h3>
                     </div>
                 </a>
             </div>
@@ -1057,8 +959,7 @@ document.body.classList.add('loading');
             <img src="./img/Oncle G - Logo.min.svg" alt="Logo" class="h-16">
         </div>
 
-        <button id="menuTriggerBtn"
-            class="nav-link hidden md:flex text-sm text-neutral-500 flex items-center gap-2 hover:text-yellow-500 transition-colors font-medium">
+        <button id="menuTriggerBtn" class="nav-link hidden md:flex text-sm text-neutral-500 flex items-center gap-2 hover:text-yellow-500 transition-colors font-medium">
             LE SOURIRE DE L’ONCLE <i class="fa-solid fa-arrow-right text-yellow-500 rotate-45"></i>
         </button>
 
@@ -1067,13 +968,28 @@ document.body.classList.add('loading');
             <i class="fa-solid fa-bars text-xl"></i>
         </button>
 
-        <div class="social-icons hidden md:flex gap-3">
-            <template x-for="social in ['facebook-f', 'instagram', 'linkedin-in', 'x-twitter', 'tiktok']">
-                <a href="#"
-                    class="social-btn w-9 h-9 bg-black text-white rounded-full flex justify-center items-center hover:bg-neutral-800 hover:scale-110 transition-all text-sm">
-                    <i :class="`fa-brands fa-${social}`"></i>
-                </a>
-            </template>
+        <div class="social-icons hidden md:flex gap-6">
+            <a href="#"
+                    class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                    <img src="./img/icone_social/facebook_icones.svg" class="h-10"  alt="facebook_icones">
+            </a>
+            <a href="#"
+                    class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                    <img src="./img/icone_social/instagram_icones.svg" class="h-10"  alt="facebook_icones">
+            </a>
+
+            <a href="#"
+                    class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                    <img src="./img/icone_social/x_icones.svg" class="h-10"  alt="facebook_icones">
+            </a>
+            <a href="#"
+                    class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                    <img src="./img/icone_social/tiktok_icones.svg" class="h-10"  alt="facebook_icones">
+            </a>
+            <!--<a href="#"
+                    class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                    <img src="./img/icone_social/linkedin_icones.svg" class="h-10"  alt="facebook_icones">
+            </a>-->
         </div>
     </header>
 
@@ -1118,7 +1034,7 @@ document.body.classList.add('loading');
 
         <!-- CONTAINER DU SLIDER -->
         <div
-            class="card-stack main-slider-container relative w-full h-[800px] sm:h-[850px] md:h-[900px] lg:h-[950px] max-w-[1600px] mx-auto mt-4 overflow-visible p-2 sm:p-4">
+            class="card-stack main-slider-container relative w-full h-[750px] sm:h-[800px] md:h-[750px] lg:h-[800px] max-w-[1600px] mx-auto mt-4 overflow-visible p-2 sm:p-4">
 
             <!-- LISTE DES CARTES -->
             <ul class="relative w-full h-full">
@@ -1835,7 +1751,7 @@ livraisons. </p>
             <div
                 class="sticky top-32 z-20 bg-zinc-900 text-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col-reverse md:flex-row h-[550px] md:h-[500px] mb-20 p-4 border-2 border-zinc-700">
                 <div class="md:w-1/2 flex flex-col justify-center p-8 md:p-16">
-                    <span class="text-3xl md:text-xl font-black mb-6 uppercase leading-none">REMISE EN MAIN PROPRE</span>
+                    <span class="text-4xl md:text-5xl font-black mb-6 uppercase leading-none">REMISE EN MAIN PROPRE</span>
                     <h3 class="text-yellow-500 font-bold uppercase tracking-widest text-sm mb-4">Un moment attendu, une promesse tenue</h3>
                     <p class="text-gray-600 text-sm leading-relaxed">
                   Ǫuand ONCLE G Livraisons frappe à votre porte, c’est la conclusion heureuse de chaque récit. Une poignée de main, un sourire, et votre quotidien est simplifié. </p>
@@ -1848,15 +1764,10 @@ livraisons. </p>
             </div>
 
             <div
-                class="sticky top-44 z-20 bg-zinc-900 text-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col-reverse md:flex-row h-[550px] md:h-[500px] mb-20 p-4 border-2 border-zinc-700">
-        <!-- Animated Background Elements -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-10 left-10 w-32 h-32 bg-white rounded-full animate-pulse"></div>
-            <div class="absolute top-1/3 right-20 w-24 h-24 bg-white rounded-full animate-bounce"></div>
-            <div class="absolute bottom-20 left-1/3 w-16 h-16 bg-white rounded-full animate-ping"></div>
-        </div>
+                class="sticky top-44 z-20 bg-zinc-900 text-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col-reverse md:flex-row  md:h-[500px] mb-20 p-4 border-2 border-zinc-700">
 
-        <div class="container bg-yellow-500 p-5 flex flex-col items-center justify-center rounded-[40px] mx-auto px-6 relative z-10">
+
+        <div class="container bg-yellow-500 [500px] p-5 flex flex-col items-center justify-center rounded-[40px] mx-auto px-6 relative z-10">
            <div class="container bg-yellow-500 p-4 sm:p-5 md:p-6 rounded-[30px] sm:rounded-[40px] mx-auto px-4 sm:px-6 relative z-10">
     <div class="max-w-4xl text-start md:text-center   mx-auto text-center">
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-black mb-4 sm:mb-6 uppercase tracking-tight sm:tracking-tighter leading-tight">
@@ -1874,7 +1785,7 @@ livraisons. </p>
             </a>
 
             <a href="#contact"
-               class="cta-secondary bg-white/20 backdrop-blur-sm text-black hover:text-yellow-400 text-sm sm:text-base md:text-lg font-bold uppercase tracking-wide sm:tracking-widest py-3 sm:py-4 px-6 sm:px-8 rounded-full transition-all duration-300 border-2 border-black hover:bg-white hover:border-yellow-400 w-full sm:w-auto min-h-[50px]">
+               class="cta-secondary text-center bg-white/20 backdrop-blur-sm text-black hover:text-yellow-400 text-sm sm:text-base md:text-lg font-bold uppercase tracking-wide sm:tracking-widest py-3 sm:py-4 px-6 sm:px-8 rounded-full transition-all duration-300 border-2 border-black hover:bg-white hover:border-yellow-400 w-full sm:w-auto min-h-[50px]">
                 Contactez-nous
             </a>
         </div>
@@ -2340,9 +2251,9 @@ De Bacongo à Moungali, les habitants témoignent. Chaque quartier a sa voix, ch
                         <span class="w-6 md:w-8 h-px bg-yellow-600 inline-block"></span>
                         Immédiat
                     </span>
-                    <h2 class="text-3xl md:text-5xl font-black mt-4 md:mt-6 uppercase leading-tight">La ligne<br>Directe</h2>
+                    <h2 class="text-3xl md:text-5xl font-black mt-4 md:mt-6 uppercase leading-tight">Des numéros,<br> des solutions</h2>
                     <p class="font-light text-gray-500 mt-4 md:mt-8 text-lg md:text-xl leading-relaxed max-w-sm">
-                        Une voix humaine derrière chaque appel. Pas de robot, juste l'Oncle.
+                        Un coup de fil suffit. Derrière la ligne, une voixrassurante qui prend en charge vos besoins. Déjà, <br> Oncle G Livraisons est en route.
                     </p>
                 </div>
                 <div class="mt-12 md:mt-20">
@@ -2357,11 +2268,11 @@ De Bacongo à Moungali, les habitants témoignent. Chaque quartier a sa voix, ch
                 <div>
                     <span class="text-gray-400 font-bold tracking-[0.2em] uppercase text-xs flex items-center gap-2">
                         <span class="w-6 md:w-8 h-px bg-gray-400 inline-block"></span>
-                        Correspondance
+                      ÉCRIVEZ-LUI !
                     </span>
-                    <h2 class="text-3xl md:text-5xl font-black mt-4 md:mt-6 uppercase leading-tight">Écrire à<br>la famille</h2>
+                    <h2 class="text-3xl md:text-5xl font-black mt-4 md:mt-6 uppercase leading-tight">Chaque message est une lettre d’un proche</h2>
                     <p class="font-light text-gray-500 mt-4 md:mt-8 text-lg md:text-xl leading-relaxed max-w-sm">
-                        Chaque message est lu avec soin. Une réponse personnelle, toujours.
+                        Nous lisons vos mots avec soin, comme sivous écriviez à un membre de la famille. La réponse est toujours humaine, jamais automatique.
                     </p>
                 </div>
                 <div class="mt-12 md:mt-20">
@@ -2377,8 +2288,9 @@ De Bacongo à Moungali, les habitants témoignent. Chaque quartier a sa voix, ch
 
         <div class="py-12 md:py-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-8 border-b border-gray-200 reveal-element">
             <div>
-                <h2 class="text-xl md:text-2xl font-black uppercase">Le Cercle Oncle G.</h2>
-                <p class="font-light text-gray-500 italic mt-1">Plus qu'un service, une communauté.</p>
+                <h2 class="text-xl md:text-2xl font-black uppercase">REJOIGNEZ-LE !</h2>
+                <span class="text-gray-500 text-xs md:text-sm italic mt-1">Chaque contact est une rencontre</span>
+                <p class="font-light text-gray-500 italic mt-1">ONCLE G Livraisons n’est pas seulement un service, c’est une communauté.<br> En nous écrivant, vous entrez dans une famille qui grandit avec vous.</p>
             </div>
             <a href="#" class="w-full md:w-auto text-center px-8 py-4 bg-black text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-yellow-500 hover:text-black transition-colors duration-300 shadow-lg">
                 Nous rejoindre
@@ -2742,10 +2654,10 @@ De Bacongo à Moungali, les habitants témoignent. Chaque quartier a sa voix, ch
                     if (mobileMenuBtn) {
                         mobileMenuBtn.classList.remove('hidden');
                     }
-                    // Show the desktop menu trigger when menu is closed
-                    if (menuTriggerBtn) {
-                        menuTriggerBtn.classList.remove('hidden');
-                    }
+                    // Show the desktop menu trigger when menu is closed (uniquement sur PC)
+                                      if (menuTriggerBtn && window.innerWidth >= 768) {
+                                          menuTriggerBtn.classList.remove('hidden');
+                                      }
                 } else {
                     menuOverlay.classList.replace('menu-closed', 'menu-open');
                     document.body.style.overflow = 'hidden';

@@ -1,0 +1,112 @@
+/* Halcom Font Family - Loading locally */
+@font-face {
+    font-family: 'Halcom';
+    src: url('./fonts/halcom-font-family-1769100539-0/Halcom-Thin-BF648a7145280f9.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Halcom';
+    src: url('./fonts/halcom-font-family-1769100539-0/Halcom-ThinItalic-BF648a714522fdf.otf') format('opentype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Halcom';
+    src: url('./fonts/halcom-font-family-1769100539-0/Halcom-Light-BF648a71454e889.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Halcom';
+    src: url('./fonts/halcom-font-family-1769100539-0/Halcom-LightItalic-BF648a71454d055.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Halcom';
+    src: url('./fonts/halcom-font-family-1769100539-0/Halcom-Regular-BF648a71453957a.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Halcom';
+    src: url('./fonts/halcom-font-family-1769100539-0/Halcom-Italic-BF648a71456443a.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Halcom';
+    src: url('./fonts/halcom-font-family-1769100539-0/Halcom-Medium-BF648a714568789.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Halcom';
+    src: url('./fonts/halcom-font-family-1769100539-0/Halcom-MediumItalic-BF648a71455df9d.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Halcom';
+    src: url('./fonts/halcom-font-family-1769100539-0/Halcom-Bold-BF648a714549635.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Halcom';
+    src: url('./fonts/halcom-font-family-1769100539-0/Halcom-BoldItalic-BF648a7145597de.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Halcom';
+    src: url('./fonts/halcom-font-family-1769100539-0/Halcom-ExtraBold-BF648a71454d82a.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Halcom';
+    src: url('./fonts/halcom-font-family-1769100539-0/Halcom-ExtraBoldItalic-BF648a714551827.otf') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Halcom';
+    src: url('./fonts/halcom-font-family-1769100539-0/Halcom-Black-BF648a7144cd3a5.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Halcom';
+    src: url('./fonts/halcom-font-family-1769100539-0/Halcom-BlackItalic-BF648a71455b3bd.otf') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}

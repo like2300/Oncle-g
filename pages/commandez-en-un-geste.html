@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Oncle G Corrigé - Images Affichées</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Découvrez les services innovants d'Oncle G : livraison express, impact sur les réseaux sociaux, compétitivité et formation de qualité.">
+    <meta name="keywords" content="Oncle G, services, livraison, réseaux sociaux, formation, compétitivité">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Oncle G - Services Innovants">
+    <meta property="og:description" content="Découvrez les services innovants d'Oncle G : livraison express, impact sur les réseaux sociaux, compétitivité et formation de qualité.">
+    <meta property="og:image" content="./img/Oncle G - Logo.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Oncle G - Services Innovants">
+    <meta property="twitter:description" content="Découvrez les services innovants d'Oncle G : livraison express, impact sur les réseaux sociaux, compétitivité et formation de qualité.">
+    <meta property="twitter:image" content="./img/Oncle G - Logo.svg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/icons/favicon-16x16.png">
+    <link rel="shortcut icon" href="./img/icons/favicon.ico">
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/icons/apple-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./img/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./img/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./img/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./img/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./img/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./img/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="./img/icons/apple-icon-57x57.png">
+
+    <!-- Android Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="./img/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="./img/icons/android-icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./img/icons/android-icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="72x72" href="./img/icons/android-icon-72x72.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="./img/icons/android-icon-48x48.png">
+    <link rel="icon" type="image/png" sizes="36x36" href="./img/icons/android-icon-36x36.png">
+
+    <!-- MS Icons -->
+    <link rel="icon" type="image/png" sizes="310x310" href="./img/icons/ms-icon-310x310.png">
+    <link rel="icon" type="image/png" sizes="150x150" href="./img/icons/ms-icon-150x150.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="./img/icons/ms-icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="70x70" href="./img/icons/ms-icon-70x70.png">
+
+    <!-- Manifest and Config -->
+    <link rel="manifest" href="./img/icons/manifest.json">
+    <meta name="msapplication-config" content="./img/icons/browserconfig.xml">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../fonts.css">
+
+        <style>
+
+        /* Styles utilitaires pour la troncation du texte */
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Cacher la barre de défilement */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .hover-overlay {
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+
+
+    <!-- Halcom Font Family - Loading from external CSS file -->
+    <link rel="stylesheet" href="./fonts.css">
+
+    <style>
+        @keyframes float {
+        0% { transform: translateY(0); opacity: 0.8; }
+        50% { transform: translateY(-6px); opacity: 1; }
+        100% { transform: translateY(0); opacity: 0.8; }
+        }
+
+        .slide-enter {
+        animation: slideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .slide-exit {
+        animation: slideOut 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        @keyframes slideIn {
+        0% { transform: translateX(100%) scale(0.9); opacity: 0; }
+        100% { transform: translateX(0) scale(1); opacity: 1; }
+        }
+
+        @keyframes slideOut {
+        0% { transform: translateX(0) scale(1); opacity: 1; }
+        100% { transform: translateX(-100%) scale(0.9); opacity: 0; }
+        }
+
+        /* Enhanced card transition */
+        .card-transition {
+        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Smooth next card preview animation */
+        .next-card-transition {
+        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Scale animation for smoother effect */
+        .scale-in {
+        animation: scaleIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        @keyframes scaleIn {
+        0% { transform: scale(0.8); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Fade animation */
+        .fade-in {
+        animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+        }
+
+        /* Slide from side animation */
+        .slide-from-right {
+        animation: slideFromRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        @keyframes slideFromRight {
+        0% { transform: translateX(50px); opacity: 0; }
+        100% { transform: translateX(0); opacity: 1; }
+        }
+
+        .slide-from-left {
+        animation: slideFromLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        @keyframes slideFromLeft {
+        0% { transform: translateX(-50px); opacity: 0; }
+        100% { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Consistent transition for all slide content */
+        .slide-content {
+        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Animation for content elements when slide enters */
+        .slide-content-element {
+        animation: slideContentIn 0.8s 0.2s both;
+        }
+
+        @keyframes slideContentIn {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        }
+
+        /* Apply different delays for staggered animations */
+        .slide-content-element:nth-child(1) { animation-delay: 0.1s; }
+        .slide-content-element:nth-child(2) { animation-delay: 0.2s; }
+        .slide-content-element:nth-child(3) { animation-delay: 0.3s; }
+        .slide-content-element:nth-child(4) { animation-delay: 0.4s; }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+        .main-slider-container {
+            width: 90vw;
+            height: 70vh;
+        }
+
+        .main-slide {
+            width: 100%;
+            height: 100%;
+            padding: 8%;
+        }
+
+        .preview-card {
+            width: 85vw;
+            height: 65vh;
+            transform: translateX(calc(50% + 20px)) translateY(-50%) !important;
+        }
+
+        .slide-content-text {
+            max-width: 60%;
+        }
+
+        .slide-elements-right {
+            right: 8%;
+        }
+        }
+
+        @media (max-width: 768px) {
+        .main-slider-container {
+            width: 95vw;
+            height: 60vh;
+            border-radius: 24px;
+        }
+
+        .main-slide {
+            padding: 10%;
+        }
+
+        .preview-card {
+            width: 90vw;
+            height: 55vh;
+            opacity: 0.2;
+            transform: translateX(calc(50% + 15px)) translateY(-50%) !important;
+        }
+
+        .slide-content-text {
+            max-width: 100%;
+        }
+
+        .slide-elements-right {
+            right: 10%;
+            top: 50%;
+        }
+
+        .slide-title {
+            font-size: 1.8rem;
+        }
+
+        .slide-description {
+            font-size: 0.9rem;
+        }
+
+        .slide-button {
+            padding: 0.7rem 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .indicator-position {
+            left: 10%;
+        }
+        }
+
+        @media (max-width: 480px) {
+        body {
+            padding: 4%;
+        }
+
+        .card-stack {
+            height: 60vh !important; /* Increased height for mobile */
+        }
+
+        .main-slider-container {
+            width: 100vw;
+            height: 60vh; /* Increased from 50vh to 60vh */
+            border-radius: 20px;
+        }
+
+        .main-slide {
+            padding: 8%;
+        }
+
+        .preview-card {
+            display: none; /* Hide preview on very small screens */
+        }
+
+        .slide-title {
+            font-size: 1.5rem;
+        }
+
+        .slide-description {
+            font-size: 0.8rem;
+        }
+
+        .slide-button {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.8rem;
+        }
+
+        .nav-arrows {
+            width: 30px;
+            height: 30px;
+            font-size: 0.8rem;
+        }
+
+        .dots-container {
+            margin-top: 4%;
+        }
+        }
+
+        /* Extra small mobile devices */
+        @media (max-width: 360px) {
+            .card-stack {
+                height: 65vh !important; /* Even taller for very small screens */
+            }
+
+            .main-slider-container {
+                height: 65vh !important;
+            }
+        }
+
+        /* Responsive styles for presentation popup */
+        @media (max-width: 768px) {
+            .presentation-popup-content {
+                max-width: 90%;
+                margin: 0 20px;
+                max-height: 80vh;
+            }
+
+            .presentation-popup-content .p-6 {
+                padding: 0.75rem;
+            }
+
+            .presentation-popup-content .grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .presentation-popup-content .element-item {
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .presentation-popup-content {
+                max-width: 95%;
+                margin: 0 10px;
+                max-height: 85vh;
+            }
+
+            .presentation-popup-content .p-6 {
+                padding: 0.5rem;
+            }
+
+            .presentation-popup-content .element-item {
+                padding: 0.75rem;
+            }
+
+            .presentation-popup-content .space-x-4 {
+                gap: 0.5rem;
+            }
+        }
+
+        /* Height control classes for slider cards */
+        .slider-height-small {
+        height: 400px !important;
+        }
+
+        .slider-height-medium {
+        height: 520px !important;
+        }
+
+        .slider-height-large {
+        height: 600px !important;
+        }
+
+        .slider-height-extra-large {
+        height: 700px !important;
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+
+
+
+                    // color default
+                    colors: {
+                        primary: '#facc15',
+                        secondary: '#1A1A1A',
+                        accent: '#FF4081',
+                    },
+                    fontFamily: {
+                        sans: ['Halcom', 'sans-serif'],
+                        heading: ['Halcom', 'sans-serif'],
+                    },
+                    animation: {
+                        'scale-down': 'scaleDown 500ms forwards',
+                        'scale-up': 'scaleUp 500ms forwards',
+                    },
+                    keyframes: {
+                        scaleDown: {
+                            '0%': { transform: 'scale(1) translateY(0)', opacity: '1' },
+                            '100%': { transform: 'scale(1.1) translateY(40px)', opacity: '0' },
+                        },
+                        scaleUp: {
+                            '0%': { transform: 'scale(1.1) translateY(-40px)', opacity: '0' },
+                            '100%': { transform: 'scale(1) translateY(0)', opacity: '1' },
+                        },
+                    },
+
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Petit style pour lisibilité */
+        .card-stack:hover .nav-btn {
+            opacity: 1;
+        }
+
+        /* Empêcher la sélection de texte accidentelle */
+        .no-select {
+            user-select: none;
+        }
+    </style>
+
+    <style>
+        /* Masquer la barre de scroll par défaut pour un look plus propre */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Premium Popup Styles */
+
+
+        .popup-image {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .popup-title {
+            animation: slideFromTop 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+
+        .popup-text {
+            animation: slideFromBottom 0.8s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+
+        .popup-button {
+            animation: scaleIn 0.8s 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        @keyframes slideFromTop {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideFromBottom {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Kinetic light effects */
+        .kinetic-light-1, .kinetic-light-2, .kinetic-light-3 {
+            position: absolute;
+            border-radius: 50%;
+             width: 200px;
+            height: 200px;
+            filter: blur(40px);
+            z-index: -1;
+            animation: moveLight 8s infinite alternate;
+        }
+
+        .kinetic-light-1 {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .kinetic-light-2 {
+            top: 60%;
+            left: 70%;
+            animation-delay: 2s;
+        }
+
+        .kinetic-light-3 {
+            top: 30%;
+            left: 50%;
+            animation-delay: 4s;
+        }
+
+        @keyframes moveLight {
+            0% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+            25% { transform: translate(20px, 30px) scale(1.2); opacity: 0.7; }
+            50% { transform: translate(-10px, 20px) scale(0.9); opacity: 0.4; }
+            75% { transform: translate(15px, -10px) scale(1.1); opacity: 0.6; }
+            100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+        }
+
+        /* Slide-in menu animation */
+        .menu-overlay {
+            transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        .menu-open { transform: translateY(0); }
+        .menu-closed { transform: translateY(-100%); }
+
+        /* Animation for showing the popup */
+        .popup-show {
+            transform: scale(1) !important;
+            opacity: 1 !important;
+        }
+
+        /* Animation for elements with delay */
+        .animate-fadeIn {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Custom font styles for different sections */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Halcom', sans-serif;
+            font-weight: 700; /* Bold weight for headings */
+        }
+
+        .hero-title {
+            font-family: 'Halcom', sans-serif;
+            font-weight: 900; /* Black weight for hero titles */
+            font-style: normal;
+        }
+
+        .section-title {
+            font-family: 'Halcom', sans-serif;
+            font-weight: 800; /* Extra bold weight for section titles */
+            font-style: normal;
+        }
+
+        .card-title {
+            font-family: 'Halcom', sans-serif;
+            font-weight: 700; /* Bold weight for card titles */
+            font-style: normal;
+        }
+
+        .navigation-text {
+            font-family: 'Halcom', sans-serif;
+            font-weight: 500; /* Medium weight for navigation */
+            font-style: normal;
+        }
+
+        .body-text {
+            font-family: 'Halcom', sans-serif;
+            font-weight: 400; /* Regular weight for body text */
+            font-style: normal;
+        }
+
+        .emphasis-text {
+            font-family: 'Halcom', sans-serif;
+            font-weight: 600; /* Semi-bold for emphasized text */
+            font-style: normal;
+        }
+
+        .italic-text {
+            font-family: 'Halcom', sans-serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+    </style>
+
+    <style>
+        body { font-family: 'Halcom', sans-serif; }
+        /* Ligne verticale personnalisée */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #374151, #eab308, #374151, transparent);
+        }
+        @media (max-width: 768px) {
+            .timeline-line::before { left: 20px; }
+        }
+    </style>
+
+    <style>
+
+        /* Effet de texte contour (Outline) */
+        .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+        }
+
+        /* Animation au survol des cartes */
+        .whawoo-card {
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .whawoo-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            background: #493801;
+            border-color: #eab308;
+        }
+
+        /* Décoration d'arrière-plan */
+        .bg-glow {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(234, 179, 8, 0.05) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        input , textarea {
+            color: black!important  ;
+        }
+    </style>
+
+    <style>
+        /* Bloquer le scroll pendant le chargement */
+        body.loading { overflow: hidden; }
+
+        /* Style initial des tracés */
+        .speed-path {
+            fill: transparent;           /* Transparent au début */
+            stroke: #eab308;             /* Jaune ONCLE G */
+            stroke-width: 1.5;           /* Épaisseur du trait */
+            stroke-dasharray: 2000;      /* Longueur du trait */
+            stroke-dashoffset: 2000;     /* Caché au départ */
+            opacity: 0.8;
+        }
+
+        /* 1. Animation de "Dessin" rapide */
+        .animate-draw {
+            animation: dash 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        @keyframes dash {
+            to { stroke-dashoffset: 0; }
+        }
+
+        /* 2. Animation de "Remplissage" (Impact) */
+        .animate-fill {
+            fill: #080606 !important;     /* Devient Blanc */
+            stroke: none;                 /* Enlève le contour */
+            transition: fill 0.3s ease-in, stroke 0.1s;
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+        }
+
+        /* Animation de disparition du loader */
+        .loader-fade-out {
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(1.1); /* Léger zoom avant de partir */
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+    </style>
+
+</head>
+
+<body class="bg-white p-0   overflow-x-hidden" x-data="cardStack()">
+
+
+
+
+<div id="loader-overlay" class="fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center overflow-hidden">
+
+    <div class="relative w-[300px] md:w-[600px] px-6">
+        <svg id="oncle-g-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 268.61" class="w-full h-auto drop-shadow-[0_0_15px_rgba(234,179,8,0.3)]">
+            <g id="logo-content">
+                <path class="speed-path" d="M216.38 162.61h5.83l-7.43 27.65h17.31l-1.46 5.26h-23.09l8.84-32.91zM239.19 170.69h5.69l-6.68 24.83h-5.69l6.68-24.83zm2.26-9.21h6.16l-1.5 5.41H240l1.46-5.41zM245.68 170.69h5.88l1.78 18.16 11.43-18.16h6.21l-16.74 25.02h-5.13l-3.43-25.02zM272.1 170.69h5.69l-1.46 5.6c2.73-3.95 5.97-6.35 10.39-6.07l-1.6 6.02h-.33c-4.99 0-9.31 3.2-11.14 10.06l-2.45 9.22h-5.74l6.63-24.83z"></path>
+                <path class="speed-path" d="M280.71 189.27c0-2.49.89-4.47 2.35-5.97 1.97-1.93 4.98-3.01 8.51-3.01 2.92 0 5.5.56 7.71 1.22l.14-.42c.14-.61.28-1.31.28-2.07 0-2.31-1.6-3.76-5.5-3.76-2.49 0-4.8.56-6.77 1.36l-.94-4.61c2.54-.99 5.46-1.65 8.84-1.65 6.49 0 9.92 2.82 9.92 7.67 0 1.22-.23 2.4-.52 3.62l-3.71 13.87h-5.5l.85-3.29c-2.12 2.35-4.84 3.81-8.18 3.81-4.23 0-7.48-2.68-7.48-6.77m17.4-3.24l.33-1.13c-1.6-.52-3.76-.94-6.02-.94-2.07 0-3.72.61-4.8 1.64-.8.8-1.22 1.84-1.22 3.01 0 1.98 1.55 3.34 4.05 3.34 3.43 0 6.72-2.59 7.66-5.92M311.04 170.69h5.69l-6.68 24.83h-5.69l6.68-24.83zm2.26-9.21h6.16l-1.5 5.41h-6.11l1.46-5.41zM312.68 191.62l3.43-3.48c2.63 2.64 5.5 3.48 8.04 3.48 2.21 0 3.95-1.13 3.95-2.96 0-1.22-1.13-2.07-3.62-3.1-4.14-1.69-7.15-3.29-7.15-7.1 0-4.66 3.76-8.28 9.73-8.28 3.9 0 7.52 1.74 9.55 3.53l-3.15 3.67c-2.26-1.79-4.51-2.73-6.82-2.73-2.45 0-3.81 1.22-3.81 2.82 0 1.27 1.13 2.07 3.95 3.24 3.76 1.6 6.82 3.34 6.82 6.96 0 5.12-4.23 8.42-9.92 8.42-3.76 0-8.09-1.46-11-4.47M361.45 181.56c0 3.81-1.65 7.52-4.37 10.2-2.59 2.63-6.16 4.33-10.11 4.33-7.1 0-11.66-4.8-11.66-11.33 0-3.86 1.64-7.52 4.37-10.25 2.58-2.64 6.16-4.33 10.11-4.33 7.1 0 11.66 4.8 11.66 11.38m-8.66 7.19c1.93-1.88 3.01-4.66 3.01-7.05 0-4.23-2.59-6.59-6.35-6.59-2.12 0-4.05.99-5.5 2.4-1.93 1.88-3.01 4.66-3.01 7.05 0 4.23 2.59 6.58 6.35 6.58 2.12 0 4.09-.94 5.5-2.4M366.66 170.69h5.69l-.85 3.15c1.97-1.93 4.37-3.67 7.57-3.67 4.56 0 7.52 2.87 7.52 7.43 0 1.32-.38 2.92-.75 4.37l-3.57 13.54h-5.69l3.67-13.78c.23-.8.38-1.79.38-2.49 0-2.49-1.6-3.9-4.33-3.9-3.2 0-5.83 2.54-6.82 6.21l-3.72 13.97h-5.74l6.63-24.83zM384.25 191.62l3.43-3.48c2.63 2.64 5.5 3.48 8.04 3.48 2.21 0 3.95-1.13 3.95-2.96 0-1.22-1.13-2.07-3.62-3.1-4.14-1.69-7.15-3.29-7.15-7.1 0-4.66 3.76-8.28 9.73-8.28 3.9 0 7.52 1.74 9.55 3.53l-3.15 3.67c-2.26-1.79-4.51-2.73-6.82-2.73-2.45 0-3.81 1.22-3.81 2.82 0 1.27 1.13 2.07 3.95 3.24 3.76 1.6 6.82 3.34 6.82 6.96 0 5.12-4.23 8.42-9.92 8.42-3.76 0-8.09-1.46-11-4.47"></path>
+                <path class="speed-path" d="M82.74 133.62c-4.49 5.28-9.21 4.94-5.85-2.85 1.54-3.57 5.33-5.67 5.75-9.57.51-4.63-5.06-17.61 5.55-14.85.99-11.35 2.9-21.33 9.05-31.04 12.48-19.69 34.73-27.62 57.23-21.32 27.89 7.8 41.64 42.11 34.08 68.72 12.56-1.2-.54 13.65-1.07 19.43-.32 3.47 3.96 7 2.58 12.9-.74 3.16-3.29 2.38-4.7.04-.65-1.08-.62-2.98-1.71-3.46-6.66 26.99-22.39 58.21-52.1 64.34l-66.79-.27c-2.14-1.29-2.51-4.48-.82-6.26 2.21-2.32 9.99-.15 12.99-1.6 1.96-2.82.8-5.65-2.63-6.05-3.89-.46-21.37.92-23.05-.68-.26-.25-1.07-2.05-1.12-2.44-.86-7.08 13.06-4.02 17.05-3.94 3.07.06 12.85.77 14.19-2.21 1-2.82-.23-5.1-3.24-5.47-5.51-.67-12.14.61-17.48.57-2.47-.02-6.44-.4-7.5-2.87-3.24-7.57 12.14-4.45 15.7-4.74 7.83-.62 7.28-7 1.63-7.67-9.57-1.14-21.28.88-31.09 0-1.49-.37-2.38-1.48-2.52-2.98-.65-7.03 13.48-4.12 17.75-4.08 6.29.07 14.12.51 20.22 0 3.23-.27 6.19-1.16 5.05-5.08-1.64-5.68-18.21.08-22.48-3.17-2.27-1.73-1.1-6.49 1.04-6.49h24.82c.14-.4-.55-.65-.55-.82v-16.09zm104.17-8.73c3.68-16.8 2.95-32.78-5.91-47.81-22.98-38.98-79.66-27.93-89.27 15.63-1.35 6.11-1.62 12.44-3 18.54l-1.68-3.76c-4.87-.72-4 4.4-3.76 7.85.11 1.65 1.07 4.07 1.01 5.5-.05 1.19-1.31 2.15-1.02 3.51l2.16.03.3 1.61 2.45-1.64c-2.07 4.64-4.55 6.41-3.68 12.14.91 5.96 6.25 20.08 8.58 26.31 1.91 5.11 4.12 10.12 6.56 14.99 2.35-2.51 2.58-6.25 4.47-9.43 3.46-5.84 12.4-11.9 19.15-11.19 4.22.44 14.03 1.75 17.74 2.99 3.61 1.2 10.09 8.8 11.64 12.36 2.12 4.86 2.18 9.71 3.99 14.54 5.39-5.9 11.18-11.98 16.07-18.27 4.37-5.62 9.76-12.12 9.85-19.64.03-2.4-1.75-4.72-1.1-7.33 2.19-.42.21 2.9 1.91 3.81l.52-2.77 2.23-.45c.24-4.74 3.53-8.5 5.26-12.76.5-1.25 1.87-4.03 1.05-5.03-1.52-1.59-3.79-.25-5.51.3zm-108.53 9.27c1.31.1 5.29-6.2 2.99-5.99-.46.04-3.45 4.87-2.99 5.99zm109.61 20.18c.21-2.28-.18-4.57-1.36-6.54-1.68 1.43-.09 5.33 1.36 6.54zm-50.71 30.54c-1.69 4.77-8.32 7.51-2.36 11.9 5.37 3.95 8.78.91 11.74-3.89 3.58-5.81 4.83-10.85.67-16.69-6.25-8.78-14.33-11.44-25.04-11.54-3.3-.03-12.71 4.3-14.39 6.92-.67 1.04-2.59 8.53-2.64 9.9-.22 5.68 6.68 17.27 12.68 11.59 3.26-3.09-.72-7.28-.28-10.92l10.63 2.73h9z"></path>
+                <path class="speed-path" d="M36.25 179.57c1.55-.23 9.94.12 11.2.5 2.49.75 2.87 5.77-.13 6.74-.84.27-4.26.76-5.23.78-2.65.08-9 0-9.84-2.7-1.02-3.29.99-4.88 4-5.33zM58.59 215.28c-2.16 2.3-14.41 2.53-12.16-4.26.92-2.76 8.57-2.72 10.83-2.04 2.08.62 2.67 4.86 1.33 6.3zM123.83 109.98c.6.6 1.78.83 1.99 1.82-3.12.02-6.82-.03-9.85-.78-2.32-.57-5.79-2.89-7.91-2.99-2.26-.11-5.16 1.36-7.33 1.86.02-1.9 6.17-7.32 7.37-7.22 3.03 3.17 7.87 2.35 11.72 3.96 2.18.91 2.61 1.96 4.01 3.35zM169.38 112.4c1.7 3.03 4.7 5.32 4.43 9.22-1.87-1.26-4.74-3.83-6.95-4.25-2.19-.42-5.74.69-8.59.43-2.9-.27-6.09-1.7-9-2.18l7.41-3.22c4.48-.24 8.39 2.06 12.69 0zM105.65 118.09c2.84 3.8 5.68 3.95 10.11 4.11 1.09.04 2.1-.55 3.19-.52 1.92.07 4.22 1.38 6.33 1.05-5.02-6.38-12.19-8.85-19.63-4.63zm1.64-.29l2.21-.28 2.14 3.56c-.57.48-5.31-2.32-4.35-3.28zm6.64.48c-.35-.41-.48-1.03-.41-1.27.04-.24.15-.44.39-.42.24 0 2.53.31 2.82.39l.28.09s.04.11.15.26c.11.13.13.22.13.22s-.33.52-1.42.87c-1.07.35-1.59.26-1.94-.15zm2.07 2.54l1.92-3.01c1.14.02 4.04 2.69 4.63 3.82l-6.55-.81z"></path>
+                <path class="speed-path" d="M104.55 115.08c-.03-.8 1.96-.83 2.61-.93 6.01-.96 12.01-.49 16.97 3.43.23.18 1.58 1.06.86 1.32-2.34-1.26-7.27-3.82-9.81-3.82h-10.64zM160.45 121.08c2.8.44 7.87 3.52 10.09 5.45-2.98-.61-9-4.36-11.73-4.36h-8.45v-.54c.68.21 1.58-.55 1.91-.55 2.4 0 6-.34 8.18 0zM146 154.33c.27-.91 1.44-.95 2.19-1.89 1.38-1.71 1.32-4.4 1.03-6.51-.24-1.75-1.57-3.07-1.32-4.68 3.88 3.36 5.18 13.56-1.9 13.08zM160.18 143.43c-2.38-1.48-4.69-3.04-6.55-5.17l-5.98-7.92c3.71 3.71 8.07 7.16 11.45 11.18.51.61 1.32.89 1.08 1.91zM119.28 151.06c-6.84-2.74-6.19-10.64 0-13.63-.32 1.86-2.21 2.6-2.85 4.51-1.33 4.02.28 6.28 2.85 9.12zM145.45 152.16c-1.14-.31-.72-2.1-1.64-2.99-1.03-1.01-2.54-.92-3.82-.58-1.89.5-3.44 2.91-5.44 2.76 2.89-5.21 11.31-7.1 10.9.81zM121.46 127.62c-3.91 3.29-8.98 6.62-14.18 7.08l14.18-7.08zM129.63 150.52c-1.13-.93-1.71-2.29-3-3.26-2.18-1.64-3.88-2.28-6.26-.55 1.84-5.56 8.99-.42 9.26 3.81zM152.54 156.52c1.15 1.12 2 8.51 1.64 10.36l-2.71-10.09 1.08-.26zM87.09 112.9l-1.91-1.1-.26 5.46c-2.36-3.54-.12-10.99 2.17-4.36zM187.46 133.07l1.64-4.63-1.64-.55c4.27-2.86 2.74 3.96 0 5.18zM111.64 150.53l-4.9 7.08c-.62-1.39 3.84-8.11 4.9-7.08zM120.77 167.01c5.81-1 6.52 1.87 9.17 2.04 1.84.12 3.06-.96 5.72-.27 3.52.91 8.5 5.94 10.81 8.63-3.66 6.09-10.08 6.28-16.55 5.82-7.38-.52-18.47-2.72-19.32-11.62.31-.96 8.78-4.36 10.16-4.6zm21.41 8.05c-1.5-2.36-6.17-5.49-8.94-5.41-1.21.04-2.69 1.04-3.81.91-1.31-.15-3.07-2.34-5.03-2.57-2.72-.32-7.13 1.6-9.49 2.99l27.27 4.08zm2.73 2.19l-33.27-5.46c1.8 7.29 8.58 8.8 15.09 9.72 6.57.93 13.81 1.83 18.18-4.27z"></path>
+                <path class="speed-path" d="M167.52 128.39c-.26-.35-1.46-1.38-3.87-2.84-2.4-1.46-4.32-1.79-6.68-1.81-2.34-.02-6.64 2.1-7.88 2.64s-.9.68-.9.68 4 .72 5.24.83c1.27.11 1.97 1.05 4.63 1.86 2.66.79 4.19 1.05 6.75.44 2.53-.61 2.99-1.46 2.99-1.46l-.28-.33zm-12.93-.87c-.33-.2-.74-.17-1.57-.28-.81-.09-2.21-.26-2.42-.42-.22-.13-.07-.35.02-.39.09-.04 1.77-.85 3.23-1.4 1.44-.55 1.4-.5 1.31-.11-.07.37-.22.92.02 1.62.26.7.55 1.53.55 1.53s-.79-.35-1.14-.55zm4.7-1.59c-.37.39-.87.76-1.57.44-.7-.33-1.73-1.03-1.75-1.29-.04-.28.04-.37.46-.48.44-.11 1.29-.2 2.08-.11.76.11 1.09.22 1.16.24.07.02.11.11.11.11s-.09.68-.48 1.09zm7.75 2.88l-.07.17s-2.14.94-3.04 1c-.92.04-1.9.02-2.64-.13-.72-.15-.98-.2-.98-.2l1.75-1.35 1.51-2.16s1.18.59 2.34 1.42 1.16.85 1.16.85.04.24-.02.39z"></path>
+                <path class="speed-path" d="M284 105.74c0 10.98-4.62 21.96-12.62 29.97-7.6 7.59-18.06 12.52-30.59 12.52-19.81 0-32.84-13.76-32.84-31.82 0-10.98 4.62-21.96 12.62-29.97 7.59-7.59 18.06-12.52 30.58-12.52 19.81 0 32.84 13.75 32.84 31.82m-24.72 20.83c5.23-5.24 8.31-12.93 8.31-19.81 0-10.67-6.46-18.27-18.27-18.27-6.67 0-12.42 2.87-16.63 7.08-5.24 5.24-8.31 12.93-8.31 19.81 0 10.67 6.47 18.27 18.27 18.27 6.67 0 12.42-2.88 16.63-7.08M292.63 91.98h15.6l-1.54 5.75c3.9-3.49 8.83-6.77 14.98-6.77 9.85 0 16.22 6.05 16.22 16.01 0 3.08-.92 6.98-1.85 10.47l-7.9 29.56h-15.6l8.11-30.17c.41-1.54.72-3.59.72-4.93 0-4.41-2.77-6.77-7.6-6.77-6.16 0-10.16 4.41-11.9 10.98L293.56 147h-15.6l14.68-55.01zM337.9 123.39c0-8.93 3.59-16.94 9.44-22.79 5.95-5.95 14.16-9.65 22.99-9.65 12.11 0 18.78 5.54 22.58 12.11L381 111.48c-2.77-4.21-5.75-7.18-11.91-7.18-3.59 0-7.08 1.74-9.85 4.52-3.59 3.59-5.95 8.93-5.95 14.57 0 7.08 4.72 11.6 10.78 11.6 4.83 0 8.31-1.95 12.42-5.44l8.01 10.16c-5.75 5.13-11.6 8.52-20.94 8.52-14.99 0-25.66-9.85-25.66-24.84M403.28 72.07h15.6l-20.11 74.92h-15.61l20.12-74.92zM424.43 124.93c.51 6.47 4.41 10.78 12.62 10.78 4.1 0 7.7-1.23 12.21-4.41l7.18 9.65c-4.93 4.1-11.8 7.29-21.14 7.29-15.81 0-25.45-9.24-25.45-24.43 0-8.52 3.69-17.24 9.95-23.5 5.64-5.65 13.45-9.34 22.68-9.34 14.27 0 22.48 9.24 22.48 21.45 0 3.9-1.02 8.31-2.77 12.52h-37.77zm1.43-9.75h23.91c.31-1.03.51-2.26.51-3.59 0-4.52-2.67-8.11-9.03-8.11-4.31 0-8.11 1.74-10.98 4.62-1.95 1.95-3.39 4.31-4.41 7.08M489.09 117.03c0-11.19 4.72-21.96 12.73-29.97 8.01-8 19.19-13.14 32.12-13.14 15.19 0 24.32 5.85 29.35 12.42l-11.7 10.37c-4.21-4.62-9.85-8.31-18.88-8.31-7.39 0-14.06 3.08-18.88 7.9-5.03 5.03-8.31 12.42-8.31 20.22 0 11.19 8.21 17.24 18.37 17.24 5.54 0 9.65-1.33 12.83-2.77l3.39-11.7H524.2l3.69-13.65h31.2l-10.16 35.82c-7.08 4-15.29 6.78-26.07 6.78-16.42 0-33.77-9.75-33.77-31.2"></path>
+            </g>
+        </svg>
+
+        <div class="mt-8 h-[2px] w-full bg-zinc-900 rounded-full overflow-hidden">
+            <div id="loader-progress" class="h-full bg-yellow-500 w-0 transition-all duration-[200ms] ease-out"></div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const body = document.body;
+        const loaderOverlay = document.getElementById('loader-overlay');
+        const paths = document.querySelectorAll('.speed-path');
+        const progressBar = document.getElementById('loader-progress');
+
+        // Récupération des sons
+        const audioElectric = document.getElementById('audio-electric');
+        const audioStop = document.getElementById('audio-stop');
+
+        // Réglage volumes
+        if(audioElectric) audioElectric.volume = 0.5;
+        if(audioStop) audioStop.volume = 1.0;
+
+        // 1. Initialisation : Bloquer le scroll
+        body.classList.add('loading');
+
+        // 2. Lancer l'animation de tracé (Visuel immédiat)
+        paths.forEach(path => {
+            path.classList.add('animate-draw');
+        });
+
+        // 3. Tenter de lancer le son électrique (Peut être bloqué par le navigateur)
+        if(audioElectric) {
+            audioElectric.play().catch(() => console.log("Autoplay audio bloqué"));
+        }
+
+        // --- SIMULATION D'ATTENTE (TRICKLE) ---
+        // On fait avancer la barre doucement tant que la page n'est pas chargée
+        // pour ne pas qu'elle reste bloquée à 0%.
+        let progress = 0;
+        const interval = setInterval(() => {
+            // On augmente doucement jusqu'à 90% max
+            if (progress < 90) {
+                // Plus on avance, plus ça ralentit (effet naturel)
+                let increment = (90 - progress) / 20;
+                progress += Math.max(0.5, increment);
+                progressBar.style.width = progress + "%";
+            }
+        }, 100);
+
+        // --- LE VRAI ÉVÉNEMENT DE CHARGEMENT ---
+        // Se déclenche quand TOUT est chargé (Images, CSS, JS externe)
+        window.addEventListener('load', () => {
+
+            // On arrête la simulation d'attente
+            clearInterval(interval);
+
+            // On force la barre à 100% instantanément
+            progressBar.style.width = "100%";
+
+            // Petite pause de 200ms pour que l'œil voie la barre pleine
+            setTimeout(() => {
+                finishLoader();
+            }, 200);
+        });
+
+        // Fonction de fermeture
+        function finishLoader() {
+            // Arrêt son électrique
+            if(audioElectric) {
+                audioElectric.pause();
+                audioElectric.currentTime = 0;
+            }
+
+            // Jouer l'impact (STOP)
+            if(audioStop) {
+                audioStop.play().catch(() => {});
+            }
+
+            // Remplissage Blanc du Logo (L'Impact Visuel)
+            paths.forEach(path => {
+                path.classList.add('animate-fill');
+            });
+
+            // Disparition finale (Après l'impact)
+            setTimeout(() => {
+                loaderOverlay.classList.add('loader-fade-out');
+                body.classList.remove('loading');
+            }, 600); // 0.6s pour laisser le temps de voir le logo blanc
+        }
+
+        // SÉCURITÉ : Si la page met plus de 10 secondes (bug réseau), on force l'ouverture
+        setTimeout(() => {
+            if (body.classList.contains('loading')) {
+                window.dispatchEvent(new Event('load'));
+            }
+        }, 10000);
+    });
+</script>
+
+<style>
+    /* Masquer le scroll pendant le chargement */
+    body.loading { overflow: hidden; }
+
+    #oncle-g-loader path {
+        fill: none;
+        stroke: #eab308;
+        stroke-width: 0.5;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: draw 2s ease-in-out forwards;
+    }
+
+    /* Animation du tracé */
+    @keyframes draw {
+        to { stroke-dashoffset: 0; }
+    }
+
+    /* Remplissage final et éclat */
+    .fill-final {
+        fill: #fff !important;
+        stroke: none !important;
+        transition: fill 0.8s ease-in;
+    }
+
+    /* Effet de fondu du loader */
+    .fade-out {
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    /* Animation de "Vitesse" (Shine) */
+    #oncle-g-loader::after {
+        content: '';
+        position: absolute;
+        top: 0; left: -100%;
+        width: 50%; height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(234, 179, 8, 0.4), transparent);
+        transform: skewX(-25deg);
+        animation: speed-shine 1.5s infinite;
+    }
+
+    @keyframes speed-shine {
+        to { left: 200%; }
+    }
+</style>
+
+
+<script>
+    window.addEventListener('load', () => {
+    const progress = document.getElementById('progress-line');
+    const loader = document.getElementById('loader-wrapper');
+    const paths = document.querySelectorAll('#oncle-g-loader path');
+
+    // 1. Simuler la progression
+    setTimeout(() => {
+        progress.style.width = '100%';
+    }, 100);
+
+    // 2. Une fois le tracé fini, on remplit le logo en blanc
+    setTimeout(() => {
+        paths.forEach(path => {
+            path.classList.add('fill-final');
+        });
+    }, 1800);
+
+    // 3. On fait disparaître le loader avec un effet de scale
+    setTimeout(() => {
+        loader.classList.add('fade-out');
+        document.body.classList.remove('loading');
+    }, 2800);
+});
+
+// Ajouter la classe loading au body dès le départ
+document.body.classList.add('loading');
+</script>
+
+
+
+
+    <!-- Slide-in Navigation Menu -->
+    <div id="menuOverlay" class="fixed inset-0 z-50 bg-black/90 menu-overlay menu-closed overflow-y-auto p-6 md:p-12 lg:p-24">
+        <div class="flex flex-col h-full">
+             <header class="mb-12 md:mb-20">
+                <!-- <h2 class="text-4xl md:block hidden md:text-5xl lg:text-7xl font-bold tracking-tight text-white">Navigation</h2> -->
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 md:gap-x-16 gap-y-8 md:gap-y-12 flex-grow">
+
+                <a href="./pages/le-sourire-de-l-oncle.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm uppercase tracking-widest text-gray-500">01</span>
+                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">LE SOURIRE DE L’ONCLE</h3>
+                    </div>
+                </a>
+
+                <a href="./pages/livraison-express.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm uppercase tracking-widest text-gray-500">02</span>
+                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">LIVRAISON EXPRESS</h3>
+                    </div>
+                </a>
+
+                <a href="./pages/commandez-en-un-geste.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm uppercase tracking-widest text-gray-500">03</span>
+                        <h3 class="text-xl md:text-xl font-semibold group-hover:text-yellow-500">COMMANDEZ EN UN GESTE</h3>
+
+                    </div>
+                </a>
+
+                <a href="./pages/a-propos.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm uppercase tracking-widest text-gray-500">04</span>
+                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">À PROPOS</h3>
+                    </div>
+                </a>
+
+                <a href="./pages/communaute.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm uppercase tracking-widest text-gray-500">05</span>
+                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">COMMUNAUTÉ</h3>
+                    </div>
+                </a>
+
+                <a href="./pages/contacts.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm uppercase tracking-widest text-gray-500">06</span>
+                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">CONTACTS</h3>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Close button -->
+            <button id="closeMenuBtn" class="mt-5 w-[50px] h-[50px]   bg-yellow-500 flex items-center justify-center text-white self-start">
+                <i class="fas fa-times text-4xl "></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="flex  justify-between items-center px-8 py-5 max-w-[1400px] mx-auto relative z-50">
+        <div class="logo flex items-center gap-3 cursor-pointer">
+            <img src="../img/Oncle G - Logo.min.svg" alt="Logo" class="h-16">
+        </div>
+
+        <button id="menuTriggerBtn" class="nav-link hidden md:flex text-sm text-neutral-500 flex items-center gap-2 hover:text-yellow-500 transition-colors font-medium">
+           CONTACTS <i class="fa-solid fa-arrow-right text-yellow-500 rotate-45"></i>
+        </button>
+
+        <!-- Mobile button for slide-in menu -->
+        <button id="mobileMenuBtn" class="md:hidden text-neutral-500 flex items-center hover:text-yellow-500 transition-colors p-2 z-[70]">
+            <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+
+        <div class="social-icons hidden md:flex gap-6">
+            <a href="#"
+                    class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                    <img src="../img/icone_social/facebook_icones.svg" class="h-10"  alt="facebook_icones">
+            </a>
+            <a href="#"
+                    class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                    <img src="../img/icone_social/instagram_icones.svg" class="h-10"  alt="facebook_icones">
+            </a>
+
+            <a href="#"
+                    class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                    <img src="../img/icone_social/x_icones.svg" class="h-10"  alt="facebook_icones">
+            </a>
+            <a href="#"
+                    class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                    <img src="../img/icone_social/tiktok_icones.svg" class="h-10"  alt="facebook_icones">
+            </a>
+            <!--<a href="#"
+                    class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                    <img src="./img/icone_social/linkedin_icones.svg" class="h-10"  alt="facebook_icones">
+            </a>-->
+        </div>
+    </header>
+
+    <!-- Premium Popup Modal -->
+    <div id="premiumPopup" class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-lg hidden z-50 flex items-center justify-center p-4">
+      <div class="popup-content     rounded-2xl   max-w-md w-full overflow-hidden transform scale-90 opacity-0 transition-all duration-500">
+        <div class="relative">
+          <!-- Close Button (X) -->
+          <button id="closePopupX" class="absolute hidden top-4 right-4 text-white bg-red-500 rounded-full w-8 h-8 flex items-center justify-center z-10 hover:bg-red-600 transition-colors">
+            <i class="fas fa-times"></i>
+          </button>
+
+          <!-- Centered Image -->
+          <div class="image-container relative overflow-hidden">
+            <img src="../img/Oncle G - Logo.svg" alt="Oncle G Premium" class="w-full h-48 object-contain  popup-image animate-float">
+            <div class="absolute inset-0    opacity-50"></div>
+          </div>
+
+          <!-- Content -->
+          <div class="p-6 text-center">
+            <h2 class="text-2xl font-bold text-white mb-3 popup-title">Bienvenue Chez Oncle G</h2>
+            <p class="text-gray-300 mb-6 popup-text">Découvrez notre expérience premium unique et nos services exceptionnels qui vous attendent.</p>
+
+            <!-- Centered Button -->
+            <button id="exploreButton" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 popup-button">
+              Explorer Maintenant
+            </button>
+          </div>
+        </div>
+
+        <!-- Kinetic light effects -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div class="kinetic-light-1"></div>
+          <div class="kinetic-light-2"></div>
+          <div class="kinetic-light-3"></div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Hero Section with Animated Bars -->
+        <section class="relative flex justify-center items-center h-screen w-full overflow-hidden bg-white pt-20">
+            <!-- Animated Background -->
+            <div class="absolute inset-0 bg-gradient-to-br from-gray-100 to-white"></div>
+
+            <!-- Right Side Animated Bars -->
+            <div    class="side-panel absolute -right-20 md:-right-1 md:top-1/8 top-80 transform -translate-y-1/2 flex flex-col gap-3 opacity-40 md:opacity-90 scale-50 -z-5 md:scale-100 transition-all duration-300 translate-x-10 md:translate-x-0">
+                <div class="flex justify-end">
+                    <div class="bar w-16 h-4 bg-black rounded-full"></div>
+                </div>
+                <div class="flex justify-end gap-2">
+                    <div class="bar w-24 h-4 bg-black rounded-full"></div>
+                </div>
+                <div class="flex justify-end gap-3">
+                    <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                    <div class="bar w-20 h-4 bg-black rounded-full"></div>
+                </div>
+                <div class="flex justify-end gap-4 relative -left-8">
+                    <div class="bar w-10 h-4 bg-black rounded-full"></div>
+                    <div class="bar w-40 h-4 bg-black rounded-full"></div>
+                    <div class="bar w-6 h-4 bg-black rounded-full"></div>
+                </div>
+                <div class="flex justify-end gap-3">
+                    <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                    <div class="bar w-20 h-4 bg-black rounded-full"></div>
+                </div>
+                <div class="flex justify-end">
+                    <div class="bar w-24 h-4 bg-black rounded-full"></div>
+                </div>
+                <div class="flex justify-end">
+                    <div class="bar w-28 h-4 bg-black rounded-full"></div>
+                </div>
+                <div class="flex justify-end gap-4 relative -left-8">
+                    <div class="bar w-10 h-4 bg-black rounded-full"></div>
+                    <div class="bar w-40 h-4 bg-black rounded-full"></div>
+                    <div class="bar w-6 h-4 bg-black rounded-full"></div>
+                </div>
+                <div class="flex justify-end gap-2">
+                    <div class="bar w-24 h-4 bg-black rounded-full"></div>
+                </div>
+                <div class="flex justify-end gap-2">
+                    <div class="bar w-32 h-4 bg-black rounded-full"></div>
+                    <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                </div>
+                <div class="flex justify-end">
+                    <div class="bar w-24 h-4 bg-black rounded-full"></div>
+                </div>
+                <div class="flex justify-end">
+                    <div class="bar w-14 h-4 bg-black rounded-full"></div>
+                </div>
+            </div>
+
+            <!-- Center Content -->
+            <div class="text-center w-full md:w-2/4 px-6 z-10 fade-in">
+
+            <h2 class="text-sm uppercase tracking-[0.4em] text-yellow-500 font-bold mb-4">COMMANDEZ EN UN GESTE</h2>
+                   <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wide mb-4"> Un appel, et l’histoire commence
+           </h2>
+                  <p class="mt-8 text-gray-400 text-lg max-w-2xl mx-auto">
+           Pas besoin de complications. Vous commandez, ONCLE G Livraisons écoute, et déjà la magie opère. Simple, direct,
+    humain : c’est ainsi que nous écrivons chacune de vos
+    livraisons. </p>
+            </div>
+
+            <!-- Left Side Animated Bars -->
+            <div class="side-panel   absolute -left-8 md:-left-1 md:top-1/2 -bottom-80  rotate-180 transform -translate-y-1/2 flex flex-col gap-3 opacity-40 md:opacity-90 scale-50 md:scale-100 transition-all duration-300 -translate-x-10 md:translate-x-0">
+                <div class="flex justify-end">
+                    <div class="bar w-16 h-4 bg-black rounded-full"></div>
+                </div>
+                <div class="flex justify-end gap-2">
+                    <div class="bar w-24 h-4 bg-black rounded-full"></div>
+                </div>
+                <div class="flex justify-end gap-3">
+                    <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                    <div class="bar w-20 h-4 bg-black rounded-full"></div>
+                </div>
+                <div class="flex justify-end gap-4 relative -left-8">
+                    <div class="bar w-10 h-4 bg-black rounded-full"></div>
+                    <div class="bar w-40 h-4 bg-black rounded-full"></div>
+                    <div class="bar w-6 h-4 bg-black rounded-full"></div>
+                </div>
+                <div class="flex justify-end gap-3">
+                    <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                    <div class="bar w-20 h-4 bg-black rounded-full"></div>
+                </div>
+                <div class="flex justify-end">
+                    <div class="bar w-24 h-4 bg-black rounded-full"></div>
+                </div>
+                <div class="flex justify-end">
+                    <div class="bar w-28 h-4 bg-black rounded-full"></div>
+                </div>
+                <div class="flex justify-end gap-4 relative -left-8">
+                    <div class="bar w-10 h-4 bg-black rounded-full"></div>
+                    <div class="bar w-40 h-4 bg-black rounded-full"></div>
+                    <div class="bar w-6 h-4 bg-black rounded-full"></div>
+                </div>
+                <div class="flex justify-end gap-2">
+                    <div class="bar w-24 h-4 bg-black rounded-full"></div>
+                </div>
+                <div class="flex justify-end gap-2">
+                    <div class="bar w-32 h-4 bg-black rounded-full"></div>
+                    <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                </div>
+                <div class="flex justify-end">
+                    <div class="bar w-24 h-4 bg-black rounded-full"></div>
+                </div>
+                <div class="flex justify-end">
+                    <div class="bar w-14 h-4 bg-black rounded-full"></div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="py-24 md:px-4 md:px-8 mx-3  ">
+
+
+                <div
+                    class="sticky top-20 z-10 bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col md:flex-row h-[550px] md:h-[500px] mb-20 p-4 border-2 border-gray-200">
+                    <div class="md:w-1/2 h-2/5 md:h-full relative overflow-hidden rounded-[2rem]">
+                        <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=2070&auto=format&fit=crop"
+                            alt="Commande" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="absolute bottom-6 left-6 text-white text-xs font-black uppercase tracking-widest bg-black px-4 py-2 rounded-full">Étape 01</div>
+                    </div>
+                    <div class="md:w-1/2 flex flex-col justify-center p-8 md:p-16">
+                        <h3 class="text-4xl md:text-5xl font-black mb-6 uppercase leading-none">SUIVI EN TEMPS RÉEL</h3>
+                        <span class="text-yellow-500 font-bold uppercase tracking-widest text-sm mb-4">Votre livraison, comme un conte en direct</span>
+                        <p class="text-gray-600 text-sm leading-relaxed"> Vous voyez chaque étape, comme si vous suiviez un récit qui se déroule sous vos yeux. La transparence est notre manière de vous inclure dans l’histoire. </p>
+                    </div>
+                </div>
+
+                <div
+                    class="sticky top-32 z-20 bg-zinc-900 text-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col-reverse md:flex-row h-[550px] md:h-[500px] mb-20 p-4 border-2 border-zinc-700">
+                    <div class="md:w-1/2 flex flex-col justify-center p-8 md:p-16">
+                        <span class="text-4xl md:text-5xl font-black mb-6 uppercase leading-none">REMISE EN MAIN PROPRE</span>
+                        <h3 class="text-yellow-500 font-bold uppercase tracking-widest text-sm mb-4">Un moment attendu, une promesse tenue</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                      Ǫuand ONCLE G Livraisons frappe à votre porte, c’est la conclusion heureuse de chaque récit. Une poignée de main, un sourire, et votre quotidien est simplifié. </p>
+                    </div>
+                    <div class="md:w-1/2 h-2/5 md:h-full relative overflow-hidden rounded-[2rem]">
+                        <img src="https://images.unsplash.com/photo-1520038410233-7141be7e6f97?q=80&w=2070&auto=format&fit=crop"
+                            alt="Suivi" class="absolute inset-0 w-full h-full object-cover grayscale">
+                        <div class="absolute bottom-6 right-6 text-black text-xs font-black uppercase tracking-widest bg-yellow-500 px-4 py-2 rounded-full">Étape 02</div>
+                    </div>
+                </div>
+
+                <div
+                    class="sticky top-44 z-20 bg-zinc-900 text-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col-reverse md:flex-row  md:h-[500px] mb-20 p-4 border-2 border-zinc-700">
+
+
+            <div class="container bg-yellow-500 [500px] p-5 flex flex-col items-center justify-center rounded-[40px] mx-auto px-6 relative z-10">
+               <div class="container bg-yellow-500 p-4 sm:p-5 md:p-6 rounded-[30px] sm:rounded-[40px] mx-auto px-4 sm:px-6 relative z-10">
+        <div class="max-w-4xl text-start md:text-center   mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-black mb-4 sm:mb-6 uppercase tracking-tight sm:tracking-tighter leading-tight">
+                Prêt à <span class="text-white">simplifier</span> votre vie ?
+            </h2>
+            <p class="text-sm sm:text-xl text-black/90 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
+                Rejoignez la famille ONCLE G aujourd'hui et découvrez comment un simple sourire peut transformer votre quotidien.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-6 sm:mb-8">
+                <a href="tel:+2420600000000"
+                   class="cta-button bg-black text-yellow-400 hover:text-white hover:bg-yellow-500 text-base sm:text-lg md:text-xl font-black uppercase tracking-wide sm:tracking-widest py-3 sm:py-4 px-6 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-2xl border-2 sm:border-4 border-black hover:border-yellow-400 flex items-center justify-center gap-2 sm:gap-3 group w-full sm:w-auto min-h-[50px]">
+                    <span>Appelez l'Oncle</span>
+                    <i class="fas fa-phone-alt text-sm sm:text-base transform group-hover:rotate-12 transition-transform duration-300"></i>
+                </a>
+
+                <a href="#contact"
+                   class="cta-secondary text-center bg-white/20 backdrop-blur-sm text-black hover:text-yellow-400 text-sm sm:text-base md:text-lg font-bold uppercase tracking-wide sm:tracking-widest py-3 sm:py-4 px-6 sm:px-8 rounded-full transition-all duration-300 border-2 border-black hover:bg-white hover:border-yellow-400 w-full sm:w-auto min-h-[50px]">
+                    Contactez-nous
+                </a>
+            </div>
+
+            <div class="mt-6 hidden sm:mt-8 flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-6 text-black/80 max-w-lg mx-auto">
+                <div class="flex items-center justify-center gap-2   ">
+                    <i class="fas fa-check-circle text-lg sm:text-xl text-black"></i>
+                    <span class="font-bold text-xs sm:text-sm md:text-base">Service 24/7</span>
+                </div>
+                <div class="flex items-center gap-2 mb-2 sm:mb-0">
+                    <i class="fas fa-check-circle text-lg sm:text-xl text-black"></i>
+                    <span class="font-bold text-xs sm:text-sm md:text-base">Livraison en 60 min</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-check-circle text-lg sm:text-xl text-black"></i>
+                    <span class="font-bold text-xs sm:text-sm md:text-base">Satisfaction garantie</span>
+                </div>
+            </div>
+        </div>
+    </div>
+            </div>
+                </div>
+
+                <div>
+
+                </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="w-full relative">
+
+
+        <footer class="bg-black  w-full absolute -bottom-0 text-gray-400 py-8 px-6 z-20">
+
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+
+                <div class="order-2 md:order-1 hover:text-white cursor-pointer transition">
+                    Condition d'utilisation
+                </div>
+
+                <div class="order-1 md:order-2 flex gap-6 text-xl">
+                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+
+                <div class="order-3 md:order-3">
+                    all right reserve by Oncle G
+                </div>
+
+            </div>
+
+        </footer>
+        <!-- SVG Decoration (Juste en bas du footer, en noir) -->
+        <div class="  w-full overflow-hidden -mt-1 relative z-10">
+            <svg class="w-full h-auto block" viewBox="0 0 1440 405" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M852.735 236.416L853.308 353.544C853.371 366.3 843.913 376.641 832.27 376.73L832.255 376.73C820.612 376.819 811.053 366.623 810.99 353.868L810.417 236.739C810.355 223.983 819.813 213.642 831.456 213.553L831.472 213.553C843.115 213.464 852.673 223.66 852.735 236.416Z" stroke="black"/>
+                <path d="M784.848 122.485L786.048 367.147C786.11 379.904 776.637 390.247 764.974 390.336L764.958 390.336C753.295 390.425 743.721 380.227 743.658 367.47L742.459 122.808C742.396 110.052 751.869 99.7095 763.532 99.6205L763.548 99.6204C775.212 99.5315 784.785 109.729 784.848 122.485Z" stroke="black"/>
+                <path d="M638.068 206.7L639.268 451.362C639.331 464.118 629.858 474.462 618.194 474.551L618.179 474.551C606.515 474.64 596.941 464.442 596.879 451.685L595.679 207.023C595.616 194.267 605.089 183.924 616.753 183.835L616.768 183.835C628.432 183.746 638.005 193.944 638.068 206.7Z" stroke="black"/>
+                <path d="M711.898 222.06L712.977 466.693C713.033 479.446 703.525 489.796 691.82 489.895L691.804 489.895C680.099 489.993 670.501 479.803 670.444 467.05L669.365 222.417C669.309 209.664 678.817 199.314 690.522 199.215L690.537 199.215C702.242 199.117 711.842 209.307 711.898 222.06Z" stroke="black"/>
+                <path d="M711.091 111.485L711.326 165.112C711.382 177.861 701.916 188.206 690.268 188.304L690.253 188.305C678.605 188.403 669.05 178.219 668.994 165.47L668.759 111.842C668.703 99.0934 678.168 88.7495 689.815 88.651L689.831 88.6508C701.478 88.5524 711.034 98.7356 711.091 111.485Z" stroke="black"/>
+                <path d="M568.349 276.695L569.428 521.328C569.484 534.081 559.975 544.432 548.27 544.53L548.255 544.53C536.55 544.629 526.95 534.439 526.894 521.686L525.815 277.053C525.759 264.3 535.268 253.95 546.973 253.851L546.988 253.851C558.693 253.753 568.292 263.943 568.349 276.695Z" stroke="black"/>
+                <path d="M567.593 178.699L567.758 216.448C567.814 229.196 558.352 239.539 546.709 239.638L546.694 239.638C535.051 239.736 525.499 229.554 525.443 216.806L525.278 179.057C525.222 166.31 534.684 155.967 546.327 155.869L546.342 155.869C557.803 155.772 567.238 165.636 567.583 178.104L567.593 178.699Z" stroke="black"/>
+                <path d="M1380.07 148.7L1381.27 393.362C1381.33 406.118 1371.86 416.462 1360.19 416.551L1360.18 416.551C1348.51 416.64 1338.94 406.442 1338.88 393.685L1337.68 149.023C1337.62 136.267 1347.09 125.924 1358.75 125.835L1358.77 125.835C1370.43 125.746 1380.01 135.944 1380.07 148.7Z" stroke="black"/>
+                <path d="M1453.9 164.06L1454.98 408.693C1455.03 421.446 1445.52 431.796 1433.82 431.895L1433.8 431.895C1422.1 431.993 1412.5 421.803 1412.44 409.05L1411.37 164.417C1411.31 151.664 1420.82 141.314 1432.52 141.215L1432.54 141.215C1444.24 141.117 1453.84 151.307 1453.9 164.06Z" stroke="black"/>
+                <path d="M1453.09 53.4845L1453.33 107.112C1453.38 119.861 1443.92 130.206 1432.27 130.304L1432.25 130.305C1420.61 130.403 1411.05 120.219 1410.99 107.47L1410.76 53.8423C1410.7 41.0934 1420.17 30.7495 1431.82 30.651L1431.83 30.6508C1443.48 30.5524 1453.03 40.7356 1453.09 53.4845Z" stroke="black"/>
+                <path d="M1310.35 218.695L1311.43 463.328C1311.48 476.081 1301.97 486.432 1290.27 486.53L1290.25 486.53C1278.55 486.629 1268.95 476.439 1268.89 463.686L1267.81 219.053C1267.76 206.3 1277.27 195.95 1288.97 195.851L1288.99 195.851C1300.69 195.753 1310.29 205.943 1310.35 218.695Z" stroke="black"/>
+                <path d="M1309.59 120.699L1309.76 158.448C1309.81 171.196 1300.35 181.539 1288.71 181.638L1288.69 181.638C1277.05 181.736 1267.5 171.554 1267.44 158.806L1267.28 121.057C1267.22 108.31 1276.68 97.9672 1288.33 97.8688L1288.34 97.8686C1299.8 97.7717 1309.24 107.636 1309.58 120.104L1309.59 120.699Z" stroke="black"/>
+                <path d="M480.735 234.416L481.308 351.544C481.371 364.3 471.913 374.641 460.27 374.73L460.255 374.73C448.611 374.819 439.053 364.623 438.99 351.868L438.417 234.739C438.355 221.983 447.813 211.642 459.456 211.553L459.472 211.553C471.115 211.464 480.673 221.66 480.735 234.416Z" stroke="black"/>
+                <path d="M412.848 120.485L414.048 365.147C414.11 377.904 404.637 388.247 392.974 388.336L392.958 388.336C381.295 388.425 371.721 378.227 371.658 365.47L370.458 120.808C370.396 108.052 379.869 97.7095 391.532 97.6205L391.548 97.6204C403.212 97.5315 412.785 107.729 412.848 120.485Z" stroke="black"/>
+                <path d="M266.068 204.7L267.268 449.362C267.331 462.118 257.858 472.462 246.194 472.551L246.179 472.551C234.515 472.64 224.941 462.442 224.879 449.685L223.679 205.023C223.616 192.267 233.089 181.924 244.753 181.835L244.768 181.835C256.432 181.746 266.005 191.944 266.068 204.7Z" stroke="black"/>
+                <path d="M339.898 220.06L340.977 464.693C341.033 477.446 331.525 487.796 319.82 487.895L319.804 487.895C308.099 487.993 298.501 477.803 298.444 465.05L297.365 220.417C297.309 207.664 306.817 197.314 318.522 197.215L318.537 197.215C330.242 197.117 339.842 207.307 339.898 220.06Z" stroke="black"/>
+                <path d="M339.09 109.485L339.326 163.112C339.382 175.861 329.916 186.206 318.268 186.304L318.252 186.305C306.605 186.403 297.05 176.219 296.994 163.47L296.759 109.842C296.703 97.0934 306.168 86.7495 317.815 86.651L317.831 86.6508C329.478 86.5524 339.034 96.7356 339.09 109.485Z" stroke="black"/>
+                <path d="M196.349 274.695L197.428 519.328C197.484 532.081 187.975 542.432 176.27 542.53L176.255 542.53C164.55 542.629 154.95 532.439 154.894 519.686L153.815 275.053C153.759 262.3 163.268 251.95 174.972 251.851L174.988 251.851C186.693 251.753 196.292 261.943 196.349 274.695Z" stroke="black"/>
+                <path d="M195.593 176.699L195.758 214.448C195.814 227.196 186.352 237.539 174.709 237.638L174.694 237.638C163.051 237.736 153.499 227.554 153.443 214.806L153.278 177.057C153.222 164.31 162.684 153.967 174.326 153.869L174.342 153.869C185.803 153.772 195.238 163.636 195.583 176.104L195.593 176.699Z" stroke="black"/>
+                <path d="M106.735 149.416L107.308 266.544C107.371 279.3 97.9132 289.641 86.2702 289.73L86.2546 289.73C74.6115 289.819 65.0527 279.623 64.9902 266.868L64.417 149.739C64.3547 136.983 73.813 126.642 85.4561 126.553L85.4717 126.553C97.1147 126.464 106.673 136.66 106.735 149.416Z" stroke="black"/>
+                <path d="M38.8479 35.485L40.0478 280.147C40.1103 292.904 30.6374 303.247 18.9738 303.336L18.9582 303.336C7.29461 303.425 -2.2791 293.227 -2.34166 280.47L-3.54156 35.8082C-3.60391 23.0521 5.86898 12.7095 17.5324 12.6205L17.548 12.6204C29.2115 12.5315 38.7851 22.7289 38.8479 35.485Z" stroke="black"/>
+                <path d="M1229.74 239.416L1230.31 356.544C1230.37 369.3 1220.91 379.641 1209.27 379.73L1209.25 379.73C1197.61 379.819 1188.05 369.623 1187.99 356.868L1187.42 239.739C1187.35 226.983 1196.81 216.642 1208.46 216.553L1208.47 216.553C1220.11 216.464 1229.67 226.66 1229.74 239.416Z" fill="#F8DB5A" fill-opacity="0.01" stroke="black"/>
+                <path d="M1161.85 125.485L1163.05 370.147C1163.11 382.904 1153.64 393.247 1141.97 393.336L1141.96 393.336C1130.29 393.425 1120.72 383.227 1120.66 370.47L1119.46 125.808C1119.4 113.052 1128.87 102.709 1140.53 102.621L1140.55 102.62C1152.21 102.531 1161.79 112.729 1161.85 125.485Z" fill="#F8DB5A" fill-opacity="0.01" stroke="black"/>
+                <path d="M1015.07 209.7L1016.27 454.362C1016.33 467.118 1006.86 477.462 995.194 477.551L995.178 477.551C983.515 477.64 973.941 467.442 973.879 454.685L972.679 210.023C972.616 197.267 982.089 186.924 993.753 186.835L993.768 186.835C1005.43 186.746 1015.01 196.944 1015.07 209.7Z" fill="#F8DB5A" fill-opacity="0.01" stroke="black"/>
+                <path d="M1088.9 225.06L1089.98 469.693C1090.03 482.446 1080.52 492.796 1068.82 492.895L1068.8 492.895C1057.1 492.993 1047.5 482.803 1047.44 470.05L1046.37 225.417C1046.31 212.664 1055.82 202.314 1067.52 202.215L1067.54 202.215C1079.24 202.117 1088.84 212.307 1088.9 225.06Z" fill="#F8DB5A" fill-opacity="0.01" stroke="black"/>
+                <path d="M1088.09 114.485L1088.33 168.112C1088.38 180.861 1078.92 191.206 1067.27 191.304L1067.25 191.305C1055.61 191.403 1046.05 181.219 1045.99 168.47L1045.76 114.842C1045.7 102.093 1055.17 91.7495 1066.82 91.651L1066.83 91.6508C1078.48 91.5524 1088.03 101.736 1088.09 114.485Z" fill="#F8DB5A" fill-opacity="0.01" stroke="black"/>
+                <path d="M945.349 279.695L946.428 524.328C946.484 537.081 936.975 547.432 925.27 547.53L925.255 547.53C913.55 547.629 903.95 537.439 903.894 524.686L902.815 280.053C902.759 267.3 912.268 256.95 923.972 256.851L923.988 256.851C935.693 256.753 945.292 266.943 945.349 279.695Z" fill="#F8DB5A" fill-opacity="0.01" stroke="black"/>
+                <path d="M944.593 181.699L944.758 219.448C944.814 232.196 935.352 242.539 923.709 242.638L923.694 242.638C912.051 242.736 902.499 232.554 902.443 219.806L902.278 182.057C902.222 169.31 911.684 158.967 923.326 158.869L923.342 158.869C934.803 158.772 944.238 168.636 944.583 181.104L944.593 181.699Z" fill="#F8DB5A" fill-opacity="0.01" stroke="black"/>
+            </svg>
+        </div>
+    </div>
+
+
+
+        <!-- Premium Popup JavaScript -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const popup = document.getElementById('premiumPopup');
+                const closePopupX = document.getElementById('closePopupX');  // The X button
+                const exploreBtn = document.getElementById('exploreButton');  // The "Explorer Maintenant" button
+
+                // Check if popup has been shown before
+                const hasSeenPopup = localStorage.getItem('hasSeenPremiumPopup');
+
+                // Show popup if user hasn't seen it before
+                if (!hasSeenPopup) {
+                    // Small delay to ensure page loads first
+                    setTimeout(() => {
+                        popup.classList.remove('hidden');
+                        // Trigger the animation
+                        setTimeout(() => {
+                            const popupContent = popup.querySelector('.popup-content');
+                            popupContent.classList.add('popup-show');
+                            popupContent.style.transform = 'scale(1)';
+                            popupContent.style.opacity = '1';
+                        }, 50);
+                    }, 500);
+
+                    // Mark as seen in localStorage
+                    localStorage.setItem('hasSeenPremiumPopup', 'true');
+                }
+
+                // Close popup functions
+                function closePopup() {
+                    const popupContent = popup.querySelector('.popup-content');
+                    popupContent.classList.remove('popup-show');
+                    popupContent.style.transform = 'scale(0.9)';
+                    popupContent.style.opacity = '0';
+
+                    // Hide the popup after animation completes
+                    setTimeout(() => {
+                        popup.classList.add('hidden');
+                    }, 500);
+                }
+
+                // Event listeners
+                closePopupX.addEventListener('click', closePopup);  // X button closes popup
+                exploreBtn.addEventListener('click', closePopup);   // "Explorer Maintenant" button closes popup
+
+                // Also close if user clicks outside the popup content
+                popup.addEventListener('click', function(e) {
+                    if (e.target === popup) {
+                        closePopup();
+                    }
+                });
+
+                // Slide-in menu functionality
+                const menuOverlay = document.getElementById('menuOverlay');
+                const menuTriggerBtn = document.getElementById('menuTriggerBtn');
+                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                const closeMenuBtn = document.getElementById('closeMenuBtn');
+                const menuLinks = menuOverlay.querySelectorAll('a');
+
+                // Toggle Menu
+                function toggleMenu() {
+                    const isOpen = menuOverlay.classList.contains('menu-open');
+                    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                    const menuTriggerBtn = document.getElementById('menuTriggerBtn');
+
+                    if (isOpen) {
+                        menuOverlay.classList.replace('menu-open', 'menu-closed');
+                        document.body.style.overflow = 'auto';
+                        // Show the mobile menu icon when menu is closed
+                        if (mobileMenuBtn) {
+                            mobileMenuBtn.classList.remove('hidden');
+                        }
+                        // Show the desktop menu trigger when menu is closed (uniquement sur PC)
+                                          if (menuTriggerBtn && window.innerWidth >= 768) {
+                                              menuTriggerBtn.classList.remove('hidden');
+                                          }
+                    } else {
+                        menuOverlay.classList.replace('menu-closed', 'menu-open');
+                        document.body.style.overflow = 'hidden';
+                        // Hide the mobile menu icon when menu is open (it's already hidden on desktop anyway)
+                        if (mobileMenuBtn) {
+                            mobileMenuBtn.classList.add('hidden');
+                        }
+                        // Hide the desktop menu trigger when menu is open
+                        if (menuTriggerBtn) {
+                            menuTriggerBtn.classList.add('hidden');
+                        }
+                    }
+                }
+
+                // Event listeners for opening the menu
+                if (menuTriggerBtn) {
+                    menuTriggerBtn.addEventListener('click', toggleMenu);
+                }
+
+                if (mobileMenuBtn) {
+                    mobileMenuBtn.addEventListener('click', toggleMenu);
+                }
+
+                // Event listener for closing the menu
+                if (closeMenuBtn) {
+                    closeMenuBtn.addEventListener('click', toggleMenu);
+                }
+
+                // Close menu when clicking on a link
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuOverlay.classList.replace('menu-open', 'menu-closed');
+                        document.body.style.overflow = 'auto';
+                    });
+                });
+
+                // Close menu when clicking outside the menu content
+                menuOverlay.addEventListener('click', function(e) {
+                    if (e.target === menuOverlay) {
+                        menuOverlay.classList.replace('menu-open', 'menu-closed');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+        </script>
+
+        <script>
+            // Popup close functionality
+            document.getElementById('closePopup').addEventListener('click', function() {
+                const popup = document.getElementById('popup');
+                if (popup) {
+                    popup.style.display = 'none';
+                }
+            });
+        </script>
+
+
+
+    </body>
+    </html>
