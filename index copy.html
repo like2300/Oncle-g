@@ -1,14 +1,68 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONCLE G Livraisons - Carousel</title>
-    <!-- Tailwind CSS -->
+    <title>Slider Oncle G Corrigé - Images Affichées</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Découvrez les services innovants d'Oncle G : livraison express, impact sur les réseaux sociaux, compétitivité et formation de qualité.">
+    <meta name="keywords" content="Oncle G, services, livraison, réseaux sociaux, formation, compétitivité">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Oncle G - Services Innovants">
+    <meta property="og:description" content="Découvrez les services innovants d'Oncle G : livraison express, impact sur les réseaux sociaux, compétitivité et formation de qualité.">
+    <meta property="og:image" content="./img/Oncle G - Logo.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Oncle G - Services Innovants">
+    <meta property="twitter:description" content="Découvrez les services innovants d'Oncle G : livraison express, impact sur les réseaux sociaux, compétitivité et formation de qualité.">
+    <meta property="twitter:image" content="./img/Oncle G - Logo.svg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/icons/favicon-16x16.png">
+    <link rel="shortcut icon" href="./img/icons/favicon.ico">
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/icons/apple-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./img/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./img/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./img/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./img/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./img/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./img/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="./img/icons/apple-icon-57x57.png">
+
+    <!-- Android Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="./img/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="./img/icons/android-icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./img/icons/android-icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="72x72" href="./img/icons/android-icon-72x72.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="./img/icons/android-icon-48x48.png">
+    <link rel="icon" type="image/png" sizes="36x36" href="./img/icons/android-icon-36x36.png">
+
+    <!-- MS Icons -->
+    <link rel="icon" type="image/png" sizes="310x310" href="./img/icons/ms-icon-310x310.png">
+    <link rel="icon" type="image/png" sizes="150x150" href="./img/icons/ms-icon-150x150.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="./img/icons/ms-icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="70x70" href="./img/icons/ms-icon-70x70.png">
+
+    <!-- Manifest and Config -->
+    <link rel="manifest" href="./img/icons/manifest.json">
+    <meta name="msapplication-config" content="./img/icons/browserconfig.xml">
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
+
     <style>
         /* Styles utilitaires pour la troncation du texte */
         .line-clamp-3 {
@@ -30,388 +84,615 @@
         .hover-overlay {
             transition: opacity 0.3s ease-in-out;
         }
+
+        /* Correction de l'alignement du texte */
+        .slide-content-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            padding: 2rem;
+        }
+
+        .slide-title-container {
+            align-self: flex-start;
+            text-align: left;
+        }
+
+        .slide-description-container {
+            align-self: flex-end;
+            text-align: right;
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .slide-content-container {
+                justify-content: flex-end;
+                padding: 1.5rem;
+            }
+            
+            .slide-title-container {
+                align-self: flex-start;
+                text-align: left;
+                margin-bottom: 1rem;
+                width: 100%;
+            }
+            
+            .slide-description-container {
+                align-self: flex-start;
+                text-align: left;
+                width: 100%;
+            }
+        }
     </style>
-</head>
-<body class="bg-gray-900 font-sans text-white overflow-x-hidden">
+ 
 
-    <!-- Main Content with Carousel -->
-    <main class="flex-grow relative w-full">
+    <!-- Halcom Font Family - Loading locally -->
+    <style>
+        @font-face {
+            font-family: 'Halcom';
+            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-Thin-BF648a7145280f9.otf') format('opentype');
+            font-weight: 100;
+            font-style: normal;
+        }
 
-        <!-- CONTAINER DU SLIDER -->
-        <div
-            class="card-stack main-slider-container relative w-full lg:h-[750px] h-[750px] max-w-[1600px] mx-auto mt-4 overflow-visible lg:p-12 p-2">
+        @font-face {
+            font-family: 'Halcom';
+            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-ThinItalic-BF648a714522fdf.otf') format('opentype');
+            font-weight: 100;
+            font-style: italic;
+        }
 
-            <!-- LISTE DES CARTES -->
-            <ul class="relative w-full h-full">
-                
-                <!-- CAROUSEL SLIDE 1 -->
-                <li id="slide-1" class="carousel-slide group relative absolute list-none rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] transition-all duration-500 ease-in-out left-0 right-0 mx-auto bg-cover bg-center bg-no-repeat overflow-hidden h-full cursor-default"
-                    style="background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(63, 55, 0, 0.4)), url('https://picsum.photos/seed/oncleg1/1600/900.jpg'); width: 65%; top: 0px; height: 100%; background-size: cover; background-position: center; z-index: 1;">
-                    
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+        @font-face {
+            font-family: 'Halcom';
+            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-Light-BF648a71454e889.otf') format('opentype');
+            font-weight: 300;
+            font-style: normal;
+        }
 
-                    <div id="overlay-1" class="hover-overlay absolute inset-0 bg-black/95 flex flex-col items-center justify-center opacity-0 pointer-events-none z-50 px-8">
-                        <div class="text-content text-center w-full max-w-3xl max-h-full overflow-y-auto no-scrollbar py-8">
-                            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6 uppercase">Service Oncle G</h2>
-                            <p class="text-lg text-gray-200 leading-relaxed text-justify">
-                                Un sourire, c’est déjà une livraison réussie. ONCLE G Livraisons vous offre un service fiable et attentionné. Avant même d’arriver à votre porte, ONCLE G Livraisons vous offre un sourire. C’est sa manière de dire que chaque trajet est une promesse tenue. Dans une ville où le rythme est parfois effréné, ce sourire devient un repère, une certitude que votre quotidien sera allégé.
-                            </p>
-                            <button onclick="toggleOverlay(1, false)" class="mt-8 px-6 py-2 bg-yellow-500 text-black font-bold uppercase rounded-full hover:bg-yellow-400 transition-colors">
-                                <i class="fa-solid fa-times mr-2"></i> Fermer
-                            </button>
-                        </div>
-                    </div>
+        @font-face {
+            font-family: 'Halcom';
+            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-LightItalic-BF648a71454d055.otf') format('opentype');
+            font-weight: 300;
+            font-style: italic;
+        }
 
-                    <!-- CONTENU TEXTE -->
-                    <div class="absolute inset-0 flex flex-col justify-end md:justify-between items-start px-6 md:px-8 pb-24 md:pb-16 pt-8 z-10 pointer-events-none">
-                        
-                        <!-- Titre -->
-                        <div class="md:transform transition-all duration-500 w-full text-left mb-4 md:mb-0 md:mt-10 md:ml-12 translate-y-8 opacity-0 scale-95 title-anim">
-                            <!-- Taille: Mobile (2xl) -> Tablette (4xl) -> PC (5xl) -->
-                            <h1 class="text-2xl md:text-4xl lg:text-5xl md:w-[670px] text-white font-bold uppercase tracking-wider leading-tight drop-shadow-xl text-primary">
-                              Un sourire, <br>c’est déjà une <br> livraison <br> réussie
-                            </h1>
-                        </div>
+        @font-face {
+            font-family: 'Halcom';
+            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-Regular-BF648a71453957a.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+        }
 
-                        <!-- Description -->
-                        <div class="max-w-md text-gray-200 text-base md:text-lg lg:text-xl font-light leading-relaxed drop-shadow-md text-left md:text-right w-full ml-auto md:ml-auto md:mr-12 pb-32 md:pb-24">
-                            <!-- Logique Troncation: Mobile (clamp) -> Tablette (clamp) -> PC (none) -->
-                            <p class="text-start md:text-right line-clamp-3 md:line-clamp-3 lg:line-clamp-none">
-                                Avant même d’arriver à votre porte, ONCLE G Livraisons vous offre un sourire. C’est sa manière de dire que chaque trajet est une promesse tenue. Dans une ville où le rythme est parfois effréné, ce sourire devient un repère, une certitude que votre quotidien sera allégé.
-                            </p>
-                            <!-- Bouton visible sur Mobile et Tablette (lg:hidden), caché sur PC -->
-                            <button onclick="toggleOverlay(1, true)" class="lire-plus-btn lg:hidden text-yellow-500 mt-2 text-sm font-bold uppercase tracking-wider flex items-center pointer-events-auto md:ml-auto md:text-right">
-                                Lire la suite <i class="fa-solid fa-arrow-right ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
+        @font-face {
+            font-family: 'Halcom';
+            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-Italic-BF648a71456443a.otf') format('opentype');
+            font-weight: 400;
+            font-style: italic;
+        }
 
-                    <div class="controls-overlay absolute bottom-6 left-0 w-full px-6 md:px-12 flex justify-between items-center pointer-events-none z-50">
-                        <div class="dots flex items-center gap-4 pointer-events-auto pl-4">
-                            <div data-target="0" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-black border-yellow-400 w-6 h-3 border-2 rounded-full"></div>
-                            <div data-target="1" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-transparent border-2 border-white/40 w-3 h-3 rounded-full"></div>
-                            <div data-target="2" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-transparent border-2 border-white/40 w-3 h-3 rounded-full"></div>
-                        </div>
-                        <div class="nav-controls flex items-center bg-black/70 backdrop-blur-sm border border-white/10 px-5 py-2.5 rounded-full gap-5 pointer-events-auto shadow-2xl hover:bg-black/90 transition-colors">
-                            <button class="arrow-btn-prev w-9 h-9 border border-white/30 text-white rounded-full flex items-center justify-center hover:border-yellow-400 hover:text-yellow-400 transition-all">
-                                <i class="fa-solid fa-chevron-left text-xs"></i>
-                            </button>
-                            <span class="counter text-white font-bold font-mono text-sm md:text-base tracking-widest">1/3</span>
-                            <button class="arrow-btn-next w-9 h-9 border border-white/30 text-white rounded-full flex items-center justify-center hover:border-yellow-400 hover:text-yellow-400 transition-all">
-                                <i class="fa-solid fa-chevron-right text-xs"></i>
-                            </button>
-                        </div>
-                    </div>
-                </li>
+        @font-face {
+            font-family: 'Halcom';
+            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-Medium-BF648a714568789.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+        }
 
-                <!-- CAROUSEL SLIDE 2 -->
-                <li id="slide-2" class="carousel-slide group absolute list-none rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] transition-all duration-500 ease-in-out left-0 right-0 mx-auto bg-cover bg-center bg-no-repeat overflow-hidden h-full cursor-default"
-                    style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url('https://picsum.photos/seed/oncleg2/1600/900.jpg'); width: 82.5%; top: 40px; height: 100%; background-size: cover; background-position: center; z-index: 2;">
-                    
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+        @font-face {
+            font-family: 'Halcom';
+            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-MediumItalic-BF648a71455df9d.otf') format('opentype');
+            font-weight: 500;
+            font-style: italic;
+        }
 
-                    <div id="overlay-2" class="hover-overlay absolute inset-0 bg-black/95 flex flex-col items-center justify-center opacity-0 pointer-events-none z-50 px-8">
-                        <div class="text-content text-center w-full max-w-3xl max-h-full overflow-y-auto no-scrollbar py-8">
-                            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6 uppercase">Nos Racines</h2>
-                            <p class="text-lg text-gray-200 leading-relaxed text-justify">
-                                ONCLE G Livraisons est né dans les ruelles de Brazzaville. Des marchés de Poto-Poto aux avenues de Bacongo, nous connaissons chaque détour, chaque ambiance. Ce n’est pas seulement un service : c’est une déclaration d’amour à la ville et à ses habitants.
-                            </p>
-                            <button onclick="toggleOverlay(2, false)" class="mt-8 px-6 py-2 bg-yellow-500 text-black font-bold uppercase rounded-full hover:bg-yellow-400 transition-colors">
-                                <i class="fa-solid fa-times mr-2"></i> Fermer
-                            </button>
-                        </div>
-                    </div>
+        @font-face {
+            font-family: 'Halcom';
+            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-Bold-BF648a714549635.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+        }
 
-                    <div class="absolute inset-0 flex flex-col justify-end md:justify-between items-start px-6 md:px-8 pb-24 md:pb-16 pt-8 z-10 pointer-events-none">
-                        <div class="md:transform transition-all duration-500 w-full text-left mb-4 md:mb-0 md:mt-10 md:ml-12 translate-y-8 opacity-0 scale-95 title-anim">
-                            <h1 class="text-2xl md:text-4xl lg:text-5xl md:w-[670px] text-white font-bold uppercase tracking-wider leading-tight drop-shadow-xl text-primary">
-                                Vos rues <br>sont nos <br> racines
-                            </h1>
-                        </div>
+        @font-face {
+            font-family: 'Halcom';
+            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-BoldItalic-BF648a7145597de.otf') format('opentype');
+            font-weight: 700;
+            font-style: italic;
+        }
 
-                        <div class="max-w-md text-gray-200 text-base md:text-lg lg:text-xl font-light leading-relaxed drop-shadow-md text-left md:text-right w-full ml-auto md:ml-auto md:mr-12 pb-32 md:pb-24">
-                            <p class="text-start md:text-right line-clamp-3 md:line-clamp-3 lg:line-clamp-none">
-                                ONCLE G Livraisons est né dans les ruelles de Brazzaville. Des marchés de Poto-Poto aux avenues de Bacongo, nous connaissons chaque détour, chaque ambiance. Ce n’est pas seulement un service : c’est une déclaration d’amour à la ville et à ses habitants.
-                            </p>
-                            <button onclick="toggleOverlay(2, true)" class="lire-plus-btn lg:hidden text-yellow-500 mt-2 text-sm font-bold uppercase tracking-wider flex items-center pointer-events-auto md:ml-auto md:text-right">
-                                Lire la suite <i class="fa-solid fa-arrow-right ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
+        @font-face {
+            font-family: 'Halcom';
+            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-ExtraBold-BF648a71454d82a.otf') format('opentype');
+            font-weight: 800;
+            font-style: normal;
+        }
 
-                    <div class="controls-overlay absolute bottom-6 left-0 w-full px-6 md:px-12 flex justify-between items-center pointer-events-none z-50">
-                        <div class="dots flex items-center gap-4 pointer-events-auto pl-4">
-                            <div data-target="0" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-transparent border-2 border-white/40 w-3 h-3 rounded-full"></div>
-                            <div data-target="1" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-black border-yellow-400 w-6 h-3 border-2 rounded-full"></div>
-                            <div data-target="2" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-transparent border-2 border-white/40 w-3 h-3 rounded-full"></div>
-                        </div>
-                        <div class="nav-controls flex items-center bg-black/70 backdrop-blur-sm border border-white/10 px-5 py-2.5 rounded-full gap-5 pointer-events-auto shadow-2xl hover:bg-black/90 transition-colors">
-                            <button class="arrow-btn-prev w-9 h-9 border border-white/30 text-white rounded-full flex items-center justify-center hover:border-yellow-400 hover:text-yellow-400 transition-all">
-                                <i class="fa-solid fa-chevron-left text-xs"></i>
-                            </button>
-                            <span class="counter text-white font-bold font-mono text-sm md:text-base tracking-widest">2/3</span>
-                            <button class="arrow-btn-next w-9 h-9 border border-white/30 text-white rounded-full flex items-center justify-center hover:border-yellow-400 hover:text-yellow-400 transition-all">
-                                <i class="fa-solid fa-chevron-right text-xs"></i>
-                            </button>
-                        </div>
-                    </div>
-                </li>
+        @font-face {
+            font-family: 'Halcom';
+            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-ExtraBoldItalic-BF648a714551827.otf') format('opentype');
+            font-weight: 800;
+            font-style: italic;
+        }
 
-                <!-- CAROUSEL SLIDE 3 -->
-                <li id="slide-3" class="carousel-slide group absolute list-none rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] transition-all duration-500 ease-in-out left-0 right-0 mx-auto bg-cover bg-center bg-no-repeat overflow-hidden h-full cursor-default"
-                    style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url('https://picsum.photos/seed/oncleg3/1600/900.jpg'); width: 100%; top: 80px; height: 100%; background-size: cover; background-position: center; z-index: 3;">
-                    
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+        @font-face {
+            font-family: 'Halcom';
+            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-Black-BF648a7144cd3a5.otf') format('opentype');
+            font-weight: 900;
+            font-style: normal;
+        }
 
-                    <div id="overlay-3" class="hover-overlay absolute inset-0 bg-black/95 flex flex-col items-center justify-center opacity-0 pointer-events-none z-50 px-8">
-                        <div class="text-content text-center w-full max-w-3xl max-h-full overflow-y-auto no-scrollbar py-8">
-                            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6 uppercase">Sérénité</h2>
-                            <p class="text-lg text-gray-200 leading-relaxed text-justify">
-                                Chaque minute compte. ONCLE G Livraisons transforme vos besoins en instants de sérénité. Plus besoin de courir, de jongler avec les imprévus : nous faisons le chemin pour vous, afin que vous puissiez profiter pleinement de vos journées.
-                            </p>
-                            <button onclick="toggleOverlay(3, false)" class="mt-8 px-6 py-2 bg-yellow-500 text-black font-bold uppercase rounded-full hover:bg-yellow-400 transition-colors">
-                                <i class="fa-solid fa-times mr-2"></i> Fermer
-                            </button>
-                        </div>
-                    </div>
+        @font-face {
+            font-family: 'Halcom';
+            src: url('./fonts/halcom-font-family-1769100539-0/Halcom-BlackItalic-BF648a71455b3bd.otf') format('opentype');
+            font-weight: 900;
+            font-style: italic;
+        }
+    </style>
 
-                    <div class="absolute inset-0 flex flex-col justify-end md:justify-between items-start px-6 md:px-8 pb-24 md:pb-16 pt-8 z-10 pointer-events-none">
-                        <div class="md:transform transition-all duration-500 w-full text-left mb-4 md:mb-0 md:mt-10 md:ml-12 translate-y-0 opacity-100 scale-100 title-anim">
-                            <h1 class="text-2xl md:text-4xl lg:text-5xl md:w-[670px] text-white font-bold uppercase tracking-wider leading-tight drop-shadow-xl text-primary">
-                                Moins de soucis,<br> plus de vie
-                            </h1>
-                        </div>
-
-                        <div class="max-w-md text-gray-200 text-base md:text-lg lg:text-xl font-light leading-relaxed drop-shadow-md text-left md:text-right w-full ml-auto md:ml-auto md:mr-12 pb-32 md:pb-24">
-                            <p class="text-start md:text-right line-clamp-3 md:line-clamp-3 lg:line-clamp-none">
-                                Chaque minute compte. ONCLE G Livraisons transforme vos besoins en instants de sérénité. Plus besoin de courir, de jongler avec les imprévus : nous faisons le chemin pour vous, afin que vous puissiez profiter pleinement de vos journées.
-                            </p>
-                            <button onclick="toggleOverlay(3, true)" class="lire-plus-btn lg:hidden text-yellow-500 mt-2 text-sm font-bold uppercase tracking-wider flex items-center pointer-events-auto md:ml-auto md:text-right">
-                                Lire la suite <i class="fa-solid fa-arrow-right ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="controls-overlay absolute bottom-6 left-0 w-full px-6 md:px-12 flex justify-between items-center pointer-events-none z-50">
-                        <div class="dots flex items-center gap-4 pointer-events-auto pl-4">
-                            <div data-target="0" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-transparent border-2 border-white/40 w-3 h-3 rounded-full"></div>
-                            <div data-target="1" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-transparent border-2 border-white/40 w-3 h-3 rounded-full"></div>
-                            <div data-target="2" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-black border-yellow-400 w-6 h-3 border-2 rounded-full"></div>
-                        </div>
-                        <div class="nav-controls flex items-center bg-black/70 backdrop-blur-sm border border-white/10 px-5 py-2.5 rounded-full gap-5 pointer-events-auto shadow-2xl hover:bg-black/90 transition-colors">
-                            <button class="arrow-btn-prev w-9 h-9 border border-white/30 text-white rounded-full flex items-center justify-center hover:border-yellow-400 hover:text-yellow-400 transition-all">
-                                <i class="fa-solid fa-chevron-left text-xs"></i>
-                            </button>
-                            <span class="counter text-white font-bold font-mono text-sm md:text-base tracking-widest">3/3</span>
-                            <button class="arrow-btn-next w-9 h-9 border border-white/30 text-white rounded-full flex items-center justify-center hover:border-yellow-400 hover:text-yellow-400 transition-all">
-                                <i class="fa-solid fa-chevron-right text-xs"></i>
-                            </button>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </main>
+    <style>
+        /* Correction des hauteurs pour mobile */
+        @media (max-width: 768px) {
+            .card-stack {
+                height: 75vh !important;
+            }
+            
+            .main-slider-container {
+                height: 75vh !important;
+            }
+            
+            .carousel-slide {
+                height: 75vh !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .card-stack {
+                height: 80vh !important;
+            }
+            
+            .main-slider-container {
+                height: 80vh !important;
+            }
+            
+            .carousel-slide {
+                height: 80vh !important;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .card-stack {
+                height: 85vh !important;
+            }
+            
+            .main-slider-container {
+                height: 85vh !important;
+            }
+            
+            .carousel-slide {
+                height: 85vh !important;
+            }
+        }
+    </style>
 
     <script>
-        class Carousel {
-            constructor() {
-                this.currentSlide = 0;
-                this.totalSlides = 3;
-                this.slideElements = [];
-                this.dotElements = [];
-                this.autoSlideInterval = null;
-
-                this.init();
-            }
-
-            init() {
-                this.slideElements = [
-                    document.getElementById('slide-1'),
-                    document.getElementById('slide-2'),
-                    document.getElementById('slide-3')
-                ];
-                this.dotElements = document.querySelectorAll('.dot');
-                this.addEventListeners();
-                this.setActiveSlide(0);
-                setTimeout(() => {
-                    this.startAutoSlide();
-                }, 1000);
-            }
-
-            setActiveSlide(slideIndex) {
-                if (slideIndex < 0 || slideIndex >= this.totalSlides) return;
-                this.currentSlide = slideIndex;
-
-                this.slideElements.forEach((slide, index) => {
-                    slide.style.transition = 'all 0.5s ease';
-                    const titleContainer = slide.querySelector('.title-anim');
-                    const description = slide.querySelector('.max-w-md');
-
-                    if (index === this.currentSlide) {
-                        slide.style.width = '100%';
-                        slide.style.top = '80px';
-                        slide.style.zIndex = '3';
-                        
-                        if(titleContainer) {
-                            titleContainer.classList.remove('translate-y-8', 'opacity-0', 'scale-95');
-                            titleContainer.classList.add('translate-y-0', 'opacity-100', 'scale-100');
-                        }
-                        if(description) description.classList.remove('hidden');
-
-                    } else if (index === this.currentSlide - 1 || (this.currentSlide === 0 && index === this.totalSlides - 1)) {
-                        slide.style.width = '82.5%';
-                        slide.style.top = '40px';
-                        slide.style.zIndex = '2';
-
-                        if(titleContainer) {
-                            titleContainer.classList.add('translate-y-8', 'opacity-0', 'scale-95');
-                            titleContainer.classList.remove('translate-y-0', 'opacity-100', 'scale-100');
-                        }
-                        if(description) description.classList.add('hidden');
-
-                    } else {
-                        slide.style.width = '65%';
-                        slide.style.top = '0px';
-                        slide.style.zIndex = '1';
-
-                        if(titleContainer) {
-                            titleContainer.classList.add('translate-y-8', 'opacity-0', 'scale-95');
-                            titleContainer.classList.remove('translate-y-0', 'opacity-100', 'scale-100');
-                        }
-                        if(description) description.classList.add('hidden');
-                    }
-                });
-
-                this.updateDots();
-                this.updateCounter();
-            }
-
-            updateDots() {
-                this.dotElements.forEach(dot => {
-                    const targetIndex = parseInt(dot.getAttribute('data-target'));
-                    if (targetIndex === this.currentSlide) {
-                        dot.classList.remove('bg-transparent', 'w-3', 'h-3');
-                        dot.classList.add('bg-black', 'border-yellow-400', 'w-6', 'h-3');
-                    } else {
-                        dot.classList.remove('bg-black', 'border-yellow-400', 'w-6', 'h-3');
-                        dot.classList.add('bg-transparent', 'w-3', 'h-3');
-                    }
-                });
-            }
-
-            updateCounter() {
-                const counters = document.querySelectorAll('.counter');
-                counters.forEach(counter => {
-                    counter.textContent = `${this.currentSlide + 1}/${this.totalSlides}`;
-                });
-            }
-
-            next() {
-                this.pauseAutoSlide();
-                this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
-                this.setActiveSlide(this.currentSlide);
-                this.resumeAutoSlide();
-            }
-
-            prev() {
-                this.pauseAutoSlide();
-                this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
-                this.setActiveSlide(this.currentSlide);
-                this.resumeAutoSlide();
-            }
-
-            goToSlide(targetIndex) {
-                this.pauseAutoSlide();
-                if (targetIndex >= 0 && targetIndex < this.totalSlides) {
-                    this.setActiveSlide(targetIndex);
-                }
-                this.resumeAutoSlide();
-            }
-
-            openOverlay(slideNumber) {
-                const overlay = document.getElementById(`overlay-${slideNumber}`);
-                if (overlay) {
-                    overlay.classList.remove('opacity-0', 'pointer-events-none');
-                    overlay.classList.add('opacity-100', 'pointer-events-auto');
-                    this.pauseAutoSlide();
-                }
-            }
-
-            closeOverlay(slideNumber) {
-                const overlay = document.getElementById(`overlay-${slideNumber}`);
-                if (overlay) {
-                    overlay.classList.add('opacity-0', 'pointer-events-none');
-                    overlay.classList.remove('opacity-100', 'pointer-events-auto');
-                    this.resumeAutoSlide();
-                }
-            }
-
-            startAutoSlide() {
-                if (this.autoSlideInterval) clearInterval(this.autoSlideInterval);
-                this.autoSlideInterval = setInterval(() => {
-                    const anyOverlayOpen = document.querySelector('.hover-overlay.opacity-100');
-                    if (!anyOverlayOpen) {
-                        this.next();
-                    }
-                }, 8000);
-            }
-
-            pauseAutoSlide() {
-                if (this.autoSlideInterval) {
-                    clearInterval(this.autoSlideInterval);
-                    this.autoSlideInterval = null;
-                }
-            }
-
-            resumeAutoSlide() {
-                setTimeout(() => {
-                    if (!this.autoSlideInterval) {
-                        this.startAutoSlide();
-                    }
-                }, 5000);
-            }
-
-            addEventListeners() {
-                document.querySelectorAll('.arrow-btn-next').forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        this.next();
-                    });
-                });
-                document.querySelectorAll('.arrow-btn-prev').forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        this.prev();
-                    });
-                });
-
-                this.dotElements.forEach(dot => {
-                    dot.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        const index = parseInt(dot.getAttribute('data-target'));
-                        this.goToSlide(index);
-                    });
-                });
-            }
-        }
-
-        let carouselInstance;
-
-        function toggleOverlay(slideNumber, open) {
-            if (carouselInstance) {
-                if (open) {
-                    carouselInstance.openOverlay(slideNumber);
-                } else {
-                    carouselInstance.closeOverlay(slideNumber);
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#facc15',
+                        secondary: '#1A1A1A',
+                        accent: '#FF4081',
+                    },
+                    fontFamily: {
+                        sans: ['Halcom', 'sans-serif'],
+                        heading: ['Halcom', 'sans-serif'],
+                    },
                 }
             }
         }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            carouselInstance = new Carousel();
-            window.carouselInstance = carouselInstance;
-        });
     </script>
+
+</head>
+
+<body class="bg-white p-0 overflow-x-hidden" x-data="cardStack()">
+
+<!-- Contenu existant reste inchangé jusqu'au carousel -->
+
+<!-- Main Content with Carousel -->
+<main class="flex-grow relative w-full">
+
+    <!-- CONTAINER DU SLIDER - HAUTEUR AUGMENTÉE -->
+    <div class="card-stack main-slider-container relative w-full h-[700px] md:h-[800px] lg:h-[900px] max-w-[1600px] mx-auto mt-4 overflow-visible p-2 sm:p-4">
+
+        <!-- LISTE DES CARTES -->
+        <ul class="relative w-full h-full">
+            
+            <!-- CAROUSEL SLIDE 1 - CORRIGÉ -->
+            <li id="slide-1" class="carousel-slide group relative absolute list-none rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] transition-all duration-500 ease-in-out left-0 right-0 mx-auto bg-cover bg-center bg-no-repeat overflow-hidden cursor-default"
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(63, 55, 0, 0.4)), url('./img/freepik__ultrarealistic-advertising-photography-captured-by__31974.jpeg'); width: 65%; top: 0px; height: 100%; background-size: cover; background-position: center; z-index: 1;">
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+                <div id="overlay-1" class="hover-overlay absolute inset-0 bg-black/95 flex flex-col items-center justify-center opacity-0 pointer-events-none z-50 px-8">
+                    <div class="text-content text-center w-full max-w-3xl max-h-full overflow-y-auto no-scrollbar py-8">
+                        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6 uppercase">Service Oncle G</h2>
+                        <p class=" text-sm text-gray-200 leading-relaxed text-justify">
+                            Un sourire, c'est déjà une livraison réussie. ONCLE G Livraisons vous offre un service fiable et attentionné. Avant même d'arriver à votre porte, ONCLE G Livraisons vous offre un sourire. C'est sa manière de dire que chaque trajet est une promesse tenue. Dans une ville où le rythme est parfois effréné, ce sourire devient un repère, une certitude que votre quotidien sera allégé.
+                        </p>
+                        <button onclick="toggleOverlay(1, false)" class="mt-8 px-6 py-2 bg-yellow-500 text-black font-bold uppercase rounded-full hover:bg-yellow-400 transition-colors">
+                            <i class="fa-solid fa-times mr-2"></i> Fermer
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CONTENU TEXTE CORRIGÉ -->
+                <div class="slide-content-container absolute inset-0 z-10 pointer-events-none p-4 sm:p-6 md:p-8">
+                    
+                    <!-- Titre - Top Left sur PC/Tablette, en bas à gauche sur mobile -->
+                    <div class="slide-title-container">
+                        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white font-bold uppercase tracking-wider leading-tight drop-shadow-xl text-primary mb-4">
+                            Un sourire,<br>c'est déjà une<br>livraison<br>réussie
+                        </h1>
+                    </div>
+
+                    <!-- Description - Bottom Right sur PC/Tablette, en bas à gauche sur mobile -->
+                    <div class="slide-description-container">
+                        <div class="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg text-gray-200 text-sm sm:text-base md:text-lg lg:text-xl font-light leading-relaxed drop-shadow-md">
+                            <p class="line-clamp-3 md:line-clamp-none">
+                                Avant même d'arriver à votre porte, ONCLE G Livraisons vous offre un sourire. C'est sa manière de dire que chaque trajet est une promesse tenue. Dans une ville où le rythme est parfois effréné, ce sourire devient un repère, une certitude que votre quotidien sera allégé.
+                            </p>
+                            <button onclick="toggleOverlay(1, true)" class="lire-plus-btn mt-4 text-yellow-500 text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center pointer-events-auto">
+                                Lire la suite <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls-overlay absolute bottom-6 left-0 w-full px-6 md:px-12 flex justify-between items-center pointer-events-none z-50">
+                    <div class="dots flex items-center gap-4 pointer-events-auto pl-4">
+                        <div data-target="0" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-black border-yellow-400 w-6 h-3 border-2 rounded-full"></div>
+                        <div data-target="1" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-transparent border-2 border-white/40 w-3 h-3 rounded-full"></div>
+                        <div data-target="2" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-transparent border-2 border-white/40 w-3 h-3 rounded-full"></div>
+                    </div>
+                    <div class="nav-controls flex items-center bg-black/70 backdrop-blur-sm border border-white/10 px-5 py-2.5 rounded-full gap-5 pointer-events-auto shadow-2xl hover:bg-black/90 transition-colors">
+                        <button class="arrow-btn-prev w-9 h-9 border border-white/30 text-white rounded-full flex items-center justify-center hover:border-yellow-400 hover:text-yellow-400 transition-all">
+                            <i class="fa-solid fa-chevron-left text-xs"></i>
+                        </button>
+                        <span class="counter text-white font-bold font-mono text-sm md:text-base tracking-widest">1/3</span>
+                        <button class="arrow-btn-next w-9 h-9 border border-white/30 text-white rounded-full flex items-center justify-center hover:border-yellow-400 hover:text-yellow-400 transition-all">
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </li>
+
+            <!-- CAROUSEL SLIDE 2 - CORRIGÉ -->
+            <li id="slide-2" class="carousel-slide group absolute list-none rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] transition-all duration-500 ease-in-out left-0 right-0 mx-auto bg-cover bg-center bg-no-repeat overflow-hidden cursor-default"
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.43), rgba(0, 0, 0, 0.4)), url('./img/freepik__ultrarealistic-advertising-photography-captured-by__31973.jpeg'); width: 82.5%; top: 40px; height: 100%; background-size: cover; background-position: center; z-index: 2;">
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+                <div id="overlay-2" class="hover-overlay absolute inset-0 bg-black/95 flex flex-col items-center justify-center opacity-0 pointer-events-none z-50 px-8">
+                    <div class="text-content text-center w-full max-w-3xl max-h-full overflow-y-auto no-scrollbar py-8">
+                        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6 uppercase">Nos Racines</h2>
+                        <p class=" text-sm text-gray-200 leading-relaxed text-justify">
+                            ONCLE G Livraisons est né dans les ruelles de Brazzaville. Des marchés de Poto-Poto aux avenues de Bacongo, nous connaissons chaque détour, chaque ambiance. Ce n'est pas seulement un service : c'est une déclaration d'amour à la ville et à ses habitants.
+                        </p>
+                        <button onclick="toggleOverlay(2, false)" class="mt-8 px-6 py-2 bg-yellow-500 text-black font-bold uppercase rounded-full hover:bg-yellow-400 transition-colors">
+                            <i class="fa-solid fa-times mr-2"></i> Fermer
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CONTENU TEXTE CORRIGÉ -->
+                <div class="slide-content-container absolute inset-0 z-10 pointer-events-none p-4 sm:p-6 md:p-8">
+                    
+                    <!-- Titre -->
+                    <div class="slide-title-container">
+                        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white font-bold uppercase tracking-wider leading-tight drop-shadow-xl text-primary mb-4">
+                            Vos rues<br>sont nos<br>racines
+                        </h1>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="slide-description-container">
+                        <div class="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg text-gray-200 text-sm sm:text-base md:text-lg lg:text-xl font-light leading-relaxed drop-shadow-md">
+                            <p class="line-clamp-3 md:line-clamp-none">
+                                ONCLE G Livraisons est né dans les ruelles de Brazzaville. Des marchés de Poto-Poto aux avenues de Bacongo, nous connaissons chaque détour, chaque ambiance. Ce n'est pas seulement un service : c'est une déclaration d'amour à la ville et à ses habitants.
+                            </p>
+                            <button onclick="toggleOverlay(2, true)" class="lire-plus-btn mt-4 text-yellow-500 text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center pointer-events-auto">
+                                Lire la suite <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls-overlay absolute bottom-6 left-0 w-full px-6 md:px-12 flex justify-between items-center pointer-events-none z-50">
+                    <div class="dots flex items-center gap-4 pointer-events-auto pl-4">
+                        <div data-target="0" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-transparent border-2 border-white/40 w-3 h-3 rounded-full"></div>
+                        <div data-target="1" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-black border-yellow-400 w-6 h-3 border-2 rounded-full"></div>
+                        <div data-target="2" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-transparent border-2 border-white/40 w-3 h-3 rounded-full"></div>
+                    </div>
+                    <div class="nav-controls flex items-center bg-black/70 backdrop-blur-sm border border-white/10 px-5 py-2.5 rounded-full gap-5 pointer-events-auto shadow-2xl hover:bg-black/90 transition-colors">
+                        <button class="arrow-btn-prev w-9 h-9 border border-white/30 text-white rounded-full flex items-center justify-center hover:border-yellow-400 hover:text-yellow-400 transition-all">
+                            <i class="fa-solid fa-chevron-left text-xs"></i>
+                        </button>
+                        <span class="counter text-white font-bold font-mono text-sm md:text-base tracking-widest">2/3</span>
+                        <button class="arrow-btn-next w-9 h-9 border border-white/30 text-white rounded-full flex items-center justify-center hover:border-yellow-400 hover:text-yellow-400 transition-all">
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </li>
+
+            <!-- CAROUSEL SLIDE 3 - CORRIGÉ -->
+            <li id="slide-3" class="carousel-slide group absolute list-none rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] transition-all duration-500 ease-in-out left-0 right-0 mx-auto bg-cover bg-center bg-no-repeat overflow-hidden cursor-default"
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.4)), url('./img/freepik__ultrarealistic-advertising-photography-captured-by__31972.jpeg'); width: 100%; top: 80px; height: 100%; background-size: cover; background-position: center; z-index: 3;">
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+                <div id="overlay-3" class="hover-overlay absolute inset-0 bg-black/95 flex flex-col items-center justify-center opacity-0 pointer-events-none z-50 px-8">
+                    <div class="text-content text-center w-full max-w-3xl max-h-full overflow-y-auto no-scrollbar py-8">
+                        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6 uppercase">Sérénité</h2>
+                        <p class=" text-sm text-gray-200 leading-relaxed text-justify">
+                            Chaque minute compte. ONCLE G Livraisons transforme vos besoins en instants de sérénité. Plus besoin de courir, de jongler avec les imprévus : nous faisons le chemin pour vous, afin que vous puissiez profiter pleinement de vos journées.
+                        </p>
+                        <button onclick="toggleOverlay(3, false)" class="mt-8 px-6 py-2 bg-yellow-500 text-black font-bold uppercase rounded-full hover:bg-yellow-400 transition-colors">
+                            <i class="fa-solid fa-times mr-2"></i> Fermer
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CONTENU TEXTE CORRIGÉ -->
+                <div class="slide-content-container absolute inset-0 z-10 pointer-events-none p-4 sm:p-6 md:p-8">
+                    
+                    <!-- Titre -->
+                    <div class="slide-title-container">
+                        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white font-bold uppercase tracking-wider leading-tight drop-shadow-xl text-primary mb-4">
+                            Moins<br>de soucis,<br>plus<br>de vie
+                        </h1>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="slide-description-container">
+                        <div class="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg text-gray-200 text-sm sm:text-base md:text-lg lg:text-xl font-light leading-relaxed drop-shadow-md">
+                            <p class="line-clamp-3 md:line-clamp-none">
+                                Chaque minute compte. ONCLE G Livraisons transforme vos besoins en instants de sérénité. Plus besoin de courir, de jongler avec les imprévus : nous faisons le chemin pour vous, afin que vous puissiez profiter pleinement de vos journées.
+                            </p>
+                            <button onclick="toggleOverlay(3, true)" class="lire-plus-btn mt-4 text-yellow-500 text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center pointer-events-auto">
+                                Lire la suite <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls-overlay absolute bottom-6 left-0 w-full px-6 md:px-12 flex justify-between items-center pointer-events-none z-50">
+                    <div class="dots flex items-center gap-4 pointer-events-auto pl-4">
+                        <div data-target="0" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-transparent border-2 border-white/40 w-3 h-3 rounded-full"></div>
+                        <div data-target="1" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-transparent border-2 border-white/40 w-3 h-3 rounded-full"></div>
+                        <div data-target="2" class="dot cursor-pointer transition-all duration-300 hover:scale-125 bg-black border-yellow-400 w-6 h-3 border-2 rounded-full"></div>
+                    </div>
+                    <div class="nav-controls flex items-center bg-black/70 backdrop-blur-sm border border-white/10 px-5 py-2.5 rounded-full gap-5 pointer-events-auto shadow-2xl hover:bg-black/90 transition-colors">
+                        <button class="arrow-btn-prev w-9 h-9 border border-white/30 text-white rounded-full flex items-center justify-center hover:border-yellow-400 hover:text-yellow-400 transition-all">
+                            <i class="fa-solid fa-chevron-left text-xs"></i>
+                        </button>
+                        <span class="counter text-white font-bold font-mono text-sm md:text-base tracking-widest">3/3</span>
+                        <button class="arrow-btn-next w-9 h-9 border border-white/30 text-white rounded-full flex items-center justify-center hover:border-yellow-400 hover:text-yellow-400 transition-all">
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</main>
+
+<!-- Le reste de votre code HTML reste inchangé -->
+
+<script>
+    class Carousel {
+        constructor() {
+            this.currentSlide = 0;
+            this.totalSlides = 3;
+            this.slideElements = [];
+            this.dotElements = [];
+            this.autoSlideInterval = null;
+
+            this.init();
+        }
+
+        init() {
+            this.slideElements = [
+                document.getElementById('slide-1'),
+                document.getElementById('slide-2'),
+                document.getElementById('slide-3')
+            ];
+            this.dotElements = document.querySelectorAll('.dot[data-target]');
+            this.addEventListeners();
+            this.setActiveSlide(0);
+            setTimeout(() => {
+                this.startAutoSlide();
+            }, 1000);
+        }
+
+        setActiveSlide(slideIndex) {
+            if (slideIndex < 0 || slideIndex >= this.totalSlides) return;
+            this.currentSlide = slideIndex;
+
+            this.slideElements.forEach((slide, index) => {
+                slide.style.transition = 'all 0.5s ease';
+                const titleElement = slide.querySelector('h1.text-primary');
+                const descriptionElement = slide.querySelector('.slide-description-container');
+
+                if (index === this.currentSlide) {
+                    slide.style.width = '100%';
+                    slide.style.top = '80px';
+                    slide.style.zIndex = '3';
+                    slide.style.display = 'block';
+
+                    if(titleElement) {
+                        titleElement.classList.remove('opacity-0', 'scale-95');
+                        titleElement.classList.add('opacity-100', 'scale-100');
+                    }
+                    if(descriptionElement) descriptionElement.classList.remove('hidden');
+
+                } else if (index === this.currentSlide - 1 || (this.currentSlide === 0 && index === this.totalSlides - 1)) {
+                    slide.style.width = '82.5%';
+                    slide.style.top = '40px';
+                    slide.style.zIndex = '2';
+                    slide.style.display = 'block';
+
+                    if(titleElement) {
+                        titleElement.classList.add('opacity-0', 'scale-95');
+                        titleElement.classList.remove('opacity-100', 'scale-100');
+                    }
+                    if(descriptionElement) descriptionElement.classList.add('hidden');
+
+                } else {
+                    slide.style.width = '65%';
+                    slide.style.top = '0px';
+                    slide.style.zIndex = '1';
+                    slide.style.display = 'block';
+
+                    if(titleElement) {
+                        titleElement.classList.add('opacity-0', 'scale-95');
+                        titleElement.classList.remove('opacity-100', 'scale-100');
+                    }
+                    if(descriptionElement) descriptionElement.classList.add('hidden');
+                }
+            });
+
+            this.updateDots();
+            this.updateCounter();
+        }
+
+        updateDots() {
+            this.dotElements.forEach(dot => {
+                const targetIndex = parseInt(dot.getAttribute('data-target'));
+                if (targetIndex === this.currentSlide) {
+                    dot.classList.remove('bg-transparent');
+                    dot.classList.add('bg-black', 'border-yellow-400');
+                } else {
+                    dot.classList.remove('bg-black', 'border-yellow-400');
+                    dot.classList.add('bg-transparent');
+                }
+            });
+        }
+
+        updateCounter() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                counter.textContent = `${this.currentSlide + 1}/${this.totalSlides}`;
+            });
+        }
+
+        next() {
+            this.pauseAutoSlide();
+            this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+            this.setActiveSlide(this.currentSlide);
+            this.resumeAutoSlide();
+        }
+
+        prev() {
+            this.pauseAutoSlide();
+            this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+            this.setActiveSlide(this.currentSlide);
+            this.resumeAutoSlide();
+        }
+
+        goToSlide(targetIndex) {
+            this.pauseAutoSlide();
+            if (targetIndex >= 0 && targetIndex < this.totalSlides) {
+                this.setActiveSlide(targetIndex);
+            }
+            this.resumeAutoSlide();
+        }
+
+        openOverlay(slideNumber) {
+            const overlay = document.getElementById(`overlay-${slideNumber}`);
+            if (overlay) {
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                overlay.classList.add('opacity-100', 'pointer-events-auto');
+                this.pauseAutoSlide();
+            }
+        }
+
+        closeOverlay(slideNumber) {
+            const overlay = document.getElementById(`overlay-${slideNumber}`);
+            if (overlay) {
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                overlay.classList.remove('opacity-100', 'pointer-events-auto');
+                this.resumeAutoSlide();
+            }
+        }
+
+        startAutoSlide() {
+            if (this.autoSlideInterval) clearInterval(this.autoSlideInterval);
+            this.autoSlideInterval = setInterval(() => {
+                const anyOverlayOpen = document.querySelector('.hover-overlay.opacity-100');
+                if (!anyOverlayOpen) {
+                    this.next();
+                }
+            }, 8000);
+        }
+
+        pauseAutoSlide() {
+            if (this.autoSlideInterval) {
+                clearInterval(this.autoSlideInterval);
+                this.autoSlideInterval = null;
+            }
+        }
+
+        resumeAutoSlide() {
+            setTimeout(() => {
+                if (!this.autoSlideInterval) {
+                    this.startAutoSlide();
+                }
+            }, 5000);
+        }
+
+        addEventListeners() {
+            document.querySelectorAll('.arrow-btn-next').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.next();
+                });
+            });
+            document.querySelectorAll('.arrow-btn-prev').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.prev();
+                });
+            });
+
+            this.dotElements.forEach(dot => {
+                dot.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const index = parseInt(dot.getAttribute('data-target'));
+                    this.goToSlide(index);
+                });
+            });
+        }
+    }
+
+    let carouselInstance;
+
+    function toggleOverlay(slideNumber, open) {
+        if (carouselInstance) {
+            if (open) {
+                carouselInstance.openOverlay(slideNumber);
+            } else {
+                carouselInstance.closeOverlay(slideNumber);
+            }
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        carouselInstance = new Carousel();
+        window.carouselInstance = carouselInstance;
+    });
+</script>
+
+<!-- Le reste de votre code HTML reste inchangé -->
+
 </body>
 </html>
