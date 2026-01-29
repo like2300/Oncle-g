@@ -59,14 +59,60 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-
-
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../fonts.css">
+
+        <!-- Styles personnalisés pour l'animation -->
+        <style>
+            /* Définition de l'animation "breathe" (respiration) */
+            @keyframes breathe {
+                0%, 100% {
+                    transform: scaleX(1);
+                    opacity: 0.5; /* Plus transparent au repos pour l'élégance */
+                }
+                50% {
+                    transform: scaleX(1.15); /* Légère extension */
+                    opacity: 1; /* Plus lumineux à l'extension */
+                }
+            }
+
+            /* Animation d'entrée pour le texte */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Classe de base pour les barres animées */
+            .bar-anim {
+                /* transform-origin est important pour l'extension */
+                transform-origin: right; /* Pour le côté droit */
+                animation-name: breathe;
+                animation-timing-function: ease-in-out; /* Courbe douce */
+                animation-iteration-count: infinite;
+                /* La durée sera définie par défaut, le décalage par JS */
+                animation-duration: 3s;
+                border-radius: 9999px; /* Arrondi parfait (pill) */
+            }
+
+            /* Origine gauche pour le panneau gauche (car il est rotaté) */
+            .side-panel.left .bar-anim {
+                transform-origin: right; /* Comme le panneau est rotaté 180deg, right devient left visuellement */
+            }
+
+            /* Application de l'animation au texte */
+            .fade-in-up {
+                animation: fadeInUp 1.2s ease-out forwards;
+                opacity: 0; /* Caché au départ */
+            }
+        </style>
 
         <style>
-
         /* Styles utilitaires pour la troncation du texte */
         .line-clamp-3 {
             display: -webkit-box;
@@ -701,6 +747,8 @@
 
 
 
+
+
 <div id="loader-overlay" class="fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center overflow-hidden">
 
     <div class="relative w-[300px] md:w-[600px] px-6">
@@ -897,7 +945,8 @@ document.body.classList.add('loading');
 
 
     <!-- Slide-in Navigation Menu -->
-    <div id="menuOverlay" class="fixed inset-0 z-50 bg-black/90 menu-overlay menu-closed overflow-y-auto p-6 md:p-12 lg:p-24">
+    <!-- Slide-in Navigation Menu -->
+    <div id="menuOverlay" class="fixed inset-0 z-[666] bg-black/90 menu-overlay menu-closed overflow-y-auto p-6 md:p-12 lg:p-24">
         <div class="flex flex-col h-full">
              <header class="mb-12 md:mb-20">
                 <!-- <h2 class="text-4xl md:block hidden md:text-5xl lg:text-7xl font-bold tracking-tight text-white">Navigation</h2> -->
@@ -905,21 +954,21 @@ document.body.classList.add('loading');
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 md:gap-x-16 gap-y-8 md:gap-y-12 flex-grow">
 
-                <a href="./pages/le-sourire-de-l-oncle.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                <a href="../index.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
                     <div class="flex justify-between items-center">
                         <span class="text-sm uppercase tracking-widest text-gray-500">01</span>
                         <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">LE SOURIRE DE L’ONCLE</h3>
                     </div>
                 </a>
 
-                <a href="./pages/livraison-express.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                <a href="../pages/livraison-express.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
                     <div class="flex justify-between items-center">
                         <span class="text-sm uppercase tracking-widest text-gray-500">02</span>
                         <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">LIVRAISON EXPRESS</h3>
                     </div>
                 </a>
 
-                <a href="./pages/commandez-en-un-geste.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                <a href="../pages/commandez-en-un-geste.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
                     <div class="flex justify-between items-center">
                         <span class="text-sm uppercase tracking-widest text-gray-500">03</span>
                         <h3 class="text-xl md:text-xl font-semibold group-hover:text-yellow-500">COMMANDEZ EN UN GESTE</h3>
@@ -927,21 +976,21 @@ document.body.classList.add('loading');
                     </div>
                 </a>
 
-                <a href="./pages/a-propos.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                <a href="../pages/a-propos.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
                     <div class="flex justify-between items-center">
                         <span class="text-sm uppercase tracking-widest text-gray-500">04</span>
                         <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">À PROPOS</h3>
                     </div>
                 </a>
 
-                <a href="./pages/communaute.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                <a href="../pages/communaute.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
                     <div class="flex justify-between items-center">
                         <span class="text-sm uppercase tracking-widest text-gray-500">05</span>
                         <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">COMMUNAUTÉ</h3>
                     </div>
                 </a>
 
-                <a href="./pages/contacts.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                <a href="../pages/contacts.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
                     <div class="flex justify-between items-center">
                         <span class="text-sm uppercase tracking-widest text-gray-500">06</span>
                         <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">CONTACTS</h3>
@@ -958,12 +1007,12 @@ document.body.classList.add('loading');
 
     <!-- HEADER -->
     <header class="flex  justify-between items-center px-8 py-5 max-w-[1400px] mx-auto relative z-50">
-        <div class="logo flex items-center gap-3 cursor-pointer">
+        <div onclick="window.location.href='index.html'" class="logo flex items-center gap-3 cursor-pointer">
             <img src="../img/Oncle G - Logo.min.svg" alt="Logo" class="h-16">
         </div>
 
         <button id="menuTriggerBtn" class="nav-link hidden md:flex text-sm text-neutral-500 flex items-center gap-2 hover:text-yellow-500 transition-colors font-medium">
-           CONTACTS <i class="fa-solid fa-arrow-right text-yellow-500 rotate-45"></i>
+           COMMUNAUTÉ <i class="fa-solid fa-arrow-right text-yellow-500 rotate-45"></i>
         </button>
 
         <!-- Mobile button for slide-in menu -->
@@ -1054,53 +1103,53 @@ document.body.classList.add('loading');
     <section class="relative flex justify-center items-center h-screen w-full overflow-hidden bg-white pt-20">
         <!-- Animated Background -->
         <div class="absolute inset-0 bg-gradient-to-br from-gray-100 to-white"></div>
-
         <!-- Right Side Animated Bars -->
         <div    class="side-panel absolute -right-20 md:-right-1 md:top-1/8 top-80 transform -translate-y-1/2 flex flex-col gap-3 opacity-40 md:opacity-90 scale-50 -z-5 md:scale-100 transition-all duration-300 translate-x-10 md:translate-x-0">
             <div class="flex justify-end">
-                <div class="bar w-16 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-16 h-4 bg-black rounded-full"></div>
             </div>
             <div class="flex justify-end gap-2">
-                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-24 h-4 bg-black rounded-full"></div>
             </div>
             <div class="flex justify-end gap-3">
-                <div class="bar w-8 h-4 bg-black rounded-full"></div>
-                <div class="bar w-20 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-8 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-20 h-4 bg-black rounded-full"></div>
             </div>
             <div class="flex justify-end gap-4 relative -left-8">
-                <div class="bar w-10 h-4 bg-black rounded-full"></div>
-                <div class="bar w-40 h-4 bg-black rounded-full"></div>
-                <div class="bar w-6 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-10 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-40 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-6 h-4 bg-black rounded-full"></div>
             </div>
             <div class="flex justify-end gap-3">
-                <div class="bar w-8 h-4 bg-black rounded-full"></div>
-                <div class="bar w-20 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-8 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-20 h-4 bg-black rounded-full"></div>
             </div>
             <div class="flex justify-end">
-                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-24 h-4 bg-black rounded-full"></div>
             </div>
             <div class="flex justify-end">
-                <div class="bar w-28 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-28 h-4 bg-black rounded-full"></div>
             </div>
             <div class="flex justify-end gap-4 relative -left-8">
-                <div class="bar w-10 h-4 bg-black rounded-full"></div>
-                <div class="bar w-40 h-4 bg-black rounded-full"></div>
-                <div class="bar w-6 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-10 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-40 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-6 h-4 bg-black rounded-full"></div>
             </div>
             <div class="flex justify-end gap-2">
-                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-24 h-4 bg-black rounded-full"></div>
             </div>
             <div class="flex justify-end gap-2">
-                <div class="bar w-32 h-4 bg-black rounded-full"></div>
-                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-32 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-8 h-4 bg-black rounded-full"></div>
             </div>
             <div class="flex justify-end">
-                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-24 h-4 bg-black rounded-full"></div>
             </div>
             <div class="flex justify-end">
-                <div class="bar w-14 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-14 h-4 bg-black rounded-full"></div>
             </div>
         </div>
+
 
         <!-- Center Content -->
         <div class="text-center w-full md:w-2/4 px-6 z-10 fade-in">
@@ -1113,49 +1162,49 @@ document.body.classList.add('loading');
         </div>
 
         <!-- Left Side Animated Bars -->
-        <div class="side-panel   absolute -left-8 md:-left-1 md:top-1/2 -bottom-80  rotate-180 transform -translate-y-1/2 flex flex-col gap-3 opacity-40 md:opacity-90 scale-50 md:scale-100 transition-all duration-300 -translate-x-10 md:translate-x-0">
+        <div class="side-panel absolute -left-8 md:-left-1 md:top-1/2 -bottom-80  rotate-180 transform -translate-y-1/2 flex flex-col gap-3 opacity-40 md:opacity-90 scale-50 md:scale-100 transition-all duration-300 -translate-x-10 md:translate-x-0">
             <div class="flex justify-end">
-                <div class="bar w-16 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-16 h-4 bg-black rounded-full"></div>
             </div>
             <div class="flex justify-end gap-2">
-                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-24 h-4 bg-black rounded-full"></div>
             </div>
             <div class="flex justify-end gap-3">
-                <div class="bar w-8 h-4 bg-black rounded-full"></div>
-                <div class="bar w-20 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-8 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-20 h-4 bg-black rounded-full"></div>
             </div>
             <div class="flex justify-end gap-4 relative -left-8">
-                <div class="bar w-10 h-4 bg-black rounded-full"></div>
-                <div class="bar w-40 h-4 bg-black rounded-full"></div>
-                <div class="bar w-6 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-10 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-40 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-6 h-4 bg-black rounded-full"></div>
             </div>
             <div class="flex justify-end gap-3">
-                <div class="bar w-8 h-4 bg-black rounded-full"></div>
-                <div class="bar w-20 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-8 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-20 h-4 bg-black rounded-full"></div>
             </div>
             <div class="flex justify-end">
-                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-24 h-4 bg-black rounded-full"></div>
             </div>
             <div class="flex justify-end">
-                <div class="bar w-28 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-28 h-4 bg-black rounded-full"></div>
             </div>
             <div class="flex justify-end gap-4 relative -left-8">
-                <div class="bar w-10 h-4 bg-black rounded-full"></div>
-                <div class="bar w-40 h-4 bg-black rounded-full"></div>
-                <div class="bar w-6 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-10 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-40 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-6 h-4 bg-black rounded-full"></div>
             </div>
             <div class="flex justify-end gap-2">
-                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-24 h-4 bg-black rounded-full"></div>
             </div>
             <div class="flex justify-end gap-2">
-                <div class="bar w-32 h-4 bg-black rounded-full"></div>
-                <div class="bar w-8 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-32 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-8 h-4 bg-black rounded-full"></div>
             </div>
             <div class="flex justify-end">
-                <div class="bar w-24 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-24 h-4 bg-black rounded-full"></div>
             </div>
             <div class="flex justify-end">
-                <div class="bar w-14 h-4 bg-black rounded-full"></div>
+                <div class="bar bar-anim w-14 h-4 bg-black rounded-full"></div>
             </div>
         </div>
     </section>
@@ -1301,11 +1350,29 @@ De Bacongo à Moungali, les habitants témoignent. Chaque quartier a sa voix, ch
                 </div>
 
                 <div class="order-1 md:order-2 flex gap-6 text-xl">
-                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-x-twitter"></i></a>
-                </div>
+                    <div class="social-icons flex gap-6">
+                        <a href="#"
+                                class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                                <img src="../img/icone_social/facebook_icones_white.svg" class="h-10"  alt="facebook_icones">
+                        </a>
+                        <a href="#"
+                                class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                                <img src="../img/icone_social/instagram_icones_white.svg" class="h-10"  alt="facebook_icones">
+                        </a>
+
+                        <a href="#"
+                                class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                                <img src="../img/icone_social/x_icones_white.svg" class="h-10"  alt="facebook_icones">
+                        </a>
+                        <a href="#"
+                                class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                                <img src="../img/icone_social/tiktok_icones_white.svg" class="h-10"  alt="facebook_icones">
+                        </a>
+                        <!--<a href="#"
+                                class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                                <img src="../img/icone_social/linkedin_icones.svg" class="h-10"  alt="facebook_icones">
+                        </a>-->
+                    </div>  </div>
 
                 <div class="order-3 md:order-3">
                     all right reserve by Oncle G

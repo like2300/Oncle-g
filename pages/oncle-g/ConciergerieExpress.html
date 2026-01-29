@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conciergerie Express - Oncle G</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Halcom', sans-serif; }
+    </style>
+</head>
+<body class="bg-white text-black antialiased">
+    <div class="flex flex-wrap min-h-screen">
+        <div class="w-full lg:w-5/12 relative min-h-[400px] order-2 lg:order-1">
+            <img src="https://images.unsplash.com/photo-1585652414002-da78a876796a?q=80&w=1964&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-yellow-500/10 backdrop-multiply"></div>
+        </div>
+
+        <div class="w-full lg:w-7/12 flex flex-col justify-center p-8 md:p-24 order-1 lg:order-2">
+            <nav class="mb-16">
+               <button onclick="window.history.back()"  class="text-zinc-400 hover:text-black uppercase text-xs font-black tracking-widest transition-all">
+                    <i class="fa-solid fa-chevron-left mr-2"></i> Menu Principal
+                </button>
+            </nav>
+
+            <h2 class="text-yellow-500 font-black text-sm uppercase tracking-[0.5em] mb-4">Service Particulier</h2>
+            <h1 class="text-6xl lg:text-9xl font-black uppercase tracking-tighter mb-10 leading-none">
+                L'Oncle<br><span class="text-zinc-200">s'occupe de</span><br>tout.
+            </h1>
+
+            <p class="text-2xl text-zinc-600 font-light mb-12 max-w-lg italic">
+                "Courses urgentes, dépôts de clés, retraits en pharmacie... Retrouvez le luxe du temps libre."
+            </p>
+
+            <div class="flex items-center gap-8 mb-16">
+                <div class="text-center">
+                    <span class="block text-4xl font-black">15'</span>
+                    <span class="text-[10px] uppercase font-bold text-zinc-400 tracking-widest">Récupération</span>
+                </div>
+                <div class="w-px h-12 bg-zinc-200"></div>
+                <div class="text-center">
+                    <span class="block text-4xl font-black">ASAP</span>
+                    <span class="text-[10px] uppercase font-bold text-zinc-400 tracking-widest">Livraison</span>
+                </div>
+            </div>
+
+            <a href="https://wa.me/242060000000" class="inline-block bg-black text-white text-center px-12 py-6 rounded-full font-black uppercase tracking-widest hover:bg-yellow-500 hover:text-black transition-all">
+                Besoin d'un service immédiat ?
+            </a>
+        </div>
+    </div>
+</body>
+</html>

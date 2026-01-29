@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allô’Gaz - Oncle G</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Halcom', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#F8F8F8] text-black antialiased">
+    <div class="max-w-[1440px] mx-auto min-h-screen flex flex-col lg:flex-row">
+
+        <div class="w-full lg:w-1/2 p-8 md:p-20 flex flex-col justify-between">
+            <header>
+                <img src="./img/Oncle G - Logo.svg" class="h-12 mb-20 grayscale" alt="">
+                <h1 class="text-7xl lg:text-8xl font-black uppercase mb-6 leading-none">ALLÔ’<br><span class="text-yellow-500">GAZ</span></h1>
+                <p class="text-xl text-zinc-500 max-w-md leading-relaxed">
+                    Ne portez plus, ne sortez plus. Recevez votre bouteille de gaz directement installée dans votre cuisine, avec la sécurité et le sourire de l'Oncle.
+                </p>
+            </header>
+
+            <div class="mt-20 space-y-8">
+                <div class="flex items-center gap-6 group">
+                    <div class="w-16 h-16 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl group-hover:bg-yellow-500 transition-colors">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-black uppercase text-sm">Livraison express</h4>
+                        <p class="text-zinc-400 text-xs">Moins de 45 minutes chez vous.</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-6 group">
+                    <div class="w-16 h-16 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl group-hover:bg-yellow-500 transition-colors">
+                        <i class="fa-solid fa-shield-check"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-black uppercase text-sm">Installation Sécurisée</h4>
+                        <p class="text-zinc-400 text-xs">Vérification des joints incluse.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="mt-20 w-full md:w-fit bg-black text-white px-12 py-6 rounded-2xl font-black uppercase tracking-widest hover:shadow-2xl transition-all">
+                Commander mon gaz
+            </button>
+        </div>
+
+        <div class="w-full lg:w-1/2 p-4 lg:p-8">
+            <div class="relative h-full w-full rounded-[3rem] overflow-hidden shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1584263343369-14b55c7c64b4?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <div class="absolute bottom-12 left-12 right-12 text-white">
+                    <span class="text-yellow-500 font-black text-xs uppercase tracking-widest mb-2 block">Partout à Brazzaville</span>
+                    <h3 class="text-3xl font-black uppercase">Disponible 7j/7</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

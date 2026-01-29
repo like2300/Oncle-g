@@ -515,7 +515,7 @@
         }
 
         /* Premium Popup Styles */
-       
+
 
         .popup-image {
             animation: float 6s ease-in-out infinite;
@@ -688,7 +688,7 @@
     </style>
 
     <style>
-       
+
         /* Effet de texte contour (Outline) */
         .text-outline {
             color: transparent;
@@ -772,7 +772,7 @@
 
 
 <div id="loader-overlay" class="fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center overflow-hidden">
-    
+
     <div class="relative w-[300px] md:w-[600px] px-6">
         <svg id="oncle-g-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 268.61" class="w-full h-auto drop-shadow-[0_0_15px_rgba(234,179,8,0.3)]">
             <g id="logo-content">
@@ -799,11 +799,11 @@
         const loaderOverlay = document.getElementById('loader-overlay');
         const paths = document.querySelectorAll('.speed-path');
         const progressBar = document.getElementById('loader-progress');
-        
+
         // Récupération des sons
         const audioElectric = document.getElementById('audio-electric');
         const audioStop = document.getElementById('audio-stop');
-        
+
         // Réglage volumes
         if(audioElectric) audioElectric.volume = 0.5;
         if(audioStop) audioStop.volume = 1.0;
@@ -829,7 +829,7 @@
             // On augmente doucement jusqu'à 90% max
             if (progress < 90) {
                 // Plus on avance, plus ça ralentit (effet naturel)
-                let increment = (90 - progress) / 20; 
+                let increment = (90 - progress) / 20;
                 progress += Math.max(0.5, increment);
                 progressBar.style.width = progress + "%";
             }
@@ -838,10 +838,10 @@
         // --- LE VRAI ÉVÉNEMENT DE CHARGEMENT ---
         // Se déclenche quand TOUT est chargé (Images, CSS, JS externe)
         window.addEventListener('load', () => {
-            
+
             // On arrête la simulation d'attente
             clearInterval(interval);
-            
+
             // On force la barre à 100% instantanément
             progressBar.style.width = "100%";
 
@@ -875,7 +875,7 @@
                 body.classList.remove('loading');
             }, 600); // 0.6s pour laisser le temps de voir le logo blanc
         }
-        
+
         // SÉCURITÉ : Si la page met plus de 10 secondes (bug réseau), on force l'ouverture
         setTimeout(() => {
             if (body.classList.contains('loading')) {
@@ -965,10 +965,10 @@ document.body.classList.add('loading');
 
 
 <div class="flex flex-wrap min-h-screen">
-    
+
     <div class="w-full lg:w-7/12 flex flex-col justify-center relative z-10 bg-black">
       <div class="container mx-auto px-6 md:px-12 py-10 h-full flex flex-col justify-between">
-        
+
         <nav class="flex justify-between items-center mb-10 lg:mb-0">
           <div class="text-2xl font-black tracking-tighter uppercase">
             G – PRO <span class="text-yellow-500">ILLIMITÉ</span>
@@ -976,7 +976,7 @@ document.body.classList.add('loading');
         </nav>
 
         <header class="flex flex-col justify-center flex-grow py-10">
-            
+
             <nav class="flex mb-8" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
@@ -1003,16 +1003,16 @@ document.body.classList.add('loading');
                 </ol>
             </nav>
             <span class="text-yellow-500 font-bold tracking-[0.2em] uppercase text-sm mb-4">Offre Professionnelle</span>
-            
+
             <h1 class="text-5xl lg:text-7xl font-black leading-tight mb-6">
                 Votre logistique <br>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">sans contrainte.</span>
             </h1>
-            
+
             <div class="w-24 h-1 bg-yellow-500 my-6"></div>
-            
+
             <p class="text-xl md:text-2xl text-gray-400 font-light mb-10 max-w-lg leading-relaxed">
-                Une moto et un livreur dédiés, entièrement gérés par <strong class="text-white">ONCLE G</strong>. 
+                Une moto et un livreur dédiés, entièrement gérés par <strong class="text-white">ONCLE G</strong>.
                 Carburant, maintenance et suivi inclus.
             </p>
 
@@ -1059,10 +1059,10 @@ document.body.classList.add('loading');
     </div>
 
     <div class="w-full lg:w-5/12 relative h-96 lg:h-auto">
-        <img src="https://images.unsplash.com/photo-1620912179836-e04f3780373c?q=80&w=2070&auto=format&fit=crop" 
-             alt="Logistique Pro" 
+        <img src="https://images.unsplash.com/photo-1620912179836-e04f3780373c?q=80&w=2070&auto=format&fit=crop"
+             alt="Logistique Pro"
              class="absolute inset-0 w-full h-full object-cover filter brightness-75 grayscale hover:grayscale-0 transition-all duration-700">
-        
+
         <div class="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent lg:bg-gradient-to-l lg:from-transparent lg:via-transparent lg:to-black"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
 
