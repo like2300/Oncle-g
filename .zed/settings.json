@@ -1,0 +1,8 @@
+{
+  "terminal": {
+    "shell": {
+      "program": "sh"
+    }
+  },
+  "context_server_timeout": 60
+}

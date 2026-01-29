@@ -738,6 +738,25 @@
             transform: scale(1.1); /* Léger zoom avant de partir */
             transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
+        /* Animation Classes for scroll reveal */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+        .delay-500 { transition-delay: 500ms; }
+        .delay-600 { transition-delay: 600ms; }
     </style>
 
 </head>
@@ -1199,25 +1218,25 @@ document.body.classList.add('loading');
             </div>
         </section>
 
-    <section class="py-24 px-4 md:px-8 max-w-7xl mx-auto">
+    <section class="py-24 px-4 md:px-8 max-w-7xl mx-auto reveal-element">
 
 
         <div class="flex flex-col md:flex-row gap-6 md:gap-10">
 
             <div class="flex flex-col gap-6 md:gap-10 w-full md:w-1/2">
 
-                <div class="bg-zinc-900 rounded-[2.5rem] p-8 md:p-12 h-[450px] flex flex-col justify-between relative group overflow-visible border border-zinc-800">
-                    <img src="./img/livreur-pro.png" alt="" class="absolute -top-12 -right-6 w-64 h-auto drop-shadow-2xl group-hover:-translate-y-4 transition-transform duration-500 z-20 pointer-events-none">
+                <div class="bg-zinc-900 rounded-[2.5rem] p-8 md:p-12 h-[450px] flex flex-col justify-between relative group overflow-visible border border-zinc-800 reveal-element">
+                    <img src="./img/livreur-pro.png" alt="" class="absolute -top-12 -right-6 w-64 h-auto drop-shadow-2xl group-hover:-translate-y-4 transition-transform duration-500 z-20 pointer-events-none reveal-element delay-200">
 
-                    <div class="z-10 relative">
+                    <div class="z-10 relative reveal-element delay-300">
                         <h4 class="text-3xl font-black text-white mt-4 uppercase leading-none">G – PRO <br> ILLIMITÉ</h4>
-                        <p class="text-sm text-gray-400 mt-6 max-w-[200px] leading-relaxed">
+                        <p class="text-sm text-gray-400 mt-6 max-w-[200px] leading-relaxed reveal-element delay-400">
                           Une moto et un livreur dédiés, entièrement gérés par ONCLE G Livraisons, Carburant, maintenance, remplacement et suivi inclus.
 
                         </p>
                     </div>
 
-                    <button class="bg-white text-black text-[10px] font-black uppercase py-4 px-8 rounded-full flex items-center gap-3 w-fit hover:bg-yellow-500 transition-colors z-10">
+                    <button class="bg-white text-black text-[10px] font-black uppercase py-4 px-8 rounded-full flex items-center gap-3 w-fit hover:bg-yellow-500 transition-colors z-10 reveal-element delay-500">
                         En savoir Plus
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -1225,18 +1244,18 @@ document.body.classList.add('loading');
                     </button>
                 </div>
 
-                <div class="bg-zinc-100 rounded-[2.5rem] p-8 md:p-12 h-[400px] flex flex-col justify-between relative group overflow-visible">
-                    <img src="./img/marketing-impact.png" alt="" class="absolute -top-16 -left-4 w-56 h-auto drop-shadow-xl group-hover:scale-110 transition-transform duration-500 z-20 pointer-events-none">
+                <div class="bg-zinc-100 rounded-[2.5rem] p-8 md:p-12 h-[400px] flex flex-col justify-between relative group overflow-visible reveal-element delay-200">
+                    <img src="./img/marketing-impact.png" alt="" class="absolute -top-16 -left-4 w-56 h-auto drop-shadow-xl group-hover:scale-110 transition-transform duration-500 z-20 pointer-events-none reveal-element delay-300">
 
-                    <div class="z-10 relative text-right md:text-left flex flex-col items-end md:items-start">
+                    <div class="z-10 relative text-right md:text-left flex flex-col items-end md:items-start reveal-element delay-400">
                         <h4 class="text-3xl font-black text-black uppercase leading-none">G – PRO
      <br> MARKETING  <br>  IMPACT </h4>
-                        <p class="text-sm text-gray-600 mt-6 max-w-[250px]">
+                        <p class="text-sm text-gray-600 mt-6 max-w-[250px] reveal-element delay-500">
                            Solution clé en main qui permet aux marques et e-commerçants de vendre leurs produits sans gérer la logistique. ONCLE G Livraisons prend en charge le stock, la vente, la distribution et la livraison finale.
     </p>
                     </div>
 
-                    <button class="bg-black text-white text-[10px] font-black uppercase py-4 px-8 rounded-full flex items-center gap-3 w-fit self-end md:self-start">
+                    <button class="bg-black text-white text-[10px] font-black uppercase py-4 px-8 rounded-full flex items-center gap-3 w-fit self-end md:self-start reveal-element delay-600">
                         Détails
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -1248,18 +1267,18 @@ document.body.classList.add('loading');
 
             <div class="flex flex-col gap-6 md:gap-10 w-full md:w-1/2 md:mt-20">
 
-                <div class="bg-white border border-black rounded-[2.5rem] p-8 md:p-12 h-[450px] flex flex-col justify-between relative group overflow-visible">
-                    <img src="./img/bouteille-gaz.png" alt="" class="absolute -top-20 right-0 w-48 h-auto drop-shadow-2xl group-hover:rotate-12 transition-transform duration-500 z-20 pointer-events-none">
+                <div class="bg-white border border-black rounded-[2.5rem] p-8 md:p-12 h-[450px] flex flex-col justify-between relative group overflow-visible reveal-element">
+                    <img src="./img/bouteille-gaz.png" alt="" class="absolute -top-20 right-0 w-48 h-auto drop-shadow-2xl group-hover:rotate-12 transition-transform duration-500 z-20 pointer-events-none reveal-element delay-200">
 
-                    <div>
+                    <div class="reveal-element delay-300">
                         <h4 class="text-4xl font-black text-black uppercase leading-tight">CONCIERGERIE
      <br> EXPRESS</h4>
-                        <p class="text-sm text-black font-medium mt-6 max-w-[220px]">
+                        <p class="text-sm text-black font-medium mt-6 max-w-[220px] reveal-element delay-400">
                        Courses urgentes, dépôts, retraits ou démarches rapides : ONCLE G Livraisons s’occupe de tout, en un temps record. Un service flexible, rapide et fiable pour gérer les imprévus du quotidien.
      </p>
                     </div>
 
-                    <button class="bg-black text-white text-[10px] font-black uppercase py-4 px-8 rounded-full flex items-center gap-3 w-fit">
+                    <button class="bg-black text-white text-[10px] font-black uppercase py-4 px-8 rounded-full flex items-center gap-3 w-fit reveal-element delay-500">
                         Commander Gaz
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -1267,14 +1286,14 @@ document.body.classList.add('loading');
                     </button>
                 </div>
 
-                <div class="bg-zinc-800 rounded-[2.5rem] p-8 md:p-12 h-[350px] flex flex-col justify-between relative group overflow-hidden border border-zinc-700">
-                    <div class="z-10">
+                <div class="bg-zinc-800 rounded-[2.5rem] p-8 md:p-12 h-[350px] flex flex-col justify-between relative group overflow-hidden border border-zinc-700 reveal-element delay-200">
+                    <div class="z-10 reveal-element delay-300">
                         <h4 class="text-3xl font-black text-white uppercase leading-none">ALLÔ’GAZ
     </h4>
-                        <p class="text-sm text-gray-400 mt-6 max-w-[250px]">
+                        <p class="text-sm text-gray-400 mt-6 max-w-[250px] reveal-element delay-400">
                           Plus besoin de vous déplacer, d’attendre ou de vous salir. <br> ONCLE G Livraisons vous livre votre bouteille de gaz rapidement et en toute sécurité, directement dans votre cuisine, avec un sourire en plus.
      </p>
-     <button class="bg-white mt-7 text-black text-[10px] font-black uppercase py-4 px-8 rounded-full flex items-center gap-3 w-fit hover:bg-yellow-500 transition-colors z-10">
+     <button class="bg-white mt-7 text-black text-[10px] font-black uppercase py-4 px-8 rounded-full flex items-center gap-3 w-fit hover:bg-yellow-500 transition-colors z-10 reveal-element delay-500">
          En savoir Plus
          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -1332,7 +1351,7 @@ document.body.classList.add('loading');
                         </div> </div>
 
                     <div class="order-3 md:order-3">
-                        all right reserve by Oncle G
+                        all right reserve by ONCLE G Livraisons
                     </div>
 
                 </div>
@@ -1590,5 +1609,27 @@ document.body.classList.add('loading');
                 });
             </script>
 
+        <!-- Script for scroll animations -->
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.1
+                };
+
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                const elements = document.querySelectorAll('.reveal-element');
+                elements.forEach(el => observer.observe(el));
+            });
+        </script>
         </body>
         </html>

@@ -1157,8 +1157,6 @@ document.body.classList.add('loading');
                 <p class="text-sm md:text-base text-gray-700 leading-relaxed max-w-md mx-auto">
                     Histoires de Clients
                 </p>
-
-
         </div>
 
         <!-- Left Side Animated Bars -->
@@ -1211,93 +1209,230 @@ document.body.classList.add('loading');
 
 
 
-<style>
-    #slider {
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-    }
-    #slider > div {
-        scroll-snap-align: center;
-    }
-    /* Masquer la scrollbar */
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    <style>
+        #slider {
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        #slider > div {
+            scroll-snap-align: center;
+        }
+        /* Masquer la scrollbar */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-    /* CTA Button Styles */
-    .cta-button {
-        transition: all 0.3s ease;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    }
+        /* CTA Button Styles */
+        .cta-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
 
-    .cta-button:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    }
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
 
-    .cta-secondary {
-        transition: all 0.3s ease;
-    }
+        .cta-secondary {
+            transition: all 0.3s ease;
+        }
 
-    .cta-secondary:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
+        .cta-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
 
-    /* Animation for CTA elements */
-    @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-        100% { transform: translateY(0px); }
-    }
+        /* Animation for CTA elements */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
 
-    .animate-float {
-        animation: float 3s ease-in-out infinite;
-    }
-</style>
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
 
-<div class="w-full py-10 md:py-20 bg-black">
+        /* Wave animation styles */
+        .svg-wave-animation {
+            animation: wavePulse 8s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+        }
+
+        @keyframes wavePulse {
+            0% { opacity: 0.7; transform: scaleY(1); }
+            50% { opacity: 1; transform: scaleY(1.02); }
+            100% { opacity: 0.7; transform: scaleY(1); }
+        }
+
+        .wave-group {
+            transform-origin: center;
+            animation: waveSwing 12s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+        }
+
+        @keyframes waveSwing {
+            0% { transform: rotate(0.3deg) translateX(-1px); }
+            25% { transform: rotate(-0.3deg) translateX(1px); }
+            50% { transform: rotate(0.4deg) translateX(-0.5px); }
+            75% { transform: rotate(-0.2deg) translateX(0.5px); }
+            100% { transform: rotate(0.3deg) translateX(-1px); }
+        }
+
+        /* Enhanced Animation Classes */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(60px) scale(0.9);
+            transition: all 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+
+        .reveal-element.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Timeline-specific animations for more dynamic effect */
+        .timeline-line .reveal-element {
+            transform: translateY(80px) perspective(1000px) rotateY(15deg);
+        }
+
+        .timeline-line .reveal-element.is-visible {
+            transform: translateY(0) perspective(1000px) rotateY(0);
+        }
+
+        /* Staggered delays for elegant sequential animation */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+        .delay-500 { transition-delay: 500ms; }
+        .delay-600 { transition-delay: 600ms; }
+
+        /* Modern card design */
+        .modern-card {
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1) !important;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 1.5rem;
+        }
+
+        .modern-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.15);
+            border-color: rgba(250, 204, 21, 0.3);
+        }
+
+        /* Glassmorphism effect */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Refined typography */
+        .display-1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; letter-spacing: -0.03em; }
+        .display-2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; }
+        .display-3 { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; }
+
+        /* Subtle divider */
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d1d5db, transparent);
+            margin: 2rem 0;
+        }
+
+        /* Refined section styling */
+        .section-elegant {
+            position: relative;
+            padding: 6rem 1rem;
+        }
+
+        .section-elegant::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(250, 204, 21, 0.3), transparent);
+        }
+
+        /* Modern grid layout */
+        .grid-modern {
+            display: grid;
+            gap: 2rem;
+        }
+
+        /* Refined image styling */
+        .img-refined {
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .img-refined:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+
+    <div class="w-full py-10 md:py-20 bg-black relative overflow-hidden">
 
 
-    <div id="slider" class="flex overflow-x-scroll space-x-6 px-6 md:px-20 no-scrollbar">
+        <div id="slider" class="flex overflow-x-scroll space-x-6 px-6 md:px-20 no-scrollbar">
 
-        <div class="flex-shrink-0 w-[85%] md:w-3/4 lg:w-2/3 relative group overflow-hidden rounded-[2.5rem]">
-            <img src="ton-illustration-1.webp" alt="Chapitre 1" class="w-full md:h-[700px] h-[580px] object-cover transition-transform duration-700 group-hover:scale-105">
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
-            <div class="absolute bottom-10 left-10 right-10">
-                <span class="text-yellow-500 text-xs font-bold uppercase tracking-widest">Chapitre 01</span>
-                <h4 class="text-3xl md:text-4xl font-black text-white uppercase mt-2 mb-4">Chaque livraison <br> est un chapitre</h4>
-                <p class="text-gray-300 max-w-lg text-sm md:text-base leading-relaxed">
-                   Une maman qui reçoit son panier à temps, un étudiant qui obtient ses documents avant l’examen, un couple qui partage un repas livré avec soin. Ces récits sont la preuve vivante de notre mission </p>
+            <div class="flex-shrink-0 w-[85%] md:w-3/4 lg:w-2/3 relative group overflow-hidden rounded-[2.5rem] reveal-element">
+                <img src="https://picsum.photos/seed/community1/800/600" alt="Témoignages communauté" class="w-full md:h-[700px] h-[580px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                <div class="absolute bottom-10 left-10 right-10">
+                    <span class="text-yellow-500 text-xs font-bold uppercase tracking-widest reveal-element">Chapitre 01</span>
+                    <h4 class="text-3xl md:text-4xl font-black text-white uppercase mt-2 mb-4 reveal-element delay-100">Chaque livraison <br> est un chapitre</h4>
+                    <p class="text-gray-300 max-w-lg text-sm md:text-base leading-relaxed reveal-element delay-200">
+                       Une maman qui reçoit son panier à temps, un étudiant qui obtient ses documents avant l’examen, un couple qui partage un repas livré avec soin. Ces récits sont la preuve vivante de notre mission </p>
+                </div>
             </div>
-        </div>
 
-        <div class="flex-shrink-0 w-[85%] md:w-3/4 lg:w-2/3 relative group overflow-hidden rounded-[2.5rem]">
-            <img src="ton-illustration-2.webp" alt="Quartiers Brazza" class="w-full md:h-[700px] h-[580px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-           <div class="absolute bottom-10 left-10 right-10">
-               <span class="text-yellow-500 text-xs font-bold uppercase tracking-widest">La Voix des Quartiers</span>
-                <h4 class="text-3xl md:text-4xl font-black text-white uppercase mt-2 mb-4">Brazzaville raconte <br> Oncle G</h4>
-                <p class="text-gray-300 max-w-sm text-sm md:text-base leading-relaxed">
+            <div class="flex-shrink-0 w-[85%] md:w-3/4 lg:w-2/3 relative group overflow-hidden rounded-[2.5rem] reveal-element delay-200">
+                <img src="https://picsum.photos/seed/partnership/800/600" alt="Partenariats locaux" class="w-full md:h-[700px] h-[580px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+               <div class="absolute bottom-10 left-10 right-10">
+                   <span class="text-yellow-500 text-xs font-bold uppercase tracking-widest reveal-element">La Voix des Quartiers</span>
+                    <h4 class="text-3xl md:text-4xl font-black text-white uppercase mt-2 mb-4 reveal-element delay-100">Brazzaville raconte <br> Oncle G</h4>
+                    <p class="text-gray-300 max-w-sm text-sm md:text-base leading-relaxed reveal-element delay-200">
 
 De Bacongo à Moungali, les habitants témoignent. Chaque quartier a sa voix, chaque voix raconte comment Oncle G simplifie la vie.  </p>
+                </div>
             </div>
+
+            <div class="flex-shrink-0 w-[85%] md:w-3/4 lg:w-2/3 relative group overflow-hidden rounded-[2.5rem] border-2 border-dashed border-zinc-800 reveal-element delay-300">
+                <img src="https://picsum.photos/seed/engagement/800/600" alt="Engagement communauté" class="w-full md:h-[700px] h-[580px] object-cover opacity-50 group-hover:opacity-80 transition-opacity">
+             <div class="absolute bottom-10 left-10 right-10">
+
+                    <h4 class="text-4xl md:text-6xl font-black text-white uppercase leading-none mb-6 reveal-element">Partagez <br><span class="text-yellow-500">votre histoire</span></h4>
+                    <p class="text-gray-400 max-w-md mb-8 reveal-element delay-100">Vous aussi, écrivez votre chapitre. Chaque témoignage enrichit le grand livre d’ONCLE G Livraisons, une histoire collective où la livraison devient un lien.
+    </p>
+                    <button class="bg-white text-black font-black uppercase tracking-widest px-8 py-4 rounded-full hover:bg-yellow-500 transition-colors reveal-element delay-200">
+                        Écrire à l'Oncle
+                    </button>
+                </div>
+            </div>
+
         </div>
 
-        <div class="flex-shrink-0 w-[85%] md:w-3/4 lg:w-2/3 relative group overflow-hidden rounded-[2.5rem] border-2 border-dashed border-zinc-800">
-            <img src="ton-illustration-3.webp" alt="Partagez" class="w-full md:h-[700px] h-[580px] object-cover opacity-50 group-hover:opacity-80 transition-opacity">
-         <div class="absolute bottom-10 left-10 right-10">
+        <!-- ÉLÉMENT DROIT : EFFET GLASSMORPHISME & FLOUTAGE -->
+        <!-- Cet élément est positionné en absolu par dessus le côté droit du slider -->
+        <div class="pointer-events-none absolute top-0 right-0 bottom-0 w-16 md:w-32 z-20 flex items-center justify-end ">
+            <!-- Dégradé de fondu sur la droite pour adoucir la transition -->
+            <div class="w-full h-full bg-gradient-to-l from-black via-black/70 to-transparent"></div>
 
-                <h4 class="text-4xl md:text-6xl font-black text-white uppercase leading-none mb-6">Partagez <br><span class="text-yellow-500">votre histoire</span></h4>
-                <p class="text-gray-400 max-w-md mb-8">Vous aussi, écrivez votre chapitre. Chaque témoignage enrichit le grand livre d’ONCLE G Livraisons, une histoire collective où la livraison devient un lien.
-</p>
-                <button class="bg-white text-black font-black uppercase tracking-widest px-8 py-4 rounded-full hover:bg-yellow-500 transition-colors">
-                    Écrire à l'Oncle
-                </button>
+            <!-- Icône flottante indicatrice de scroll -->
+            <div class="absolute top-1/2 right-4 w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center animate-float shadow-[0_0_15px_rgba(0,0,0,0.5)] pointer-events-auto cursor-pointer hover:bg-white/20 transition-colors" onclick="scrollSlider()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
             </div>
         </div>
-
     </div>
-</div>
 
 
 
@@ -1375,13 +1510,13 @@ De Bacongo à Moungali, les habitants témoignent. Chaque quartier a sa voix, ch
                     </div>  </div>
 
                 <div class="order-3 md:order-3">
-                    all right reserve by Oncle G
+                    all right reserve by ONCLE G Livraisons
                 </div>
 
             </div>
 
         </footer>
-        <br><br><br><br>
+        <br><br><br><br>        <br><br><br><br>        <br><br><br><br>
     </div>
 
 
@@ -1518,7 +1653,52 @@ De Bacongo à Moungali, les habitants témoignent. Chaque quartier a sa voix, ch
             });
         </script>
 
+        <!-- Script for scroll animations -->
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.1
+                };
 
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                const elements = document.querySelectorAll('.reveal-element');
+                elements.forEach(el => observer.observe(el));
+            });
+        </script>
+
+        <script>
+            function scrollSlider() {
+                const slider = document.getElementById('slider');
+                if (slider) {
+                    // Calculer la largeur d'une carte pour déterminer combien faire défiler
+                    const card = slider.querySelector('.flex-shrink-0');
+                    if (card) {
+                        const cardWidth = card.offsetWidth;
+                        // Défiler de la largeur d'une carte + un peu d'espace
+                        slider.scrollBy({
+                            left: cardWidth * 1.2, // Défiler d'environ 1.2 fois la largeur d'une carte
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        // Si aucune carte spécifique n'est trouvée, défiler d'une quantité fixe
+                        slider.scrollBy({
+                            left: 800, // Valeur par défaut
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            }
+        </script>
 
     </body>
     </html>
