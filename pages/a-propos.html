@@ -757,6 +757,86 @@
         .delay-400 { transition-delay: 400ms; }
         .delay-500 { transition-delay: 500ms; }
         .delay-600 { transition-delay: 600ms; }
+
+        /* Dotted line effect during scroll */
+        .scroll-dotted-line {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            height: 100vh;
+            width: 4px;
+            transform: translateX(-50%);
+            pointer-events: none;
+            z-index: 9999;
+            display: none;
+        }
+
+        .scroll-dotted-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0%;
+            background: repeating-radial-gradient(
+                circle,
+                #eab308 0px,
+                #eab308 2px,
+                transparent 2px,
+                transparent 4px
+            );
+            background-size: 4px 4px;
+            animation: scrollLine 0.3s linear infinite;
+        }
+
+        @keyframes scrollLine {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 0 4px;
+            }
+        }
+
+        /* Game-like dot that follows scroll */
+        .scroll-dot {
+            position: fixed;
+            width: 16px;
+            height: 16px;
+            background: #eab308;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #eab308, 0 0 20px #eab308;
+            z-index: 10000;
+            pointer-events: none;
+            display: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Enhanced scroll-triggered animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Game-like effect elements */
+        .game-element {
+            position: relative;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .game-element.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
     </style>
 
 </head>
@@ -1612,6 +1692,110 @@ document.body.classList.add('loading');
 
                 const elements = document.querySelectorAll('.reveal-element');
                 elements.forEach(el => observer.observe(el));
+            });
+        </script>
+
+        <!-- Scroll-triggered animations and dotted line script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Create the dotted line element
+                const dottedLine = document.createElement('div');
+                dottedLine.className = 'scroll-dotted-line';
+                document.body.appendChild(dottedLine);
+
+                // Create the game-like dot that follows scroll
+                const scrollDot = document.createElement('div');
+                scrollDot.className = 'scroll-dot';
+                document.body.appendChild(scrollDot);
+
+                // Track scroll position and show/hide dotted line and dot
+                let ticking = false;
+
+                function updateScrollEffects() {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const winHeight = window.innerHeight;
+
+                    // Calculate percentage scrolled
+                    const scrollPercent = (scrollTop / (docHeight || 1)) * 100;
+
+                    // Show the dotted line and dot when scrolling past a certain point
+                    if (scrollTop > 100) {
+                        dottedLine.style.display = 'block';
+                        scrollDot.style.display = 'block';
+
+                        // Position the dot based on scroll position
+                        const topPosition = (scrollPercent * winHeight / 100) + (scrollTop % winHeight);
+                        scrollDot.style.top = `${topPosition}px`;
+                        scrollDot.style.left = '50%';
+
+                        // Add pulsing effect to the dot
+                        const pulseSize = 16 + Math.sin(Date.now() / 200) * 4;
+                        scrollDot.style.transform = `translate(-50%, -50%) scale(${1 + Math.sin(Date.now() / 200) * 0.2})`;
+                    } else {
+                        dottedLine.style.display = 'none';
+                        scrollDot.style.display = 'none';
+                    }
+
+                    ticking = false;
+                }
+
+                function requestTick() {
+                    if (!ticking) {
+                        requestAnimationFrame(updateScrollEffects);
+                        ticking = true;
+                    }
+                }
+
+                window.addEventListener('scroll', requestTick);
+                window.addEventListener('resize', requestTick); // Update on resize too
+
+                // Enhanced scroll-triggered animations
+                const scrollElements = document.querySelectorAll('.scroll-animate, .game-element');
+
+                const elementObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+
+                            // Add game-like sound effect when element becomes visible
+                            // (simulated with a visual pulse)
+                            entry.target.style.transform = entry.target.style.transform + ' scale(1.02)';
+                            setTimeout(() => {
+                                entry.target.style.transform = entry.target.style.transform.replace(' scale(1.02)', '');
+                            }, 200);
+
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                });
+
+                scrollElements.forEach((el) => {
+                    elementObserver.observe(el);
+                });
+
+                // Add game-like effects to specific elements
+                const gameElements = document.querySelectorAll('.timeline-line .reveal-element');
+                gameElements.forEach((el, index) => {
+                    el.classList.add('game-element');
+                    el.style.transitionDelay = `${index * 150}ms`;
+                });
+
+                // Add special game-like effects to timeline dots
+                const timelineDots = document.querySelectorAll('.timeline-line .bg-yellow-500');
+                timelineDots.forEach((dot, index) => {
+                    dot.addEventListener('mouseover', function() {
+                        this.style.transform = 'scale(1.2)';
+                        this.style.transition = 'transform 0.2s ease';
+                    });
+
+                    dot.addEventListener('mouseout', function() {
+                        this.style.transform = 'scale(1)';
+                    });
+                });
             });
         </script>
 

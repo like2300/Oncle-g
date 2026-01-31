@@ -9,6 +9,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { font-family: 'Halcom', sans-serif; }
+
+        /* Glowing cursor effect */
+        #cursor-glow {
+            position: fixed;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            pointer-events: none;
+            background: radial-gradient(circle, rgba(250,204,21,0.4) 0%, rgba(250,204,21,0) 70%);
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            mix-blend-mode: screen;
+            transition: width 0.2s, height 0.2s;
+        }
+
+        body {
+            cursor: none;
+        }
     </style>
 </head>
 <body class="bg-[url('../../img/service/freepik__ultrarealistic-8k-photo-of-a-black-african-deliver__15783.png')] bg-cover bg-center bg-no-repeat">
@@ -50,5 +68,26 @@
         </div>
       </div>
     </section>
+    <!-- Cursor glow element -->
+    <div id="cursor-glow"></div>
+
+    <script>
+        // Glowing cursor effect
+        const cursor = document.getElementById('cursor-glow');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Handle mouse leave
+        document.addEventListener('mouseleave', () => {
+            cursor.style.opacity = '0';
+        });
+
+        document.addEventListener('mouseenter', () => {
+            cursor.style.opacity = '1';
+        });
+    </script>
 </body>
 </html>
