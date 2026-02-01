@@ -1,0 +1,57 @@
+/* Typography Styles */
+
+body { font-family: 'Halcom', sans-serif; }
+
+/* Custom font styles for different sections */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Halcom', sans-serif;
+    font-weight: 700;
+}
+
+.hero-title {
+    font-family: 'Halcom', sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.section-title {
+    font-family: 'Halcom', sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.card-title {
+    font-family: 'Halcom', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.navigation-text {
+    font-family: 'Halcom', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.body-text {
+    font-family: 'Halcom', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.emphasis-text {
+    font-family: 'Halcom', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.italic-text {
+    font-family: 'Halcom', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Effet de texte contour (Outline) */
+.text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+}

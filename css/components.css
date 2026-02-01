@@ -1,0 +1,109 @@
+/* Component Styles */
+
+/* Petit style pour lisibilité */
+.card-stack:hover .nav-btn {
+    opacity: 1;
+}
+
+/* Empêcher la sélection de texte accidentelle */
+.no-select {
+    user-select: none;
+}
+
+/* Masquer la barre de scroll par défaut pour un look plus propre */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Styles utilitaires pour la troncation du texte */
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Cacher la barre de défilement */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hover-overlay {
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Animation au survol des cartes */
+.whawoo-card {
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+}
+.whawoo-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    background: #493801;
+    border-color: #eab308;
+}
+
+/* Décoration d'arrière-plan */
+.bg-glow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(234, 179, 8, 0.05) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+input , textarea {
+    color: black!important  ;
+}
+
+/* Floating button styles */
+.floating-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background-color: #facc15;
+    color: #000;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+.floating-btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+.floating-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+.floating-btn i {
+    font-size: 1.2rem;
+}

@@ -1,0 +1,699 @@
+/* Main Styles - Page Oncle G */
+/* Fichier CSS principal combinant tous les styles de la page */
+
+/* ============================================
+   TAILWIND CONFIG EXTENSION
+   ============================================ */
+
+/*
+   Configuration Tailwind (à placer dans le fichier HTML):
+   
+   tailwind.config = {
+       theme: {
+           extend: {
+               colors: {
+                   primary: '#facc15',
+                   secondary: '#1A1A1A',
+                   accent: '#FF4081',
+               },
+               fontFamily: {
+                   sans: ['Halcom', 'sans-serif'],
+                   heading: ['Halcom', 'sans-serif'],
+               },
+               animation: {
+                   'scale-down': 'scaleDown 500ms forwards',
+                   'scale-up': 'scaleUp 500ms forwards',
+               },
+               keyframes: {
+                   scaleDown: {
+                       '0%': { transform: 'scale(1) translateY(0)', opacity: '1' },
+                       '100%': { transform: 'scale(1.1) translateY(40px)', opacity: '0' },
+                   },
+                   scaleUp: {
+                       '0%': { transform: 'scale(1.1) translateY(-40px)', opacity: '0' },
+                       '100%': { transform: 'scale(1) translateY(0)', opacity: '1' },
+                   },
+               },
+           }
+       }
+   }
+*/
+
+/* ============================================
+   ANIMATIONS - FLOAT & KEYFRAMES
+   ============================================ */
+
+@keyframes float {
+    0% { transform: translateY(0); opacity: 0.8; }
+    50% { transform: translateY(-6px); opacity: 1; }
+    100% { transform: translateY(0); opacity: 0.8; }
+}
+
+@keyframes floatAdvanced {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* ============================================
+   SLIDE ANIMATIONS
+   ============================================ */
+
+.slide-enter {
+    animation: slideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.slide-exit {
+    animation: slideOut 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes slideIn {
+    0% { transform: translateX(100%) scale(0.9); opacity: 0; }
+    100% { transform: translateX(0) scale(1); opacity: 1; }
+}
+
+@keyframes slideOut {
+    0% { transform: translateX(0) scale(1); opacity: 1; }
+    100% { transform: translateX(-100%) scale(0.9); opacity: 0; }
+}
+
+/* ============================================
+   CARD TRANSITIONS
+   ============================================ */
+
+.card-transition {
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.next-card-transition {
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ============================================
+   SCALE ANIMATIONS
+   ============================================ */
+
+.scale-in {
+    animation: scaleIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes scaleIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* ============================================
+   FADE ANIMATIONS
+   ============================================ */
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ============================================
+   SLIDE FROM SIDE ANIMATIONS
+   ============================================ */
+
+.slide-from-right {
+    animation: slideFromRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes slideFromRight {
+    0% { transform: translateX(50px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+.slide-from-left {
+    animation: slideFromLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes slideFromLeft {
+    0% { transform: translateX(-50px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+/* ============================================
+   SLIDE CONTENT ANIMATIONS
+   ============================================ */
+
+.slide-content {
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.slide-content-element {
+    animation: slideContentIn 0.8s 0.2s both;
+}
+
+@keyframes slideContentIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply different delays for staggered animations */
+.slide-content-element:nth-child(1) { animation-delay: 0.1s; }
+.slide-content-element:nth-child(2) { animation-delay: 0.2s; }
+.slide-content-element:nth-child(3) { animation-delay: 0.3s; }
+.slide-content-element:nth-child(4) { animation-delay: 0.4s; }
+
+/* ============================================
+   POPUP ANIMATIONS
+   ============================================ */
+
+.popup-image {
+    animation: floatAdvanced 6s ease-in-out infinite;
+}
+
+.popup-title {
+    animation: slideFromTop 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.popup-text {
+    animation: slideFromBottom 0.8s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.popup-button {
+    animation: scaleIn 0.8s 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slideFromTop {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideFromBottom {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* ============================================
+   KINETIC LIGHT EFFECTS
+   ============================================ */
+
+.kinetic-light-1,
+.kinetic-light-2,
+.kinetic-light-3 {
+    position: absolute;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    filter: blur(40px);
+    z-index: -1;
+    animation: moveLight 8s infinite alternate;
+}
+
+.kinetic-light-1 {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.kinetic-light-2 {
+    top: 60%;
+    left: 70%;
+    animation-delay: 2s;
+}
+
+.kinetic-light-3 {
+    top: 30%;
+    left: 50%;
+    animation-delay: 4s;
+}
+
+@keyframes moveLight {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+    25% { transform: translate(20px, 30px) scale(1.2); opacity: 0.7; }
+    50% { transform: translate(-10px, 20px) scale(0.9); opacity: 0.4; }
+    75% { transform: translate(15px, -10px) scale(1.1); opacity: 0.6; }
+    100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+}
+
+/* ============================================
+   MENU ANIMATIONS
+   ============================================ */
+
+.menu-overlay {
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.menu-open { transform: translateY(0); }
+.menu-closed { transform: translateY(-100%); }
+
+/* ============================================
+   POPUP SHOW ANIMATION
+   ============================================ */
+
+.popup-show {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+}
+
+/* ============================================
+   FADE IN UP ANIMATION
+   ============================================ */
+
+.animate-fadeIn {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   TYPOGRAPHY STYLES
+   ============================================ */
+
+body {
+    font-family: 'Halcom', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Halcom', sans-serif;
+    font-weight: 700;
+}
+
+.hero-title {
+    font-family: 'Halcom', sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.section-title {
+    font-family: 'Halcom', sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.card-title {
+    font-family: 'Halcom', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.navigation-text {
+    font-family: 'Halcom', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.body-text {
+    font-family: 'Halcom', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.emphasis-text {
+    font-family: 'Halcom', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.italic-text {
+    font-family: 'Halcom', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* ============================================
+   TIMELINE STYLES
+   ============================================ */
+
+.timeline-line::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #374151, #eab308, #374151, transparent);
+}
+
+@media (max-width: 768px) {
+    .timeline-line::before {
+        left: 20px;
+    }
+}
+
+/* ============================================
+   COMPONENT STYLES
+   ============================================ */
+
+/* Petit style pour lisibilité */
+.card-stack:hover .nav-btn {
+    opacity: 1;
+}
+
+/* Empêcher la sélection de texte accidentelle */
+.no-select {
+    user-select: none;
+}
+
+/* Masquer la barre de scroll par défaut pour un look plus propre */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* ============================================
+   CARD HOVER EFFECTS
+   ============================================ */
+
+.text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+}
+
+.whawoo-card {
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.whawoo-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    background: #493801;
+    border-color: #eab308;
+}
+
+/* ============================================
+   BACKGROUND GLOW
+   ============================================ */
+
+.bg-glow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(234, 179, 8, 0.05) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ============================================
+   FORM ELEMENTS
+   ============================================ */
+
+input,
+textarea {
+    color: black !important;
+}
+
+/* ============================================
+   LOADER STYLES
+   ============================================ */
+
+body.loading {
+    overflow: hidden;
+}
+
+.speed-path {
+    fill: transparent;
+    stroke: #000000;
+    stroke-width: 1.5;
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    opacity: 0.8;
+}
+
+.animate-draw {
+    animation: dash 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes dash {
+    to { stroke-dashoffset: 0; }
+}
+
+.animate-fill {
+    fill: #080606 !important;
+    stroke: none;
+    transition: fill 0.3s ease-in, stroke 0.1s;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+}
+
+.loader-fade-out {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.1);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ============================================
+   FLOATING BUTTON
+   ============================================ */
+
+.floating-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background-color: #facc15;
+    color: #000;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+.floating-btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+.floating-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+.floating-btn i {
+    font-size: 1.2rem;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .main-slider-container {
+        width: 90vw;
+        height: 70vh;
+    }
+
+    .main-slide {
+        width: 100%;
+        height: 100%;
+        padding: 8%;
+    }
+
+    .preview-card {
+        width: 85vw;
+        height: 65vh;
+        transform: translateX(calc(50% + 20px)) translateY(-50%) !important;
+    }
+
+    .slide-content-text {
+        max-width: 60%;
+    }
+
+    .slide-elements-right {
+        right: 8%;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-slider-container {
+        width: 95vw;
+        height: 60vh;
+        border-radius: 24px;
+    }
+
+    .main-slide {
+        padding: 10%;
+    }
+
+    .preview-card {
+        width: 90vw;
+        height: 55vh;
+        opacity: 0.2;
+        transform: translateX(calc(50% + 15px)) translateY(-50%) !important;
+    }
+
+    .slide-content-text {
+        max-width: 100%;
+    }
+
+    .slide-elements-right {
+        right: 10%;
+        top: 50%;
+    }
+
+    .slide-title {
+        font-size: 1.8rem;
+    }
+
+    .slide-description {
+        font-size: 0.9rem;
+    }
+
+    .slide-button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .indicator-position {
+        left: 10%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 4%;
+    }
+
+    .card-stack {
+        height: 60vh !important;
+    }
+
+    .main-slider-container {
+        width: 100vw;
+        height: 60vh;
+        border-radius: 20px;
+    }
+
+    .main-slide {
+        padding: 8%;
+    }
+
+    .preview-card {
+        display: none;
+    }
+
+    .slide-title {
+        font-size: 1.5rem;
+    }
+
+    .slide-description {
+        font-size: 0.8rem;
+    }
+
+    .slide-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+    }
+
+    .nav-arrows {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+
+    .dots-container {
+        margin-top: 4%;
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 360px) {
+    .card-stack {
+        height: 65vh !important;
+    }
+
+    .main-slider-container {
+        height: 65vh !important;
+    }
+}
+
+/* Responsive styles for presentation popup */
+@media (max-width: 768px) {
+    .presentation-popup-content {
+        max-width: 90%;
+        margin: 0 20px;
+        max-height: 80vh;
+    }
+
+    .presentation-popup-content .p-6 {
+        padding: 0.75rem;
+    }
+
+    .presentation-popup-content .grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .presentation-popup-content .element-item {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .presentation-popup-content {
+        max-width: 95%;
+        margin: 0 10px;
+        max-height: 85vh;
+    }
+
+    .presentation-popup-content .p-6 {
+        padding: 0.5rem;
+    }
+
+    .presentation-popup-content .element-item {
+        padding: 0.75rem;
+    }
+
+    .presentation-popup-content .space-x-4 {
+        gap: 0.5rem;
+    }
+}
+
+/* ============================================
+   HEIGHT CONTROL CLASSES
+   ============================================ */
+
+.slider-height-small {
+    height: 400px !important;
+}
+
+.slider-height-medium {
+    height: 520px !important;
+}
+
+.slider-height-large {
+    height: 600px !important;
+}
+
+.slider-height-extra-large {
+    height: 700px !important;
+}
