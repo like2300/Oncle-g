@@ -29,41 +29,52 @@
         }
     </style>
 </head>
-<body class="bg-[url('../../img/service/0005_G.png')] bg-cover bg-center bg-no-repeat">
-    <section>
-      <div class=" bg-black/70  w-screen  h-screen flex items-end p-9 justify-center  ">
-        <div class="absolute top-4 left-4">
-            <button onclick="window.location.href='/'" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded-full shadow-md transition-colors duration-300">
-                <i class="fas fa-home mr-2"></i>Accueil
-            </button>
+<body class="bg-black">
+    <section class="relative">
+        <!-- Video Background -->
+        <div class="absolute inset-0 overflow-hidden z-0">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-40">
+                <source src="../../video/_action_le_202602010001_umcmu.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
-        <div class="flex w-1/1 text-center flex-col  items-center justify-center ">
-            <h1 class="text-3xl font-bold text-gray-100 ">
-                G – PRO
-                <div class="bg-yellow-500 p-2   rotate-3">
-                    <p class="text-black font-black text-4xl leading-none tracking-tighter">ILLIMITÉ</p>
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/70 z-0"></div>
+
+        <div class="relative z-10 w-screen h-screen flex items-end p-9 justify-center">
+            <div class="absolute top-4 left-4">
+                <button onclick="window.location.href='/'" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded-full shadow-md transition-colors duration-300">
+                    <i class="fas fa-home mr-2"></i>Accueil
+                </button>
+            </div>
+            <div class="flex w-1/1 text-center flex-col  items-center justify-center ">
+                <h1 class="text-3xl font-bold text-gray-100 ">
+                    G – PRO
+                    <div class="bg-yellow-500 p-2   rotate-3">
+                        <p class="text-black font-black text-4xl leading-none tracking-tighter">ILLIMITÉ</p>
+                    </div>
+      </h1>
+
+
+                <span class="text-4xl mt-4 font-bold text-white">
+                    Livraison sans contrainte, pensée pour les professionnels
+
+                </span>
+
+                <p class="mt-4    text-gray-100  ">
+
+                    Une moto et un livreur dédiés, entièrement gérés par <br> <strong class="text-yellow-500">ONCLE G Livraisons</strong>, Carburant, maintenance, remplacement et suivi inclus.
+
+                </p>
+
+                <div class="mt-4 flex gap-4 sm:mt-6">
+                    <a class="inline-block rounded-full     bg-yellow-500 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-white hover:text-yellow-500" href="#">
+                   contactez-nous
+                    </a>
                 </div>
-  </h1>
-
-
-            <span class="text-4xl mt-4 font-bold text-white">
-                Livraison sans contrainte, pensée pour les professionnels
-
-            </span>
-
-            <p class="mt-4    text-gray-100  ">
-
-                Une moto et un livreur dédiés, entièrement gérés par <br> <strong class="text-yellow-500">ONCLE G Livraisons</strong>, Carburant, maintenance, remplacement et suivi inclus.
-
-            </p>
-
-            <div class="mt-4 flex gap-4 sm:mt-6">
-                <a class="inline-block rounded-full     bg-yellow-500 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-white hover:text-yellow-500" href="#">
-               contactez-nous
-                </a>
             </div>
         </div>
-      </div>
     </section>
     <!-- Cursor glow element -->
     <div id="cursor-glow"></div>
