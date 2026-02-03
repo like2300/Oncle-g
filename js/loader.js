@@ -30,25 +30,33 @@ document.addEventListener("DOMContentLoaded", () => {
     // On fait avancer la barre doucement tant que la page n'est pas chargée
     // pour ne pas qu'elle reste bloquée à 0%.
     let progress = 0;
-    const interval = setInterval(() => {
-        // On augmente doucement jusqu'à 90% max
-        if (progress < 90) {
-            // Plus on avance, plus ça ralentit (effet naturel)
-            let increment = (90 - progress) / 20;
-            progress += Math.max(0.5, increment);
-            progressBar.style.width = progress + "%";
-        }
-    }, 100);
+    let interval;
+
+    if(progressBar) {
+        interval = setInterval(() => {
+            // On augmente doucement jusqu'à 90% max
+            if (progress < 90) {
+                // Plus on avance, plus ça ralentit (effet naturel)
+                let increment = (90 - progress) / 20;
+                progress += Math.max(0.5, increment);
+                progressBar.style.width = progress + "%";
+            }
+        }, 100);
+    }
 
     // --- LE VRAI ÉVÉNEMENT DE CHARGEMENT ---
     // Se déclenche quand TOUT est chargé (Images, CSS, JS externe)
     window.addEventListener('load', () => {
 
         // On arrête la simulation d'attente
-        clearInterval(interval);
+        if(interval) {
+            clearInterval(interval);
+        }
 
-        // On force la barre à 100% instantanément
-        progressBar.style.width = "100%";
+        // On force la barre à 100% instantanément (if progressBar exists)
+        if(progressBar) {
+            progressBar.style.width = "100%";
+        }
 
         // Petite pause de 200ms pour que l'œil voie la barre pleine
         setTimeout(() => {
@@ -76,7 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Disparition finale (Après l'impact)
         setTimeout(() => {
-            loaderOverlay.classList.add('loader-fade-out');
+            if(loaderOverlay) {
+                loaderOverlay.classList.add('loader-fade-out');
+            }
             body.classList.remove('loading');
         }, 600); // 0.6s pour laisser le temps de voir le logo blanc
     }

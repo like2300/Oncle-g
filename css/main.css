@@ -279,58 +279,150 @@
 }
 
 /* ============================================
-   TYPOGRAPHY STYLES
+   TYPOGRAPHY STYLES - ENFORCED FONT USAGE
    ============================================ */
 
+/* Force font usage on all elements with highest specificity */
+*, *::before, *::after {
+    font-family: 'Halcom', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
 body {
-    font-family: 'Halcom', sans-serif;
+    font-family: 'Halcom', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Halcom', sans-serif;
+    font-family: 'Halcom', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
     font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 .hero-title {
-    font-family: 'Halcom', sans-serif;
+    font-family: 'Halcom', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
     font-weight: 900;
     font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 .section-title {
-    font-family: 'Halcom', sans-serif;
+    font-family: 'Halcom', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
     font-weight: 800;
     font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 .card-title {
-    font-family: 'Halcom', sans-serif;
+    font-family: 'Halcom', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
     font-weight: 700;
     font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 .navigation-text {
-    font-family: 'Halcom', sans-serif;
+    font-family: 'Halcom', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
     font-weight: 500;
     font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 .body-text {
-    font-family: 'Halcom', sans-serif;
+    font-family: 'Halcom', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
     font-weight: 400;
     font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 .emphasis-text {
-    font-family: 'Halcom', sans-serif;
+    font-family: 'Halcom', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
     font-weight: 600;
     font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 .italic-text {
-    font-family: 'Halcom', sans-serif;
+    font-family: 'Halcom', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
     font-weight: 400;
     font-style: italic;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Additional font enforcement for form elements */
+input, textarea, select, button {
+    font-family: 'Halcom', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+/* Allow Font Awesome icons to work properly - More specific rules */
+i[class*="fa-"],
+.fas,
+.far,
+.fal,
+.fad,
+.fa,
+.fab {
+    font-family: 'Font Awesome 6 Free' !important;
+}
+
+.fab,
+i[class*="fa-brands"] {
+    font-family: 'Font Awesome 6 Brands' !important;
+}
+
+/* Ensure icons maintain their intended styling */
+i[class*="fa-"] {
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: never !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Enforce font on pseudo-elements too */
+::placeholder {
+    font-family: 'Halcom', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+::-webkit-input-placeholder {
+    font-family: 'Halcom', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+::-moz-placeholder {
+    font-family: 'Halcom', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+:-ms-input-placeholder {
+    font-family: 'Halcom', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+:-moz-placeholder {
+    font-family: 'Halcom', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+/* Ensure SVG images are not affected by font changes */
+img[src$=".svg"],
+svg {
+    font-family: inherit !important;
+    font-size: inherit !important;
 }
 
 /* ============================================

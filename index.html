@@ -16,8 +16,8 @@
     <meta property="og:url" content="https://www.oncleg.com/">
     <meta property="og:title" content="Oncle G - Livraisons Express">
     <meta property="og:description" content="Service de livraison express à Brazzaville. Un sourire, c'est déjà une livraison réussie.">
-    <meta property="og:image" content="https://like2300.github.io/Oncle-g/img/ScreenShot.png">
-    <meta property="og:image:type" content="image/png">
+    <meta property="og:image" content="https://like2300.github.io/Oncle-g/img/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Oncle G - Service de livraison express à Brazzaville">
@@ -27,12 +27,16 @@
     <meta property="twitter:url" content="https://www.oncleg.com/">
     <meta property="twitter:title" content="Oncle G - Livraisons Express">
     <meta property="twitter:description" content="Service de livraison express à Brazzaville. Un sourire, c'est déjà une livraison réussie.">
-    <meta property="twitter:image" content="https://like2300.github.io/Oncle-g/img/ScreenShot.png">
+    <meta property="twitter:image" content="https://like2300.github.io/Oncle-g/img/og-image.jpg">
     <meta property="twitter:image:alt" content="Oncle G - Service de livraison express à Brazzaville">
 
     <!-- WhatsApp and other messaging platforms -->
     <meta property="og:site_name" content="Oncle G Livraisons">
     <meta name="theme-color" content="#facc15">
+
+    <!-- Additional social media tags for better compatibility -->
+    <meta name="thumbnail" content="https://like2300.github.io/Oncle-g/img/ScreenShot.png">
+    <link rel="image_src" type="image/png" href="https://like2300.github.io/Oncle-g/img/ScreenShot.png">
 
     <!-- link favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="./img/icons/favicon-32x32.png">
@@ -46,9 +50,6 @@
 
     <!-- Alpine.js via CDN -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Preconnect to external domains for performance -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
@@ -68,16 +69,25 @@
     <link rel="preload" href="./css/carousel.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="./css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
-    <!-- Font preloading for performance -->
+    <!-- Font preloading for performance - Only available format -->
     <link rel="preload" href="./fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="./fonts/halcom-font-family-1769100539-0/Halcom-Regular-BF648a71453957a.otf" as="font" type="font/otf" crossorigin>
+
+    <!-- Non-critical CSS loaded asynchronously -->
+    <link rel="preload" href="./css/font-display.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pB4FaK1VMV2+jJT8JSkNqVtw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Fallback for browsers that don't support onload -->
     <noscript><link rel="stylesheet" href="./fonts.css"></noscript>
+    <noscript><link rel="stylesheet" href="./css/font-display.css"></noscript>
 
     <!-- JavaScript Configuration Files -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
     <script defer src="./js/tailwind-config.js"></script>
-    <script  src="./js/loader.js"></script>
+    <script src="./js/loader.js"></script>
+    <script defer src="./js/font-loader.js"></script>
     <script defer src="./scripts/simple-seo-enhancement.js"></script>
     <script src="./js/animations.js"></script>
     <script defer src="./js/cardstack.js"></script>
@@ -118,7 +128,7 @@
     </script>
 </head>
 
-<body class="bg-white p-0 overflow-x-hidden">
+<body class="bg-white p-0 overflow-x-hidden font-loading">
 
     <!-- Floating button that appears when reaching the "LIVRAISON EXPRESS" section -->
     <button id="scrollToTopBtn" class="floating-btn bottom-40">
@@ -202,7 +212,7 @@
         </button>
 
         <!-- Mobile button for slide-in menu -->
-        <button id="mobileMenuBtn" class="md:hidden text-neutral-500 flex items-center hover:text-primary transition-colors p-2 z-[70]">
+        <button id="mobileMenuBtn" class="md:hidden text-neutral-500 flex items-center hover:text-yellow-500 transition-colors p-2 z-[70]">
             <i class="fa-solid fa-bars text-xl"></i>
         </button>
 
@@ -272,7 +282,7 @@
 
                 <!-- CAROUSEL SLIDE 1 -->
                 <li id="slide-1" class="carousel-slide group relative absolute list-none rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] transition-all duration-500 ease-in-out left-0 right-0 mx-auto bg-cover bg-center bg-no-repeat overflow-hidden h-full cursor-default"
-                    style="background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(63, 55, 0, 0.4)), url('./img/freepik__ultrarealistic-advertising-photography-captured-by__31974.jpeg'); width: 65%; top: 0px; height: 100%; background-size: cover; background-position: center; z-index: 1;">
+                    style="background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(63, 55, 0, 0.4)), url('./img/freepik__ultrarealistic-advertising-photography-captured-by__31974.webp'); width: 65%; top: 0px; height: 100%; background-size: cover; background-position: center; z-index: 1;">
 
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
 
@@ -332,7 +342,7 @@
 
                 <!-- CAROUSEL SLIDE 2 -->
                 <li id="slide-2" class="carousel-slide group absolute list-none rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] transition-all duration-500 ease-in-out left-0 right-0 mx-auto bg-cover bg-center bg-no-repeat overflow-hidden h-full cursor-default"
-                    style="background-image: linear-gradient(rgba(0, 0, 0, 0.43), rgba(0, 0, 0, 0.4)), url('./img/freepik__ultrarealistic-advertising-photography-captured-by__31973.jpeg'); width: 82.5%; top: 40px; height: 100%; background-size: cover; background-position: center; z-index: 2;">
+                    style="background-image: linear-gradient(rgba(0, 0, 0, 0.43), rgba(0, 0, 0, 0.4)), url('./img/freepik__ultrarealistic-advertising-photography-captured-by__31973.webp'); width: 82.5%; top: 40px; height: 100%; background-size: cover; background-position: center; z-index: 2;">
 
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
 
@@ -386,7 +396,7 @@
 
                 <!-- CAROUSEL SLIDE 3 -->
                 <li id="slide-3" class="carousel-slide group absolute list-none rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] transition-all duration-500 ease-in-out left-0 right-0 mx-auto bg-cover bg-center bg-no-repeat overflow-hidden h-full cursor-default"
-                    style="background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.4)), url('./img/freepik__ultrarealistic-advertising-photography-captured-by__31972.jpeg'); width: 100%; top: 80px; height: 100%; background-size: cover; background-position: center; z-index: 3;">
+                    style="background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.4)), url('./img/freepik__ultrarealistic-advertising-photography-captured-by__31972.webp'); width: 100%; top: 80px; height: 100%; background-size: cover; background-position: center; z-index: 3;">
 
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
 

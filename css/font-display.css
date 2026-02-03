@@ -1,0 +1,72 @@
+/* Font Display Control for Maximum Compatibility */
+
+/* Define font loading states */
+@supports (font-display: swap) {
+  @font-face {
+    font-family: 'Halcom';
+    src: url('../fonts/halcom-font-family-1769100539-0/Halcom-Regular-BF648a71453957a.otf') format('opentype');
+    font-display: swap;
+  }
+}
+
+/* Fallback for older browsers that don't support font-display */
+@supports not (font-display: swap) {
+  @font-face {
+    font-family: 'Halcom';
+    src: url('../fonts/halcom-font-family-1769100539-0/Halcom-Regular-BF648a71453957a.otf') format('opentype');
+  }
+}
+
+/* High priority font application */
+body, html {
+  font-family: 'Halcom', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga" 1;
+}
+
+/* Font loading detection classes */
+.font-loaded body,
+.font-loaded html {
+  font-family: 'Halcom', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+.font-loading body,
+.font-loading html {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+.font-error body,
+.font-error html {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+/* Ensure Font Awesome icons work regardless of global font settings */
+i[class*="fa-"],
+.fas,
+.far,
+.fal,
+.fad,
+.fa,
+.fab {
+  font-family: 'Font Awesome 6 Free' !important;
+}
+
+.fab,
+i[class*="fa-brands"] {
+  font-family: 'Font Awesome 6 Brands' !important;
+}
+
+/* Ensure icons maintain their intended styling */
+i[class*="fa-"] {
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: never !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}

@@ -1,7 +1,6 @@
 // Scroll to Top Button Script
 document.addEventListener('DOMContentLoaded', () => {
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-    const livraisonSection = document.querySelector('section:has(h2:contains("LIVRAISON EXPRESS"))');
 
     // Show/hide button based on scroll position
     function toggleScrollButton() {

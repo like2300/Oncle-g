@@ -70,6 +70,21 @@ input , textarea {
     color: black!important  ;
 }
 
+/* Social button styles for SVG icons */
+.social-btn img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-height: 40px;
+    filter: brightness(1) saturate(1);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-btn:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.2) saturate(1.2);
+}
+
 /* Floating button styles */
 .floating-btn {
     position: fixed;
