@@ -370,32 +370,7 @@ input, textarea, select, button {
     font-family: 'Halcom', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
-/* Allow Font Awesome icons to work properly - More specific rules */
-i[class*="fa-"],
-.fas,
-.far,
-.fal,
-.fad,
-.fa,
-.fab {
-    font-family: 'Font Awesome 6 Free' !important;
-}
 
-.fab,
-i[class*="fa-brands"] {
-    font-family: 'Font Awesome 6 Brands' !important;
-}
-
-/* Ensure icons maintain their intended styling */
-i[class*="fa-"] {
-    font-style: normal !important;
-    font-weight: normal !important;
-    font-variant: normal !important;
-    text-transform: none !important;
-    speak: never !important;
-    -webkit-font-smoothing: antialiased !important;
-    -moz-osx-font-smoothing: grayscale !important;
-}
 
 /* Enforce font on pseudo-elements too */
 ::placeholder {

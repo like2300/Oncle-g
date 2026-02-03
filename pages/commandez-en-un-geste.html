@@ -60,8 +60,14 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
 
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
 
         <!-- Styles personnalisés pour l'animation -->
         <style>
@@ -813,7 +819,7 @@
 
             <!-- Close button -->
             <button id="closeMenuBtn" class="mt-5 w-[50px] h-[50px]   bg-yellow-500 flex items-center justify-center text-white self-start">
-                <i class="fas fa-times text-4xl "></i>
+                <span class="material-symbols-outlined text-4xl ">close</span>
             </button>
         </div>
     </div>
@@ -826,12 +832,12 @@
 
         <button id="menuTriggerBtn" class="nav-link hidden md:flex text-sm text-neutral-500 flex items-center gap-2 hover:text-yellow-500 transition-colors font-medium">
            COMMANDEZ EN UN GESTE
- <i class="fa-solid fa-arrow-right text-yellow-500 rotate-45"></i>
+ <span class="material-symbols-outlined text-yellow-500 rotate-45">arrow_forward</span>
         </button>
 
         <!-- Mobile button for slide-in menu -->
         <button id="mobileMenuBtn" class="md:hidden text-neutral-500 flex items-center hover:text-yellow-500 transition-colors p-2 z-[70]">
-            <i class="fa-solid fa-bars text-xl"></i>
+            <span class="material-symbols-outlined text-xl">menu</span>
         </button>
 
         <div class="social-icons hidden md:flex gap-6">
@@ -865,7 +871,7 @@
         <div class="relative">
           <!-- Close Button (X) -->
           <button id="closePopupX" class="absolute hidden top-4 right-4 text-white bg-red-500 rounded-full w-8 h-8 flex items-center justify-center z-10 hover:bg-red-600 transition-colors">
-            <i class="fas fa-times"></i>
+            <span class="material-symbols-outlined">close</span>
           </button>
 
           <!-- Centered Image -->
@@ -1070,7 +1076,7 @@
                 <a href="tel:+2420600000000"
                    class="cta-button bg-black text-yellow-400 hover:text-white hover:bg-yellow-500 text-base sm:text-lg md:text-xl font-black uppercase tracking-wide sm:tracking-widest py-3 sm:py-4 px-6 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-2xl border-2 sm:border-4 border-black hover:border-yellow-400 flex items-center justify-center gap-2 sm:gap-3 group w-full sm:w-auto min-h-[50px]">
                     <span>Appelez l'Oncle</span>
-                    <i class="fas fa-phone-alt text-sm sm:text-base transform group-hover:rotate-12 transition-transform duration-300"></i>
+                    <span class="material-symbols-outlined text-sm sm:text-base transform group-hover:rotate-12 transition-transform duration-300">phone</span>
                 </a>
 
                 <a href="#contact"
@@ -1081,15 +1087,15 @@
 
             <div class="mt-6 hidden sm:mt-8 flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-6 text-black/80 max-w-lg mx-auto">
                 <div class="flex items-center justify-center gap-2   ">
-                    <i class="fas fa-check-circle text-lg sm:text-xl text-black"></i>
+                    <span class="material-symbols-outlined text-lg sm:text-xl text-black">check_circle</span>
                     <span class="font-bold text-xs sm:text-sm md:text-base">Service 24/7</span>
                 </div>
                 <div class="flex items-center gap-2 mb-2 sm:mb-0">
-                    <i class="fas fa-check-circle text-lg sm:text-xl text-black"></i>
+                    <span class="material-symbols-outlined text-lg sm:text-xl text-black">check_circle</span>
                     <span class="font-bold text-xs sm:text-sm md:text-base">Livraison en 60 min</span>
                 </div>
                 <div class="flex items-center gap-2">
-                    <i class="fas fa-check-circle text-lg sm:text-xl text-black"></i>
+                    <span class="material-symbols-outlined text-lg sm:text-xl text-black">check_circle</span>
                     <span class="font-bold text-xs sm:text-sm md:text-base">Satisfaction garantie</span>
                 </div>
             </div>
@@ -1423,7 +1429,7 @@
                     <div class="relative">
                         <!-- Close Button (X) -->
                         <button id="closePopupX" class="absolute top-4 right-4 text-white bg-red-500 hidden rounded-full w-8 h-8 flex items-center justify-center z-10 hover:bg-red-600 transition-colors">
-                            <i class="fas fa-times"></i>
+                            <span class="material-symbols-outlined">close</span>
                         </button>
 
                         <!-- Centered Image -->

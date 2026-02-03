@@ -59,7 +59,12 @@
     <!-- Scripts loaded efficiently -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
     <script defer src="./scripts/simple-seo-enhancement.js"></script>
     <script src="./js/loader.js"></script>
@@ -140,7 +145,7 @@
         <div class="relative z-10 w-screen h-screen flex items-end p-9 justify-center">
             <div class="absolute top-4 left-4">
                 <button onclick="window.history.back()" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded-full shadow-md transition-colors duration-300">
-                    <i class="fas fa-arrow-left mr-2"></i>Retour
+                    <span class="material-symbols-outlined mr-2">arrow_back</span>Retour
                 </button>
             </div>
             <div class="flex w-1/1 text-center flex-col  items-center justify-center ">
@@ -199,7 +204,7 @@
                     <div class="relative">
                         <!-- Close Button (X) -->
                         <button id="closePopupX" class="absolute top-4 right-4 text-white bg-red-500 hidden rounded-full w-8 h-8 flex items-center justify-center z-10 hover:bg-red-600 transition-colors">
-                            <i class="fas fa-times"></i>
+                            <span class="material-symbols-outlined">close</span>
                         </button>
 
                         <!-- Centered Image -->

@@ -60,11 +60,14 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
 
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
 
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
     <link rel="stylesheet" href="../fonts.css">
 
     <style>
@@ -756,7 +759,7 @@
 
             <!-- Close button -->
             <button id="closeMenuBtn" class="mt-5 w-[50px] h-[50px]   bg-yellow-500 flex items-center justify-center text-white self-start">
-                <i class="fas fa-times text-4xl "></i>
+                <span class="material-symbols-outlined text-4xl ">close</span>
             </button>
         </div>
     </div>
@@ -767,12 +770,12 @@
         </div>
 
         <button id="menuTriggerBtn" class="nav-link hidden md:flex text-sm text-neutral-500 flex items-center gap-2 hover:text-yellow-500 transition-colors font-medium">
-           CONTACTS <i class="fa-solid fa-arrow-right text-yellow-500 rotate-45"></i>
+           CONTACTS <span class="material-symbols-outlined text-yellow-500 rotate-45">arrow_forward</span>
         </button>
 
         <!-- Mobile button for slide-in menu -->
         <button id="mobileMenuBtn" class="md:hidden text-neutral-500 flex items-center hover:text-yellow-500 transition-colors p-2 z-[70]">
-            <i class="fa-solid fa-bars text-xl"></i>
+            <span class="material-symbols-outlined text-xl">menu</span>
         </button>
 
         <div class="social-icons hidden md:flex gap-6">
@@ -806,7 +809,7 @@
         <div class="relative">
           <!-- Close Button (X) -->
           <button id="closePopupX" class="absolute hidden top-4 right-4 text-white bg-red-500 rounded-full w-8 h-8 flex items-center justify-center z-10 hover:bg-red-600 transition-colors">
-            <i class="fas fa-times"></i>
+            <span class="material-symbols-outlined">close</span>
           </button>
 
           <!-- Centered Image -->
@@ -1304,7 +1307,7 @@
                     <div class="relative">
                         <!-- Close Button (X) -->
                         <button id="closePopupX" class="absolute top-4 right-4 text-white bg-red-500 hidden rounded-full w-8 h-8 flex items-center justify-center z-10 hover:bg-red-600 transition-colors">
-                            <i class="fas fa-times"></i>
+                            <span class="material-symbols-outlined">close</span>
                         </button>
 
                         <!-- Centered Image -->
