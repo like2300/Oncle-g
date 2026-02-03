@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conciergerie Express - Oncle G | Services Sur Mesure</title>
+    <title>Allô'Gaz - Oncle G | Livraison de Gaz à Domicile</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Service de conciergerie express par ONCLE G Livraisons. Tâches quotidiennes prises en charge par nos experts. Gain de temps garanti.">
-    <meta name="keywords" content="conciergerie, express, oncle g, services, tâches quotidiennes, gain de temps, brazzaville">
+    <meta name="description" content="Service de livraison de gaz à domicile par ONCLE G Livraisons. Commandez en un geste, recevez rapidement. Sécurité et fiabilité garanties.">
+    <meta name="keywords" content="allô'gaz, livraison gaz, domicile, oncle g, commande facile, sécurité, brazzaville">
     <meta name="author" content="Oncle G Livraisons">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#facc15">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.oncleg.com/ConciergerieExpress.html">
-    <meta property="og:title" content="Conciergerie Express - Oncle G | Services Sur Mesure">
-    <meta property="og:description" content="Service de conciergerie express par ONCLE G Livraisons. Tâches quotidiennes prises en charge par nos experts. Gain de temps garanti.">
+    <meta property="og:url" content="https://www.oncleg.com/Allô'Gaz.html">
+    <meta property="og:title" content="Allô'Gaz - Oncle G | Livraison de Gaz à Domicile">
+    <meta property="og:description" content="Service de livraison de gaz à domicile par ONCLE G Livraisons. Commandez en un geste, recevez rapidement. Sécurité et fiabilité garanties.">
     <meta property="og:image" content="../../img/Oncle%20G%20-%20Logo.svg">
     <meta property="og:site_name" content="Oncle G">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.oncleg.com/ConciergerieExpress.html">
-    <meta property="twitter:title" content="Conciergerie Express - Oncle G | Services Sur Mesure">
-    <meta property="twitter:description" content="Service de conciergerie express par ONCLE G Livraisons. Tâches quotidiennes prises en charge par nos experts. Gain de temps garanti.">
+    <meta property="twitter:url" content="https://www.oncleg.com/Allô'Gaz.html">
+    <meta property="twitter:title" content="Allô'Gaz - Oncle G | Livraison de Gaz à Domicile">
+    <meta property="twitter:description" content="Service de livraison de gaz à domicile par ONCLE G Livraisons. Commandez en un geste, recevez rapidement. Sécurité et fiabilité garanties.">
     <meta property="twitter:image" content="../../img/Oncle%20G%20-%20Logo.svg">
 
     <!-- link favicon -->
@@ -131,7 +131,7 @@
     <section class="relative">
         <!-- GIF Background -->
         <div class="absolute inset-0 overflow-hidden z-0">
-            <div class="w-full h-full bg-cover bg-center opacity-40" style="background-image: url('../../img/background-animation.webp');"></div>
+            <div class="w-full h-full bg-cover bg-center opacity-80" style="background-image: url('../../gif/_action_le_202602011102.gif');"></div>
         </div>
 
         <!-- Overlay -->
@@ -145,20 +145,22 @@
             </div>
             <div class="flex w-1/1 text-center flex-col  items-center justify-center ">
                 <h1 class="text-3xl font-bold text-gray-100 ">
-                    CONCIERGERIE
+                    ALLÔ'
 
                     <div class="bg-yellow-500 p-2   rotate-3">
-                        <p class="text-black font-black text-4xl leading-none tracking-tighter">EXPRESS</p>
+                        <p class="text-black font-black text-4xl leading-none tracking-tighter">GAZ</p>
                     </div>
-          </h1>
+      </h1>
 
 
-                <span class="lg:text-4xl text-2xl mt-4 font-bold text-white">
-                    Juste un coup de fil et l'Oncle frappe à votre porte
+                <span class="text-4xl mt-4 font-bold text-white">
+                    Votre bouteille de Gaz transportée, installée et testée
                 </span>
 
                 <p class="mt-4    text-gray-100  ">
-                    Courses urgentes, dépôts, retraits ou démarches rapides :<br> <strong class="text-yellow-500">ONCLE G Livraisons</strong> s'occupe de tout, en un temps record. Un service flexible,<br> rapide et fiable pour gérer les imprévus du quotidien.
+
+                    Plus besoin de vous déplacer, d'attendre ou de vous salir. <br> <span class="text-primary">ONCLE G Livraisons</span> vous livre votre bouteille de gaz rapidement et en toute sécurité, <br> directement dans votre cuisine, avec un sourire en plus.
+
                 </p>
 
                 <div class="mt-4 flex gap-4 sm:mt-6">
@@ -172,6 +174,29 @@
     <!-- Cursor glow element -->
     <div id="cursor-glow"></div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                const container = document.getElementById('lottie-logo');
+                if (container) {
+                    const animation = bodymovin.loadAnimation({
+                        container: container,
+                        renderer: 'svg',
+                        loop: false,
+                        autoplay: true,
+                        path: '../../img/Oncle-G-Logo-1-2-Playful.json'
+                    });
+                    setTimeout(function() {
+                        const loaderOverlay = document.getElementById('loader-overlay');
+                        if (loaderOverlay) {
+                            loaderOverlay.style.display = 'none';
+                            document.body.style.overflow = 'visible';
+                        }
+                    }, 3000);
+                }
+            }, 500);
+        });
+    </script>
 
     <script>
         // Glowing cursor effect

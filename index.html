@@ -41,34 +41,41 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Halcom Font Family - Loading from external CSS file -->
-    <link  rel="stylesheet" href="./fonts.css">
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-    <!-- CSS Principal -->
-    <link rel="stylesheet" href="./css/main.css">
+    <!-- Critical CSS inlined for faster rendering -->
+    <link rel="preload" href="./css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="./css/loader.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="./css/main.css"></noscript>
+    <noscript><link rel="stylesheet" href="./css/loader.css"></noscript>
 
+    <!-- Non-critical CSS loaded asynchronously -->
+    <link rel="preload" href="./css/animations.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="./css/typography.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="./css/components.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="./css/layout.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="./css/carousel.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="./css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
-    <!-- OU utilisez les fichiers séparés existants -->
-    <link rel="stylesheet" href="./css/animations.css">
-    <link rel="stylesheet" href="./css/typography.css">
-    <link rel="stylesheet" href="./css/components.css">
-    <link rel="stylesheet" href="./css/layout.css">
-    <link rel="stylesheet" href="./css/carousel.css">
-    <link rel="stylesheet" href="./css/loader.css">
-    <link rel="stylesheet" href="./css/responsive.css">
-    <link rel="stylesheet" href="./css/svg.css">
+    <!-- Font preloading for performance -->
+    <link rel="preload" href="./fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- Fallback for browsers that don't support onload -->
+    <noscript><link rel="stylesheet" href="./fonts.css"></noscript>
 
     <!-- JavaScript Configuration Files -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
     <script defer src="./js/tailwind-config.js"></script>
     <script  src="./js/loader.js"></script>
+    <script defer src="./scripts/simple-seo-enhancement.js"></script>
     <script src="./js/animations.js"></script>
     <script defer src="./js/cardstack.js"></script>
     <script defer src="./js/popup.js"></script>
     <script defer src="./js/misc.js"></script>
     <script defer src="./js/menu.js"></script>
     <script defer src="./js/carousel.js"></script>
-    <script defer src="./js/svg-animation.js"></script>
     <script defer src="./js/scroll.js"></script>
     <script>
         // Initialize Lottie animation for the logo and hide loader after animation plays
@@ -113,20 +120,19 @@
     <div id="loader-overlay" class="fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center overflow-hidden">
         <div class="relative w-[300px] md:w-[600px] px-6">
             <div id="lottie-logo" class="w-full h-auto"></div>
-
         </div>
     </div>
 
     <!-- Slide-in Navigation Menu -->
     <div id="menuOverlay" class="fixed inset-0 z-[666] bg-black/90 menu-overlay menu-closed overflow-y-auto p-6 md:p-12 lg:p-24">
-        <div class="flex flex-col h-full">
+        <div class="flex flex-col min-h-full">
              <header class="mb-12 md:mb-20">
                 <!-- <h2 class="text-4xl md:block hidden md:text-5xl lg:text-7xl font-bold tracking-tight text-white">Navigation</h2> -->
             </header>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 md:gap-x-16 gap-y-8 md:gap-y-12 flex-grow">
 
-                <a href="./pages/le-sourire-de-l-oncle.html" class="group border-b border-gray-800 pb-4 hover:border-primary transition text-white">
+                <a href="./index.html" class="group border-b border-gray-800 pb-4 hover:border-primary transition text-white">
                     <div class="flex justify-between items-center">
                         <span class="text-sm uppercase tracking-widest text-gray-500">01</span>
                         <h3 class="text-xl md:text-2xl group-hover:text-primary">LE SOURIRE DE L'ONCLE</h3>
@@ -215,19 +221,19 @@
         <div class="popup-content rounded-2xl max-w-md w-full overflow-hidden transform scale-90 opacity-0 transition-all duration-500">
             <div class="relative">
                 <!-- Close Button (X) -->
-                <button id="closePopupX" class="absolute top-4 right-4 text-white bg-red-500 rounded-full w-8 h-8 flex items-center justify-center z-10 hover:bg-red-600 transition-colors">
+                <button id="closePopupX" class="absolute top-4 right-4 text-white bg-red-500 hidden rounded-full w-8 h-8 flex items-center justify-center z-10 hover:bg-red-600 transition-colors">
                     <i class="fas fa-times"></i>
                 </button>
 
                 <!-- Centered Image -->
                 <div class="image-container relative overflow-hidden">
-                    <img src="./img/Oncle G - Logo.svg" alt="Oncle G Premium" class="w-full h-48 object-contain popup-image animate-float">
+                    <object data="./img/img-loader/Livreur.svg" class="w-full h-[380px]  object-contain popup-image animate-float"></object>
                     <div class="absolute inset-0 opacity-50"></div>
                 </div>
 
                 <!-- Content -->
                 <div class="p-6 text-center">
-                    <h2 class="text-2xl font-bold text-white mb-3 popup-title">Bienvenue Chez Oncle G</h2>
+                    <h2 class="text-2xl font-bold text-white mb-3 popup-title">Bienvenue Chez <br>  <span class="text-primary">Oncle G Livraisons</span> </h2>
                     <p class="text-gray-300 mb-6 popup-text">Découvrez notre expérience premium unique et nos services exceptionnels qui vous attendent.</p>
 
                     <!-- Centered Button -->
@@ -265,7 +271,7 @@
                         <div class="text-content text-center w-full max-w-3xl max-h-full overflow-y-auto no-scrollbar py-8">
                             <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6 uppercase">Service Oncle G</h2>
                             <p class="text-sm text-gray-200 leading-relaxed text-justify">
-                                Un sourire, c'est déjà une livraison réussie. ONCLE G Livraisons vous offre un service fiable et attentionné. Avant même d'arriver à votre porte, ONCLE G Livraisons vous offre un sourire. C'est sa manière de dire que chaque trajet est une promesse tenue. Dans une ville où le rythme est parfois effréné, ce sourire devient un repère, une certitude que votre quotidien sera all��gé.
+                                Un sourire, c'est déjà une livraison réussie.<br> ONCLE G Livraisons vous offre un service fiable et attentionné. Avant même d'arriver à votre porte,<br> ONCLE G Livraisons  vous offre un sourire. C'est sa manière de dire que chaque trajet est une promesse tenue. Dans une ville où le rythme est parfois effréné, ce sourire devient un repère, une certitude que votre quotidien sera all��gé.
                             </p>
                             <button onclick="toggleOverlay(1, false)" class="mt-8 px-6 py-2 bg-primary text-black font-bold uppercase rounded-full hover:bg-yellow-400 transition-colors">
                                 <i class="fa-solid fa-times mr-2"></i> Fermer
@@ -288,7 +294,7 @@
                         <div class="max-w-xs sm:max-w-sm md:max-w-md text-gray-200 text-sm sm:text-base md:text-lg font-light leading-relaxed drop-shadow-md text-left lg:text-right md:text-left lg:ml-auto mb-6">
                             <!-- Logique Troncation: Mobile (clamp) -> Tablette (clamp) -> PC (none) -->
                             <p class="text-start italic lg:text-right md:text-left line-clamp-3 mb-6 sm:line-clamp-3 md:line-clamp-none">
-                                Avant même d'arriver à votre porte, <br><strong class="text-primary">ONCLE G Livraisons</strong> vous offre un sourire. C'est sa manière de dire que chaque trajet est une promesse tenue. Dans une ville où le rythme est parfois effréné, ce sourire devient un repère, une certitude que votre quotidien sera allégé.
+                                Avant même d'arriver à votre porte, <br> <strong class="text-primary">ONCLE G Livraisons</strong> vous offre un sourire. C'est sa manière de dire que chaque trajet est une promesse tenue. Dans une ville où le rythme est parfois effréné, ce sourire devient un repère, une certitude que votre quotidien sera allégé.
                             </p>
                             <!-- Bouton visible sur Mobile et Tablette (lg:hidden), caché sur PC -->
                             <button onclick="toggleOverlay(1, true)" class="lire-plus-btn mt-2 text-primary text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center pointer-events-auto lg:hidden md:text-right">
@@ -539,6 +545,9 @@
         </div>
     </section>
 
+
+
+
     <section class="py-24 px-4 md:px-8 max-w-7xl mx-auto reveal-element">
         <div class="flex flex-col md:flex-row gap-6 md:gap-10">
             <div class="flex flex-col gap-6 md:gap-10 w-full md:w-1/2">
@@ -632,9 +641,10 @@
            <h2 class="text-sm uppercase tracking-[0.4em] text-primary font-bold mb-4">COMMANDEZ EN UN GESTE</h2>
 
                   <p class="mt-8 text-gray-400 text-lg max-w-2xl mx-auto">
-           Pas besoin de complications. Vous commandez, ONCLE G Livraisons écoute, et déjà la magie opère. Simple, direct,
-    humain : c’est ainsi que nous écrivons chacune de vos
-    livraisons. </p>
+                        Pas besoin de complications. Vous commandez, ONCLE G Livraisons écoute, et déjà la magie opère. Simple, direct,
+                    humain : c’est ainsi que nous écrivons chacune de vos
+                    livraisons.
+                 </p>
             </div>
 
             <!-- Left Side Animated Bars -->
@@ -963,8 +973,7 @@
 
 
 
-        <img class="hidden lg:block" src="./pages/PROPOS.svg" alt="Logo">
-
+        <object class="hidden lg:block" data="./pages/PROPOS.svg" type="image/svg+xml" id="map-svg"  ></object>
 
 
 
@@ -1349,9 +1358,14 @@
             </div>
         </footer>
 
-        <!-- SVG Decoration (Juste en bas du footer, en noir) -->
+
+
+              <!-- SVG Decoration (Juste en bas du footer, en noir) -->
         <div class="w-full overflow-hidden -mt-1 relative z-10">
-            <svg class="w-full h-auto block svg-wave-animation" viewBox="0 0 1440 405" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="w-full h-auto block svg-wave-animation" viewBox="0 0 1440 405" fill="none" xmlns="http://www.w3.org/2000 svg">
+                <defs>
+
+                </defs>
                 <g class="wave-group">
                     <path d="M852.735 236.416L853.308 353.544C853.371 366.3 843.913 376.641 832.27 376.73L832.255 376.73C820.612 376.819 811.053 366.623 810.99 353.868L810.417 236.739C810.355 223.983 819.813 213.642 831.456 213.553L831.472 213.553C843.115 213.464 852.673 223.66 852.735 236.416Z" stroke="black">
                         <animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0; 0 -5; 0 0" dur="4.5s" repeatCount="indefinite" begin="0s" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" />
@@ -1416,30 +1430,33 @@
                     <path d="M38.8479 35.485L40.0478 280.147C40.1103 292.904 30.6374 303.247 18.9738 303.336L18.9582 303.336C7.29461 303.425 -2.2791 293.227 -2.34166 280.47L-3.54156 35.8082C-3.60391 23.0521 5.86898 12.7095 17.5324 12.6205L17.548 12.6204C29.2115 12.5315 38.7851 22.7289 38.8479 35.485Z" stroke="black">
                         <animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0; 0 -5; 0 0" dur="5.7s" repeatCount="indefinite" begin="10s" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" />
                     </path>
-                    <path d="M1229.74 239.416L1230.31 356.544C1230.37 369.3 1220.91 379.641 1209.27 379.73L1209.25 379.73C1197.61 379.819 1188.05 369.623 1187.99 356.868L1187.42 239.739C1187.35 226.983 1196.81 216.642 1208.46 216.553L1208.47 216.553C1220.11 216.464 1229.67 226.66 1229.74 239.416Z" fill="url(#waveGradient)" stroke="black">
+                    <path d="M1229.74 239.416L1230.31 356.544C1230.37 369.3 1220.91 379.641 1209.27 379.73L1209.25 379.73C1197.61 379.819 1188.05 369.623 1187.99 356.868L1187.42 239.739C1187.35 226.983 1196.81 216.642 1208.46 216.553L1208.47 216.553C1220.11 216.464 1229.67 226.66 1229.74 239.416Z"  stroke="black">
                         <animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0; 0 -6; 0 0" dur="5.1s" repeatCount="indefinite" begin="10.5s" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" />
                     </path>
-                    <path d="M1161.85 125.485L1163.05 370.147C1163.11 382.904 1153.64 393.247 1141.97 393.336L1141.96 393.336C1130.29 393.425 1120.72 383.227 1120.66 370.47L1119.46 125.808C1119.4 113.052 1128.87 102.709 1140.53 102.621L1140.55 102.62C1152.21 102.531 1161.79 112.729 1161.85 125.485Z" fill="url(#waveGradient)" stroke="black">
+                    <path d="M1161.85 125.485L1163.05 370.147C1163.11 382.904 1153.64 393.247 1141.97 393.336L1141.96 393.336C1130.29 393.425 1120.72 383.227 1120.66 370.47L1119.46 125.808C1119.4 113.052 1128.87 102.709 1140.53 102.621L1140.55 102.62C1152.21 102.531 1161.79 112.729 1161.85 125.485Z"   stroke="black">
                         <animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0; 0 -8; 0 0" dur="4.3s" repeatCount="indefinite" begin="11s" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" />
                     </path>
-                    <path d="M1015.07 209.7L1016.27 454.362C1016.33 467.118 1006.86 477.462 995.194 477.551L995.178 477.551C983.515 477.64 973.941 467.442 973.879 454.685L972.679 210.023C972.616 197.267 982.089 186.924 993.753 186.835L993.768 186.835C1005.43 186.746 1015.01 196.944 1015.07 209.7Z" fill="url(#waveGradient)" stroke="black">
+                    <path d="M1015.07 209.7L1016.27 454.362C1016.33 467.118 1006.86 477.462 995.194 477.551L995.178 477.551C983.515 477.64 973.941 467.442 973.879 454.685L972.679 210.023C972.616 197.267 982.089 186.924 993.753 186.835L993.768 186.835C1005.43 186.746 1015.01 196.944 1015.07 209.7Z"   stroke="black">
                         <animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0; 0 -5; 0 0" dur="5.9s" repeatCount="indefinite" begin="11.5s" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" />
                     </path>
-                    <path d="M1088.9 225.06L1089.98 469.693C1090.03 482.446 1080.52 492.796 1068.82 492.895L1068.8 492.895C1057.1 492.993 1047.5 482.803 1047.44 470.05L1046.37 225.417C1046.31 212.664 1055.82 202.314 1067.52 202.215L1067.54 202.215C1079.24 202.117 1088.84 212.307 1088.9 225.06Z" fill="url(#waveGradient)" stroke="black">
+                    <path d="M1088.9 225.06L1089.98 469.693C1090.03 482.446 1080.52 492.796 1068.82 492.895L1068.8 492.895C1057.1 492.993 1047.5 482.803 1047.44 470.05L1046.37 225.417C1046.31 212.664 1055.82 202.314 1067.52 202.215L1067.54 202.215C1079.24 202.117 1088.84 212.307 1088.9 225.06Z"   stroke="black">
                         <animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0; 0 -7; 0 0" dur="4.7s" repeatCount="indefinite" begin="12s" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" />
                     </path>
-                    <path d="M1088.09 114.485L1088.33 168.112C1088.38 180.861 1078.92 191.206 1067.27 191.304L1067.25 191.305C1055.61 191.403 1046.05 181.219 1045.99 168.47L1045.76 114.842C1045.7 102.093 1055.17 91.7495 1066.82 91.651L1066.83 91.6508C1078.48 91.5524 1088.03 101.736 1088.09 114.485Z" fill="url(#waveGradient)" stroke="black">
+                    <path d="M1088.09 114.485L1088.33 168.112C1088.38 180.861 1078.92 191.206 1067.27 191.304L1067.25 191.305C1055.61 191.403 1046.05 181.219 1045.99 168.47L1045.76 114.842C1045.7 102.093 1055.17 91.7495 1066.82 91.651L1066.83 91.6508C1078.48 91.5524 1088.03 101.736 1088.09 114.485Z"  stroke="black">
                         <animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0; 0 -4; 0 0" dur="6.3s" repeatCount="indefinite" begin="12.5s" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" />
                     </path>
-                    <path d="M945.349 279.695L946.428 524.328C946.484 537.081 936.975 547.432 925.27 547.53L925.255 547.53C913.55 547.629 903.95 537.439 903.894 524.686L902.815 280.053C902.759 267.3 912.268 256.95 923.972 256.851L923.988 256.851C935.693 256.753 945.292 266.943 945.349 279.695Z" fill="url(#waveGradient)" stroke="black">
+                    <path d="M945.349 279.695L946.428 524.328C946.484 537.081 936.975 547.432 925.27 547.53L925.255 547.53C913.55 547.629 903.95 537.439 903.894 524.686L902.815 280.053C902.759 267.3 912.268 256.95 923.972 256.851L923.988 256.851C935.693 256.753 945.292 266.943 945.349 279.695Z"   stroke="black">
                         <animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0; 0 -9; 0 0" dur="3.9s" repeatCount="indefinite" begin="13s" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" />
                     </path>
-                    <path d="M944.593 181.699L944.758 219.448C944.814 232.196 935.352 242.539 923.709 242.638L923.694 242.638C912.051 242.736 902.499 232.554 902.443 219.806L902.278 182.057C902.222 169.31 911.684 158.967 923.326 158.869L923.342 158.869C934.803 158.772 944.238 168.636 944.583 181.104L944.593 181.699Z" fill="url(#waveGradient)" stroke="black">
+                    <path d="M944.593 181.699L944.758 219.448C944.814 232.196 935.352 242.539 923.709 242.638L923.694 242.638C912.051 242.736 902.499 232.554 902.443 219.806L902.278 182.057C902.222 169.31 911.684 158.967 923.326 158.869L923.342 158.869C934.803 158.772 944.238 168.636 944.583 181.104L944.593 181.699Z"   stroke="black">
                         <animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0; 0 -6; 0 0" dur="5.3s" repeatCount="indefinite" begin="13.5s" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" />
                     </path>
                 </g>
             </svg>
         </div>
+
+
+
     </div>
 
     <!-- Footer Year Script -->

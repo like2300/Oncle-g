@@ -3,33 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conciergerie Express - Oncle G</title>
-    <link rel="stylesheet" href="../../fonts.css">
+    <title>G-PRO Illimité - Oncle G | Livraison Sans Contrainte</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="G-PRO Illimité par ONCLE G Livraisons - Moto et livreur dédiés pour les professionnels. Carburant, maintenance, remplacement et suivi inclus.">
+    <meta name="keywords" content="g-pro, illimité, oncle g, livraison professionnelle, moto dédiée, service livraison, professionnel, brazzaville">
+    <meta name="author" content="Oncle G Livraisons">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#facc15">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.oncleg.com/pro-g.html">
+    <meta property="og:title" content="G-PRO Illimité - Oncle G | Livraison Sans Contrainte">
+    <meta property="og:description" content="G-PRO Illimité par ONCLE G Livraisons - Moto et livreur dédiés pour les professionnels. Carburant, maintenance, remplacement et suivi inclus.">
+    <meta property="og:image" content="../../img/Oncle%20G%20-%20Logo.svg">
+    <meta property="og:site_name" content="Oncle G">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.oncleg.com/pro-g.html">
+    <meta property="twitter:title" content="G-PRO Illimité - Oncle G | Livraison Sans Contrainte">
+    <meta property="twitter:description" content="G-PRO Illimité par ONCLE G Livraisons - Moto et livreur dédiés pour les professionnels. Carburant, maintenance, remplacement et suivi inclus.">
+    <meta property="twitter:image" content="../../img/Oncle%20G%20-%20Logo.svg">
+
+    <!-- link favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../../img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../img/icons/favicon-16x16.png">
+
+    <link rel="manifest" href="../../img/icons/manifest.json">
+    <meta name="msapplication-config" content="../../img/icons/browserconfig.xml">
+
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Critical CSS inlined for faster rendering -->
+    <link rel="preload" href="../../css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="../../css/loader.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../../css/main.css"></noscript>
+    <noscript><link rel="stylesheet" href="../../css/loader.css"></noscript>
+
+    <!-- Non-critical CSS loaded asynchronously -->
+    <link rel="preload" href="../../css/animations.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="../../css/typography.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="../../css/components.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="../../css/layout.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="../../css/carousel.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="../../css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- Font preloading for performance -->
+    <link rel="preload" href="../../fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- Scripts loaded efficiently -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body { font-family: 'Halcom', sans-serif; }
-
-        /* Glowing cursor effect */
-        #cursor-glow {
-            position: fixed;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            pointer-events: none;
-            background: radial-gradient(circle, rgba(250,204,21,0.4) 0%, rgba(250,204,21,0) 70%);
-            transform: translate(-50%, -50%);
-            z-index: 9999;
-            mix-blend-mode: screen;
-            transition: width 0.2s, height 0.2s;
-        }
-
-        body {
-            cursor: none;
-        }
-    </style>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+    <script defer src="./scripts/simple-seo-enhancement.js"></script>
+    <script src="./js/loader.js"></script>
 </head>
 <body class="bg-black">
+
+<div id="loader-overlay" class="fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center overflow-hidden">
+    <div class="relative w-[300px] md:w-[600px] px-6">
+        <div id="lottie-logo" class="w-full h-auto"></div>
+    </div>
+</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                const container = document.getElementById('lottie-logo');
+                if (container) {
+                    const animation = bodymovin.loadAnimation({
+                        container: container,
+                        renderer: 'svg',
+                        loop: false,
+                        autoplay: true,
+                        path: '../../img/Oncle-G-Logo-1-2-Playful.json'
+                    });
+
+                    // Listen for the complete event to hide the loader when animation finishes
+                    animation.addEventListener('DOMLoaded', function() {
+                        // Hide loader after animation completes
+                        animation.addEventListener('complete', function() {
+                            const loaderOverlay = document.getElementById('loader-overlay');
+                            if (loaderOverlay) {
+                                loaderOverlay.style.display = 'none';
+                                document.body.style.overflow = 'visible';
+                            }
+                        });
+
+                        // Also add a fallback timeout in case the complete event doesn't fire
+                        setTimeout(function() {
+                            const loaderOverlay = document.getElementById('loader-overlay');
+                            if (loaderOverlay) {
+                                loaderOverlay.style.display = 'none';
+                                document.body.style.overflow = 'visible';
+                            }
+                        }, 4000); // 4 seconds as a fallback
+                    });
+
+                    // If DOMLoaded doesn't fire, use a timeout
+                    setTimeout(function() {
+                        const loaderOverlay = document.getElementById('loader-overlay');
+                        if (loaderOverlay) {
+                            loaderOverlay.style.display = 'none';
+                            document.body.style.overflow = 'visible';
+                        }
+                    }, 5000); // 5 seconds as a final fallback
+                } else {
+                    // If container doesn't exist, hide loader anyway after a delay
+                    setTimeout(function() {
+                        const loaderOverlay = document.getElementById('loader-overlay');
+                        if (loaderOverlay) {
+                            loaderOverlay.style.display = 'none';
+                            document.body.style.overflow = 'visible';
+                        }
+                    }, 1000);
+                }
+            }, 500);
+        });
+    </script>
+
     <section class="relative">
         <!-- GIF Background -->
         <div class="absolute inset-0 overflow-hidden z-0">
@@ -56,7 +154,6 @@
 
                 <span class="text-4xl mt-4 font-bold text-white">
                     Livraison sans contrainte, pensée pour les professionnels
-
                 </span>
 
                 <p class="mt-4    text-gray-100  ">
@@ -76,6 +173,7 @@
     <!-- Cursor glow element -->
     <div id="cursor-glow"></div>
 
+
     <script>
         // Glowing cursor effect
         const cursor = document.getElementById('cursor-glow');
@@ -94,5 +192,41 @@
             cursor.style.opacity = '1';
         });
     </script>
-</body>
+
+            <!-- Premium Popup Modal -->
+            <div id="premiumPopup" class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-lg hidden z-50 flex items-center justify-center p-4">
+                <div class="popup-content rounded-2xl max-w-md w-full overflow-hidden transform scale-90 opacity-0 transition-all duration-500">
+                    <div class="relative">
+                        <!-- Close Button (X) -->
+                        <button id="closePopupX" class="absolute top-4 right-4 text-white bg-red-500 hidden rounded-full w-8 h-8 flex items-center justify-center z-10 hover:bg-red-600 transition-colors">
+                            <i class="fas fa-times"></i>
+                        </button>
+
+                        <!-- Centered Image -->
+                        <div class="image-container relative overflow-hidden">
+                            <object data="../img/img-loader/Livreur.svg" class="w-full h-[380px]  object-contain popup-image animate-float"></object>
+                            <div class="absolute inset-0 opacity-50"></div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-6 text-center">
+         <h2 class="text-2xl font-bold text-white mb-3 popup-title">Bienvenue Chez <br>  <span class="text-primary">Oncle G Livraisons</span> </h2>
+                            <p class="text-gray-300 mb-6 popup-text">Découvrez notre expérience premium unique et nos services exceptionnels qui vous attendent.</p>
+
+                            <!-- Centered Button -->
+                            <button id="exploreButton" class="bg-primary hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 popup-button">
+                                Explorer Maintenant
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Kinetic light effects -->
+                    <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                        <div class="kinetic-light-1"></div>
+                        <div class="kinetic-light-2"></div>
+                        <div class="kinetic-light-3"></div>
+                    </div>
+                </div>
+            </div>
+        </body>
 </html>

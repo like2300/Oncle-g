@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (menuOverlay) {
             menuOverlay.classList.remove('menu-open');
             menuOverlay.classList.add('menu-closed');
-            document.body.style.overflow = '';
+            document.body.style.overflow = 'visible';
         }
     }
 
