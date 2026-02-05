@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos d'Oncle G | Notre Histoire et Nos Valeurs</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Découvrez les services innovants d'Oncle G : livraison express, impact sur les réseaux sociaux, compétitivité et formation de qualité.">
+    <meta name="keywords" content="Oncle G, services, livraison, réseaux sociaux, formation, compétitivité">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Oncle G - Services Innovants">
+    <meta property="og:description" content="Découvrez les services innovants d'Oncle G : livraison express, impact sur les réseaux sociaux, compétitivité et formation de qualité.">
+    <meta property="og:image" content="../img/Oncle G - Logo.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Oncle G - Services Innovants">
+    <meta property="twitter:description" content="Découvrez les services innovants d'Oncle G : livraison express, impact sur les réseaux sociaux, compétitivité et formation de qualité.">
+    <meta property="twitter:image" content="../img/Oncle G - Logo.svg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/icons/favicon-16x16.png">
+    <link rel="shortcut icon" href="../img/icons/favicon.ico">
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/apple-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../img/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../img/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../img/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../img/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../img/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="../img/icons/apple-icon-57x57.png">
+
+    <!-- Android Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="../img/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="../img/icons/android-icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../img/icons/android-icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="72x72" href="../img/icons/android-icon-72x72.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="../img/icons/android-icon-48x48.png">
+    <link rel="icon" type="image/png" sizes="36x36" href="../img/icons/android-icon-36x36.png">
+
+    <!-- MS Icons -->
+    <link rel="icon" type="image/png" sizes="310x310" href="../img/icons/ms-icon-310x310.png">
+    <link rel="icon" type="image/png" sizes="150x150" href="../img/icons/ms-icon-150x150.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="../img/icons/ms-icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="70x70" href="../img/icons/ms-icon-70x70.png">
+
+    <!-- Manifest and Config -->
+    <link rel="manifest" href="./img/icons/manifest.json">
+    <meta name="msapplication-config" content="../img/icons/browserconfig.xml">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+
+        <!-- Styles personnalisés pour l'animation -->
+        <style>
+            /* Définition de l'animation "breathe" (respiration) */
+            @keyframes breathe {
+                0%, 100% {
+                    transform: scaleX(1);
+                    opacity: 0.5; /* Plus transparent au repos pour l'élégance */
+                }
+                50% {
+                    transform: scaleX(1.15); /* Légère extension */
+                    opacity: 1; /* Plus lumineux à l'extension */
+                }
+            }
+
+            /* Animation d'entrée pour le texte */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Classe de base pour les barres animées */
+            .bar-anim {
+                /* transform-origin est important pour l'extension */
+                transform-origin: right; /* Pour le côté droit */
+                animation-name: breathe;
+                animation-timing-function: ease-in-out; /* Courbe douce */
+                animation-iteration-count: infinite;
+                /* La durée sera définie par défaut, le décalage par JS */
+                animation-duration: 3s;
+                border-radius: 9999px; /* Arrondi parfait (pill) */
+            }
+
+            /* Origine gauche pour le panneau gauche (car il est rotaté) */
+            .side-panel.left .bar-anim {
+                transform-origin: right; /* Comme le panneau est rotaté 180deg, right devient left visuellement */
+            }
+
+            /* Application de l'animation au texte */
+            .fade-in-up {
+                animation: fadeInUp 1.2s ease-out forwards;
+                opacity: 0; /* Caché au départ */
+            }
+        </style>
+
+        <style>
+        /* Styles utilitaires pour la troncation du texte */
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Cacher la barre de défilement */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .hover-overlay {
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+
+
+    <!-- Halcom Font Family - Loading from external CSS file -->
+    <link rel="stylesheet" href="./fonts.css">
+
+    <style>
+        @keyframes float {
+        0% { transform: translateY(0); opacity: 0.8; }
+        50% { transform: translateY(-6px); opacity: 1; }
+        100% { transform: translateY(0); opacity: 0.8; }
+        }
+
+        .slide-enter {
+        animation: slideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .slide-exit {
+        animation: slideOut 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        @keyframes slideIn {
+        0% { transform: translateX(100%) scale(0.9); opacity: 0; }
+        100% { transform: translateX(0) scale(1); opacity: 1; }
+        }
+
+        @keyframes slideOut {
+        0% { transform: translateX(0) scale(1); opacity: 1; }
+        100% { transform: translateX(-100%) scale(0.9); opacity: 0; }
+        }
+
+        /* Enhanced card transition */
+        .card-transition {
+        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Smooth next card preview animation */
+        .next-card-transition {
+        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Scale animation for smoother effect */
+        .scale-in {
+        animation: scaleIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        @keyframes scaleIn {
+        0% { transform: scale(0.8); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Fade animation */
+        .fade-in {
+        animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+        }
+
+        /* Slide from side animation */
+        .slide-from-right {
+        animation: slideFromRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        @keyframes slideFromRight {
+        0% { transform: translateX(50px); opacity: 0; }
+        100% { transform: translateX(0); opacity: 1; }
+        }
+
+        .slide-from-left {
+        animation: slideFromLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        @keyframes slideFromLeft {
+        0% { transform: translateX(-50px); opacity: 0; }
+        100% { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Consistent transition for all slide content */
+        .slide-content {
+        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Animation for content elements when slide enters */
+        .slide-content-element {
+        animation: slideContentIn 0.8s 0.2s both;
+        }
+
+        @keyframes slideContentIn {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        }
+
+        /* Apply different delays for staggered animations */
+        .slide-content-element:nth-child(1) { animation-delay: 0.1s; }
+        .slide-content-element:nth-child(2) { animation-delay: 0.2s; }
+        .slide-content-element:nth-child(3) { animation-delay: 0.3s; }
+        .slide-content-element:nth-child(4) { animation-delay: 0.4s; }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+        .main-slider-container {
+            width: 90vw;
+            height: 70vh;
+        }
+
+        .main-slide {
+            width: 100%;
+            height: 100%;
+            padding: 8%;
+        }
+
+        .preview-card {
+            width: 85vw;
+            height: 65vh;
+            transform: translateX(calc(50% + 20px)) translateY(-50%) !important;
+        }
+
+        .slide-content-text {
+            max-width: 60%;
+        }
+
+        .slide-elements-right {
+            right: 8%;
+        }
+        }
+
+        @media (max-width: 768px) {
+        .main-slider-container {
+            width: 95vw;
+            height: 60vh;
+            border-radius: 24px;
+        }
+
+        .main-slide {
+            padding: 10%;
+        }
+
+        .preview-card {
+            width: 90vw;
+            height: 55vh;
+            opacity: 0.2;
+            transform: translateX(calc(50% + 15px)) translateY(-50%) !important;
+        }
+
+        .slide-content-text {
+            max-width: 100%;
+        }
+
+        .slide-elements-right {
+            right: 10%;
+            top: 50%;
+        }
+
+        .slide-title {
+            font-size: 1.8rem;
+        }
+
+        .slide-description {
+            font-size: 0.9rem;
+        }
+
+        .slide-button {
+            padding: 0.7rem 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .indicator-position {
+            left: 10%;
+        }
+        }
+
+        @media (max-width: 480px) {
+        body {
+            padding: 4%;
+        }
+
+        .card-stack {
+            height: 60vh !important; /* Increased height for mobile */
+        }
+
+        .main-slider-container {
+            width: 100vw;
+            height: 60vh; /* Increased from 50vh to 60vh */
+            border-radius: 20px;
+        }
+
+        .main-slide {
+            padding: 8%;
+        }
+
+        .preview-card {
+            display: none; /* Hide preview on very small screens */
+        }
+
+        .slide-title {
+            font-size: 1.5rem;
+        }
+
+        .slide-description {
+            font-size: 0.8rem;
+        }
+
+        .slide-button {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.8rem;
+        }
+
+        .nav-arrows {
+            width: 30px;
+            height: 30px;
+            font-size: 0.8rem;
+        }
+
+        .dots-container {
+            margin-top: 4%;
+        }
+        }
+
+        /* Extra small mobile devices */
+        @media (max-width: 360px) {
+            .card-stack {
+                height: 65vh !important; /* Even taller for very small screens */
+            }
+
+            .main-slider-container {
+                height: 65vh !important;
+            }
+        }
+
+        /* Responsive styles for presentation popup */
+        @media (max-width: 768px) {
+            .presentation-popup-content {
+                max-width: 90%;
+                margin: 0 20px;
+                max-height: 80vh;
+            }
+
+            .presentation-popup-content .p-6 {
+                padding: 0.75rem;
+            }
+
+            .presentation-popup-content .grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .presentation-popup-content .element-item {
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .presentation-popup-content {
+                max-width: 95%;
+                margin: 0 10px;
+                max-height: 85vh;
+            }
+
+            .presentation-popup-content .p-6 {
+                padding: 0.5rem;
+            }
+
+            .presentation-popup-content .element-item {
+                padding: 0.75rem;
+            }
+
+            .presentation-popup-content .space-x-4 {
+                gap: 0.5rem;
+            }
+        }
+
+        /* Height control classes for slider cards */
+        .slider-height-small {
+        height: 400px !important;
+        }
+
+        .slider-height-medium {
+        height: 520px !important;
+        }
+
+        .slider-height-large {
+        height: 600px !important;
+        }
+
+        .slider-height-extra-large {
+        height: 700px !important;
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+
+
+
+                    // color default
+                    colors: {
+                        primary: '#facc15',
+                        secondary: '#1A1A1A',
+                        accent: '#FF4081',
+                    },
+                    fontFamily: {
+                        sans: ['Halcom', 'sans-serif'],
+                        heading: ['Halcom', 'sans-serif'],
+                    },
+                    animation: {
+                        'scale-down': 'scaleDown 500ms forwards',
+                        'scale-up': 'scaleUp 500ms forwards',
+                    },
+                    keyframes: {
+                        scaleDown: {
+                            '0%': { transform: 'scale(1) translateY(0)', opacity: '1' },
+                            '100%': { transform: 'scale(1.1) translateY(40px)', opacity: '0' },
+                        },
+                        scaleUp: {
+                            '0%': { transform: 'scale(1.1) translateY(-40px)', opacity: '0' },
+                            '100%': { transform: 'scale(1) translateY(0)', opacity: '1' },
+                        },
+                    },
+
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Petit style pour lisibilité */
+        .card-stack:hover .nav-btn {
+            opacity: 1;
+        }
+
+        /* Empêcher la sélection de texte accidentelle */
+        .no-select {
+            user-select: none;
+        }
+    </style>
+
+    <style>
+        /* Masquer la barre de scroll par défaut pour un look plus propre */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Premium Popup Styles */
+
+
+        .popup-image {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .popup-title {
+            animation: slideFromTop 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+
+        .popup-text {
+            animation: slideFromBottom 0.8s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+
+        .popup-button {
+            animation: scaleIn 0.8s 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        @keyframes slideFromTop {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideFromBottom {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Kinetic light effects */
+        .kinetic-light-1, .kinetic-light-2, .kinetic-light-3 {
+            position: absolute;
+            border-radius: 50%;
+             width: 200px;
+            height: 200px;
+            filter: blur(40px);
+            z-index: -1;
+            animation: moveLight 8s infinite alternate;
+        }
+
+        .kinetic-light-1 {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .kinetic-light-2 {
+            top: 60%;
+            left: 70%;
+            animation-delay: 2s;
+        }
+
+        .kinetic-light-3 {
+            top: 30%;
+            left: 50%;
+            animation-delay: 4s;
+        }
+
+        @keyframes moveLight {
+            0% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+            25% { transform: translate(20px, 30px) scale(1.2); opacity: 0.7; }
+            50% { transform: translate(-10px, 20px) scale(0.9); opacity: 0.4; }
+            75% { transform: translate(15px, -10px) scale(1.1); opacity: 0.6; }
+            100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+        }
+
+        /* Slide-in menu animation */
+        .menu-overlay {
+            transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        .menu-open { transform: translateY(0); }
+        .menu-closed { transform: translateY(-100%); }
+
+        /* Animation for showing the popup */
+        .popup-show {
+            transform: scale(1) !important;
+            opacity: 1 !important;
+        }
+
+        /* Animation for elements with delay */
+        .animate-fadeIn {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Custom font styles for different sections */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Halcom', sans-serif;
+            font-weight: 700; /* Bold weight for headings */
+        }
+
+        .hero-title {
+            font-family: 'Halcom', sans-serif;
+            font-weight: 900; /* Black weight for hero titles */
+            font-style: normal;
+        }
+
+        .section-title {
+            font-family: 'Halcom', sans-serif;
+            font-weight: 800; /* Extra bold weight for section titles */
+            font-style: normal;
+        }
+
+        .card-title {
+            font-family: 'Halcom', sans-serif;
+            font-weight: 700; /* Bold weight for card titles */
+            font-style: normal;
+        }
+
+        .navigation-text {
+            font-family: 'Halcom', sans-serif;
+            font-weight: 500; /* Medium weight for navigation */
+            font-style: normal;
+        }
+
+        .body-text {
+            font-family: 'Halcom', sans-serif;
+            font-weight: 400; /* Regular weight for body text */
+            font-style: normal;
+        }
+
+        .emphasis-text {
+            font-family: 'Halcom', sans-serif;
+            font-weight: 600; /* Semi-bold for emphasized text */
+            font-style: normal;
+        }
+
+        .italic-text {
+            font-family: 'Halcom', sans-serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+    </style>
+
+    <style>
+        body { font-family: 'Halcom', sans-serif; }
+        /* Ligne verticale personnalisée */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #374151, #eab308, #374151, transparent);
+        }
+        @media (max-width: 768px) {
+            .timeline-line::before { left: 20px; }
+        }
+    </style>
+
+    <style>
+
+        /* Effet de texte contour (Outline) */
+        .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+        }
+
+        /* Animation au survol des cartes */
+        .whawoo-card {
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .whawoo-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            background: #493801;
+            border-color: #eab308;
+        }
+
+        /* Décoration d'arrière-plan */
+        .bg-glow {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(234, 179, 8, 0.05) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        input , textarea {
+            color: black!important  ;
+        }
+    </style>
+
+    <!-- JavaScript Configuration Files -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+    <script defer src="../js/tailwind-config.js"></script>
+    <script src="../js/loader.js"></script>
+    <script src="../js/animations.js"></script>
+    <script defer src="../js/cardstack.js"></script>
+    <script defer src="../js/popup.js"></script>
+    <script defer src="../js/misc.js"></script>
+    <script defer src="../js/menu.js"></script>
+    <script defer src="../js/carousel.js"></script>
+    <script defer src="../js/scroll.js"></script>
+    <script>
+        // Initialize Lottie animation for the logo and hide loader after animation plays
+        document.addEventListener('DOMContentLoaded', function() {
+            // Start the animation after a short delay
+            setTimeout(function() {
+                const container = document.getElementById('lottie-logo');
+                if (container) {
+                    const animation = bodymovin.loadAnimation({
+                        container: container,
+                        renderer: 'svg',
+                        loop: false, // Play once then stop
+                        autoplay: true,
+                        path: '../img/Oncle-G-Logo-1-2-Playful.json' // Path to your animation JSON
+                    });
+
+                    // Calculate approximate duration of animation and hide loader after that time
+                    // Using a fixed timeout since the complete event may not fire in all cases
+                    setTimeout(function() {
+                        const loaderOverlay = document.getElementById('loader-overlay');
+                        if (loaderOverlay) {
+                            loaderOverlay.style.display = 'none';
+
+                            // Ensure the body scroll is enabled
+                            document.body.style.overflow = 'visible';
+                        }
+                    }, 3000); // Adjust based on your animation duration
+                }
+            }, 500); // Delay to ensure DOM is ready
+        });
+    </script>
+
+    <style>
+        /* Animation Classes for scroll reveal */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+        .delay-500 { transition-delay: 500ms; }
+        .delay-600 { transition-delay: 600ms; }
+
+        /* Dotted line effect during scroll */
+        .scroll-dotted-line {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            height: 100vh;
+            width: 4px;
+            transform: translateX(-50%);
+            pointer-events: none;
+            z-index: 9999;
+            display: none;
+        }
+
+        .scroll-dotted-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0%;
+            background: repeating-radial-gradient(
+                circle,
+                #eab308 0px,
+                #eab308 2px,
+                transparent 2px,
+                transparent 4px
+            );
+            background-size: 4px 4px;
+            animation: scrollLine 0.3s linear infinite;
+        }
+
+        @keyframes scrollLine {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 0 4px;
+            }
+        }
+
+        /* Game-like dot that follows scroll */
+        .scroll-dot {
+            position: fixed;
+            width: 16px;
+            height: 16px;
+            background: #eab308;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #eab308, 0 0 20px #eab308;
+            z-index: 10000;
+            pointer-events: none;
+            display: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Enhanced scroll-triggered animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Game-like effect elements */
+        .game-element {
+            position: relative;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .game-element.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+
+</head>
+
+<body class="bg-white p-0   overflow-x-hidden" x-data="cardStack()">
+
+
+
+
+
+<div id="loader-overlay" class="fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center overflow-hidden">
+    <div id="lottie-logo" class="w-[300px] md:w-[400px] h-[300px] md:h-[400px] flex items-center justify-center"></div>
+</div>
+
+
+
+
+
+
+    <!-- Slide-in Navigation Menu -->
+    <!-- Slide-in Navigation Menu -->
+    <div id="menuOverlay" class="fixed inset-0 z-[666] bg-black/90 menu-overlay menu-closed overflow-y-auto p-6 md:p-12 lg:p-24">
+        <div class="flex flex-col h-full">
+             <header class="mb-12 md:mb-20">
+                <!-- <h2 class="text-4xl md:block hidden md:text-5xl lg:text-7xl font-bold tracking-tight text-white">Navigation</h2> -->
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 md:gap-x-16 gap-y-8 md:gap-y-12 flex-grow">
+
+                <a href="../index.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm uppercase tracking-widest text-gray-500">01</span>
+                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">LE SOURIRE DE L’ONCLE</h3>
+                    </div>
+                </a>
+
+                <a href="../pages/livraison-express.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm uppercase tracking-widest text-gray-500">02</span>
+                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">LIVRAISON EXPRESS</h3>
+                    </div>
+                </a>
+
+                <a href="../pages/commandez-en-un-geste.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm uppercase tracking-widest text-gray-500">03</span>
+                        <h3 class="text-xl md:text-xl font-semibold group-hover:text-yellow-500">COMMANDEZ EN UN GESTE</h3>
+
+                    </div>
+                </a>
+
+                <a href="../pages/a-propos.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm uppercase tracking-widest text-gray-500">04</span>
+                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">À PROPOS</h3>
+                    </div>
+                </a>
+
+                <a href="../pages/communaute.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm uppercase tracking-widest text-gray-500">05</span>
+                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">COMMUNAUTÉ</h3>
+                    </div>
+                </a>
+
+                <a href="../pages/contacts.html" class="group border-b border-gray-800 pb-4 hover:border-yellow-500 transition text-white">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm uppercase tracking-widest text-gray-500">06</span>
+                        <h3 class="text-xl md:text-2xl group-hover:text-yellow-500">CONTACTS</h3>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Close button -->
+            <button id="closeMenuBtn" class="mt-5 w-[50px] h-[50px]   bg-yellow-500 flex items-center justify-center text-white self-start">
+                <span class="material-symbols-outlined text-4xl ">close</span>
+            </button>
+        </div>
+    </div>
+    <!-- HEADER -->
+    <header class="flex  justify-between items-center px-8 py-5 max-w-[1400px] mx-auto relative z-50">
+        <div onclick="window.location.href='index.html'" class="logo flex items-center gap-3 cursor-pointer">
+            <img onclick="window.location.href='index.html'"   src="../img/Oncle G - Logo.min.svg" alt="Logo" class="h-16">
+        </div>
+
+        <button id="menuTriggerBtn" class="nav-link hidden md:flex text-sm text-neutral-500 flex items-center gap-2 hover:text-yellow-500 transition-colors font-medium">
+          EMPLOYER <span class="material-symbols-outlined text-yellow-500 rotate-45">arrow_forward</span>
+        </button>
+
+        <!-- Mobile button for slide-in menu -->
+        <button id="mobileMenuBtn" class="md:hidden text-neutral-500 flex items-center hover:text-yellow-500 transition-colors p-2 z-[70]">
+            <span class="material-symbols-outlined text-xl">menu</span>
+        </button>
+
+        <div class="social-icons hidden md:flex gap-6">
+            <a href="#"
+                    class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                    <img src="../img/icone_social/facebook_icones.svg" class="h-10"  alt="facebook_icones">
+            </a>
+            <a href="#"
+                    class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                    <img src="../img/icone_social/instagram_icones.svg" class="h-10"  alt="facebook_icones">
+            </a>
+
+            <a href="#"
+                    class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                    <img src="../img/icone_social/x_icones.svg" class="h-10"  alt="facebook_icones">
+            </a>
+            <a href="#"
+                    class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                    <img src="../img/icone_social/tiktok_icones.svg" class="h-10"  alt="facebook_icones">
+            </a>
+             <a href="#"
+                    class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                    <img src="../img/icone_social/linked_icones.svg" class="h-10"  alt="facebook_icones">
+            </a>
+        </div>
+    </header>
+
+    <!-- Premium Popup Modal -->
+    <div id="premiumPopup" class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-lg hidden z-50 flex items-center justify-center p-4">
+      <div class="popup-content     rounded-2xl   max-w-md w-full overflow-hidden transform scale-90 opacity-0 transition-all duration-500">
+        <div class="relative">
+          <!-- Close Button (X) -->
+          <button id="closePopupX" class="absolute hidden top-4 right-4 text-white bg-red-500 rounded-full w-8 h-8 flex items-center justify-center z-10 hover:bg-red-600 transition-colors">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+
+          <!-- Centered Image -->
+          <div class="image-container relative overflow-hidden">
+            <img src="../img/Oncle G - Logo.svg" alt="Oncle G Premium" class="w-full h-48 object-contain  popup-image animate-float">
+            <div class="absolute inset-0    opacity-50"></div>
+          </div>
+
+          <!-- Content -->
+          <div class="p-6 text-center">
+            <h2 class="text-2xl font-bold text-white mb-3 popup-title">Bienvenue Chez Oncle G</h2>
+            <p class="text-gray-300 mb-6 popup-text">Découvrez notre expérience premium unique et nos services exceptionnels qui vous attendent.</p>
+
+            <!-- Centered Button -->
+            <button id="exploreButton" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 popup-button">
+              Explorer Maintenant
+            </button>
+          </div>
+        </div>
+
+        <!-- Kinetic light effects -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div class="kinetic-light-1"></div>
+          <div class="kinetic-light-2"></div>
+          <div class="kinetic-light-3"></div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="w-full relative">
+
+
+            <footer class="bg-black  w-full absolute -bottom-0 text-gray-400 py-8 px-6 z-20">
+
+                <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+
+                    <div class="order-2 md:order-1 hover:text-white cursor-pointer transition">
+                        Condition d'utilisation
+                    </div>
+
+                    <div class="order-1 md:order-2 flex gap-6 text-xl">
+                        <div class="social-icons flex gap-6">
+                            <a href="#"
+                                    class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                                    <img src="../img/icone_social/facebook_icones_white.svg" class="h-10"  alt="facebook_icones">
+                            </a>
+                            <a href="#"
+                                    class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                                    <img src="../img/icone_social/instagram_icones_white.svg" class="h-10"  alt="facebook_icones">
+                            </a>
+
+                            <a href="#"
+                                    class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                                    <img src="../img/icone_social/x_icones_white.svg" class="h-10"  alt="facebook_icones">
+                            </a>
+                            <a href="#"
+                                    class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                                    <img src="../img/icone_social/tiktok_icones_white.svg" class="h-10"  alt="facebook_icones">
+                            </a>
+                            <a href="#"
+                                    class="social-btn   text-white rounded-full flex justify-center items-center  hover:scale-110 transition-all text-sm">
+                                    <img src="../img/icone_social/linked_icones_white.svg" class="h-10"  alt="facebook_icones">
+                            </a>
+                        </div>  </div>
+
+                    <div class="order-3 md:order-3">
+                        all right reserve by ONCLE G Livraisons
+                    </div>
+
+                </div>
+
+            </footer>
+            <br><br><br><br>        <br><br><br><br>        <br><br><br><br>
+        </div>
+
+
+
+            <!-- Premium Popup JavaScript -->
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const popup = document.getElementById('premiumPopup');
+                    const closePopupX = document.getElementById('closePopupX');  // The X button
+                    const exploreBtn = document.getElementById('exploreButton');  // The "Explorer Maintenant" button
+
+                    // Check if popup has been shown before
+                    const hasSeenPopup = localStorage.getItem('hasSeenPremiumPopup');
+
+                    // Show popup if user hasn't seen it before
+                    if (!hasSeenPopup) {
+                        // Small delay to ensure page loads first
+                        setTimeout(() => {
+                            popup.classList.remove('hidden');
+                            // Trigger the animation
+                            setTimeout(() => {
+                                const popupContent = popup.querySelector('.popup-content');
+                                popupContent.classList.add('popup-show');
+                                popupContent.style.transform = 'scale(1)';
+                                popupContent.style.opacity = '1';
+                            }, 50);
+                        }, 500);
+
+                        // Mark as seen in localStorage
+                        localStorage.setItem('hasSeenPremiumPopup', 'true');
+                    }
+
+                    // Close popup functions
+                    function closePopup() {
+                        const popupContent = popup.querySelector('.popup-content');
+                        popupContent.classList.remove('popup-show');
+                        popupContent.style.transform = 'scale(0.9)';
+                        popupContent.style.opacity = '0';
+
+                        // Hide the popup after animation completes
+                        setTimeout(() => {
+                            popup.classList.add('hidden');
+                        }, 500);
+                    }
+
+                    // Event listeners
+                    closePopupX.addEventListener('click', closePopup);  // X button closes popup
+                    exploreBtn.addEventListener('click', closePopup);   // "Explorer Maintenant" button closes popup
+
+                    // Also close if user clicks outside the popup content
+                    popup.addEventListener('click', function(e) {
+                        if (e.target === popup) {
+                            closePopup();
+                        }
+                    });
+
+                    // Slide-in menu functionality
+                    const menuOverlay = document.getElementById('menuOverlay');
+                    const menuTriggerBtn = document.getElementById('menuTriggerBtn');
+                    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                    const closeMenuBtn = document.getElementById('closeMenuBtn');
+                    const menuLinks = menuOverlay.querySelectorAll('a');
+
+                    // Toggle Menu
+                    function toggleMenu() {
+                        const isOpen = menuOverlay.classList.contains('menu-open');
+                        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                        const menuTriggerBtn = document.getElementById('menuTriggerBtn');
+
+                        if (isOpen) {
+                            menuOverlay.classList.replace('menu-open', 'menu-closed');
+                            document.body.style.overflow = 'auto';
+                            // Show the mobile menu icon when menu is closed
+                            if (mobileMenuBtn) {
+                                mobileMenuBtn.classList.remove('hidden');
+                            }
+                            // Show the desktop menu trigger when menu is closed (uniquement sur PC)
+                                              if (menuTriggerBtn && window.innerWidth >= 768) {
+                                                  menuTriggerBtn.classList.remove('hidden');
+                                              }
+                        } else {
+                            menuOverlay.classList.replace('menu-closed', 'menu-open');
+                            document.body.style.overflow = 'hidden';
+                            // Hide the mobile menu icon when menu is open (it's already hidden on desktop anyway)
+                            if (mobileMenuBtn) {
+                                mobileMenuBtn.classList.add('hidden');
+                            }
+                            // Hide the desktop menu trigger when menu is open
+                            if (menuTriggerBtn) {
+                                menuTriggerBtn.classList.add('hidden');
+                            }
+                        }
+                    }
+
+                    // Event listeners for opening the menu
+                    if (menuTriggerBtn) {
+                        menuTriggerBtn.addEventListener('click', toggleMenu);
+                    }
+
+                    if (mobileMenuBtn) {
+                        mobileMenuBtn.addEventListener('click', toggleMenu);
+                    }
+
+                    // Event listener for closing the menu
+                    if (closeMenuBtn) {
+                        closeMenuBtn.addEventListener('click', toggleMenu);
+                    }
+
+                    // Close menu when clicking on a link
+                    menuLinks.forEach(link => {
+                        link.addEventListener('click', () => {
+                            menuOverlay.classList.replace('menu-open', 'menu-closed');
+                            document.body.style.overflow = 'auto';
+                        });
+                    });
+
+                    // Close menu when clicking outside the menu content
+                    menuOverlay.addEventListener('click', function(e) {
+                        if (e.target === menuOverlay) {
+                            menuOverlay.classList.replace('menu-open', 'menu-closed');
+                            document.body.style.overflow = 'auto';
+                        }
+                    });
+                });
+            </script>
+
+            <script>
+                // Popup close functionality
+                document.getElementById('closePopup').addEventListener('click', function() {
+                    const popup = document.getElementById('popup');
+                    if (popup) {
+                        popup.style.display = 'none';
+                    }
+                });
+            </script>
+
+            <!-- Script for scroll animations -->
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const observerOptions = {
+                        root: null,
+                        rootMargin: '0px',
+                        threshold: 0.1
+                    };
+
+                    const observer = new IntersectionObserver((entries, observer) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('is-visible');
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, observerOptions);
+
+                    const elements = document.querySelectorAll('.reveal-element');
+                    elements.forEach(el => observer.observe(el));
+                });
+            </script>
+
+            <script>
+                function scrollSlider() {
+                    const slider = document.getElementById('slider');
+                    if (slider) {
+                        // Calculer la largeur d'une carte pour déterminer combien faire défiler
+                        const card = slider.querySelector('.flex-shrink-0');
+                        if (card) {
+                            const cardWidth = card.offsetWidth;
+                            // Défiler de la largeur d'une carte + un peu d'espace
+                            slider.scrollBy({
+                                left: cardWidth * 1.2, // Défiler d'environ 1.2 fois la largeur d'une carte
+                                behavior: 'smooth'
+                            });
+                        } else {
+                            // Si aucune carte spécifique n'est trouvée, défiler d'une quantité fixe
+                            slider.scrollBy({
+                                left: 800, // Valeur par défaut
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                }
+            </script>
+
+                <!-- Premium Popup Modal -->
+                <div id="premiumPopup" class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-lg hidden z-50 flex items-center justify-center p-4">
+                    <div class="popup-content rounded-2xl max-w-md w-full overflow-hidden transform scale-90 opacity-0 transition-all duration-500">
+                        <div class="relative">
+                            <!-- Close Button (X) -->
+                            <button id="closePopupX" class="absolute top-4 right-4 text-white bg-red-500 hidden rounded-full w-8 h-8 flex items-center justify-center z-10 hover:bg-red-600 transition-colors">
+                                <span class="material-symbols-outlined">close</span>
+                            </button>
+
+                            <!-- Centered Image -->
+                            <div class="image-container relative overflow-hidden">
+                                <object data="../img/img-loader/Livreur.svg" class="w-full h-[380px]  object-contain popup-image animate-float"></object>
+                                <div class="absolute inset-0 opacity-50"></div>
+                            </div>
+
+                            <!-- Content -->
+                            <div class="p-6 text-center">
+             <h2 class="text-2xl font-bold text-white mb-3 popup-title">Bienvenue Chez <br>  <span class="text-primary">Oncle G Livraisons</span> </h2>
+                                <p class="text-gray-300 mb-6 popup-text">Découvrez notre expérience premium unique et nos services exceptionnels qui vous attendent.</p>
+
+                                <!-- Centered Button -->
+                                <button id="exploreButton" class="bg-primary hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 popup-button">
+                                    Explorer Maintenant
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Kinetic light effects -->
+                        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                            <div class="kinetic-light-1"></div>
+                            <div class="kinetic-light-2"></div>
+                            <div class="kinetic-light-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </body>
+            </html>

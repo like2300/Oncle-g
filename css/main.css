@@ -1,3 +1,6 @@
+/* Import Google Fonts Material Symbols */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
+
 /* Main Styles - Page Oncle G */
 /* Fichier CSS principal combinant tous les styles de la page */
 
@@ -281,6 +284,21 @@
 /* ============================================
    TYPOGRAPHY STYLES - ENFORCED FONT USAGE
    ============================================ */
+
+/* Material Symbols - Override global font enforcement */
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined' !important;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    font-size: 1em;
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* Force font usage on all elements with highest specificity */
 *, *::before, *::after {

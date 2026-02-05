@@ -1,9 +1,18 @@
-// Loader Script
+// Loader Script - Updated to work with both SVG and Lottie loaders
 document.addEventListener("DOMContentLoaded", () => {
     const body = document.body;
     const loaderOverlay = document.getElementById('loader-overlay');
     const paths = document.querySelectorAll('.speed-path');
     const progressBar = document.getElementById('loader-progress');
+
+    // Check if we're using the Lottie loader (by checking if lottie-logo element exists)
+    const isLottieLoader = document.getElementById('lottie-logo') !== null;
+
+    // Skip this loader script if we're using the Lottie loader
+    if (isLottieLoader) {
+        console.log("Lottie loader detected, skipping SVG loader script");
+        return;
+    }
 
     // Récupération des sons
     const audioElectric = document.getElementById('audio-electric');
