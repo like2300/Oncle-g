@@ -2,7 +2,7 @@
 class Carousel {
     constructor() {
         this.currentSlide = 0;
-        this.totalSlides = 3;
+        this.totalSlides = 4;
         this.slideElements = [];
         this.dotElements = [];
         this.autoSlideInterval = null;
@@ -14,11 +14,12 @@ class Carousel {
         this.slideElements = [
             document.getElementById('slide-1'),
             document.getElementById('slide-2'),
-            document.getElementById('slide-3')
+            document.getElementById('slide-3'),
+            document.getElementById('slide-4')
         ];
         this.dotElements = document.querySelectorAll('.dot[data-target]');
         this.addEventListeners();
-        this.setActiveSlide(0);
+        this.setActiveSlide(3); // Afficher le nouveau slide (slide 4) en premier par défaut
         setTimeout(() => {
             this.startAutoSlide();
         }, 1000);
@@ -38,7 +39,7 @@ class Carousel {
                 if (index === this.currentSlide) {
                     slide.style.width = '100%';
                     slide.style.top = '80px';
-                    slide.style.zIndex = '3';
+                    slide.style.zIndex = '4'; // Updated z-index for 4 slides
                     slide.style.display = 'block';
 
                     // Load the background image if it hasn't been loaded yet
@@ -58,9 +59,9 @@ class Carousel {
                     if(descriptionElement) descriptionElement.classList.remove('hidden');
 
                 } else if (index === this.currentSlide - 1 || (this.currentSlide === 0 && index === this.totalSlides - 1)) {
-                    slide.style.width = '82.5%';
-                    slide.style.top = '40px';
-                    slide.style.zIndex = '2';
+                    slide.style.width = '86.6%'; // Adjusted for 4 slides
+                    slide.style.top = '53px'; // Adjusted for 4 slides
+                    slide.style.zIndex = '3'; // Updated z-index for 4 slides
                     slide.style.display = 'block';
 
                     // Load the background image if it hasn't been loaded yet
@@ -82,8 +83,29 @@ class Carousel {
                     }
                     if(descriptionElement) descriptionElement.classList.add('hidden');
 
+                } else if (index === this.currentSlide - 2 || (this.currentSlide < 2 && index === (this.currentSlide + this.totalSlides - 2) % this.totalSlides)) {
+                    slide.style.width = '73.3%'; // New width for 4 slides
+                    slide.style.top = '26px'; // New position for 4 slides
+                    slide.style.zIndex = '2'; // Updated z-index for 4 slides
+                    slide.style.display = 'block';
+
+                    // Load the background image if it hasn't been loaded yet
+                    if (slide.dataset.bgSrc && !slide.dataset.bgLoaded) {
+                        const bgImageUrl = slide.dataset.bgSrc;
+                        slide.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.55), rgba(63, 55, 0, 0.4)), url('${bgImageUrl}')`;
+                        slide.dataset.bgLoaded = 'true';
+                        slide.classList.remove('bg-loading');
+                        slide.classList.add('bg-loaded');
+                    }
+
+                    if(titleElement) {
+                        titleElement.classList.add('opacity-0', 'scale-95');
+                        titleElement.classList.remove('opacity-100', 'scale-100');
+                    }
+                    if(descriptionElement) descriptionElement.classList.add('hidden');
+
                 } else {
-                    slide.style.width = '65%';
+                    slide.style.width = '60%'; // New width for back slide in 4 slides
                     slide.style.top = '0px';
                     slide.style.zIndex = '1';
                     slide.style.display = 'block';
