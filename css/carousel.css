@@ -202,3 +202,24 @@
 /* Masquer la scrollbar */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Styles pour le chargement progressif des images */
+.blur-up {
+    filter: blur(5px);
+    transition: filter 0.5s ease-in-out;
+}
+
+.blur-up.loaded {
+    filter: blur(0);
+}
+
+.bg-loading {
+    background-color: #f0f0f0; /* Couleur de fond temporaire pendant le chargement */
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.bg-loaded {
+    opacity: 1;
+}

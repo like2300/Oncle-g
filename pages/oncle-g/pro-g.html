@@ -60,12 +60,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts with priority loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
 
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+    <script defer src="../../js/image-loader.js"></script>
     <script defer src="./scripts/simple-seo-enhancement.js"></script>
     <script src="./js/loader.js"></script>
 </head>
@@ -136,7 +138,7 @@
     <section class="relative">
         <!-- GIF Background -->
         <div class="absolute inset-0 overflow-hidden z-0">
-            <div class="w-full h-full bg-cover bg-center opacity-40" style="background-image: url('../../img/background-animation.webp');"></div>
+            <div class="w-full h-full bg-cover bg-center opacity-40 bg-loading" data-bg-src="../../img/background-animation.webp"></div>
         </div>
 
         <!-- Overlay -->

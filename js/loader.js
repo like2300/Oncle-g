@@ -26,9 +26,15 @@ document.addEventListener("DOMContentLoaded", () => {
     body.classList.add('loading');
 
     // 2. Lancer l'animation de tracé (Visuel immédiat)
-    paths.forEach(path => {
-        path.classList.add('animate-draw');
-    });
+    if(paths.length > 0) {
+        paths.forEach(path => {
+            path.classList.add('animate-draw');
+        });
+    } else {
+        // If no speed-path elements exist, skip to finish
+        finishLoader();
+        return;
+    }
 
     // 3. Tenter de lancer le son électrique (Peut être bloqué par le navigateur)
     if(audioElectric) {
@@ -87,9 +93,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Remplissage Blanc du Logo (L'Impact Visuel)
-        paths.forEach(path => {
-            path.classList.add('animate-fill');
-        });
+        if(paths.length > 0) {
+            paths.forEach(path => {
+                path.classList.add('animate-fill');
+            });
+        }
 
         // Disparition finale (Après l'impact)
         setTimeout(() => {
@@ -100,10 +108,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 600); // 0.6s pour laisser le temps de voir le logo blanc
     }
 
-    // SÉCURITÉ : Si la page met plus de 10 secondes (bug réseau), on force l'ouverture
+    // SÉCURITÉ : Si la page met plus de 8 secondes (bug réseau), on force l'ouverture
     setTimeout(() => {
         if (body.classList.contains('loading')) {
             window.dispatchEvent(new Event('load'));
         }
-    }, 10000);
+    }, 8000); // Reduced timeout from 10s to 8s for faster display
 });

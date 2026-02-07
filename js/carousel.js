@@ -28,51 +28,86 @@ class Carousel {
         if (slideIndex < 0 || slideIndex >= this.totalSlides) return;
         this.currentSlide = slideIndex;
 
-        this.slideElements.forEach((slide, index) => {
-            slide.style.transition = 'all 0.5s ease';
-            const titleElement = slide.querySelector('h1.text-primary');
-            const descriptionElement = slide.querySelector('.max-w-xs, .max-w-sm, .max-w-md');
+        // Use requestAnimationFrame for smoother transitions
+        requestAnimationFrame(() => {
+            this.slideElements.forEach((slide, index) => {
+                slide.style.transition = 'all 0.5s ease';
+                const titleElement = slide.querySelector('h1.text-primary');
+                const descriptionElement = slide.querySelector('.max-w-xs, .max-w-sm, .max-w-md');
 
-            if (index === this.currentSlide) {
-                slide.style.width = '100%';
-                slide.style.top = '80px';
-                slide.style.zIndex = '3';
-                slide.style.display = 'block';
+                if (index === this.currentSlide) {
+                    slide.style.width = '100%';
+                    slide.style.top = '80px';
+                    slide.style.zIndex = '3';
+                    slide.style.display = 'block';
 
-                if(titleElement) {
-                    titleElement.classList.remove('opacity-0', 'scale-95');
-                    titleElement.classList.add('opacity-100', 'scale-100');
+                    // Load the background image if it hasn't been loaded yet
+                    if (slide.dataset.bgSrc && !slide.dataset.bgLoaded) {
+                        const bgImageUrl = slide.dataset.bgSrc;
+                        // Apply the background image with the linear gradient
+                        slide.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.55), rgba(63, 55, 0, 0.4)), url('${bgImageUrl}')`;
+                        slide.dataset.bgLoaded = 'true';
+                        slide.classList.remove('bg-loading');
+                        slide.classList.add('bg-loaded');
+                    }
+
+                    if(titleElement) {
+                        titleElement.classList.remove('opacity-0', 'scale-95');
+                        titleElement.classList.add('opacity-100', 'scale-100');
+                    }
+                    if(descriptionElement) descriptionElement.classList.remove('hidden');
+
+                } else if (index === this.currentSlide - 1 || (this.currentSlide === 0 && index === this.totalSlides - 1)) {
+                    slide.style.width = '82.5%';
+                    slide.style.top = '40px';
+                    slide.style.zIndex = '2';
+                    slide.style.display = 'block';
+
+                    // Load the background image if it hasn't been loaded yet
+                    if (slide.dataset.bgSrc && !slide.dataset.bgLoaded) {
+                        let gradient = 'linear-gradient(rgba(0, 0, 0, 0.43), rgba(0, 0, 0, 0.4))';
+                        if (index === 2) { // For slide 3
+                           gradient = 'linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.4))';
+                        }
+                        const bgImageUrl = slide.dataset.bgSrc;
+                        slide.style.backgroundImage = `${gradient}, url('${bgImageUrl}')`;
+                        slide.dataset.bgLoaded = 'true';
+                        slide.classList.remove('bg-loading');
+                        slide.classList.add('bg-loaded');
+                    }
+
+                    if(titleElement) {
+                        titleElement.classList.add('opacity-0', 'scale-95');
+                        titleElement.classList.remove('opacity-100', 'scale-100');
+                    }
+                    if(descriptionElement) descriptionElement.classList.add('hidden');
+
+                } else {
+                    slide.style.width = '65%';
+                    slide.style.top = '0px';
+                    slide.style.zIndex = '1';
+                    slide.style.display = 'block';
+
+                    // Load the background image if it hasn't been loaded yet
+                    if (slide.dataset.bgSrc && !slide.dataset.bgLoaded) {
+                        const bgImageUrl = slide.dataset.bgSrc;
+                        slide.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.55), rgba(63, 55, 0, 0.4)), url('${bgImageUrl}')`;
+                        slide.dataset.bgLoaded = 'true';
+                        slide.classList.remove('bg-loading');
+                        slide.classList.add('bg-loaded');
+                    }
+
+                    if(titleElement) {
+                        titleElement.classList.add('opacity-0', 'scale-95');
+                        titleElement.classList.remove('opacity-100', 'scale-100');
+                    }
+                    if(descriptionElement) descriptionElement.classList.add('hidden');
                 }
-                if(descriptionElement) descriptionElement.classList.remove('hidden');
+            });
 
-            } else if (index === this.currentSlide - 1 || (this.currentSlide === 0 && index === this.totalSlides - 1)) {
-                slide.style.width = '82.5%';
-                slide.style.top = '40px';
-                slide.style.zIndex = '2';
-                slide.style.display = 'block';
-
-                if(titleElement) {
-                    titleElement.classList.add('opacity-0', 'scale-95');
-                    titleElement.classList.remove('opacity-100', 'scale-100');
-                }
-                if(descriptionElement) descriptionElement.classList.add('hidden');
-
-            } else {
-                slide.style.width = '65%';
-                slide.style.top = '0px';
-                slide.style.zIndex = '1';
-                slide.style.display = 'block';
-
-                if(titleElement) {
-                    titleElement.classList.add('opacity-0', 'scale-95');
-                    titleElement.classList.remove('opacity-100', 'scale-100');
-                }
-                if(descriptionElement) descriptionElement.classList.add('hidden');
-            }
+            this.updateDots();
+            this.updateCounter();
         });
-
-        this.updateDots();
-        this.updateCounter();
     }
 
     updateDots() {
