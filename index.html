@@ -105,6 +105,7 @@
     <script defer src="./js/menu.js"></script>
     <script defer src="./js/carousel.js"></script>
     <script defer src="./js/scroll.js"></script>
+    <script defer src="./js/contact-form-handler.js"></script>
     <script>
         // Initialize Lottie animation for the logo and hide loader after animation plays
         document.addEventListener('DOMContentLoaded', function() {
@@ -267,20 +268,20 @@
         </button>
 
         <div class="social-icons hidden md:flex gap-6">
-            <a href="#" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
+            <a href="https://www.facebook.com/oncleglivraisons" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
                 <img src="./img/icone_social/facebook_icones.svg" class="h-10" alt="facebook_icones">
             </a>
-            <a href="#" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
-                <img src="./img/icone_social/instagram_icones.svg" class="h-10" alt="facebook_icones">
+            <a href="https://www.instagram.com/oncleglivraisons/" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
+                <img src="./img/icone_social/instagram_icones.svg" class="h-10" alt="instagram_icones">
             </a>
-            <a href="#" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
-                <img src="./img/icone_social/x_icones.svg" class="h-10" alt="facebook_icones">
+            <a href="https://x.com/OncleGLIVRAISON" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
+                <img src="./img/icone_social/x_icones.svg" class="h-10" alt="x_icones">
             </a>
-            <a href="#" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
-                <img src="./img/icone_social/tiktok_icones.svg" class="h-10" alt="facebook_icones">
+            <a href="https://www.tiktok.com/@oncle.g.livraisons" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
+                <img src="./img/icone_social/tiktok_icones.svg" class="h-10" alt="tiktok_icones">
             </a>
-            <a href="#" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
-                <img src="./img/icone_social/linked_icones.svg" class="h-10" alt="facebook_icones">
+            <a href="https://www.linkedin.com/in/oncle-g-livraisons-5272783a0/" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
+                <img src="./img/icone_social/linked_icones.svg" class="h-10" alt="linkedin_icones">
             </a>
         </div>
     </header>
@@ -298,7 +299,7 @@
 
                  <!--Centered Image-->
                 <div class="image-container relative overflow-hidden">
-                    <object data="./img/img-loader/Livreur.svg" class="w-full h-[380px]  object-contain popup-image animate-float"></object>
+                    <object data="./img/img-loader/Livreur.webp" class="w-full h-[380px]  object-contain popup-image animate-float"></object>
                     <div class="absolute inset-0 opacity-50"></div>
                 </div>
 
@@ -514,7 +515,6 @@
                 <!-- CAROUSEL SLIDE 4 - NEW IMAGE -->
                 <li id="slide-4" class="carousel-slide group absolute list-none rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] transition-all duration-500 ease-in-out left-0 right-0 mx-auto bg-cover bg-center bg-no-repeat overflow-hidden h-full cursor-default bg-loading"
                     data-bg-src="./img/section/PHOTO-2026-02-07-12-26-43 2.jpg" style="width: 100%; top: 80px; height: 100%; background-size: cover; background-position: center; z-index: 4;">
-
                 </li>
             </ul>
         </div>
@@ -574,7 +574,7 @@
 
         <!-- Center Content -->
         <div class="text-center flex items-center justify-center flex-col gap-2 w-full md:w-2/4 px-6 z-10 fade-in">
-            <h2 class="text-4xl md:text-5xl lg:flex  font-bold uppercase tracking-wide mb-4">LIVRAISON
+            <h2 class="text-4xl md:text-5xl lg:flex  font-bold uppercase tracking-wide mb-4">NOS SERVICES
                 <div class="bg-primary p-2  rotate-3">
                     <p class="text-black font-black text-4xl leading-none text-white tracking-tighter">EXPRESS</p>
                 </div>
@@ -721,13 +721,16 @@
             <!-- Center Content -->
             <div class="text-center w-full md:w-2/4 px-6 z-10 fade-in">
 
-            <h2 class="text-4xl lg:flex flex-col items-center justify-center md:text-5xl font-bold uppercase tracking-wide mb-4"> Un appel, et l’histoire
+            <h2 class="text-4xl lg:flex flex-col items-center justify-center md:text-5xl font-bold uppercase tracking-wide mb-4">
                 <div class="bg-primary p-2  rotate-3">
-                    <p class="text-black font-black text-4xl leading-none text-white tracking-tighter">commence</p>
+                    <p class="text-black font-black text-4xl leading-none text-white tracking-tighter">COMMANDEZ </p>
                 </div>
+                EN UN GESTE
            </h2>
 
-           <h2 class="text-sm uppercase tracking-[0.4em] text-primary font-bold mb-4">COMMANDEZ EN UN GESTE</h2>
+           <h2 class="text-sm uppercase tracking-[0.4em] text-primary font-bold mb-4">
+           Un appel, et l’histoire commence
+           </h2>
 
                   <p class="mt-8 text-gray-400 text-lg max-w-2xl mx-auto">
                         Pas besoin de complications. Vous commandez, ONCLE G Livraisons écoute, et déjà la magie opère. Simple, direct,
@@ -1319,8 +1322,11 @@
                             </p>
                         </div>
                         <div class="mt-12 md:mt-20">
-                            <a href="tel:+242060000000" class="block text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter hover:text-primary transition-colors break-words">
+                            <a href="tel:+242066338224" class="block text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter hover:text-primary transition-colors break-words">
                                 +242 06...
+                            </a>
+                            <a href="tel:+242055600366" class="block text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter hover:text-primary transition-colors break-words">
+                                +242 05...
                             </a>
                             <span class="text-xs text-gray-400 uppercase tracking-widest mt-2 block md:hidden">Touchez pour appeler</span>
                         </div>
@@ -1338,7 +1344,7 @@
                             </p>
                         </div>
                         <div class="mt-12 md:mt-20">
-                            <a href="mailto:bonjour@oncleg.cg" class="group/btn inline-flex items-center gap-2 md:gap-4 text-lg md:text-xl font-bold uppercase tracking-widest">
+                            <a href="mailto:contact@oncleg.com" class="group/btn inline-flex items-center gap-2 md:gap-4 text-lg md:text-xl font-bold uppercase tracking-widest">
                                 <span class="border-b-2 border-black group-hover/btn:border-primary transition-all pb-1">Envoyer un mot</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 md:w-6 md:h-6 group-hover/btn:translate-x-2 transition-transform text-primary">
                                   <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
@@ -1354,7 +1360,7 @@
                         <span class="text-gray-500 text-xs md:text-sm italic mt-1">Chaque contact est une rencontre</span>
                         <p class="font-light text-gray-500 italic mt-1">ONCLE G Livraisons n’est pas seulement un service, c’est une communauté.<br> En nous écrivant, vous entrez dans une famille qui grandit avec vous.</p>
                     </div>
-                    <a href="#" class="w-full md:w-auto text-center px-8 py-4 bg-black text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-primary hover:text-black transition-colors duration-300 shadow-lg">
+                    <a href="https://whatsapp.com/channel/0029Vb6g9OgLdQeVgMM2q80X" class="w-full md:w-auto text-center px-8 py-4 bg-black text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-primary hover:text-black transition-colors duration-300 shadow-lg">
                         Nous rejoindre
                     </a>
                 </div>
@@ -1365,14 +1371,15 @@
                         <h3 class="text-3xl md:text-4xl font-light italic text-black">Laissez une trace.</h3>
                     </div>
 
+                    <form id="contactForm">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 md:gap-y-12">
                         <div class="group relative reveal-element delay-100">
                             <input type="text" id="nom" class="peer w-full bg-transparent border-b-2 border-gray-200 py-3 outline-none text-lg md:text-xl font-bold text-black focus:border-primary transition-colors placeholder-transparent" placeholder="Votre Nom">
                             <label for="nom" class="absolute left-0 -top-3 text-gray-400 text-[10px] md:text-xs uppercase tracking-widest transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-yellow-600 peer-focus:text-[10px]">Nom Complet</label>
                         </div>
                         <div class="group relative reveal-element delay-100">
-                            <input type="email" id="email" class="peer w-full bg-transparent border-b-2 border-gray-200 py-3 outline-none text-lg md:text-xl font-bold text-black focus:border-primary transition-colors placeholder-transparent" placeholder="Votre Email">
-                            <label for="email" class="absolute left-0 -top-3 text-gray-400 text-[10px] md:text-xs uppercase tracking-widest transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-yellow-600 peer-focus:text-[10px]">Email</label>
+                            <input type="tel" id="telephone" class="peer w-full bg-transparent border-b-2 border-gray-200 py-3 outline-none text-lg md:text-xl font-bold text-black focus:border-primary transition-colors placeholder-transparent" placeholder="Votre Téléphone">
+                            <label for="telephone" class="absolute left-0 -top-3 text-gray-400 text-[10px] md:text-xs uppercase tracking-widest transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-yellow-600 peer-focus:text-[10px]">Téléphone</label>
                         </div>
                         <div class="md:col-span-2 group relative mt-4 md:mt-8 reveal-element delay-200">
                             <textarea id="message" class="peer w-full bg-transparent border-b-2 border-gray-200 py-3 outline-none text-xl md:text-2xl font-light resize-none h-32 focus:border-primary transition-colors placeholder-transparent" placeholder="Votre Message"></textarea>
@@ -1380,11 +1387,12 @@
                         </div>
 
                         <div class="md:col-span-2 mt-8 flex justify-end reveal-element delay-300">
-                            <button class="w-full md:w-auto bg-black text-white px-12 py-5 md:py-6 text-base md:text-lg font-black uppercase tracking-widest hover:bg-primary hover:text-black transition-all duration-300 shadow-xl">
+                            <button type="submit" class="w-full md:w-auto bg-black text-white px-12 py-5 md:py-6 text-base md:text-lg font-black uppercase tracking-widest hover:bg-primary hover:text-black transition-all duration-300 shadow-xl">
                                 Envoyer
                             </button>
                         </div>
                     </div>
+                    </form>
                 </section>
             </main>
 
@@ -1438,20 +1446,20 @@
 
                 <div class="order-1 md:order-2 flex gap-6 text-xl">
                     <div class="social-icons flex gap-6">
-                        <a href="#" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
+                        <a href="https://www.facebook.com/oncleglivraisons" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
                             <img src="./img/icone_social/facebook_icones_white.svg" class="h-10" alt="facebook_icones">
                         </a>
-                        <a href="#" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
-                            <img src="./img/icone_social/instagram_icones_white.svg" class="h-10" alt="facebook_icones">
+                        <a href="https://www.instagram.com/oncleglivraisons/" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
+                            <img src="./img/icone_social/instagram_icones_white.svg" class="h-10" alt="instagram_icones">
                         </a>
-                        <a href="#" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
-                            <img src="./img/icone_social/x_icones_white.svg" class="h-10" alt="facebook_icones">
+                        <a href="https://x.com/OncleGLIVRAISON" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
+                            <img src="./img/icone_social/x_icones_white.svg" class="h-10" alt="x_icones">
                         </a>
-                        <a href="#" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
-                            <img src="./img/icone_social/tiktok_icones_white.svg" class="h-10" alt="facebook_icones">
+                        <a href="https://www.tiktok.com/@oncle.g.livraisons" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
+                            <img src="./img/icone_social/tiktok_icones_white.svg" class="h-10" alt="tiktok_icones">
                         </a>
-                        <a href="#" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
-                            <img src="./img/icone_social/linked_icones_white.svg" class="h-10" alt="facebook_icones">
+                        <a href="https://www.linkedin.com/in/oncle-g-livraisons-5272783a0/" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
+                            <img src="./img/icone_social/linked_icones_white.svg" class="h-10" alt="linkedin_icones">
                         </a>
                     </div>
                 </div>
