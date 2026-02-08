@@ -1,0 +1,25 @@
+User-agent: *
+Disallow:
+
+# Sitemap
+Sitemap: https://www.oncleg.com/sitemap.xml
+
+# Allow important pages
+Allow: /index.html
+Allow: /pages/contacts.html
+Allow: /pages/a-propos.html
+Allow: /pages/livraison-express.html
+Allow: /pages/commandez-en-un-geste.html
+Allow: /pages/communaute.html
+Allow: /pages/employer.html
+Allow: /pages/oncle-g/Allô’Gaz.html
+Allow: /pages/oncle-g/Allô'Gaz.html
+Allow: /pages/oncle-g/ConciergerieExpress.html
+Allow: /pages/oncle-g/G-PROMarketing.html
+Allow: /pages/oncle-g/pro-g.html
+
+# Disallow non-essential files
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /js/
+Disallow: /css/
