@@ -1,0 +1,24 @@
+[build]
+  publish = "."
+  command = ""
+
+[context.production]
+  command = ""
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[template.environment]
+  NODE_VERSION = "18"
+
+[functions]
+  directory = "functions"
+  external_node_modules = ["sharp"]
+
+[dev]
+  command = ""
+  port = 8888
+  publish = "."
+  autoLaunch = false
