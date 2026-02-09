@@ -12,7 +12,6 @@ Allow: /pages/livraison-express.html
 Allow: /pages/commandez-en-un-geste.html
 Allow: /pages/communaute.html
 Allow: /pages/employer.html
-Allow: /pages/oncle-g/Allô’Gaz.html
 Allow: /pages/oncle-g/Allô'Gaz.html
 Allow: /pages/oncle-g/ConciergerieExpress.html
 Allow: /pages/oncle-g/G-PROMarketing.html
@@ -23,3 +22,6 @@ Disallow: /*.json$
 Disallow: /*.xml$
 Disallow: /js/
 Disallow: /css/
+
+# Google Search Console Verification (if you have a verification file)
+Allow: /google*.html

@@ -137,12 +137,8 @@
     }
     </script>
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MCKGDTKC');</script>
+    <!-- Google Tag Manager (async for performance) -->
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MCKGDTKC"></script>
     <!-- End Google Tag Manager -->
 
     <!-- link favicon -->
@@ -152,115 +148,217 @@
     <link rel="manifest" href="./img/icons/manifest.json">
     <meta name="msapplication-config" content="./img/icons/browserconfig.xml">
 
-    <!-- Tailwind CSS via CDN -->
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./img/Oncle G - Logo.min.svg" as="image">
+    <link rel="preload" href="./css/main.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" as="style">
+
+    <!-- Inline critical CSS for faster rendering -->
+    <style>
+      /* Critical CSS - Inlined for fastest rendering */
+      body { font-family: Arial, sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
+      .bg-white { background-color: white; }
+      .p-0 { padding: 0; }
+      .font-loading { font-display: swap; }
+      .loading { opacity: 1; transition: opacity 0.3s; }
+      .fixed { position: fixed; }
+      .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+      .z-\[9999\] { z-index: 9999; }
+      .flex { display: flex; }
+      .flex-col { flex-direction: column; }
+      .items-center { align-items: center; }
+      .justify-center { justify-content: center; }
+      .overflow-hidden { overflow: hidden; }
+      .opacity-100 { opacity: 1; }
+      .w-\[300px\] { width: 300px; }
+      .md\:w-\[600px\] { width: 600px; }
+      .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .relative { position: relative; }
+      .h-\[50px\] { height: 50px; }
+      .w-\[50px\] { width: 50px; }
+      .md\:flex { display: flex; }
+      .hidden { display: none; }
+      .md\:hidden { display: none; }
+      .text-neutral-500 { color: #737373; }
+      .transition-colors { transition: color 0.15s ease; }
+      .font-medium { font-weight: 500; }
+      .gap-2 { gap: 0.5rem; }
+      .cursor-pointer { cursor: pointer; }
+      .h-16 { height: 4rem; }
+      .gap-3 { gap: 0.75rem; }
+      .z-50 { z-index: 50; }
+      .max-w-\[1400px\] { max-width: 1400px; }
+      .mx-auto { margin-left: auto; margin-right: auto; }
+      .py-5 { padding-top: 1.25rem; padding-bottom: 1.25rem; }
+      .px-8 { padding-left: 2rem; padding-right: 2rem; }
+      .justify-between { justify-content: space-between; }
+      .items-center { align-items: center; }
+      .relative { position: relative; }
+      .z-50 { z-index: 50; }
+      .text-white { color: white; }
+      .rounded-full { border-radius: 9999px; }
+      .hover\:scale-110:hover { transform: scale(1.1); }
+      .transition-all { transition: all 0.2s ease; }
+      .text-sm { font-size: 0.875rem; }
+      .gap-6 { gap: 1.5rem; }
+      .fixed { position: fixed; }
+      .bottom-40 { bottom: 24rem; }
+      .floating-btn { position: fixed; bottom: 5rem; right: 1rem; background: #facc15; color: #000; border: none; border-radius: 50%; width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1000; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); }
+      .floating-btn:hover { background: #eab308; transform: scale(1.05); }
+
+      /* Add more critical styles here as needed */
+    </style>
+
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="preload" href="./css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="./css/main.css"></noscript>
+
+    <link rel="preload" href="./css/loader.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="./css/loader.css"></noscript>
+
+    <link rel="preload" href="./css/components.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="./css/components.css"></noscript>
+
+    <link rel="preload" href="./css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="./css/responsive.css"></noscript>
+
+    <!-- Load fonts with display swap for performance -->
+    <link rel="preload" href="./fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="./fonts.css"></noscript>
+
+    <!-- Material Symbols font with display swap -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap"></noscript>
+
+    <!-- Load Tailwind separately to avoid blocking -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#facc15',
+            }
+          }
+        }
+      }
+    </script>
 
     <!-- Alpine.js via CDN -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-    <!-- Preconnect to external domains for performance -->
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Critical JavaScript - loaded synchronously but kept minimal -->
+    <script>
+        // Minimal inline script for essential functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide loader immediately if needed to prevent blocking
+            const loaderOverlay = document.getElementById('loader-overlay');
+            if (loaderOverlay) {
+                // Don't wait for animation to show content, just initialize it
+                setTimeout(() => {
+                    if (loaderOverlay.style.display !== 'none') {
+                        loaderOverlay.style.display = 'none';
+                        document.body.style.overflow = 'visible';
+                    }
+                }, 1000); // Show content faster
+            }
+        });
+    </script>
 
-    <!-- Material Icons with priority loading -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" rel="stylesheet">
+    <!-- Non-critical JavaScript - loaded asynchronously -->
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+    <script async src="./js/loader.js"></script>
+    <script async src="./js/animations.js"></script>
+    <script async src="./js/menu.js"></script>
+    <script async src="./js/scroll.js"></script>
 
-
-    <!-- Critical CSS inlined for faster rendering -->
-    <link rel="preload" href="./css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="./css/loader.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="./css/main.css"></noscript>
-    <noscript><link rel="stylesheet" href="./css/loader.css"></noscript>
-
-    <!-- Non-critical CSS loaded asynchronously -->
-    <link rel="preload" href="./css/animations.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="./css/typography.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="./css/components.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="./css/layout.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="./css/carousel.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="./css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
-    <!-- Font preloading for performance - Only available format -->
-    <link rel="preload" href="./fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="./fonts/halcom-font-family-1769100539-0/Halcom-Regular-BF648a71453957a.otf" as="font" type="font/otf" crossorigin>
-
-    <!-- Preload Material Symbols font -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
-    <!-- Non-critical CSS loaded asynchronously -->
-    <link rel="preload" href="./css/font-display.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
-    <!-- Fallback for browsers that don't support onload -->
-    <noscript><link rel="stylesheet" href="./fonts.css"></noscript>
-    <noscript><link rel="stylesheet" href="./css/font-display.css"></noscript>
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap"></noscript>
-
-    <!-- JavaScript Configuration Files -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+    <!-- Defer remaining scripts -->
     <script defer src="./js/tailwind-config.js"></script>
-    <script src="./js/loader.js"></script>
     <script defer src="./js/image-loader.js"></script>
     <script defer src="./js/font-loader.js"></script>
     <script defer src="./scripts/simple-seo-enhancement.js"></script>
-    <script src="./js/animations.js"></script>
     <script defer src="./js/cardstack.js"></script>
     <script defer src="./js/popup.js"></script>
     <script defer src="./js/misc.js"></script>
-    <script defer src="./js/menu.js"></script>
     <script defer src="./js/carousel.js"></script>
-    <script defer src="./js/scroll.js"></script>
     <script defer src="./js/contact-form-handler.js"></script>
+
+    <!-- Initialize Lottie animation after scripts load -->
     <script>
         // Initialize Lottie animation for the logo and hide loader after animation plays
         document.addEventListener('DOMContentLoaded', function() {
-            const container = document.getElementById('lottie-logo');
-            if (container) {
-                const animation = bodymovin.loadAnimation({
-                    container: container,
-                    renderer: 'svg',
-                    loop: false, // Play once then stop
-                    autoplay: true,
-                    path: './img/Oncle-G-Logo-1-2-Playful.json', // Path to your animation JSON
-                    // Add error handling
-                    error: function(err) {
-                        console.error('Lottie animation error:', err);
-                        // Even if there's an error, ensure the loader disappears
+            // Check if bodymovin is loaded before using it
+            if (typeof bodymovin !== 'undefined') {
+                const container = document.getElementById('lottie-logo');
+                if (container) {
+                    const animation = bodymovin.loadAnimation({
+                        container: container,
+                        renderer: 'svg',
+                        loop: false, // Play once then stop
+                        autoplay: true,
+                        path: './img/Oncle-G-Logo-1-2-Playful.json', // Path to your animation JSON
+                        // Add error handling
+                        error: function(err) {
+                            console.error('Lottie animation error:', err);
+                            // Even if there's an error, ensure the loader disappears
+                            const loaderOverlay = document.getElementById('loader-overlay');
+                            if (loaderOverlay) {
+                                loaderOverlay.style.display = 'none';
+                                document.body.style.overflow = 'visible';
+                            }
+                        }
+                    });
+
+                    // Listen for animation complete event
+                    animation.addEventListener('complete', function() {
                         const loaderOverlay = document.getElementById('loader-overlay');
                         if (loaderOverlay) {
                             loaderOverlay.style.display = 'none';
+                            // Ensure the body scroll is enabled
                             document.body.style.overflow = 'visible';
                         }
-                    }
-                });
+                    });
 
-                // Listen for animation complete event
-                animation.addEventListener('complete', function() {
+                    // Fallback: Hide loader after 2 seconds if animation doesn't complete
+                    setTimeout(function() {
+                        const loaderOverlay = document.getElementById('loader-overlay');
+                        if (loaderOverlay && getComputedStyle(loaderOverlay).display !== 'none') {
+                            loaderOverlay.style.display = 'none';
+                            // Ensure the body scroll is enabled
+                            document.body.style.overflow = 'visible';
+                        }
+                    }, 2000); // Faster timeout
+                } else {
+                    // If container doesn't exist, hide loader immediately
                     const loaderOverlay = document.getElementById('loader-overlay');
                     if (loaderOverlay) {
                         loaderOverlay.style.display = 'none';
                         // Ensure the body scroll is enabled
                         document.body.style.overflow = 'visible';
                     }
-                });
-
-                // Fallback: Hide loader after 3 seconds if animation doesn't complete
-                setTimeout(function() {
-                    const loaderOverlay = document.getElementById('loader-overlay');
-                    if (loaderOverlay && getComputedStyle(loaderOverlay).display !== 'none') {
-                        loaderOverlay.style.display = 'none';
-                        // Ensure the body scroll is enabled
-                        document.body.style.overflow = 'visible';
-                    }
-                }, 3000); // Reduced timeout to show content faster
+                }
             } else {
-                // If container doesn't exist, hide loader immediately
+                // If bodymovin isn't loaded, hide loader immediately
                 const loaderOverlay = document.getElementById('loader-overlay');
                 if (loaderOverlay) {
                     loaderOverlay.style.display = 'none';
-                    // Ensure the body scroll is enabled
                     document.body.style.overflow = 'visible';
                 }
             }
@@ -272,7 +370,7 @@
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MCKGDTKC"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Floating button that appears when reaching the "LIVRAISON EXPRESS" section -->
@@ -362,7 +460,7 @@
     <!-- HEADER -->
     <header class="flex justify-between items-center px-8 py-5 max-w-[1400px] mx-auto relative z-50">
         <div onclick="window.location.href='index.html'" class="logo flex items-center gap-3 cursor-pointer">
-            <img src="./img/Oncle G - Logo.min.svg" alt="Logo" class="h-16">
+            <img src="./img/Oncle G - Logo.min.svg" alt="Oncle G - Service de livraison à Brazzaville" class="h-16" loading="eager" >
         </div>
 
         <button id="menuTriggerBtn" class="nav-link hidden md:flex text-sm text-neutral-500 flex items-center gap-2 hover:text-primary justify-center transition-colors font-medium">
@@ -381,19 +479,19 @@
 
         <div class="social-icons hidden md:flex gap-6">
             <a href="https://www.facebook.com/oncleglivraisons" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
-                <img src="./img/icone_social/facebook_icones.svg" class="h-10" alt="facebook_icones">
+                <img src="./img/icone_social/facebook_icones.svg" class="h-10" alt="facebook_icones" loading="lazy" width="40" height="40">
             </a>
             <a href="https://www.instagram.com/oncleglivraisons/" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
-                <img src="./img/icone_social/instagram_icones.svg" class="h-10" alt="instagram_icones">
+                <img src="./img/icone_social/instagram_icones.svg" class="h-10" alt="instagram_icones" loading="lazy" width="40" height="40">
             </a>
             <a href="https://x.com/OncleGLIVRAISON" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
-                <img src="./img/icone_social/x_icones.svg" class="h-10" alt="x_icones">
+                <img src="./img/icone_social/x_icones.svg" class="h-10" alt="x_icones" loading="lazy" width="40" height="40">
             </a>
             <a href="https://www.tiktok.com/@oncle.g.livraisons" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
-                <img src="./img/icone_social/tiktok_icones.svg" class="h-10" alt="tiktok_icones">
+                <img src="./img/icone_social/tiktok_icones.svg" class="h-10" alt="tiktok_icones" loading="lazy" width="40" height="40">
             </a>
             <a href="https://www.linkedin.com/in/oncle-g-livraisons-5272783a0/" class="social-btn text-white rounded-full flex justify-center items-center hover:scale-110 transition-all text-sm">
-                <img src="./img/icone_social/linked_icones.svg" class="h-10" alt="linkedin_icones">
+                <img src="./img/icone_social/linked_icones.svg" class="h-10" alt="linkedin_icones" loading="lazy" width="40" height="40">
             </a>
         </div>
     </header>
@@ -753,21 +851,21 @@
         <div class="flex flex-col md:flex-row gap-6 md:gap-10">
             <div class="flex flex-col gap-6 md:gap-10 w-full md:w-1/2">
                 <div class="relative  h-auto  flex flex-col justify-between group overflow-visible   reveal-element">
-                    <img onclick="window.location.href='./pages/oncle-g/pro-g.html'" class="cursor-pointer" src="./img/service_svg/illimite.webp" alt="Logo">
+                    <img onclick="window.location.href='./pages/oncle-g/pro-g.html'" class="cursor-pointer" src="./img/service_svg/illimite.webp" alt="G-PRO Illimité - Service de livraison professionnelle" loading="lazy"  >
                 </div>
 
                 <div class="relative h-auto flex flex-col justify-between group overflow-visible reveal-element delay-200">
-                    <img onclick="window.location.href='./pages/oncle-g/G-PROMarketing.html'" class="cursor-pointer" src="./img/service_svg/e-commerce.webp" alt="Logo">
+                    <img onclick="window.location.href='./pages/oncle-g/G-PROMarketing.html'" class="cursor-pointer" src="./img/service_svg/e-commerce.webp" alt="G-PRO Marketing - Solution e-commerce clé en main" loading="lazy"  >
                 </div>
             </div>
 
             <div class="flex flex-col gap-6 md:gap-10 w-full md:w-1/2 md:mt-20">
                 <div class="relative h-auto flex flex-col justify-between group overflow-visible reveal-element">
-                    <img onclick="window.location.href='./pages/oncle-g/ConciergerieExpress.html'" class="cursor-pointer" src="./img/service_svg/conciergerie.webp" alt="Logo">
+                    <img onclick="window.location.href='./pages/oncle-g/ConciergerieExpress.html'" class="cursor-pointer" src="./img/service_svg/conciergerie.webp" alt="Conciergerie Express - Service de conciergerie à domicile" loading="lazy" >
                 </div>
 
                 <div class="relative h-auto flex flex-col justify-between group overflow-hidden   reveal-element delay-200">
-                    <img onclick="window.location.href='./pages/oncle-g/Allô’Gaz.html'" class="cursor-pointer" src="./img/service_svg/gaz.webp" alt="Logo">
+                    <img onclick="window.location.href='./pages/oncle-g/Allô’Gaz.html'" class="cursor-pointer" src="./img/service_svg/gaz.webp" alt="Allô'Gaz - Service de livraison de gaz à domicile" loading="lazy" >
                 </div>
             </div>
         </div>
@@ -845,7 +943,7 @@
            </h2>
 
                   <p class="mt-8 text-gray-400 text-lg max-w-2xl mx-auto">
-                        Pas besoin de complications. Vous commandez, ONCLE G Livraisons écoute, et déjà la magie opère. Simple, direct,
+                    Pas besoin de complications. Vous commandez, ONCLE G Livraisons écoute, et déjà la magie opère. Simple, direct,
                     humain : c’est ainsi que nous écrivons chacune de vos
                     livraisons.
                  </p>
