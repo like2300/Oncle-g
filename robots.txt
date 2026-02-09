@@ -1,27 +1,39 @@
 User-agent: *
-Disallow:
+Allow: /
 
 # Sitemap
 Sitemap: https://www.oncleg.com/sitemap.xml
 
-# Allow important pages
-Allow: /index.html
-Allow: /pages/contacts.html
-Allow: /pages/a-propos.html
-Allow: /pages/livraison-express.html
-Allow: /pages/commandez-en-un-geste.html
-Allow: /pages/communaute.html
-Allow: /pages/employer.html
-Allow: /pages/oncle-g/Allô'Gaz.html
-Allow: /pages/oncle-g/ConciergerieExpress.html
-Allow: /pages/oncle-g/G-PROMarketing.html
-Allow: /pages/oncle-g/pro-g.html
+# Host directive
+Host: https://www.oncleg.com
 
-# Disallow non-essential files
+# Crawling rules
 Disallow: /*.json$
 Disallow: /*.xml$
 Disallow: /js/
 Disallow: /css/
+Disallow: /img/icons/
+Disallow: /fonts/
+Disallow: /*.gif$
 
-# Google Search Console Verification (if you have a verification file)
+# Allow important pages specifically
+Allow: /$
+Allow: /index.html$
+Allow: /pages/a-propos.html$
+Allow: /pages/commandez-en-un-geste.html$
+Allow: /pages/communaute.html$
+Allow: /pages/contacts.html$
+Allow: /pages/employer.html$
+Allow: /pages/livraison-express.html$
+Allow: /pages/oncle-g/Allô'Gaz.html$
+Allow: /pages/oncle-g/Allô’Gaz.html$
+Allow: /pages/oncle-g/ConciergerieExpress.html$
+Allow: /pages/oncle-g/G-PROMarketing.html$
+Allow: /pages/oncle-g/pro-g.html$
+
+# Additional directives for better crawling
+Crawl-delay: 2
+Request-rate: 1/2s
+
+# Google Search Console Verification
 Allow: /google*.html
