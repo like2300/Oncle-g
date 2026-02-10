@@ -1124,7 +1124,7 @@
     <section class="max-w-[1200px] mx-auto px-6 py-20 bg-white" id="equipe">
         <div class="mb-16 text-start">
             <h2 class="text-5xl md:text-7xl font-black text-neutral-900 uppercase italic leading-none tracking-tighter">
-                L'ÉQUIPE <br> <span style="color: #facc15;" class="uppercase italic">Oncle G</span>
+                L'ÉQUIPE <br> <span style="color: #facc15;" class="uppercase italic">Oncle G LIVRAISONS</span>
             </h2>
             <div class="w-24 h-2 mt-4" style="background-color: #facc15;"></div>
             <p class="text-gray-500 mt-6 max-w-md text-lg italic font-medium border-l-4 pl-4 border-gray-100">
@@ -1215,46 +1215,64 @@
         </div>
     </section>
 
-    <div id="teamModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/95 backdrop-blur-md transition-all">
-        <div class="bg-white rounded-[40px] max-w-4xl w-full overflow-hidden relative flex flex-col md:flex-row animate-fadeIn shadow-2xl">
-            <button onclick="closeModal()" class="absolute top-6 right-6 z-20 bg-black text-white w-12 h-12 rounded-full flex items-center justify-center text-3xl hover:scale-110 transition-all shadow-xl" style="border: 3px solid #facc15;">&times;</button>
+    <div id="teamModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-0 sm:p-4 bg-neutral-950/95 backdrop-blur-md transition-all duration-300">
 
-            <div class="md:w-1/2 h-[350px] md:h-[600px] bg-neutral-100">
-                <img id="modalImg" src="" class="w-full h-full object-cover" alt="Photo">
+        <div class="relative w-full h-full sm:h-auto sm:max-h-[90vh] sm:max-w-6xl bg-white sm:rounded-[2rem] overflow-hidden flex flex-col md:flex-row shadow-[0_0_40px_rgba(250,204,21,0.3)] animate-slideUp">
+
+            <button onclick="closeModal()" class="absolute top-4 right-4 z-50 w-12 h-12 flex items-center justify-center bg-black text-white rounded-full hover:bg-[#facc15] hover:text-black transition-colors duration-300 shadow-lg border-2 border-white/20">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="relative w-full h-[55%] md:w-[45%] md:h-auto shrink-0 bg-neutral-900 group">
+
+                <img id="modalImg" src="" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 opacity-90" alt="Membre">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 md:opacity-40"></div>
+
+                <div class="absolute bottom-0 left-0 w-full h-2 bg-[#facc15]"></div>
+                <div class="absolute bottom-2 left-0 w-2/3 h-1 bg-[#facc15]"></div>
             </div>
 
-            <div class="md:w-1/2 p-10 md:px-16 flex flex-col justify-center relative">
-                <div class="absolute top-0 right-0 p-10 opacity-10 text-8xl font-black italic select-none">OG</div>
+            <div class="relative flex-1 bg-white flex flex-col justify-center p-6 md:p-12 overflow-y-auto">
 
-                <span id="modalRole" class="font-black uppercase text-xs tracking-[0.3em] mb-2" style="color: #facc15;">Poste</span>
-                <h3 id="modalName" class="text-4xl md:text-5xl font-black text-neutral-900 italic uppercase leading-none mb-6">Nom</h3>
+                <div class="absolute right-0 top-1/2 -translate-y-1/2 text-[12rem] md:text-[18rem] font-black italic text-neutral-100 select-none overflow-hidden leading-none pointer-events-none -mr-10">
+                    OG
+                </div>
 
-                <div class="w-16 h-2 mb-8" style="background-color: #facc15;"></div>
+                <div class="relative z-10 flex flex-col mt-7 md:mt-0 items-start">
 
-                <p id="modalDesc" class="text-gray-600 leading-relaxed text-lg italic">Description complète...</p>
+                    <span id="modalRole" class="inline-block bg-black text-white text-xs font-bold uppercase tracking-[0.2em] py-1.5 px-3 mb-4 -skew-x-12 border-l-4 border-[#facc15]">
+                        Poste
+                    </span>
 
-                <button onclick="closeModal()" class="mt-12 bg-neutral-900 text-white py-5 px-10 rounded-2xl font-black uppercase tracking-widest hover:scale-105 transition-all self-start text-sm" style="box-shadow: 4px 4px 0px #facc15;">
-                    Fermer
-                </button>
+                    <h3 id="modalName" class="text-4xl md:text-6xl lg:text-7xl font-black text-neutral-900 uppercase italic leading-[0.9] tracking-tighter mb-6 drop-shadow-sm">
+                        NOM<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-neutral-800 to-neutral-500">PRÉNOM</span>
+                    </h3>
+
+                    <div class="w-24 h-2 bg-[#facc15] mb-6 transform -skew-x-12"></div>
+
+                    <p id="modalDesc" class="text-neutral-600 text-sm md:text-lg font-medium leading-relaxed max-w-lg mb-8">
+                        Description...
+                    </p>
+
+                    <button onclick="closeModal()" class="group relative py-4 px-10 bg-transparent overflow-hidden border-2 border-black text-black font-black uppercase tracking-widest text-sm hover:text-white transition-colors duration-300">
+                        <span class="absolute inset-0 w-full h-full bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out skew-x-12 origin-left"></span>
+                        <span class="relative z-10">Fermer</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
     <style>
-        /* Styles pour la grille et animations */
-        #equipe .aspect-\[9\/16\] {
-            aspect-ratio: 9 / 16;
+        /* Animation d'apparition fluide vers le haut */
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px) scale(0.95); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        .animate-fadeIn { animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-
-        /* Forcer la couleur primary dans les classes existantes */
-        .text-primary { color: #facc15 !important; }
-        .bg-primary { background-color: #facc15 !important; }
+        .animate-slideUp { animation: slideUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     </style>
 
 
@@ -1262,23 +1280,21 @@
 
 
 
+    <div id="teamModal2" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/90 backdrop-blur-md transition-all">
+        <div class="bg-white rounded-[30px] max-w-4xl w-full overflow-hidden relative flex flex-col animate-fadeIn">
+            <button onclick="closeModal2()" class="absolute top-4 right-4 z-10 bg-white/80 backdrop-blur-md w-10 h-10 rounded-full flex items-center justify-center text-black text-2xl hover:bg-primary hover:text-white transition-all shadow-lg">&times;</button>
 
-
-    <div id="teamModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/90 backdrop-blur-md transition-all">
-        <div class="bg-white rounded-[40px] max-w-4xl w-full overflow-hidden relative flex flex-col md:flex-row animate-fadeIn">
-            <button onclick="closeModal()" class="absolute top-6 right-6 z-10 bg-white/80 backdrop-blur-md w-10 h-10 rounded-full flex items-center justify-center text-black text-2xl hover:bg-primary hover:text-white transition-all shadow-lg">&times;</button>
-
-            <div class="md:w-1/2 h-[300px] md:h-auto">
-                <img id="modalImg" src="" class="w-full h-full object-cover" alt="Photo équipe">
+            <div class="w-full h-60 sm:h-80 md:h-[350px] lg:h-[400px]">
+                <img id="modalImg2" src="" class="w-full h-full object-cover" alt="Photo équipe">
             </div>
 
-            <div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-white">
-                <span id="modalRole" class="text-primary font-bold uppercase text-xs tracking-[0.2em]">Poste</span>
-                <h3 id="modalName" class="text-4xl md:text-5xl font-black text-neutral-900 mt-2 mb-6 italic uppercase">Nom</h3>
-                <div class="w-12 h-1 bg-primary/20 mb-6"></div>
-                <p id="modalDesc" class="text-gray-600 leading-relaxed text-lg italic">Description...</p>
+            <div class="w-full p-6 sm:p-8 md:p-10 flex flex-col justify-center bg-white">
+                <span id="modalRole2" class="text-primary font-bold uppercase text-xs tracking-[0.2em]">Poste</span>
+                <h3 id="modalName2" class="text-2xl sm:text-3xl md:text-4xl font-black text-neutral-900 mt-2 mb-4 italic uppercase">Nom</h3>
+                <div class="w-12 h-1.5 sm:w-16 sm:h-2 bg-primary/20 mb-4"></div>
+                <p id="modalDesc2" class="text-gray-600 leading-relaxed text-base sm:text-lg italic mb-6">Description...</p>
 
-                <button onclick="closeModal()" class="mt-10 bg-neutral-900 text-white py-4 px-8 rounded-2xl font-bold hover:bg-primary transition-all self-start">
+                <button onclick="closeModal2()" class="mt-4 bg-neutral-900 text-white py-3 px-6 sm:py-4 sm:px-8 rounded-xl font-bold hover:bg-primary transition-all self-start">
                     Fermer le profil
                 </button>
             </div>
@@ -1305,9 +1321,31 @@
             document.body.style.overflow = 'auto'; // Réactive le scroll
         }
 
+        function openModal2(name, role, desc, imgSrc) {
+            document.getElementById('modalName2').innerText = name;
+            document.getElementById('modalRole2').innerText = role;
+            document.getElementById('modalDesc2').innerText = desc;
+            document.getElementById('modalImg2').src = imgSrc;
+
+            const modal = document.getElementById('teamModal2');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // Bloque le scroll
+        }
+
+        function closeModal2() {
+            const modal = document.getElementById('teamModal2');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto'; // Réactive le scroll
+        }
+
         window.onclick = function(event) {
             const modal = document.getElementById('teamModal');
             if (event.target == modal) { closeModal(); }
+
+            const modal2 = document.getElementById('teamModal2');
+            if (event.target == modal2) { closeModal2(); }
         }
     </script>
 
