@@ -15,7 +15,7 @@
        theme: {
            extend: {
                colors: {
-                   primary: '#facc15',
+                   primary: '#f6d23a',
                    secondary: '#1A1A1A',
                    accent: '#FF4081',
                },
@@ -558,7 +558,7 @@ body.loading {
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
-    background-color: #facc15;
+    background-color: #f6d23a;
     color: #000;
     border: none;
     display: flex;

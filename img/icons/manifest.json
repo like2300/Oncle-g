@@ -3,7 +3,7 @@
  "short_name": "Oncle G",
  "start_url": "./index.html",
  "display": "standalone",
- "theme_color": "#facc15",
+ "theme_color": "#f6d23a",
  "background_color": "#ffffff",
  "icons": [
   {

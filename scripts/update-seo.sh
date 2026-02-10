@@ -45,7 +45,7 @@ update_html_file() {
         print "    <meta name=\"keywords\" content=\"'"$keywords"'\">";
         print "    <meta name=\"author\" content=\"Oncle G Livraisons\">";
         print "    <meta name=\"robots\" content=\"index, follow\">";
-        print "    <meta name=\"theme-color\" content=\"#facc15\">";  # Yellow color from your brand
+        print "    <meta name=\"theme-color\" content=\"#f6d23a\">";  # Yellow color from your brand
         print "";
         print "    <!-- Open Graph / Facebook -->";
         print "    <meta property=\"og:type\" content=\"website\">";
