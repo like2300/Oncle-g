@@ -6,6 +6,12 @@
   command = ""
 
 [[redirects]]
+  from = "https://oncle-g.netlify.app/sitemap.xml"
+  to = "/sitemap-netlify.xml"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200

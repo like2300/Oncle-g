@@ -2,10 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.oncleg.com/sitemap.xml
-
-# Host directive
-Host: https://www.oncleg.com
+Sitemap: /sitemap.xml
 
 # Crawling rules
 Disallow: /*.json$
